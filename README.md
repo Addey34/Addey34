@@ -40,3 +40,5 @@ Here’s an overview of the technologies I work with daily:
 ## 📈 **Github Stats**
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Addey34&show_icons=true&count_private=true&hide=prs)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Addey34&layout=compact)
+
+---
