@@ -30,12 +30,13 @@ Here’s an overview of the technologies I work with daily:
 
 ---
 
-## 📲 Connect with me
+## 📲 **Connect with me**
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin)](https://www.linkedin.com/in/adrianguichard/)
 [![Email](https://img.shields.io/badge/Email-adrian34470@gmail.com-red)](mailto:adrian34470@gmail.com)
 [![Portfolio](https://img.shields.io/badge/Portfolio-%F0%9F%8C%8D-orange)](https://adrianguichard.com)
 
 ---
 
+## 📈 **Github Stats**
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Addey34&show_icons=true&count_private=true&hide=prs)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Addey34&layout=compact)
