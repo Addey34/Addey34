@@ -21,7 +21,7 @@ Here’s an overview of the technologies I work with daily:
 
 ### ⚙️ **Backend**
 - ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)  ![Express.js](https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white)
-- ![Java](https://img.shields.io/badge/Java-007396?style=flat-square&logo=java&logoColor=white)
+- ![Java]([https://img.shields.io/badge/Java-007396?style=flat-square&logo=java&logoColor=white](https://img.shields.io/badge/Java-007396?style=flat-square&logo=java&logoColor=white)
    ![Spring](https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=spring&logoColor=white)
 
 
