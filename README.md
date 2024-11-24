@@ -37,5 +37,5 @@ Here’s an overview of the technologies I work with daily:
 
 ---
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=yourusername&show_icons=true&count_private=true&hide=prs)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=yourusername&layout=compact)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Addey34&show_icons=true&count_private=true&hide=prs)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Addey34&layout=compact)
