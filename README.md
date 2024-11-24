@@ -11,16 +11,16 @@ I am **Adrian GUICHARD**, a **Full Stack Developer** passionate about creating m
 Here’s an overview of the technologies I work with daily:
 
 ### 🖥️ **Frontend**
-- ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)  **React** | **Vue.js** | **Next.js** | **Astro.js**
-- **Three.js** (animations and 3D models)
+- ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) | ![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=vue.js&logoColor=white) | ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white) | ![Astro](https://img.shields.io/badge/Astro-FF5D00?style=flat-square&logo=astro&logoColor=white)
+- ![Three.js](https://img.shields.io/badge/Three.js-000000?style=flat-square&logo=three.js&logoColor=white) (animations and 3D models)
 - **HTML5 / CSS3 / SASS** | **TailwindCSS**
 
 ### ⚙️ **Backend**
-- **Node.js** | **Express.js**
+- ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white) | ![Express.js](https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white)
 - **Java** | **Spring Boot**
 
 ### 📊 **Databases**
-- **PostgreSQL** | **MongoDB** | **Prisma ORM**
+- ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white) | ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white) | ![Prisma ORM](https://img.shields.io/badge/Prisma-2D3748?style=flat-square&logo=prisma&logoColor=white)
 
 ---
 
