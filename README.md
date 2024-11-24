@@ -24,6 +24,8 @@ Here’s an overview of the technologies I work with daily:
 
 ---
 
-[![Build Status](https://img.shields.io/travis/com/yourusername/yourrepo.svg)](https://travis-ci.com/yourusername/yourrepo)
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/yourrepo.svg?style=social&label=Star)](https://github.com/yourusername/yourrepo)
-[![Forks](https://img.shields.io/github/forks/yourusername/yourrepo.svg?style=social&label=Fork)](https://github.com/yourusername/yourrepo)
+## 📲 Connect with me
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin)](https://www.linkedin.com/in/adrianguichard/)
+[![Portfolio](https://adrianguichard.com)
+[![Email](https://img.shields.io/badge/Email-adrian34470@gmail.com-green)](mailto:adrian34470@gmail.com)
+
