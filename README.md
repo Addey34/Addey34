@@ -1,4 +1,20 @@
-# 🌟 Bienvenue sur mon profil GitHub ! 🌟
+<h1 class="animated-text">🌟 Bienvenue sur mon profil GitHub ! 🌟</h1>
+<style>
+  .animated-text {
+    font-size: 2rem;
+    background: linear-gradient(90deg, #ff6ec4, #7873f5);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradient-animation 3s ease infinite;
+  }
+
+  @keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+</style>
+
 
 Je suis un **Full Stack Developer** passionné, spécialisé dans le développement web moderne avec une expérience en **React**, **Vue.js**, **Node.js**, **Next.js**, **Astro.js**, **Three.js**, **Java**, et bien d'autres. 🎯
 
