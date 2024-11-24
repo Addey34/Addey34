@@ -1,8 +1,8 @@
 # 🌟 Bienvenue sur mon profil GitHub ! 🌟
 
-Je suis un **Full Stack Developer** passionné, spécialisé dans le développement web moderne avec une expérience en **React**, **Vue.js**, **Node.js**, **Next.js**, **Astro.js**, **Three.js**, **Java**, et bien d'autres. 🎯
+Je suis **Adrian**, un **Full Stack Developer** passionné par la création de solutions modernes et performantes. Je travaille avec des technologies comme **React**, **Vue.js**, **Node.js**, **Next.js**, **Astro.js**, **Three.js**, et bien plus encore.
 
-🎓 **Actuellement étudiant en Bachelor Web Development**, je suis à la recherche d'une entreprise pour mon alternance. Si vous êtes une entreprise innovante cherchant un développeur talentueux et motivé, contactez-moi !
+🎓 **Actuellement étudiant en Bachelor Web Development**, je suis à la recherche d'une **entreprise d'accueil pour une alternance**. Si vous êtes une entreprise innovante à la recherche d’un développeur motivé, n’hésitez pas à me contacter !
 
 ---
 
@@ -24,56 +24,45 @@ Voici un aperçu des technologies avec lesquelles je travaille quotidiennement 
 
 ---
 
-## 🌟 **Effets interactifs et animations**
-
-### 🔵 **Animation dynamique avec Three.js**
-![Three.js Animation](https://user-images.githubusercontent.com/xxx/example.gif)
-
-Créez des scènes 3D immersives avec des particules ou des modèles interactifs pour des projets créatifs.
-
-### 💻 **Exemple de graphique avec Chart.js**
-Visualisez des données en temps réel :
-![Chart.js Graph Example](https://user-images.githubusercontent.com/xxx/chart-example.png)
-
----
-
-## 📈 **Statistiques GitHub**
-
-![Vos Stats GitHub](https://github-readme-stats.vercel.app/api?username=<VOTRE_NOM_UTILISATEUR>&show_icons=true&theme=radical)
-![Langages les plus utilisés](https://github-readme-stats.vercel.app/api/top-langs/?username=<VOTRE_NOM_UTILISATEUR>&layout=compact&theme=radical)
-
----
-
-## 🌐 **Projets Représentatifs**
-
-1. **Portfolio Web** : Un portfolio interactif construit avec **React** et **Three.js**.
-2. **Application e-commerce** : Un projet complet avec **Vue.js**, **Node.js** et **PostgreSQL**.
-3. **Blog JAMstack** : Créé avec **Astro.js** et **MongoDB**.
-
----
-
-## 🔗 **Liens Importants**
-
-- **Portfolio** : [monportfolio.com](https://monportfolio.com)
-- **LinkedIn** : [Mon Profil LinkedIn](https://www.linkedin.com/in/votreprofil/)
-- **Email** : [votre.email@example.com](mailto:votre.email@example.com)
-
----
-
-## ✨ **Effets stylés pour impressionner !**
-
-### 1️⃣ **Animation avec Particles.js**
-Ajoutez cet effet sur votre site ou votre README (via GitHub Pages).
-
 ```html
-<div id="particles-js"></div>
+<div id="particles-js" style="position: absolute; width: 100%; height: 100%;"></div>
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
-  particlesJS('particles-js', {
+  particlesJS("particles-js", {
     particles: {
-      number: { value: 50 },
-      color: { value: "#00ffff" },
+      number: { value: 100, density: { enable: true, value_area: 800 } },
+      color: { value: "#ffffff" },
       shape: { type: "circle" },
+      opacity: {
+        value: 0.8,
+        random: true,
+        anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false },
+      },
+      size: {
+        value: 3,
+        random: true,
+        anim: { enable: true, speed: 2, size_min: 0.1, sync: false },
+      },
+      line_linked: { enable: false },
+      move: {
+        enable: true,
+        speed: 1,
+        direction: "none",
+        random: true,
+        out_mode: "out",
+        bounce: false,
+      },
     },
+    interactivity: {
+      events: {
+        onhover: { enable: true, mode: "repulse" },
+        onclick: { enable: true, mode: "push" },
+      },
+      modes: {
+        repulse: { distance: 100, duration: 0.4 },
+        push: { particles_nb: 4 },
+      },
+    },
+    retina_detect: true,
   });
 </script>
