@@ -24,7 +24,6 @@ Here’s an overview of the technologies I work with daily:
 
 ---
 
-## 🌠 Shooting Stars Effect
-
-Click the link below to see the shooting stars in action:  
-[✨ Shooting Stars Effect](https://<votre-utilisateur>.github.io/shooting-stars-effect/)
+[![Build Status](https://img.shields.io/travis/com/yourusername/yourrepo.svg)](https://travis-ci.com/yourusername/yourrepo)
+[![GitHub stars](https://img.shields.io/github/stars/yourusername/yourrepo.svg?style=social&label=Star)](https://github.com/yourusername/yourrepo)
+[![Forks](https://img.shields.io/github/forks/yourusername/yourrepo.svg?style=social&label=Fork)](https://github.com/yourusername/yourrepo)
