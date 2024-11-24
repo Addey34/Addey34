@@ -11,7 +11,7 @@ I am **Adrian GUICHARD**, a **Full Stack Developer** passionate about creating m
 Here’s an overview of the technologies I work with daily:
 
 ### 🖥️ **Frontend**
-- **React** | **Vue.js** | **Next.js** | **Astro.js**
+- ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)  **React** | **Vue.js** | **Next.js** | **Astro.js**
 - **Three.js** (animations and 3D models)
 - **HTML5 / CSS3 / SASS** | **TailwindCSS**
 
