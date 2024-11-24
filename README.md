@@ -1,25 +1,25 @@
-# 🌟 Bienvenue sur mon profil GitHub ! 🌟
+# 🌟 Welcome to my GitHub Profile! 🌟
 
-Je suis **Adrian**, un **Full Stack Developer** passionné par la création de solutions modernes et performantes. Je travaille avec des technologies comme **React**, **Vue.js**, **Node.js**, **Next.js**, **Astro.js**, **Three.js**, et bien plus encore.
+I am **Adrian GUICHARD**, a **Full Stack Developer** passionate about creating modern and high-performing solutions. I work with technologies such as **React**, **Vue.js**, **Node.js**, **Next.js**, **Astro.js**, **Three.js**, and more.
 
-🎓 **Actuellement étudiant en Bachelor Web Development**, je suis à la recherche d'une **entreprise d'accueil pour une alternance**. Si vous êtes une entreprise innovante à la recherche d’un développeur motivé, n’hésitez pas à me contacter !
+🎓 **Currently pursuing a Bachelor’s degree in Web Development**, I am looking for a **host company for an apprenticeship**. If you are an innovative company seeking a motivated developer, feel free to contact me!
 
 ---
 
-## 🚀 **Stack Technique**
+## 🚀 **Technical Stack**
 
-Voici un aperçu des technologies avec lesquelles je travaille quotidiennement :
+Here’s an overview of the technologies I work with daily:
 
 ### 🖥️ **Frontend**
 - **React** | **Vue.js** | **Next.js** | **Astro.js**
-- **Three.js** (animations et modèles 3D)
+- **Three.js** (animations and 3D models)
 - **HTML5 / CSS3 / SASS** | **TailwindCSS**
 
 ### ⚙️ **Backend**
 - **Node.js** | **Express.js**
 - **Java** | **Spring Boot**
 
-### 📊 **Bases de données**
+### 📊 **Databases**
 - **PostgreSQL** | **MongoDB** | **Prisma ORM**
 
 ---
