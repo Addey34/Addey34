@@ -23,3 +23,5 @@ Here’s an overview of the technologies I work with daily:
 - **PostgreSQL** | **MongoDB** | **Prisma ORM**
 
 ---
+
+[✨ Shooting Stars Effect](https://github.com/Addey34/ShootingStarsEffect)
