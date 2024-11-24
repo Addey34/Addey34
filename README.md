@@ -24,4 +24,7 @@ Here’s an overview of the technologies I work with daily:
 
 ---
 
-[✨ Shooting Stars Effect](https://github.com/Addey34/ShootingStarsEffect)
+## 🌠 Shooting Stars Effect
+
+Click the link below to see the shooting stars in action:  
+[✨ Shooting Stars Effect](https://<votre-utilisateur>.github.io/shooting-stars-effect/)
