@@ -21,7 +21,7 @@
 
 ### 🔥 Key Attributes  
 <div align="center">
-  <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+  <div style="display: flex; gap: 50px; flex-wrap: wrap;">
     <div style="text-align: center;">
       <img src="https://media.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif" width="50" alt="Code Icon" />
       <br>
