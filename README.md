@@ -18,15 +18,15 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
   <table>
     <tr>
       <td align="center">
-        <img src="https://media.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif" width="50" alt="Code Icon" /><br />
+        <img src="https://media.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif" width="150" alt="Code Icon" /><br />
       </td>
       <span>Tech Enthusiast</span>
       <td align="center">
-        <img src="https://media.giphy.com/media/LnUtcdoDUKHj6/giphy.gif" width="50" alt="Puzzle Icon" /><br />
+        <img src="https://media.giphy.com/media/LnUtcdoDUKHj6/giphy.gif" width="150" alt="Puzzle Icon" /><br />
       </td>
       <span>Problem Solver</span>
       <td align="center">
-        <img src="https://media.giphy.com/media/l0HU7jj0ivEFyZIA0/giphy.gif" width="50" alt="Book Icon" /><br />
+        <img src="https://media.giphy.com/media/l0HU7jj0ivEFyZIA0/giphy.gif" width="150" alt="Book Icon" /><br />
       </td>
       <span>Continuous Learner</span>
     </tr>
