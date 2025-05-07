@@ -150,13 +150,13 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
 
 <div align="center">
   <a href="https://www.linkedin.com/in/adrianguichard/"  target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=60ZV_wYC0BM2&format=png" width="75" alt="LinkedIn" />
+    <img src="https://img.icons8.com/?size=100&id=60ZV_wYC0BM2&format=png" width="100" alt="LinkedIn" />
   </a>
   <a href="mailto:adrian34470@gmail.com"  target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=ihMzI7k32pJf&format=png" width="75" alt="Email" />
+    <img src="https://img.icons8.com/?size=100&id=ihMzI7k32pJf&format=png" width="100" alt="Email" />
   </a>
   <a href="https://adrianguichard.com"  target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=116754&format=png" width="75" alt="Portfolio" />
+    <img src="https://img.icons8.com/?size=100&id=116754&format=png" width="100" alt="Portfolio" />
   </a>
 </div>
 
