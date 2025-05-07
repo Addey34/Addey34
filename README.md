@@ -16,13 +16,25 @@
 ---
 
 ### 🔥 Key Attributes  
-
-<p align="center">
-  <img src="https://media.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif" width="50" alt="Code Icon" />     
-  <img src="https://media.giphy.com/media/LnUtcdoDUKHj6/giphy.gif" width="50" alt="Puzzle Icon" />     
-  <img src="https://media.giphy.com/media/l0HU7jj0ivEFyZIA0/giphy.gif" width="50" alt="Book Icon" /><br>
-  Tech Enthusiast            Problem Solver            Continuous Learner
-</p>
+<div align="center">
+  <div style="display: flex; gap: 50px; flex-wrap: wrap;">
+    <div style="text-align: center;">
+      <img src="https://media.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif" width="50" alt="Code Icon" />
+      <br>
+      <span>Tech Enthusiast</span>
+    </div>
+    <div style="text-align: center;">
+      <img src="https://media.giphy.com/media/LnUtcdoDUKHj6/giphy.gif" width="50" alt="Puzzle Icon" />
+      <br>
+      <span>Problem Solver</span>
+    </div>
+    <div style="text-align: center;">
+      <img src="https://media.giphy.com/media/l0HU7jj0ivEFyZIA0/giphy.gif" width="50" alt="Book Icon" />
+      <br>
+      <span>Continuous Learner</span>
+    </div>
+  </div>
+</div>
 
 ## ✨ Tech Stack
 
