@@ -17,16 +17,18 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
 <div align="center">
   <table>
     <tr>
-      <td><img src="https://media.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif" width="50" alt="Code Icon" /></td>
-      <td>Tech Enthusiast</td>
-    </tr>
-    <tr>
-      <td><img src="https://media.giphy.com/media/LnUtcdoDUKHj6/giphy.gif" width="50" alt="Puzzle Icon" /></td>
-      <td>Problem Solver</td>
-    </tr>
-    <tr>
-      <td><img src="https://media.giphy.com/media/l0HU7jj0ivEFyZIA0/giphy.gif" width="50" alt="Book Icon" /></td>
-      <td>Continuous Learner</td>
+      <td align="center">
+        <img src="https://media.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif" width="50" alt="Code Icon" /><br />
+        <span>Tech Enthusiast</span>
+      </td>
+      <td align="center">
+        <img src="https://media.giphy.com/media/LnUtcdoDUKHj6/giphy.gif" width="50" alt="Puzzle Icon" /><br />
+        <span>Problem Solver</span>
+      </td>
+      <td align="center">
+        <img src="https://media.giphy.com/media/l0HU7jj0ivEFyZIA0/giphy.gif" width="50" alt="Book Icon" /><br />
+        <span>Continuous Learner</span>
+      </td>
     </tr>
   </table>
 </div>
@@ -149,3 +151,5 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
 <p align="center">
   ⭐ Thanks for visiting! Feel free to explore my repositories and reach out for collaboration opportunities. 🚀
 </p>
+
+---
