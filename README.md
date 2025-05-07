@@ -23,63 +23,37 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
 
 ### 🖥️ Frontend & Frameworks
 <div align="center">
-  <a href="https://reactjs.org/" target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=t4YbEbA834uH&format=png" width="75" alt="React" />
-  </a>
-  <a href="https://vuejs.org/" target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=EoRYuY9CMBZV&format=png" width="75" alt="Vue.js" />
-  </a>
-  <a href="https://nextjs.org/" target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=AU6Wc7r56Fxz&format=png" width="75" alt="Next.js" />
-  </a>
-  <a href="https://astro.build/" target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=kXuRhjMIeKhk&format=png" width="75" alt="Astro" />
-  </a>
-  <a href="https://vitejs.dev/" target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=dJjTWMogzFzg&format=png" width="75" alt="Vite" />
-  </a>
+  <a href="https://reactjs.org/" target="_blank"><img src="https://img.icons8.com/?size=100&id=t4YbEbA834uH&format=png" width="75" alt="React" /></a>
+  <a href="https://vuejs.org/" target="_blank"><img src="https://img.icons8.com/?size=100&id=EoRYuY9CMBZV&format=png" width="75" alt="Vue.js" /></a>
+  <a href="https://nextjs.org/" target="_blank"><img src="https://img.icons8.com/?size=100&id=AU6Wc7r56Fxz&format=png" width="75" alt="Next.js" /></a>
+  <a href="https://astro.build/" target="_blank"><img src="https://img.icons8.com/?size=100&id=kXuRhjMIeKhk&format=png" width="75" alt="Astro" /></a>
+  <a href="https://vitejs.dev/" target="_blank"><img src="https://img.icons8.com/?size=100&id=dJjTWMogzFzg&format=png" width="75" alt="Vite" /></a>
 </div>
 
 ---
 
 ### 🎮 3D & Animation
 <div align="center">
-  <a href="https://threejs.org/" target="_blank">
-    <img src="https://canada1.discourse-cdn.com/flex035/uploads/threejs/original/2X/e/e4f86d2200d2d35c30f7b1494e96b9595ebc2751.png" width="75" alt="Three.js" />
-  </a>
-  <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/WebGL_Logo.svg" width="150" alt="WebGL" />
-  </a>
+  <a href="https://threejs.org/" target="_blank"><img src="https://canada1.discourse-cdn.com/flex035/uploads/threejs/original/2X/e/e4f86d2200d2d35c30f7b1494e96b9595ebc2751.png" width="75" alt="Three.js" /></a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/2/25/WebGL_Logo.svg" width="150" alt="WebGL" /></a>
 </div>
 
 ---
 
 ### ⚙️ Backend & APIs
 <div align="center">
-  <a href="https://nodejs.org/" target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=ouWtcsgDBiwO&format=png" width="75" alt="Node.js" />
-  </a>
-  <a href="https://expressjs.com/" target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=2ZOaTclOqD4q&format=png" width="75" alt="Express" />
-  </a>
+  <a href="https://nodejs.org/" target="_blank"><img src="https://img.icons8.com/?size=100&id=ouWtcsgDBiwO&format=png" width="75" alt="Node.js" /></a>
+  <a href="https://expressjs.com/" target="_blank"><img src="https://img.icons8.com/?size=100&id=2ZOaTclOqD4q&format=png" width="75" alt="Express" /></a>
 </div>
 
 ---
 
 ### 🗃️ Databases & ORM
 <div align="center">
-  <a href="https://www.postgresql.org/" target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=JRnxU7ZWP4mi&format=png" width="75" alt="PostgreSQL" />
-  </a>
-  <a href="https://www.mongodb.com/" target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=tBBf3P8HL0vR&format=png" width="75" alt="MongoDB" />
-  </a>
-  <a href="https://www.prisma.io/" target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=YKKmRFS8Utmm&format=png" width="75" alt="Prisma" />
-  </a>
-  <a href="https://firebase.google.com/" target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=9AHxUOg7E9q2&format=png" width="75" alt="Firebase" />
-  </a>
+  <a href="https://www.postgresql.org/" target="_blank"><img src="https://img.icons8.com/?size=100&id=JRnxU7ZWP4mi&format=png" width="75" alt="PostgreSQL" /></a>
+  <a href="https://www.mongodb.com/" target="_blank"><img src="https://img.icons8.com/?size=100&id=tBBf3P8HL0vR&format=png" width="75" alt="MongoDB" /></a>
+  <a href="https://www.prisma.io/" target="_blank"><img src="https://img.icons8.com/?size=100&id=YKKmRFS8Utmm&format=png" width="75" alt="Prisma" /></a>
+  <a href="https://firebase.google.com/" target="_blank"><img src="https://img.icons8.com/?size=100&id=9AHxUOg7E9q2&format=png" width="75" alt="Firebase" /></a>
 </div>
 
 ---
@@ -109,15 +83,9 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
 </p>
 
 <div align="center">
-  <a href="https://www.linkedin.com/in/adrianguichard/"  target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=60ZV_wYC0BM2&format=png" width="100" alt="LinkedIn" />
-  </a>
-  <a href="mailto:adrian34470@gmail.com"  target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=ihMzI7k32pJf&format=png" width="100" alt="Email" />
-  </a>
-  <a href="https://adrianguichard.com"  target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=116754&format=png" width="100" alt="Portfolio" />
-  </a>
+  <a href="https://www.linkedin.com/in/adrianguichard/"  target="_blank"><img src="https://img.icons8.com/?size=100&id=60ZV_wYC0BM2&format=png" width="100" alt="LinkedIn" /></a>
+  <a href="mailto:adrian34470@gmail.com"  target="_blank"><img src="https://img.icons8.com/?size=100&id=ihMzI7k32pJf&format=png" width="100" alt="Email" /></a>
+  <a href="https://adrianguichard.com"  target="_blank"><img src="https://img.icons8.com/?size=100&id=116754&format=png" width="100" alt="Portfolio" /></a>
 </div>
 
 ---
