@@ -17,15 +17,15 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
 <div align="center">
   <table>
     <tr>
-      <td style="text-align: center; vertical-align: bottom;">
+      <td align="center">
         <img src="https://media.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif" width="50" alt="Code Icon" /><br />
         <span>Tech Enthusiast</span>
       </td>
-      <td style="text-align: center; vertical-align: bottom;">
+      <td align="center">
         <img src="https://media.giphy.com/media/LnUtcdoDUKHj6/giphy.gif" width="50" alt="Puzzle Icon" /><br />
         <span>Problem Solver</span>
       </td>
-      <td style="text-align: center; vertical-align: bottom;">
+      <td align="center">
         <img src="https://media.giphy.com/media/l0HU7jj0ivEFyZIA0/giphy.gif" width="50" alt="Book Icon" /><br />
         <span>Continuous Learner</span>
       </td>
