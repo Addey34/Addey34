@@ -78,7 +78,7 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
     <img src="https://canada1.discourse-cdn.com/flex035/uploads/threejs/original/2X/e/e4f86d2200d2d35c30f7b1494e96b9595ebc2751.png" width="75" alt="Three.js" />
   </a>
   <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/WebGL_Logo.svg" width="75" alt="WebGL" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/WebGL_Logo.svg" width="125" alt="WebGL" />
   </a>
 </div>
 
