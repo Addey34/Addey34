@@ -53,63 +53,99 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
 
 ### 🖥️ Frontend & Frameworks
 <div align="center">
-
-[![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=black)](https://reactjs.org/)
-[![Vue](https://img.shields.io/badge/-Vue.js-4FC08D?logo=vue.js&logoColor=white)](https://vuejs.org/)
-[![Next.js](https://img.shields.io/badge/-Next.js-000000?logo=next.js&logoColor=white)](https://nextjs.org/)
-[![Astro](https://img.shields.io/badge/-Astro-FF5D00?logo=astro&logoColor=white)](https://astro.build/)
-[![Vite](https://img.shields.io/badge/-Vite-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Tailwind](https://img.shields.io/badge/-Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-
+  <a href="https://reactjs.org/">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" width="150" alt="React" />
+  </a>
+  <a href="https://vuejs.org/">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg" width="150" alt="Vue.js" />
+  </a>
+  <a href="https://nextjs.org/">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/Next.js_Logo.svg" width="150" alt="Next.js" />
+  </a>
+  <a href="https://astro.build/">
+    <img src="https://astro.build/og-image.png" width="150" alt="Astro" />
+  </a>
+  <a href="https://vitejs.dev/">
+    <img src="https://vitejs.dev/logo.svg" width="150" alt="Vite" />
+  </a>
+  <a href="https://tailwindcss.com/">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Tailwind_CSS_Logo.svg" width="150" alt="Tailwind CSS" />
+  </a>
 </div>
 
 ---
 
 ### 🎮 3D & Animation
 <div align="center">
-
-[![Three.js](https://img.shields.io/badge/-Three.js-000000?logo=three.js&logoColor=white)](https://threejs.org/)
-[![GSAP](https://img.shields.io/badge/-GSAP-88CE02?logo=greensock&logoColor=white)](https://greensock.com/gsap/)
-[![Framer Motion](https://img.shields.io/badge/-Framer_Motion-0055FF?logo=framer&logoColor=white)](https://www.framer.com/motion/)
-[![WebGL](https://img.shields.io/badge/-WebGL-990000?logo=webgl&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API)
-
+  <a href="https://threejs.org/">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Three.js_logo.svg" width="150" alt="Three.js" />
+  </a>
+  <a href="https://greensock.com/gsap/">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/GreenSock_Animation_Platform_logo.svg" width="150" alt="GSAP" />
+  </a>
+  <a href="https://www.framer.com/motion/">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/Framer_Motion_logo.svg" width="150" alt="Framer Motion" />
+  </a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/WebGL_Logo.svg" width="150" alt="WebGL" />
+  </a>
 </div>
 
 ---
 
 ### ⚙️ Backend & APIs
 <div align="center">
-
-[![Node.js](https://img.shields.io/badge/-Node.js-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
-[![Express](https://img.shields.io/badge/-Express-000000?logo=express&logoColor=white)](https://expressjs.com/)
-[![Java](https://img.shields.io/badge/-Java-007396?logo=java&logoColor=white)](https://www.java.com/)
-[![Spring](https://img.shields.io/badge/-Spring-6DB33F?logo=spring&logoColor=white)](https://spring.io/)
-
+  <a href="https://nodejs.org/">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" width="150" alt="Node.js" />
+  </a>
+  <a href="https://expressjs.com/">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png" width="150" alt="Express" />
+  </a>
+  <a href="https://www.java.com/">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Java_logo_2014.svg" width="150" alt="Java" />
+  </a>
+  <a href="https://spring.io/">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Spring_Framework_Logo_2018.svg" width="150" alt="Spring" />
+  </a>
 </div>
 
 ---
 
 ### 🗃️ Databases & ORM
 <div align="center">
-
-[![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
-[![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?logo=mongodb&logoColor=white)](https://www.mongodb.com/)
-[![Prisma](https://img.shields.io/badge/-Prisma-2D3748?logo=prisma&logoColor=white)](https://www.prisma.io/)
-[![Firebase](https://img.shields.io/badge/-Firebase-FFCA28?logo=firebase&logoColor=black)](https://firebase.google.com/)
-
+  <a href="https://www.postgresql.org/">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Postgresql_elephant.svg" width="150" alt="PostgreSQL" />
+  </a>
+  <a href="https://www.mongodb.com/">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/MongoDB_Logo.svg" width="150" alt="MongoDB" />
+  </a>
+  <a href="https://www.prisma.io/">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Prisma_logo.svg" width="150" alt="Prisma" />
+  </a>
+  <a href="https://firebase.google.com/">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Firebase_Logo_2016.svg" width="150" alt="Firebase" />
+  </a>
 </div>
 
 ---
 
 ### 🛠️ DevOps & Tools
 <div align="center">
-
-[![Git](https://img.shields.io/badge/-Git-F05032?logo=git&logoColor=white)](https://git-scm.com/)
-[![Docker](https://img.shields.io/badge/-Docker-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
-[![VS Code](https://img.shields.io/badge/-VS_Code-007ACC?logo=visual-studio-code&logoColor=white)](https://code.visualstudio.com/)
-[![Figma](https://img.shields.io/badge/-Figma-F24E1E?logo=figma&logoColor=white)](https://www.figma.com/)
-[![Postman](https://img.shields.io/badge/-Postman-FF6C37?logo=postman&logoColor=white)](https://www.postman.com/)
-
+  <a href="https://git-scm.com/">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Git-logo.svg" width="150" alt="Git" />
+  </a>
+  <a href="https://www.docker.com/">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Docker_logo.svg" width="150" alt="Docker" />
+  </a>
+  <a href="https://code.visualstudio.com/">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Visual_Studio_Code_1.35_icon.svg" width="150" alt="VS Code" />
+  </a>
+  <a href="https://www.figma.com/">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" width="150" alt="Figma" />
+  </a>
+  <a href="https://www.postman.com/">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Postman_Logo_2020.svg" width="150" alt="Postman" />
+  </a>
 </div>
 
 ---
@@ -122,20 +158,20 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
 
 ---
 
-## 📬 Let's Connect!
+### 📬 Let's Connect!
 <p align="center">
   Looking for a motivated developer for your team? Let's discuss how I can contribute to your projects!
 </p>
 
 <div align="center">
   <a href="https://www.linkedin.com/in/adrianguichard/">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo_2013.svg" width="150" alt="LinkedIn" />
   </a>
   <a href="mailto:adrian34470@gmail.com">
-    <img src="https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white" alt="Email" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Gmail_Icon.svg" width="150" alt="Email" />
   </a>
   <a href="https://adrianguichard.com">
-    <img src="https://img.shields.io/badge/Portfolio-FFA500?logo=world&logoColor=white" alt="Portfolio" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/World_icon_2.svg" width="150" alt="Portfolio" />
   </a>
 </div>
 
