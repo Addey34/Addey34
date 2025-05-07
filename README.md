@@ -1,4 +1,4 @@
-# 🚀 Adrian GUICHARD  
+# 🚀 Adrian G.
 ### ✨ Full Stack Developer ✨  
 
 <div align="center">
@@ -43,7 +43,7 @@
 ## ✨ Tech Stack
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=2500&pause=800&color=A569BD&center=true&vCenter=true&width=500&repeat=true&lines=Frontend+%7C+Backend+%7C+3D+%7C+Databases+%7C+Tools" alt="Tech Stack Categories" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=2500&pause=800&color=A569BD&center=true&vCenter=true&width=700&repeat=true&lines=Frontend+%7C+Backend+%7C+3D+%7C+Databases+%7C+Tools" alt="Tech Stack Categories" />
 </div>
 
 ---
