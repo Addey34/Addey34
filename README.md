@@ -84,10 +84,10 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
     <img src="https://gsap.com/wp-content/uploads/2019/04/gsap-logo.svg" width="20" alt="GSAP" />
   </a>
   <a href="https://www.framer.com/motion/">
-    <img src="https://motion.framer.com/favicon.svg" width="20" alt="Framer Motion" />
+    <img src="https://framerusercontent.com/images/TvJ9grdPgk3sRz6T6XwkpBrFr4k.png" width="20" alt="Framer Motion" />
   </a>
   <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/WebGL_Logo.svg" width="20" alt="WebGL" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/WebGL_Logo.svg" width="20" alt="WebGL" />
   </a>
 </div>
 
