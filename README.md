@@ -54,7 +54,7 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
 ### 🖥️ Frontend & Frameworks
 <div align="center">
   <a href="https://reactjs.org/" target="_blank">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="50" alt="React" />
+    <img src="https://img.icons8.com/?size=100&id=wPohyHO_qO1a&format=png&color=000000" width="50" alt="React" />
   </a>
   <a href="https://vuejs.org/" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" width="50" alt="Vue.js" />
