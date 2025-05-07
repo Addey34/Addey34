@@ -7,12 +7,6 @@
 
 ---
 
-## 🌟 About Me  
-
-Passionate **Full Stack Developer** with expertise in modern web technologies, dedicated to crafting high-performance and scalable applications. Currently pursuing a **Bachelor's degree in Web Development**, I am actively seeking an apprenticeship opportunity with an innovative company to further hone my skills and contribute to impactful projects.
-
----
-
 ## ✨ Tech Stack
 
 <div align="center">
