@@ -54,22 +54,19 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
 ### 🖥️ Frontend & Frameworks
 <div align="center">
   <a href="https://reactjs.org/" target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=t4YbEbA834uH&format=png" width="50" alt="React" />
+    <img src="https://img.icons8.com/?size=100&id=t4YbEbA834uH&format=png" width="75" alt="React" />
   </a>
   <a href="https://vuejs.org/" target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=EoRYuY9CMBZV&format=png" width="50" alt="Vue.js" />
+    <img src="https://img.icons8.com/?size=100&id=EoRYuY9CMBZV&format=png" width="75" alt="Vue.js" />
   </a>
   <a href="https://nextjs.org/" target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=AU6Wc7r56Fxz&format=png" width="50" alt="Next.js" />
+    <img src="https://img.icons8.com/?size=100&id=AU6Wc7r56Fxz&format=png" width="75" alt="Next.js" />
   </a>
   <a href="https://astro.build/" target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=kXuRhjMIeKhk&format=png" width="50" alt="Astro" />
+    <img src="https://img.icons8.com/?size=100&id=kXuRhjMIeKhk&format=png" width="75" alt="Astro" />
   </a>
   <a href="https://vitejs.dev/" target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=dJjTWMogzFzg&format=png" width="50" alt="Vite" />
-  </a>
-  <a href="https://tailwindcss.com/" target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=CIAZz2CYc6Kc&format=png" width="50" alt="Tailwind CSS" />
+    <img src="https://img.icons8.com/?size=100&id=dJjTWMogzFzg&format=png" width="75" alt="Vite" />
   </a>
 </div>
 
