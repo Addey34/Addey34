@@ -90,7 +90,7 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
     <img src="https://img.icons8.com/?size=100&id=ouWtcsgDBiwO&format=png" width="75" alt="Node.js" />
   </a>
   <a href="https://expressjs.com/" target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=2ZOaTclOqD4q&format=png" width="775" alt="Express" />
+    <img src="https://img.icons8.com/?size=100&id=2ZOaTclOqD4q&format=png" width="75" alt="Express" />
   </a>
 </div>
 
