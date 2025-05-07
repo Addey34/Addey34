@@ -10,35 +10,67 @@ I am **Adrian GUICHARD**, a **Full Stack Developer** passionate about creating m
 
 Here’s an overview of the technologies I work with daily:
 
-### 🖥️ **Frontend**
-- ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) ![Vite](https://img.shields.io/badge/Vite-F7DF1E?style=flat-square&logo=vite&logoColor=black) ![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=vue.js&logoColor=white)  ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)  ![Astro](https://img.shields.io/badge/Astro-FF5D00?style=flat-square&logo=astro&logoColor=white)
-- ![Three.js](https://img.shields.io/badge/Three.js-000000?style=flat-square&logo=three.js&logoColor=white) 
-- ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-   ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-   ![SASS](https://img.shields.io/badge/SASS-CC6699?style=flat-square&logo=sass&logoColor=white)
-   ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=flat-square&logo=tailwindcss&logoColor=white)
+### 🖥️ Frontend
 
+<div align="left">
 
-### ⚙️ **Backend**
-- ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)  ![Express.js](https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white)
-- ![Java](https://img.shields.io/badge/Java-007396?style=flat-square&logo=java&logoColor=white)
-   ![Spring](https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=spring&logoColor=white)
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
+  <img src="https://img.shields.io/badge/Vite-F7DF1E?style=for-the-badge&logo=vite&logoColor=black" />
+  <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/Astro-FF5D00?style=for-the-badge&logo=astro&logoColor=white" />
+  
+  <br>
 
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+  <img src="https://img.shields.io/badge/SASS-CC6699?style=for-the-badge&logo=sass&logoColor=white" />
+  <img src="https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white" />
+  <img src="https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white" />
 
-### 📊 **Databases**
-- ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white)  ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)  ![Prisma ORM](https://img.shields.io/badge/Prisma-2D3748?style=flat-square&logo=prisma&logoColor=white)
-
----
-
-## 📲 **Connect with me**
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin)](https://www.linkedin.com/in/adrianguichard/)
-[![Email](https://img.shields.io/badge/Email-adrian34470@gmail.com-red)](mailto:adrian34470@gmail.com)
-[![Portfolio](https://img.shields.io/badge/Portfolio-%F0%9F%8C%8D-orange)](https://adrianguichard.com)
+</div>
 
 ---
 
-## 📈 **Github Stats**
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Addey34&show_icons=true&count_private=true&hide=prs)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Addey34&layout=compact)
+### ⚙️ Backend
+
+<div align="left">
+
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" />
+  
+  <br>
+
+  <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white" />
+  <img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white" />
+
+</div>
 
 ---
+
+### 📊 Databases
+
+<div align="left">
+
+  <img src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" />
+  <img src="https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white" />
+
+</div>
+
+---
+
+## 📲 Connect with me
+
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/adrianguichard/)
+[![Email](https://img.shields.io/badge/-Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:adrian34470@gmail.com)
+[![Portfolio](https://img.shields.io/badge/-Portfolio-FFA500?style=for-the-badge&logo=world&logoColor=white)](https://adrianguichard.com)
+
+---
+
+## 📈 GitHub Stats
+
+<p align="left">
+  <img height="150px" src="https://github-readme-stats.vercel.app/api?username=Addey34&show_icons=true&theme=github_dark&count_private=true&hide=prs" />
+  <img height="150px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Addey34&layout=compact&hide=html,css&theme=github_dark" />
+</p>
