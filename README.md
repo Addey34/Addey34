@@ -1,6 +1,5 @@
 # 🚀 Adrian G.
-### ✨ Full Stack Developer ✨  
----
+
 
 ## ✨ Tech Stack
 
