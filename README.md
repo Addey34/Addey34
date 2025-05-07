@@ -63,7 +63,7 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" width="50" alt="Next.js" />
   </a>
   <a href="https://astro.build/" target="_blank">
-    <img src="https://cdn.sanity.io/images/3do82whm/next/1c2aa4d10fe71c23d7a36f69fc11c419c5f4ac35-1000x667.png" width="50" alt="Astro" />
+    <img src="https://img.icons8.com/?size=100&id=kXuRhjMIeKhk&format=png&color=000000" width="50" alt="Astro" />
   </a>
   <a href="https://vitejs.dev/" target="_blank">
     <img src="https://vitejs.dev/logo.svg" width="20" alt="Vite" />
