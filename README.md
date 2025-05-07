@@ -195,5 +195,3 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
 <p align="center">
   ⭐ Thanks for visiting! Feel free to explore my repositories and reach out for collaboration opportunities. 🚀
 </p>
-
----
