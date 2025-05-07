@@ -69,7 +69,7 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
     <img src="https://vitejs.dev/logo.svg" width="20" alt="Vite" />
   </a>
   <a href="https://tailwindcss.com/">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" width="20" alt="Tailwind CSS" />
+    <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" width="20" alt="Tailwind CSS" />
   </a>
 </div>
 
