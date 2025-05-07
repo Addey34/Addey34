@@ -54,22 +54,22 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
 ### 🖥️ Frontend & Frameworks
 <div align="center">
   <a href="https://reactjs.org/">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" width="150" alt="React" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" width="20" alt="React" />
   </a>
   <a href="https://vuejs.org/">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg" width="150" alt="Vue.js" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg" width="20" alt="Vue.js" />
   </a>
   <a href="https://nextjs.org/">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/Next.js_Logo.svg" width="150" alt="Next.js" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/Next.js_Logo.svg" width="20" alt="Next.js" />
   </a>
   <a href="https://astro.build/">
-    <img src="https://astro.build/og-image.png" width="150" alt="Astro" />
+    <img src="https://astro.build/og-image.png" width="20" alt="Astro" />
   </a>
   <a href="https://vitejs.dev/">
-    <img src="https://vitejs.dev/logo.svg" width="150" alt="Vite" />
+    <img src="https://vitejs.dev/logo.svg" width="20" alt="Vite" />
   </a>
   <a href="https://tailwindcss.com/">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Tailwind_CSS_Logo.svg" width="150" alt="Tailwind CSS" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Tailwind_CSS_Logo.svg" width="20" alt="Tailwind CSS" />
   </a>
 </div>
 
@@ -78,16 +78,16 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
 ### 🎮 3D & Animation
 <div align="center">
   <a href="https://threejs.org/">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Three.js_logo.svg" width="150" alt="Three.js" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Three.js_logo.svg" width="20" alt="Three.js" />
   </a>
   <a href="https://greensock.com/gsap/">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/GreenSock_Animation_Platform_logo.svg" width="150" alt="GSAP" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/GreenSock_Animation_Platform_logo.svg" width="20" alt="GSAP" />
   </a>
   <a href="https://www.framer.com/motion/">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/Framer_Motion_logo.svg" width="150" alt="Framer Motion" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/Framer_Motion_logo.svg" width="20" alt="Framer Motion" />
   </a>
   <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/WebGL_Logo.svg" width="150" alt="WebGL" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/WebGL_Logo.svg" width="20" alt="WebGL" />
   </a>
 </div>
 
@@ -96,16 +96,16 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
 ### ⚙️ Backend & APIs
 <div align="center">
   <a href="https://nodejs.org/">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" width="150" alt="Node.js" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" width="20" alt="Node.js" />
   </a>
   <a href="https://expressjs.com/">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png" width="150" alt="Express" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png" width="20" alt="Express" />
   </a>
   <a href="https://www.java.com/">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Java_logo_2014.svg" width="150" alt="Java" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Java_logo_2014.svg" width="20" alt="Java" />
   </a>
   <a href="https://spring.io/">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Spring_Framework_Logo_2018.svg" width="150" alt="Spring" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Spring_Framework_Logo_2018.svg" width="20" alt="Spring" />
   </a>
 </div>
 
@@ -114,16 +114,16 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
 ### 🗃️ Databases & ORM
 <div align="center">
   <a href="https://www.postgresql.org/">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Postgresql_elephant.svg" width="150" alt="PostgreSQL" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Postgresql_elephant.svg" width="20" alt="PostgreSQL" />
   </a>
   <a href="https://www.mongodb.com/">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/MongoDB_Logo.svg" width="150" alt="MongoDB" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/MongoDB_Logo.svg" width="20" alt="MongoDB" />
   </a>
   <a href="https://www.prisma.io/">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Prisma_logo.svg" width="150" alt="Prisma" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Prisma_logo.svg" width="20" alt="Prisma" />
   </a>
   <a href="https://firebase.google.com/">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Firebase_Logo_2016.svg" width="150" alt="Firebase" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Firebase_Logo_2016.svg" width="20" alt="Firebase" />
   </a>
 </div>
 
@@ -132,19 +132,19 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
 ### 🛠️ DevOps & Tools
 <div align="center">
   <a href="https://git-scm.com/">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Git-logo.svg" width="150" alt="Git" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Git-logo.svg" width="20" alt="Git" />
   </a>
   <a href="https://www.docker.com/">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Docker_logo.svg" width="150" alt="Docker" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Docker_logo.svg" width="20" alt="Docker" />
   </a>
   <a href="https://code.visualstudio.com/">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Visual_Studio_Code_1.35_icon.svg" width="150" alt="VS Code" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Visual_Studio_Code_1.35_icon.svg" width="20" alt="VS Code" />
   </a>
   <a href="https://www.figma.com/">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" width="150" alt="Figma" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" width="20" alt="Figma" />
   </a>
   <a href="https://www.postman.com/">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Postman_Logo_2020.svg" width="150" alt="Postman" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Postman_Logo_2020.svg" width="20" alt="Postman" />
   </a>
 </div>
 
@@ -165,13 +165,13 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
 
 <div align="center">
   <a href="https://www.linkedin.com/in/adrianguichard/">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo_2013.svg" width="150" alt="LinkedIn" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo_2013.svg" width="20" alt="LinkedIn" />
   </a>
   <a href="mailto:adrian34470@gmail.com">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Gmail_Icon.svg" width="150" alt="Email" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Gmail_Icon.svg" width="20" alt="Email" />
   </a>
   <a href="https://adrianguichard.com">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/World_icon_2.svg" width="150" alt="Portfolio" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/World_icon_2.svg" width="20" alt="Portfolio" />
   </a>
 </div>
 
