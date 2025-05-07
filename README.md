@@ -116,20 +116,20 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
 
 ### 🛠️ DevOps & Tools
 <div align="center">
+  <a href="https://code.visualstudio.com/" target="_blank">
+    <img src="https://img.icons8.com/?size=100&id=i19Ns28h30P4&format=png" width="75" alt="VS Code" />
+  </a>
+  <a href="https://www.github.com/" target="_blank">
+    <img src="https://img.icons8.com/?size=100&id=52539&format=png" width="75" alt="Github" />
+  </a>
   <a href="https://git-scm.com/" target="_blank">
     <img src="https://img.icons8.com/?size=100&id=20906&format=png" width="75" alt="Git" />
   </a>
   <a href="https://www.docker.com/" target="_blank">
     <img src="https://img.icons8.com/?size=100&id=22813&format=png" width="75" alt="Docker" />
   </a>
-  <a href="https://code.visualstudio.com/" target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=i19Ns28h30P4&format=png" width="75" alt="VS Code" />
-  </a>
   <a href="https://www.figma.com/" target="_blank">
     <img src="https://img.icons8.com/?size=100&id=8gfeOoqrHqJU&format=png" width="75" alt="Figma" />
-  </a>
-  <a href="https://www.postman.com/" target="_blank">
-    <img src="https://www.postman.com/_ar-assets/images/favicon-1-48.png" width="50" alt="Postman" />
   </a>
 </div>
 
@@ -150,13 +150,13 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
 
 <div align="center">
   <a href="https://www.linkedin.com/in/adrianguichard/"  target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo_2013.svg" width="20" alt="LinkedIn" />
+    <img src="https://img.icons8.com/?size=100&id=lMUZwFHycz7a&format=png" width="75" alt="LinkedIn" />
   </a>
   <a href="mailto:adrian34470@gmail.com"  target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Gmail_Icon.svg" width="20" alt="Email" />
+    <img src="https://img.icons8.com/?size=100&id=ihMzI7k32pJf&format=png" width="75" alt="Email" />
   </a>
   <a href="https://adrianguichard.com"  target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/World_icon_2.svg" width="20" alt="Portfolio" />
+    <img src="https://img.icons8.com/?size=100&id=116754&format=png" width="75" alt="Portfolio" />
   </a>
 </div>
 
