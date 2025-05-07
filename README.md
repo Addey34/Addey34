@@ -53,22 +53,22 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
 
 ### 🖥️ Frontend & Frameworks
 <div align="center">
-  <a href="https://reactjs.org/">
+  <a href="https://reactjs.org/" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="50" alt="React" />
   </a>
-  <a href="https://vuejs.org/">
+  <a href="https://vuejs.org/" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" width="50" alt="Vue.js" />
   </a>
-  <a href="https://nextjs.org/">
+  <a href_blank="https://nextjs.org/" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" width="50" alt="Next.js" />
   </a>
-  <a href="https://astro.build/">
+  <a href="https://astro.build/" target="_blank">
     <img src="https://astro.build/assets/press/logomark-light.svg" width="50" alt="Astro" />
   </a>
-  <a href="https://vitejs.dev/">
+  <a href="https://vitejs.dev/" target="_blank">
     <img src="https://vitejs.dev/logo.svg" width="20" alt="Vite" />
   </a>
-  <a href="https://tailwindcss.com/">
+  <a href="https://tailwindcss.com/" target="_blank">
     <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" width="50" alt="Tailwind CSS" />
   </a>
 </div>
@@ -77,16 +77,16 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
 
 ### 🎮 3D & Animation
 <div align="center">
-  <a href="https://threejs.org/">
+  <a href="https://threejs.org/" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg" width="50" alt="Three.js" />
   </a>
-  <a href="https://greensock.com/gsap/">
+  <a href="https://greensock.com/gsap/" target="_blank">
     <img src="https://gsap.com/wp-content/uploads/2019/04/gsap-logo.svg" width="50" alt="GSAP" />
   </a>
-  <a href="https://www.framer.com/motion/">
+  <a href="https://www.framer.com/motion/" target="_blank">
     <img src="https://framerusercontent.com/images/TvJ9grdPgk3sRz6T6XwkpBrFr4k.png" width="50" alt="Framer Motion" />
   </a>
-  <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API">
+  <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/WebGL_Logo.svg" width="50" alt="WebGL" />
   </a>
 </div>
@@ -95,16 +95,16 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
 
 ### ⚙️ Backend & APIs
 <div align="center">
-  <a href="https://nodejs.org/">
+  <a href="https://nodejs.org/" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="50" alt="Node.js" />
   </a>
-  <a href="https://expressjs.com/">
+  <a href="https://expressjs.com/" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" width="50" alt="Express" />
   </a>
-  <a href="https://www.java.com/">
+  <a href="https://www.java.com/" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="50" alt="Java" />
   </a>
-  <a href="https://spring.io/">
+  <a href="https://spring.io/" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" width="50" alt="Spring" />
   </a>
 </div>
@@ -113,16 +113,16 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
 
 ### 🗃️ Databases & ORM
 <div align="center">
-  <a href="https://www.postgresql.org/">
+  <a href="https://www.postgresql.org/" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="50" alt="PostgreSQL" />
   </a>
-  <a href="https://www.mongodb.com/">
+  <a href="https://www.mongodb.com/" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="50" alt="MongoDB" />
   </a>
-  <a href="https://www.prisma.io/">
+  <a href="https://www.prisma.io/" target="_blank">
     <img src="https://www.prisma.io/images/favicon-32x32.png" width="50" alt="Prisma" />
   </a>
-  <a href="https://firebase.google.com/">
+  <a href="https://firebase.google.com/" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" width="50" alt="Firebase" />
   </a>
 </div>
@@ -131,19 +131,19 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
 
 ### 🛠️ DevOps & Tools
 <div align="center">
-  <a href="https://git-scm.com/">
+  <a href="https://git-scm.com/" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="50" alt="Git" />
   </a>
-  <a href="https://www.docker.com/">
+  <a href="https://www.docker.com/" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="50" alt="Docker" />
   </a>
-  <a href="https://code.visualstudio.com/">
+  <a href="https://code.visualstudio.com/" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" width="50" alt="VS Code" />
   </a>
-  <a href="https://www.figma.com/">
+  <a href="https://www.figma.com/" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="50" alt="Figma" />
   </a>
-  <a href="https://www.postman.com/">
+  <a href="https://www.postman.com/" target="_blank">
     <img src="https://www.postman.com/_ar-assets/images/favicon-1-48.png" width="50" alt="Postman" />
   </a>
 </div>
@@ -164,13 +164,13 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
 </p>
 
 <div align="center">
-  <a href="https://www.linkedin.com/in/adrianguichard/">
+  <a href="https://www.linkedin.com/in/adrianguichard/"  target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo_2013.svg" width="20" alt="LinkedIn" />
   </a>
-  <a href="mailto:adrian34470@gmail.com">
+  <a href="mailto:adrian34470@gmail.com"  target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Gmail_Icon.svg" width="20" alt="Email" />
   </a>
-  <a href="https://adrianguichard.com">
+  <a href="https://adrianguichard.com"  target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/World_icon_2.svg" width="20" alt="Portfolio" />
   </a>
 </div>
