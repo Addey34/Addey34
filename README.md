@@ -86,21 +86,11 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
 
 ### 🛠️ DevOps & Tools
 <div align="center">
-  <a href="https://code.visualstudio.com/" target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=i19Ns28h30P4&format=png" width="75" alt="VS Code" />
-  </a>
-  <a href="https://www.github.com/" target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=52539&format=png" width="75" alt="Github" />
-  </a>
-  <a href="https://git-scm.com/" target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=20906&format=png" width="75" alt="Git" />
-  </a>
-  <a href="https://www.docker.com/" target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=22813&format=png" width="75" alt="Docker" />
-  </a>
-  <a href="https://www.figma.com/" target="_blank">
-    <img src="https://img.icons8.com/?size=100&id=8gfeOoqrHqJU&format=png" width="75" alt="Figma" />
-  </a>
+  <a href="https://code.visualstudio.com/" target="_blank"><img src="https://img.icons8.com/?size=100&id=i19Ns28h30P4&format=png" width="75" alt="VS Code" /></a>
+  <a href="https://www.github.com/" target="_blank"><img src="https://img.icons8.com/?size=100&id=52539&format=png" width="75" alt="Github" /></a>
+  <a href="https://git-scm.com/" target="_blank"><img src="https://img.icons8.com/?size=100&id=20906&format=png" width="75" alt="Git" /></a>
+  <a href="https://www.docker.com/" target="_blank"><img src="https://img.icons8.com/?size=100&id=22813&format=png" width="75" alt="Docker" /></a>
+  <a href="https://www.figma.com/" target="_blank"><img src="https://img.icons8.com/?size=100&id=8gfeOoqrHqJU&format=png" width="75" alt="Figma" /></a>
 </div>
 
 ---
