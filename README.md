@@ -1,10 +1,5 @@
 # 🚀 Adrian G.
 ### ✨ Full Stack Developer ✨  
-
-<div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&duration=2800&pause=400&color=4FC0E8&center=true&vCenter=true&width=500&lines=Passionate+Developer;Tech+Enthusiast;Problem+Solver;Continuous+Learner;Creative+Thinker" alt="Typing Animation" />
-</div>
-
 ---
 
 ## ✨ Tech Stack
