@@ -9,30 +9,16 @@
 
 ## 🌟 About Me  
 
-<p align="center">
-  Passionate <strong>Full Stack Developer</strong> with expertise in modern web technologies, dedicated to crafting high-performance and scalable applications. Currently pursuing a <strong>Bachelor's degree in Web Development</strong>, I am actively seeking an apprenticeship opportunity with an innovative company to further hone my skills and contribute to impactful projects.
-</p>
+Passionate **Full Stack Developer** with expertise in modern web technologies, dedicated to crafting high-performance and scalable applications. Currently pursuing a **Bachelor's degree in Web Development**, I am actively seeking an apprenticeship opportunity with an innovative company to further hone my skills and contribute to impactful projects.
 
 ---
 
 ### 🔥 Key Attributes  
 <div align="center">
-  <div style="display: flex; gap: 50px; flex-wrap: wrap;">
-    <div style="text-align: center;">
-      <img src="https://media.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif" width="50" alt="Code Icon" />
-      <br>
-      <span>Tech Enthusiast</span>
-    </div>
-    <div style="text-align: center;">
-      <img src="https://media.giphy.com/media/LnUtcdoDUKHj6/giphy.gif" width="50" alt="Puzzle Icon" />
-      <br>
-      <span>Problem Solver</span>
-    </div>
-    <div style="text-align: center;">
-      <img src="https://media.giphy.com/media/l0HU7jj0ivEFyZIA0/giphy.gif" width="50" alt="Book Icon" />
-      <br>
-      <span>Continuous Learner</span>
-    </div>
+  <div>
+    <img src="https://media.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif" width="50" alt="Code Icon" /> <span>Tech Enthusiast</span>
+    <img src="https://media.giphy.com/media/LnUtcdoDUKHj6/giphy.gif" width="50" alt="Puzzle Icon" /> <span>Problem Solver</span>
+    <img src="https://media.giphy.com/media/l0HU7jj0ivEFyZIA0/giphy.gif" width="50" alt="Book Icon" /> <span>Continuous Learner</span>
   </div>
 </div>
 
@@ -45,70 +31,70 @@
 ---
 
 ### 🖥️ Frontend & Frameworks
-<div align="center" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 15px; margin: 20px 0;">
+<div align="center">
 
-[![React](https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=black&labelColor=282C34)](https://reactjs.org/)
-[![Vue](https://img.shields.io/badge/-Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white&labelColor=282C34)](https://vuejs.org/)
-[![Next.js](https://img.shields.io/badge/-Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white&labelColor=000)](https://nextjs.org/)
-[![Astro](https://img.shields.io/badge/-Astro-FF5D00?style=for-the-badge&logo=astro&logoColor=white&labelColor=000)](https://astro.build/)
-[![Vite](https://img.shields.io/badge/-Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white&labelColor=282C34)](https://vitejs.dev/)
-[![Tailwind](https://img.shields.io/badge/-Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white&labelColor=282C34)](https://tailwindcss.com/)
+[![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=black)](https://reactjs.org/)
+[![Vue](https://img.shields.io/badge/-Vue.js-4FC08D?logo=vue.js&logoColor=white)](https://vuejs.org/)
+[![Next.js](https://img.shields.io/badge/-Next.js-000000?logo=next.js&logoColor=white)](https://nextjs.org/)
+[![Astro](https://img.shields.io/badge/-Astro-FF5D00?logo=astro&logoColor=white)](https://astro.build/)
+[![Vite](https://img.shields.io/badge/-Vite-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind](https://img.shields.io/badge/-Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
 </div>
 
 ---
 
 ### 🎮 3D & Animation
-<div align="center" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 15px; margin: 20px 0;">
+<div align="center">
 
-[![Three.js](https://img.shields.io/badge/-Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white&labelColor=000)](https://threejs.org/)
-[![GSAP](https://img.shields.io/badge/-GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white&labelColor=282C34)](https://greensock.com/gsap/)
-[![Framer Motion](https://img.shields.io/badge/-Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white&labelColor=282C34)](https://www.framer.com/motion/)
-[![WebGL](https://img.shields.io/badge/-WebGL-990000?style=for-the-badge&logo=webgl&logoColor=white&labelColor=282C34)](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API)
+[![Three.js](https://img.shields.io/badge/-Three.js-000000?logo=three.js&logoColor=white)](https://threejs.org/)
+[![GSAP](https://img.shields.io/badge/-GSAP-88CE02?logo=greensock&logoColor=white)](https://greensock.com/gsap/)
+[![Framer Motion](https://img.shields.io/badge/-Framer_Motion-0055FF?logo=framer&logoColor=white)](https://www.framer.com/motion/)
+[![WebGL](https://img.shields.io/badge/-WebGL-990000?logo=webgl&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API)
 
 </div>
 
 ---
 
 ### ⚙️ Backend & APIs
-<div align="center" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 15px; margin: 20px 0;">
+<div align="center">
 
-[![Node.js](https://img.shields.io/badge/-Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white&labelColor=282C34)](https://nodejs.org/)
-[![Express](https://img.shields.io/badge/-Express-000000?style=for-the-badge&logo=express&logoColor=white&labelColor=000)](https://expressjs.com/)
-[![Java](https://img.shields.io/badge/-Java-007396?style=for-the-badge&logo=java&logoColor=white&labelColor=282C34)](https://www.java.com/)
-[![Spring](https://img.shields.io/badge/-Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white&labelColor=282C34)](https://spring.io/)
+[![Node.js](https://img.shields.io/badge/-Node.js-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Express](https://img.shields.io/badge/-Express-000000?logo=express&logoColor=white)](https://expressjs.com/)
+[![Java](https://img.shields.io/badge/-Java-007396?logo=java&logoColor=white)](https://www.java.com/)
+[![Spring](https://img.shields.io/badge/-Spring-6DB33F?logo=spring&logoColor=white)](https://spring.io/)
 
 </div>
 
 ---
 
 ### 🗃️ Databases & ORM
-<div align="center" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 15px; margin: 20px 0;">
+<div align="center">
 
-[![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white&labelColor=282C34)](https://www.postgresql.org/)
-[![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white&labelColor=282C34)](https://www.mongodb.com/)
-[![Prisma](https://img.shields.io/badge/-Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white&labelColor=000)](https://www.prisma.io/)
-[![Firebase](https://img.shields.io/badge/-Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black&labelColor=282C34)](https://firebase.google.com/)
+[![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Prisma](https://img.shields.io/badge/-Prisma-2D3748?logo=prisma&logoColor=white)](https://www.prisma.io/)
+[![Firebase](https://img.shields.io/badge/-Firebase-FFCA28?logo=firebase&logoColor=black)](https://firebase.google.com/)
 
 </div>
 
 ---
 
 ### 🛠️ DevOps & Tools
-<div align="center" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 15px; margin: 20px 0;">
+<div align="center">
 
-[![Git](https://img.shields.io/badge/-Git-F05032?style=for-the-badge&logo=git&logoColor=white&labelColor=282C34)](https://git-scm.com/)
-[![Docker](https://img.shields.io/badge/-Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white&labelColor=282C34)](https://www.docker.com/)
-[![VS Code](https://img.shields.io/badge/-VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white&labelColor=282C34)](https://code.visualstudio.com/)
-[![Figma](https://img.shields.io/badge/-Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white&labelColor=282C34)](https://www.figma.com/)
-[![Postman](https://img.shields.io/badge/-Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white&labelColor=282C34)](https://www.postman.com/)
+[![Git](https://img.shields.io/badge/-Git-F05032?logo=git&logoColor=white)](https://git-scm.com/)
+[![Docker](https://img.shields.io/badge/-Docker-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
+[![VS Code](https://img.shields.io/badge/-VS_Code-007ACC?logo=visual-studio-code&logoColor=white)](https://code.visualstudio.com/)
+[![Figma](https://img.shields.io/badge/-Figma-F24E1E?logo=figma&logoColor=white)](https://www.figma.com/)
+[![Postman](https://img.shields.io/badge/-Postman-FF6C37?logo=postman&logoColor=white)](https://www.postman.com/)
 
 </div>
 
 ## 📈 GitHub Stats
-<div align="center" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Addey34&show_icons=true&theme=github_dark&count_private=true&hide=prs&include_all_commits=true&bg_color=00000000&title_color=4FC0E8&text_color=A569BD&icon_color=4FC0E8&border_color=A569BD" alt="GitHub Stats" />
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Addey34&layout=compact&theme=github_dark&hide=html,css&bg_color=00000000&title_color=4FC0E8&text_color=A569BD&border_color=A569BD" alt="Top Languages" />
+<div align="center">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Addey34&show_icons=true&theme=github_dark&count_private=true&hide=prs&include_all_commits=true" alt="GitHub Stats" />
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Addey34&layout=compact&theme=github_dark&hide=html,css" alt="Top Languages" />
 </div>
 
 ## 📬 Let's Connect!
@@ -116,20 +102,20 @@
   Looking for a motivated developer for your team? Let's discuss how I can contribute to your projects!
 </p>
 
-<div align="center" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 20px;">
+<div align="center">
   <a href="https://www.linkedin.com/in/adrianguichard/">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
   <a href="mailto:adrian34470@gmail.com">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+    <img src="https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white" alt="Email" />
   </a>
   <a href="https://adrianguichard.com">
-    <img src="https://img.shields.io/badge/Portfolio-FFA500?style=for-the-badge&logo=world&logoColor=white" alt="Portfolio" />
+    <img src="https://img.shields.io/badge/Portfolio-FFA500?logo=world&logoColor=white" alt="Portfolio" />
   </a>
 </div>
 
 ## 🎯 Looking for an Apprenticeship!
-<div align="center" style="background: rgba(79, 192, 232, 0.1); padding: 15px; border-radius: 10px; border-left: 3px solid #A569BD; margin: 20px 0; max-width: 600px; margin-left: auto; margin-right: auto;">
+<div align="center">
   <p>🔹 Available for a work-study program</p>
   <p>🔹 Passionate about learning and contributing</p>
   <p>🔹 Open to exciting challenges</p>
