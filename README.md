@@ -77,14 +77,8 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
   <a href="https://threejs.org/" target="_blank">
     <img src="https://canada1.discourse-cdn.com/flex035/uploads/threejs/original/2X/e/e4f86d2200d2d35c30f7b1494e96b9595ebc2751.png" width="75" alt="Three.js" />
   </a>
-  <a href="https://greensock.com/gsap/" target="_blank">
-    <img src="https://gsap.com/wp-content/uploads/2019/04/gsap-logo.svg" width="50" alt="GSAP" />
-  </a>
-  <a href="https://www.framer.com/motion/" target="_blank">
-    <img src="https://framerusercontent.com/images/TvJ9grdPgk3sRz6T6XwkpBrFr4k.png" width="50" alt="Framer Motion" />
-  </a>
   <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/WebGL_Logo.svg" width="50" alt="WebGL" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/WebGL_Logo.svg" width="75" alt="WebGL" />
   </a>
 </div>
 
