@@ -59,7 +59,7 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
   <a href="https://vuejs.org/" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" width="50" alt="Vue.js" />
   </a>
-  <a href_blank="https://nextjs.org/" target="_blank">
+  <a href="https://nextjs.org/" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" width="50" alt="Next.js" />
   </a>
   <a href="https://astro.build/" target="_blank">
