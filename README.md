@@ -13,36 +13,6 @@ Passionate **Full Stack Developer** with expertise in modern web technologies, d
 
 ---
 
-### 🔥 Key Attributes  
-<div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img src="https://media.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif" width="100" alt="Code Icon" />
-      </td>
-      <td align="center">
-        <img src="https://media.giphy.com/media/LnUtcdoDUKHj6/giphy.gif" width="100" alt="Puzzle Icon" />
-      </td>
-      <td align="center">
-        <img src="https://media.giphy.com/media/l0HU7jj0ivEFyZIA0/giphy.gif" width="100" alt="Book Icon" />
-      </td>
-    </tr>
-    <tr>
-      <td align="center">
-        <span>Tech Enthusiast</span>
-      </td>
-      <td align="center">
-        <span>Problem Solver</span>
-      </td>
-      <td align="center">
-        <span>Continuous Learner</span>
-      </td>
-    </tr>
-  </table>
-</div>
-
----
-
 ## ✨ Tech Stack
 
 <div align="center">
