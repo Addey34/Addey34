@@ -1,6 +1,3 @@
-# 🚀 Adrian G.
-
-
 ## ✨ Tech Stack
 
 <div align="center">
