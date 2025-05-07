@@ -13,10 +13,6 @@
   Passionate <strong>Full Stack Developer</strong> with expertise in modern web technologies, dedicated to crafting high-performance and scalable applications. Currently pursuing a <strong>Bachelor's degree in Web Development</strong>, I am actively seeking an apprenticeship opportunity with an innovative company to further hone my skills and contribute to impactful projects.
 </p>
 
-<div align="center">
-  <img src="https://komarev.com/ghpvc/?username=Addey34&label=Profile+Views&color=4FC0E8&style=flat-square" alt="Profile Views" />
-</div>
-
 ---
 
 ### 🔥 Key Attributes  
