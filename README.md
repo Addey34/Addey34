@@ -56,9 +56,10 @@
 
 ## 📈 GitHub Stats
 <div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Addey34&show_icons=true&theme=github_dark&count_private=true&hide=prs&include_all_commits=true&bg_color=00000000&title_color=4FC0E8&text_color=A569BD&icon_color=4FC0E8&border_color=A569BD" alt="GitHub Stats" />
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Addey34&layout=compact&theme=github_dark&hide=html,css&bg_color=00000000&title_color=4FC0E8&text_color=A569BD&border_color=A569BD" alt="Top Languages" />
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Addey34&show_icons=true&theme=github_dark" alt="GitHub Stats" />
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Addey34&layout=compact&theme=github_dark" alt="Top Languages" />
 </div>
+
 
 ---
 
