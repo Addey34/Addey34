@@ -56,9 +56,10 @@
 
 ## 📈 GitHub Stats
 <div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Addey34&show_icons=true&theme=github_dark" alt="GitHub Stats" />
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Addey34&layout=compact&theme=github_dark" alt="Top Languages" />
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Addey34&show_icons=true&theme=midnight-purple" alt="GitHub Stats" />
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Addey34&layout=compact&theme=midnight-purple" alt="Top Languages" />
 </div>
+
 
 
 ---
