@@ -56,8 +56,8 @@
 
 ## 📈 GitHub Stats
 <div align="center">
-<img height="150em" src="https://github-readme-stats.vercel.app/api?username=Addey34&theme=midnight-purple&hide=prs,issues&show_icons=true&icon_color=9D7AFF&custom_title=Mes%20Stats" />
-<img height="150em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Addey34&theme=midnight-purple&layout=compact&exclude_repo=repo1,repo2&langs_count=6" />
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=Addey34&theme=midnight-purple&hide=prs,issues&show_icons=true&icon_color=9D7AFF&custom_title=Mes%20Stats" />
+<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Addey34&theme=midnight-purple&layout=compact&exclude_repo=repo1,repo2&langs_count=6" />
 </div>
 
 ---
