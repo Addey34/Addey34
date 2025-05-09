@@ -56,8 +56,8 @@
 
 ## 📈 GitHub Stats
 <div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Addey34&show_icons=true&theme=midnight-purple&hide=prs,issues&hide_rank=true&include_all_commits=true" alt="GitHub Stats" />
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Addey34&layout=compact&theme=midnight-purple&hide=html,css&hide_border=true&exclude_repo=Addey34,Addey34.github.io" alt="Top Languages" />
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=Addey34&theme=midnight-purple&hide=prs,issues&show_icons=true&hide_border=true&bg_color=1a1b27&icon_color=9D7AFF&title_color=9D7AFF&custom_title=Mes%20Stats" />
+<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Addey34&theme=midnight-purple&layout=compact&hide_border=true&bg_color=1a1b27&title_color=9D7AFF&exclude_repo=repo1,repo2&langs_count=6" />
 </div>
 
 ---
