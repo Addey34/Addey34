@@ -60,29 +60,6 @@
   <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Addey34&layout=compact&theme=midnight-purple&hide=html,css&hide_border=true&exclude_repo=Addey34,Addey34.github.io" alt="Top Languages" />
 </div>
 
-<!-- Bannière animée (optionnelle) -->
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=9D7AFF&width=435&lines=Bonjour+%F0%9F%91%8B%2C+bienvenue+sur+mon+profil!" alt="Typing SVG" />
-  
-  <!-- Stats avec fond personnalisé et cache des éléments privés -->
-  <img height="165em" src="https://github-readme-stats.vercel.app/api?username=Addey34&show_icons=true&theme=midnight-purple&hide_border=true&bg_color=1a1b27&hide=prs,issues,contribs&include_all_commits=true&icon_color=9D7AFF&title_color=9D7AFF&text_color=FFFFFF&custom_title=Mes%20Statistiques%20GitHub" alt="GitHub Stats"/>
-  
-  <!-- Streak avec effet néon -->
-  <img height="165em" src="https://streak-stats.demolab.com?user=Addey34&theme=midnight-purple&hide_border=true&background=1A1B27&stroke=9D7AFF&ring=9D7AFF&fire=9D7AFF&currStreakNum=FFFFFF&sideNums=FFFFFF&currStreakLabel=9D7AFF" alt="GitHub Streak"/>
-  
-  <!-- Langages avec exclusion des repos privés -->
-  <img height="165em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Addey34&layout=compact&theme=midnight-purple&hide_border=true&bg_color=1a1b27&title_color=9D7AFF&text_color=FFFFFF&exclude_repo=repo1,repo2,repo3&langs_count=6" alt="Top Languages"/>
-  
-  <!-- Activité GitHub animée (3D) -->
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Addey34&theme=midnight-purple&hide_border=true&bg_color=1a1b27&point=9D7AFF&line=9D7AFF&color=FFFFFF&area=true&area_color=9D7AFF" alt="Activity Graph"/>
-  
-  <!-- Badges personnalisés -->
-  <p align="center">
-    <img src="https://komarev.com/ghpvc/?username=Addey34&label=Profil%20vu&color=9D7AFF&style=flat" alt="Profile views"/>
-    <img src="https://img.shields.io/github/followers/Addey34?label=Suiveurs&color=9D7AFF&style=flat" alt="GitHub followers"/>
-  </p>
-
-
-
 ---
 
 ### 📬 Let's Connect!
