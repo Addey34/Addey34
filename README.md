@@ -1,7 +1,7 @@
 ## ✨ Tech Stack
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&duration=2500&pause=800&color=A569BD&center=true&vCenter=true&width=800&repeat=true&lines=Frontend+%7C+Backend+%7C+3D+%7C+Databases+%7C+Tools" alt="Tech Stack Categories" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&duration=2500&pause=800&color=A569BD&center=true&vCenter=true&width=800&repeat=true&lines=Frontend+%7C+Backend+%7C+Databases+%7C+3D+%7C+Tools" alt="Tech Stack Categories" />
 </div>
 
 ---
@@ -17,10 +17,10 @@
 
 ---
 
-### 🎮 3D & Animation
+### ⚙️ Backend & APIs
 <div align="center">
-  <a href="https://threejs.org/" target="_blank"><img src="https://canada1.discourse-cdn.com/flex035/uploads/threejs/original/2X/e/e4f86d2200d2d35c30f7b1494e96b9595ebc2751.png" width="66" alt="Three.js" /></a>
-  <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/2/25/WebGL_Logo.svg" width="132" alt="WebGL" /></a>
+  <a href="https://nodejs.org/" target="_blank"><img src="https://img.icons8.com/?size=100&id=ouWtcsgDBiwO&format=png" width="66" alt="Node.js" /></a>
+  <a href="https://expressjs.com/" target="_blank"><img src="https://img.icons8.com/?size=100&id=2ZOaTclOqD4q&format=png" width="66" alt="Express" /></a>
 </div>
 
 ---
@@ -35,10 +35,10 @@
 
 ---
 
-### ⚙️ Backend & APIs
+### 🎮 3D & Animation
 <div align="center">
-  <a href="https://nodejs.org/" target="_blank"><img src="https://img.icons8.com/?size=100&id=ouWtcsgDBiwO&format=png" width="66" alt="Node.js" /></a>
-  <a href="https://expressjs.com/" target="_blank"><img src="https://img.icons8.com/?size=100&id=2ZOaTclOqD4q&format=png" width="66" alt="Express" /></a>
+  <a href="https://threejs.org/" target="_blank"><img src="https://canada1.discourse-cdn.com/flex035/uploads/threejs/original/2X/e/e4f86d2200d2d35c30f7b1494e96b9595ebc2751.png" width="66" alt="Three.js" /></a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/2/25/WebGL_Logo.svg" width="132" alt="WebGL" /></a>
 </div>
 
 ---
