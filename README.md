@@ -12,7 +12,7 @@
   <a href="https://vuejs.org/" target="_blank"><img src="https://img.icons8.com/?size=100&id=EoRYuY9CMBZV&format=png" width="66" alt="Vue.js" /></a>
   <a href="https://nextjs.org/" target="_blank"><img src="https://img.icons8.com/?size=100&id=AU6Wc7r56Fxz&format=png" width="66" alt="Next.js" /></a>
   <a href="https://astro.build/" target="_blank"><img src="https://img.icons8.com/?size=100&id=kXuRhjMIeKhk&format=png" width="66" alt="Astro" /></a>
-  <a href="https://vitejs.dev/" target="_blank"><img src="https://img.icons8.com/?size=100&id=dJjTWMogzFzg&format=png" width="66" alt="Vite" /></a>
+  <a href="https://vitejs.dev/" target="_blank"><img src="https://image.noelshack.com/fichiers/2025/20/6/1747507307-chatgpt-image-17-mai-2025-20-38-57.jpg" width="66" alt="Vite" /></a>
 </div>
 
 ---
