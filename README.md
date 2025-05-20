@@ -9,7 +9,7 @@
 ### 🖥️ Frontend & Frameworks
 <div align="center">
   <a href="https://reactjs.org/" target="_blank"><img src="http://www.image-heberg.fr/files/17477427563377377182.png" width="66" alt="React" /></a>
-  <a href="https://vuejs.org/" target="_blank"><img src="https://img.icons8.com/?size=100&id=EoRYuY9CMBZV&format=png" width="66" alt="Vue.js" /></a>
+  <a href="https://vuejs.org/" target="_blank"><img src="http://www.image-heberg.fr/files/17477428203095551459.png" width="66" alt="Vue.js" /></a>
   <a href="https://astro.build/" target="_blank"><img src="https://img.icons8.com/?size=100&id=kXuRhjMIeKhk&format=png" width="66" alt="Astro" /></a>
   <a href="https://tailwindcss.com/" target="_blank"><img src="https://img.icons8.com/?size=100&id=FnnFuAIw4e8j&format=png" width="66" alt="Tailwind CSS" /></a>
 </div>
