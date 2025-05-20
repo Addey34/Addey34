@@ -8,43 +8,44 @@
 
 ### 🖥️ Frontend & Frameworks
 <div align="center">
-  <a href="https://reactjs.org/" target="_blank"><img src="http://www.image-heberg.fr/files/17477427563377377182.png" width="66" alt="React" /></a>
-  <a href="https://vuejs.org/" target="_blank"><img src="http://www.image-heberg.fr/files/17477428203095551459.png" width="66" alt="Vue.js" /></a>
-  <a href="https://astro.build/" target="_blank"><img src="http://www.image-heberg.fr/files/17477428683275647821.png" width="66" alt="Astro" /></a>
-  <a href="https://tailwindcss.com/" target="_blank"><img src="http://www.image-heberg.fr/files/17477429092818001650.png" width="66" alt="Tailwind CSS" /></a>
+  <a href="https://reactjs.org/"><img src="http://www.image-heberg.fr/files/17477427563377377182.png" width="66" alt="React" /></a>
+  <a href="https://vuejs.org/"><img src="http://www.image-heberg.fr/files/17477428203095551459.png" width="66" alt="Vue.js" /></a>
+  <a href="https://astro.build/"><img src="http://www.image-heberg.fr/files/17477428683275647821.png" width="66" alt="Astro" /></a>
+  <a href="https://tailwindcss.com/"><img src="http://www.image-heberg.fr/files/17477429092818001650.png" width="66" alt="Tailwind CSS" /></a>
 </div>
 
 ---
 
 ### ⚙️ Backend & APIs
 <div align="center">
-  <a href="https://nodejs.org/" target="_blank"><img src="http://www.image-heberg.fr/files/1747742978813725633.png" width="66" alt="Node.js" /></a>
-  <a href="https://expressjs.com/" target="_blank"><img src="http://www.image-heberg.fr/files/17477429953518088379.png" width="66" alt="Express" /></a>
+  <a href="https://nodejs.org/"><img src="http://www.image-heberg.fr/files/1747742978813725633.png" width="66" alt="Node.js" /></a>
+  <a href="https://expressjs.com/"><img src="http://www.image-heberg.fr/files/17477429953518088379.png" width="66" alt="Express" /></a>
 </div>
 
 ---
 
 ### 🗃️ Databases & ORM
 <div align="center">
-  <a href="https://www.postgresql.org/" target="_blank"><img src="http://www.image-heberg.fr/files/17477444703112288170.png" width="66" alt="PostgreSQL" /></a>
-  <a href="https://www.mongodb.com/" target="_blank"><img src="http://www.image-heberg.fr/files/17477444981445582964.png" width="66" alt="MongoDB" /></a>
-  <a href="https://www.prisma.io/" target="_blank"><img src="http://www.image-heberg.fr/files/17477446591937434430.png" width="66" alt="Prisma" /></a>
+  <a href="https://www.postgresql.org/"><img src="http://www.image-heberg.fr/files/17477444703112288170.png" width="66" alt="PostgreSQL" /></a>
+  <a href="https://www.mongodb.com/"><img src="http://www.image-heberg.fr/files/17477444981445582964.png" width="66" alt="MongoDB" /></a>
+  <a href="https://www.prisma.io/"><img src="http://www.image-heberg.fr/files/17477446591937434430.png" width="66" alt="Prisma" /></a>
 </div>
 
 ---
 
 ### 🎮 3D & Animation
 <div align="center">
-  <a href="https://threejs.org/" target="_blank"><img src="http://www.image-heberg.fr/files/17477447272539662852.png" width="66" alt="Three.js" /></a>
+  <a href="https://threejs.org/"><img src="http://www.image-heberg.fr/files/17477447272539662852.png" width="66" alt="Three.js" /></a>
 </div>
 
 ---
 
 ### 🛠️ DevOps & Tools
 <div align="center">
-  <a href="https://code.visualstudio.com/" target="_blank"><img src="http://www.image-heberg.fr/files/1747743079993188133.png" width="66" alt="VS Code" /></a>
-  <a href="https://www.github.com/" target="_blank"><img src="http://www.image-heberg.fr/files/17477431441111676110.png" width="66" alt="Github" /></a>
-  <a href="https://www.docker.com/" target="_blank"><img src="http://www.image-heberg.fr/files/17477431031357597547.png" width="66" alt="Docker" /></a>
+  <a href="https://code.visualstudio.com/"><img src="http://www.image-heberg.fr/files/1747743079993188133.png" width="66" alt="VS Code" /></a>
+  <a href="https://www.github.com/"><img src="http://www.image-heberg.fr/files/17477431441111676110.png" width="66" alt="Github" /></a>
+  <a href="https://www.chatgpt.com/"><img src="http://www.image-heberg.fr/files/17477458872942620867.png" width="66" alt="ChatGPT" /></a>
+  <a href="https://www.docker.com/"><img src="http://www.image-heberg.fr/files/17477431031357597547.png" width="66" alt="Docker" /></a>
 </div>
 
 ---
@@ -67,9 +68,9 @@
 </p>
 
 <div align="center">
-  <a href="https://www.linkedin.com/in/adrianguichard/"  target="_blank"><img src="http://www.image-heberg.fr/files/17477433122997929382.png" width="66" alt="LinkedIn" /></a>
-  <a href="mailto:adrian34470@gmail.com"  target="_blank"><img src="http://www.image-heberg.fr/files/17477433311520144312.png" width="66" alt="Email" /></a>
-  <a href="https://adrianguichard.com"  target="_blank"><img src="http://www.image-heberg.fr/files/17477433502902743753.png" width="66" alt="Portfolio" /></a>
+  <a href="https://www.linkedin.com/in/adrianguichard/"><img src="http://www.image-heberg.fr/files/17477433122997929382.png" width="66" alt="LinkedIn" /></a>
+  <a href="mailto:adrian34470@gmail.com"><img src="http://www.image-heberg.fr/files/17477433311520144312.png" width="66" alt="Email" /></a>
+  <a href="https://adrianguichard.com"><img src="http://www.image-heberg.fr/files/17477433502902743753.png" width="66" alt="Portfolio" /></a>
 </div>
 
 ---
