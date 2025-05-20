@@ -28,7 +28,7 @@
 <div align="center">
   <a href="https://www.postgresql.org/" target="_blank"><img src="http://www.image-heberg.fr/files/17477444703112288170.png" width="66" alt="PostgreSQL" /></a>
   <a href="https://www.mongodb.com/" target="_blank"><img src="http://www.image-heberg.fr/files/17477444981445582964.png" width="66" alt="MongoDB" /></a>
-  <a href="https://www.prisma.io/" target="_blank"><img src="https://img.icons8.com/?size=100&id=YKKmRFS8Utmm&format=png" width="66" alt="Prisma" /></a>
+  <a href="https://www.prisma.io/" target="_blank"><img src="http://www.image-heberg.fr/files/17477446591937434430.png" width="66" alt="Prisma" /></a>
 </div>
 
 ---
