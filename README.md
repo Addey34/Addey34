@@ -63,6 +63,15 @@
 
 ---
 
+<div align="center">
+  <img src="https://img.shields.io/badge/Frontend-%23F39C12.svg?&style=flat&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/Backend-%236573D4.svg?&style=flat&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Databases-%234CAF50.svg?&style=flat&logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/3D-%234CAF50.svg?&style=flat&logo=blender&logoColor=white" />
+</div>
+
+---
+
 ### 📬 Let's Connect!
 <p align="center">
   Looking for a motivated developer for your team? Let's discuss how I can contribute to your projects!
