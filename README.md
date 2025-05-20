@@ -45,8 +45,9 @@
   <a href="https://code.visualstudio.com/"><img src="http://www.image-heberg.fr/files/1747743079993188133.png" width="66" alt="VS Code" /></a>
   <a href="https://www.github.com/"><img src="http://www.image-heberg.fr/files/17477431441111676110.png" width="66" alt="Github" /></a>
   <a href="https://www.docker.com/"><img src="http://www.image-heberg.fr/files/17477431031357597547.png" width="66" alt="Docker" /></a>
-  <a href="https://www.chatgpt.com/"><img src="http://www.image-heberg.fr/files/17477458872942620867.png" width="66" alt="ChatGPT" /></a>
   <a href="https://www.reddit.com/"><img src="http://www.image-heberg.fr/files/1747745988276555299.png" width="66" alt="Reddit" /></a>
+  <a href="https://www.chatgpt.com/"><img src="http://www.image-heberg.fr/files/17477458872942620867.png" width="66" alt="ChatGPT" /></a>
+  <a href="https://www.linux.org/"><img src="http://www.image-heberg.fr/files/17477461671095534012.png" width="66" alt="Linux" /></a>
 </div>
 
 ---
