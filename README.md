@@ -26,7 +26,7 @@
 
 ### 🗃️ Databases & ORM
 <div align="center">
-  <a href="https://www.postgresql.org/" target="_blank"><img src="https://img.icons8.com/?size=100&id=JRnxU7ZWP4mi&format=png" width="66" alt="PostgreSQL" /></a>
+  <a href="https://www.postgresql.org/" target="_blank"><img src="http://www.image-heberg.fr/files/17477443623609094805.png" width="66" alt="PostgreSQL" /></a>
   <a href="https://www.mongodb.com/" target="_blank"><img src="https://img.icons8.com/?size=100&id=tBBf3P8HL0vR&format=png" width="66" alt="MongoDB" /></a>
   <a href="https://www.prisma.io/" target="_blank"><img src="https://img.icons8.com/?size=100&id=YKKmRFS8Utmm&format=png" width="66" alt="Prisma" /></a>
   <a href="https://firebase.google.com/" target="_blank"><img src="https://img.icons8.com/?size=100&id=9AHxUOg7E9q2&format=png" width="66" alt="Firebase" /></a>
