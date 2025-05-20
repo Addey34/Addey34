@@ -36,7 +36,7 @@
 ### 🎮 3D & Animation
 <div align="center">
   <a href="https://threejs.org/" target="_blank"><img src="http://www.image-heberg.fr/files/17477447272539662852.png" width="66" alt="Three.js" /></a>
-  <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" target="_blank"><img src="http://www.image-heberg.fr/files/17477448452384425856.png" width="66" alt="WebGL" /></a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" target="_blank"><img src="http://www.image-heberg.fr/files/17477448452384425856.png" width="100" alt="WebGL" /></a>
 </div>
 
 ---
