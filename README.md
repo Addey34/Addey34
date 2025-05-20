@@ -11,6 +11,7 @@
   <a href="https://reactjs.org/" target="_blank"><img src="https://img.icons8.com/?size=100&id=t4YbEbA834uH&format=png" width="66" alt="React" /></a>
   <a href="https://vuejs.org/" target="_blank"><img src="https://img.icons8.com/?size=100&id=EoRYuY9CMBZV&format=png" width="66" alt="Vue.js" /></a>
   <a href="https://astro.build/" target="_blank"><img src="https://img.icons8.com/?size=100&id=kXuRhjMIeKhk&format=png" width="66" alt="Astro" /></a>
+  <a href="https://tailwindcss.com/" target="_blank"><img src="https://img.icons8.com/?size=100&id=FnnFuAIw4e8j&format=png" width="66" alt="Tailwind CSS" /></a>
   <a href="https://vitejs.dev/" target="_blank"><img src="https://img.icons8.com/?size=100&id=dJjTWMogzFzg&format=png" width="66" alt="Vite" /></a>
 </div>
 
