@@ -54,20 +54,11 @@
 ## 📈 GitHub Stats
 <div align="center">
   <a href="#">
-    <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Addey34&theme=midnight-purple&show_icons=true" />
+    <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Addey34&theme=radical&show_icons=true" />
   </a>
   <a href="#">
-    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Addey34&theme=midnight-purple&layout=compact&exclude_repo=README.md&langs_count=6&card_width=350" />
+    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Addey34&theme=radical&layout=compact&exclude_repo=README.md&langs_count=6&card_width=350" />
   </a>
-</div>
-
----
-
-<div align="center">
-  <img src="https://img.shields.io/badge/Frontend-%23F39C12.svg?&style=flat&logo=html5&logoColor=white" />
-  <img src="https://img.shields.io/badge/Backend-%236573D4.svg?&style=flat&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/Databases-%234CAF50.svg?&style=flat&logo=postgresql&logoColor=white" />
-  <img src="https://img.shields.io/badge/3D-%234CAF50.svg?&style=flat&logo=blender&logoColor=white" />
 </div>
 
 ---
