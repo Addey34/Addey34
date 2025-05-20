@@ -69,9 +69,9 @@
 </p>
 
 <div align="center">
-  <a href="https://www.linkedin.com/in/adrianguichard/"  target="_blank"><img src="https://img.icons8.com/?size=100&id=60ZV_wYC0BM2&format=png" width="66" alt="LinkedIn" /></a>
-  <a href="mailto:adrian34470@gmail.com"  target="_blank"><img src="https://img.icons8.com/?size=100&id=ihMzI7k32pJf&format=png" width="66" alt="Email" /></a>
-  <a href="https://adrianguichard.com"  target="_blank"><img src="https://img.icons8.com/?size=100&id=116754&format=png" width="66" alt="Portfolio" /></a>
+  <a href="https://www.linkedin.com/in/adrianguichard/"  target="_blank"><img src="http://www.image-heberg.fr/files/17477433122997929382.png" width="66" alt="LinkedIn" /></a>
+  <a href="mailto:adrian34470@gmail.com"  target="_blank"><img src="http://www.image-heberg.fr/files/17477433311520144312.png" width="66" alt="Email" /></a>
+  <a href="https://adrianguichard.com"  target="_blank"><img src="http://www.image-heberg.fr/files/17477433502902743753.png" width="66" alt="Portfolio" /></a>
 </div>
 
 ---
