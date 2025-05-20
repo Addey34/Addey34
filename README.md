@@ -60,7 +60,7 @@
     <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Addey34&theme=midnight-purple&show_icons=true" />
   </a>
   <a href="#">
-    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Addey34&theme=midnight-purple&layout=compact&exclude_repo=README.me&langs_count=6&card_width=350" />
+    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Addey34&theme=midnight-purple&layout=compact&exclude_repo=README.md&langs_count=6&card_width=350" />
   </a>
 </div>
 
