@@ -44,9 +44,9 @@
 
 ### 🛠️ DevOps & Tools
 <div align="center">
-  <a href="https://code.visualstudio.com/" target="_blank"><img src="https://img.icons8.com/?size=100&id=i19Ns28h30P4&format=png" width="66" alt="VS Code" /></a>
-  <a href="https://www.github.com/" target="_blank"><img src="https://img.icons8.com/?size=100&id=52539&format=png" width="66" alt="Github" /></a>
-  <a href="https://www.docker.com/" target="_blank"><img src="https://img.icons8.com/?size=100&id=GOHWqwnSE8Sv&format=png&color=000000" width="66" alt="Docker" /></a>
+  <a href="https://code.visualstudio.com/" target="_blank"><img src="http://www.image-heberg.fr/files/1747743079993188133.png" width="66" alt="VS Code" /></a>
+  <a href="https://www.github.com/" target="_blank"><img src="http://www.image-heberg.fr/files/17477431441111676110.png" width="66" alt="Github" /></a>
+  <a href="https://www.docker.com/" target="_blank"><img src="http://www.image-heberg.fr/files/17477431031357597547.png" width="66" alt="Docker" /></a>
 </div>
 
 ---
