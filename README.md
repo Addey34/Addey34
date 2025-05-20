@@ -1,7 +1,7 @@
 ## ✨ Tech Stack
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&duration=2500&pause=800&color=F4F6F7&center=true&vCenter=true&width=800&repeat=true&lines=Frontend+%7C+Backend+%7C+Databases+%7C+3D+%7C+Tools" alt="Tech Stack Categories" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&duration=2500&pause=800&color=F39C12&center=true&vCenter=true&width=800&repeat=true&lines=Frontend+%7C+Backend+%7C+Databases+%7C+3D+%7C+Tools" alt="Tech Stack Categories" />
 </div>
 
 ---
