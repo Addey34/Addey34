@@ -72,7 +72,7 @@
 <div align="center">
   <a href="https://www.linkedin.com/in/adrianguichard/"><img src="http://www.image-heberg.fr/files/17477433122997929382.png" width="66" alt="LinkedIn" /></a>
   <a href="mailto:adrian34470@gmail.com"><img src="http://www.image-heberg.fr/files/17477433311520144312.png" width="66" alt="Email" /></a>
-  <a href="https://adrianguichard.com"><img src="http://www.image-heberg.fr/files/17477433502902743753.png" width="66" alt="Portfolio" /></a>
+  <a href="https://adrianguichard.dev"><img src="http://www.image-heberg.fr/files/17477433502902743753.png" width="66" alt="Portfolio" /></a>
 </div>
 
 ---
