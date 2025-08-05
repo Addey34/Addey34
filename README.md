@@ -20,7 +20,7 @@
 
 ---
 
-### ⚙️ Backend & APIs
+### ⚙️ Backend
 <div align="center">
   <a href="https://nodejs.org/"><img src="http://www.image-heberg.fr/files/1747742978813725633.png" width="66" alt="Node.js" /></a>
   <a href="https://expressjs.com/"><img src="http://www.image-heberg.fr/files/17477429953518088379.png" width="66" alt="Express" /></a>
