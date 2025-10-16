@@ -8,7 +8,7 @@
 
 ### 🖥️ Frontend & Frameworks
 <div align="center">
-  <a href="https://developer.mozilla.org/fr/docs/Web/HTML"><img src="https://i.ibb.co/dJJG7dnB/icons8-html-64.png" width="71" alt="HTML" /></a>
+  <a href="https://developer.mozilla.org/fr/docs/Web/HTML"><img src="https://i.goopics.net/k1i2xj.png" width="71" alt="HTML" /></a>
   <a href="https://developer.mozilla.org/fr/docs/Web/CSS"><img src="http://www.image-heberg.fr/files/17543935942984748276.png" width="71" alt="CSS" /></a>
   <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript"><img src="http://www.image-heberg.fr/files/1754393678148749606.png" width="66" alt="JavaScript" /></a>
   <a href="https://tailwindcss.com/"><img src="http://www.image-heberg.fr/files/17477429092818001650.png" width="66" alt="Tailwind CSS" /></a>
