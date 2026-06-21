@@ -44,8 +44,8 @@
 
 ### 🛠️ DevOps & Tools
 <div align="center">
-  <a href="https://devin.ai/"><img src="http://www.image-heberg.fr/files/17820100804157994228.png" width="66" alt="Devin.ai" /></a>
-  <a href="https://claude.ai/"><img src="http://www.image-heberg.fr/files/1782008658846533363.png" width="66" alt="Claude" /></a>
+  <a href="https://devin.ai/"><img src="http://www.image-heberg.fr/files/17820105693711618304.png" width="66" alt="Devin.ai" /></a>
+  <a href="https://claude.ai/"><img src="http://www.image-heberg.fr/files/17820105363923860794.png" width="66" alt="Claude" /></a>
   <a href="https://www.github.com/"><img src="http://www.image-heberg.fr/files/17477431441111676110.png" width="66" alt="Github" /></a>
   <a href="https://www.linux.org/"><img src="http://www.image-heberg.fr/files/17477461671095534012.png" width="66" alt="Linux" /></a>
   <a href="https://www.docker.com/"><img src="http://www.image-heberg.fr/files/17477431031357597547.png" width="66" alt="Docker" /></a>
