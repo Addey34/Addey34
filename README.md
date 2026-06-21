@@ -8,10 +8,10 @@
 
 ### 🖥️ Frontend & Frameworks
 <div align="center">
-  <a href="https://developer.mozilla.org/fr/docs/Web/HTML"><img src="https://www.image-heberg.fr/files/17820127883292893316.png" width="71" alt="HTML" /></a>
-  <a href="https://developer.mozilla.org/fr/docs/Web/CSS"><img src="https://www.image-heberg.fr/files/1782012749886750429.png" width="71" alt="CSS" /></a>
+  <a href="https://developer.mozilla.org/fr/docs/Web/HTML"><img src="https://www.image-heberg.fr/files/17820116013076745711.png" width="66" alt="HTML" /></a>
+  <a href="https://developer.mozilla.org/fr/docs/Web/CSS"><img src="https://www.image-heberg.fr/files/17820115422007234762.png" width="66" alt="CSS" /></a>
   <a href="https://tailwindcss.com/"><img src="http://www.image-heberg.fr/files/17477429092818001650.png" width="66" alt="Tailwind CSS" /></a>
-  <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript"><img src="https://www.image-heberg.fr/files/17820127724040973352.png" width="66" alt="JavaScript" /></a>
+  <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript"><img src="https://www.image-heberg.fr/files/1782011611578652962.png" width="66" alt="JavaScript" /></a>
   <a href="https://www.typescriptlang.org/"><img src="http://www.image-heberg.fr/files/17820122553625039680.png" width="66" alt="TypeScript" /></a>
   <a href="https://reactjs.org/"><img src="http://www.image-heberg.fr/files/17477427563377377182.png" width="66" alt="React" /></a>
   <a href="https://astro.build/"><img src="http://www.image-heberg.fr/files/17477428683275647821.png" width="66" alt="Astro" /></a>
