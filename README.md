@@ -14,8 +14,6 @@
   <a href="https://tailwindcss.com/"><img src="http://www.image-heberg.fr/files/17477429092818001650.png" width="66" alt="Tailwind CSS" /></a>
   <a href="https://reactjs.org/"><img src="http://www.image-heberg.fr/files/17477427563377377182.png" width="66" alt="React" /></a>
   <a href="https://astro.build/"><img src="http://www.image-heberg.fr/files/17477428683275647821.png" width="66" alt="Astro" /></a>
-  <!-- <a href="https://vuejs.org/"><img src="http://www.image-heberg.fr/files/17477428203095551459.png" width="66" alt="Vue.js" /></a> -->
-  <!-- <a href="https://angular.dev/overview"><img src="http://www.image-heberg.fr/files/17543938134217610666.png" width="66" alt="Angular" /></a> -->
 </div>
 
 ---
@@ -46,11 +44,10 @@
 
 ### 🛠️ DevOps & Tools
 <div align="center">
-  <a href="https://code.visualstudio.com/"><img src="http://www.image-heberg.fr/files/1747743079993188133.png" width="66" alt="VS Code" /></a>
+  <a href="https://devin.ai/"><img src="http://www.image-heberg.fr/files/17820100804157994228.png" width="66" alt="Devin.ai" /></a>
+  <a href="https://claude.ai/"><img src="http://www.image-heberg.fr/files/1782008658846533363.png" width="66" alt="Claude" /></a>
   <a href="https://www.github.com/"><img src="http://www.image-heberg.fr/files/17477431441111676110.png" width="66" alt="Github" /></a>
   <a href="https://www.linux.org/"><img src="http://www.image-heberg.fr/files/17477461671095534012.png" width="66" alt="Linux" /></a>
-  <a href="https://www.reddit.com/"><img src="http://www.image-heberg.fr/files/1747745988276555299.png" width="66" alt="Reddit" /></a>
-  <a href="https://www.chatgpt.com/"><img src="http://www.image-heberg.fr/files/17477458872942620867.png" width="66" alt="ChatGPT" /></a>
   <a href="https://www.docker.com/"><img src="http://www.image-heberg.fr/files/17477431031357597547.png" width="66" alt="Docker" /></a>
 </div>
 
