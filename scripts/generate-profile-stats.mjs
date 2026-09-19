@@ -33,13 +33,15 @@ const escapeXml = (value) =>
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&apos;');
 
+const repoLabel = owned.length === 1 ? 'repository' : 'repositories';
+const forkLabel = forks === 1 ? 'fork' : 'forks';
 const latestLabel = latest
   ? `Latest public activity: ${latest.name}`
   : 'No public repository activity';
 
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="760" height="190" viewBox="0 0 760 190" role="img" aria-labelledby="title desc">
   <title id="title">Addey34 public GitHub snapshot</title>
-  <desc id="desc">${owned.length} public repositories, ${stars} stars and ${forks} forks.</desc>
+  <desc id="desc">${owned.length} public ${repoLabel}, ${stars} stars and ${forks} ${forkLabel}.</desc>
   <rect width="760" height="190" rx="18" fill="#0d1117"/>
   <rect x="1" y="1" width="758" height="188" rx="17" fill="none" stroke="#30363d"/>
   <text x="34" y="43" fill="#f0f6fc" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="22" font-weight="700">Public GitHub snapshot</text>
@@ -52,7 +54,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="760" height="190" vi
   <text x="210" y="140" fill="#8b949e" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="13">stars</text>
 
   <text x="350" y="118" fill="#f0f6fc" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="28" font-weight="700">${forks}</text>
-  <text x="350" y="140" fill="#8b949e" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="13">forks</text>
+  <text x="350" y="140" fill="#8b949e" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="13">${forkLabel}</text>
 
   <text x="500" y="111" fill="#f0f6fc" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="15" font-weight="600">${escapeXml(latestLabel)}</text>
   <text x="500" y="136" fill="#8b949e" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="12">refreshes automatically</text>
