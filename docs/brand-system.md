@@ -43,13 +43,13 @@ The identity must still work with all effects removed and in a single color.
 ## Usage rules
 
 1. **Gold is structural.** It identifies the author, framing, major dividers and the permanent brand layer.
-2. **Electric blue is active.** It marks links, motion, status, current signals and deliberate breaks in the gold structure.
+2. **Electric blue is active.** It marks links, motion, status and current signals. It is not required inside the primary monogram.
 3. **Project colors do not replace AG colors.** Project identities live inside an AG frame.
 4. **No mandatory glow.** If the design only works because of bloom, gradients or neon, it is not finished.
 5. **No framework-logo hero.** Technology belongs lower in the hierarchy than identity and work.
 6. **One 14° cut per meaningful composition is enough.** Repetition makes the gesture decorative instead of distinctive.
 7. **Whitespace is part of the identity.** Do not fill every available area.
-8. **The monogram must survive at 24 px and in monochrome.**
+8. **The primary monogram is flat gold or monochrome.** Metallic gradients are reserved for exceptional large-format artwork, never required for recognition.\n9. **The monogram must survive at 24 px and in monochrome.**
 
 ## Grid
 
