@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="500" viewBox="0 0 640 500" role="img" aria-labelledby="title desc">
+  <title id="title">GitHub live data — mobile</title>
+  <desc id="desc">Five public repositories. Latest public activity: ludora-showcase on 2026-09-19. Generated from the GitHub REST API.</desc>
+  <rect width="640" height="500" fill="#0B0F17"/>
+  <path d="M44 1 H596" stroke="#1C2632"/>
+
+  <text x="44" y="60" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="720">GITHUB / LIVE DATA</text>
+  <text x="596" y="89" fill="#65C7FF" text-anchor="end" font-family="SFMono-Regular,Consolas,monospace" font-size="9">REST API · DAILY SYNC</text>
+
+  <text x="44" y="162" fill="#F2D58A" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="54" font-weight="720">05</text>
+  <text x="44" y="189" fill="#8F99A6" font-family="SFMono-Regular,Consolas,monospace" font-size="10">PUBLIC REPOSITORIES</text>
+
+  <path d="M44 225 H596" stroke="#263140"/>
+
+  <text x="44" y="267" fill="#7C8591" font-family="SFMono-Regular,Consolas,monospace" font-size="9.5" letter-spacing="1.4">LATEST PUBLIC ACTIVITY</text>
+  <text x="44" y="307" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="27" font-weight="680">ludora-showcase</text>
+  <text x="44" y="336" fill="#65C7FF" font-family="SFMono-Regular,Consolas,monospace" font-size="10">2026-09-19</text>
+
+  <path d="M44 371 H596" stroke="#263140"/>
+
+  <text x="44" y="411" fill="#D9AE57" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="680">Self-hosted profile signal</text>
+  <text x="44" y="442" fill="#8F99A6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">GitHub Actions + REST API · no stats service</text>
+</svg>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">AG identity board</title>
+  <desc id="desc">Brand study showing the AG monogram, palette, typography hierarchy and Arc Cut Signal design language.</desc>
+  <defs>
+    <linearGradient id="goldBoard" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F2D58A"/>
+      <stop offset="0.5" stop-color="#D9AE57"/>
+      <stop offset="1" stop-color="#A97926"/>
+    </linearGradient>
+    <linearGradient id="blueBoard" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#168CFF"/>
+      <stop offset="1" stop-color="#65C7FF"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="760" rx="26" fill="#06080D"/>
+  <rect x="1" y="1" width="1198" height="758" rx="25" fill="none" stroke="#1B2532"/>
+
+  <text x="72" y="74" fill="#98A1AE" font-family="SFMono-Regular,Consolas,monospace" font-size="12" letter-spacing="3">AG // IDENTITY SYSTEM 01</text>
+  <text x="72" y="132" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="46" font-weight="700" letter-spacing="-1.4">Arc / Cut / Signal</text>
+  <text x="72" y="169" fill="#98A1AE" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18">A permanent personal identity built around structure, authorship and active systems.</text>
+
+  <!-- mark -->
+  <g transform="translate(72 226) scale(1.58)">
+    <g fill="none" stroke-linecap="square" stroke-linejoin="miter">
+      <path d="M116 40 A52 52 0 1 0 126 102" stroke="#D9AE57" stroke-width="11"/>
+      <path d="M47 119 L79 38 L108 119" stroke="#D9AE57" stroke-width="11"/>
+      <path d="M61 88 H126" stroke="#D9AE57" stroke-width="9"/>
+    </g>
+  </g>
+
+  <text x="72" y="522" fill="#D9AE57" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="2">MONOGRAM</text>
+  <text x="72" y="548" fill="#98A1AE" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13">Primary mark: flat gold or monochrome. Electric blue belongs to the signal system, not the logo.</text>
+
+  <!-- type sample -->
+  <text x="420" y="258" fill="#D9AE57" font-family="SFMono-Regular,Consolas,monospace" font-size="11" letter-spacing="3">DISPLAY</text>
+  <text x="420" y="310" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="42" font-weight="720" letter-spacing="-1.3">ADRIAN GUICHARD</text>
+  <text x="420" y="350" fill="#65C7FF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="650" letter-spacing="1.4">FULL-STACK · PRODUCTS · SYSTEMS</text>
+  <text x="420" y="402" fill="#98A1AE" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17">From idea to running system.</text>
+
+  <!-- signal -->
+  <path d="M420 460 H650" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M650 460 L694 449" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M694 449 H880" stroke="#168CFF" stroke-width="3"/>
+  <circle cx="880" cy="449" r="4.5" fill="#65C7FF"/>
+  <path d="M890 449 H1084" stroke="#263140" stroke-width="1"/>
+  <text x="420" y="490" fill="#98A1AE" font-family="SFMono-Regular,Consolas,monospace" font-size="11" letter-spacing="2">STRUCTURE</text>
+  <text x="704" y="479" fill="#65C7FF" font-family="SFMono-Regular,Consolas,monospace" font-size="11" letter-spacing="2">ACTIVE SIGNAL</text>
+
+  <!-- palette -->
+  <text x="420" y="558" fill="#D9AE57" font-family="SFMono-Regular,Consolas,monospace" font-size="11" letter-spacing="3">CORE PALETTE</text>
+  <g transform="translate(420 585)">
+    <rect x="0" y="0" width="116" height="76" rx="10" fill="#F5F3ED"/>
+    <text x="0" y="96" fill="#98A1AE" font-family="SFMono-Regular,Consolas,monospace" font-size="10">INK</text>
+    <rect x="132" y="0" width="116" height="76" rx="10" fill="#D9AE57"/>
+    <text x="132" y="96" fill="#98A1AE" font-family="SFMono-Regular,Consolas,monospace" font-size="10">GOLD</text>
+    <rect x="264" y="0" width="116" height="76" rx="10" fill="#168CFF"/>
+    <text x="264" y="96" fill="#98A1AE" font-family="SFMono-Regular,Consolas,monospace" font-size="10">ELECTRIC</text>
+    <rect x="396" y="0" width="116" height="76" rx="10" fill="#0B0F17" stroke="#263140"/>
+    <text x="396" y="96" fill="#98A1AE" font-family="SFMono-Regular,Consolas,monospace" font-size="10">SURFACE</text>
+    <rect x="528" y="0" width="116" height="76" rx="10" fill="#06080D" stroke="#263140"/>
+    <text x="528" y="96" fill="#98A1AE" font-family="SFMono-Regular,Consolas,monospace" font-size="10">CANVAS</text>
+  </g>
+
+  <!-- authored cut marker -->
+  <g transform="translate(1038 84)">
+    <path d="M0 0 H58" stroke="#263140"/>
+    <path d="M42 -7 L74 -15" stroke="#168CFF" stroke-width="3"/>
+    <text x="-4" y="28" fill="#586170" font-family="SFMono-Regular,Consolas,monospace" font-size="9" letter-spacing="1.4">14° CUT</text>
+  </g>
+</svg>

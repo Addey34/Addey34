@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="186" height="42" viewBox="0 0 186 42" role="img" aria-labelledby="title desc">
+  <title id="title">LUDORA SHOWCASE</title>
+  <desc id="desc">Open LUDORA showcase.</desc>
+  <rect width="186" height="42" fill="#06080D"/>
+  <text x="8" y="17" fill="#7C8591" font-family="SFMono-Regular,Consolas,monospace" font-size="8" letter-spacing="1.1">SHOWCASE</text>
+  <text x="8" y="32" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" font-weight="680" letter-spacing=".7">LUDORA</text>
+  <path d="M118 32 H150" stroke="#D9AE57" stroke-width="1.5"/>
+  <path d="M150 32 L170 27" stroke="#4DD8D0" stroke-width="2.5"/>
+</svg>

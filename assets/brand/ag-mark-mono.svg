@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">AG monogram monochrome</title>
+  <desc id="desc">Monochrome geometric AG monogram showing that the identity does not depend on gradients or effects.</desc>
+  <g fill="none" stroke="#111318" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M116 40 A52 52 0 1 0 126 102" stroke-width="11"/>
+    <path d="M47 119 L79 38 L106 119" stroke-width="11"/>
+    <path d="M61 88 H94" stroke-width="9"/>
+    <path d="M91 81 H126" stroke-width="11"/>
+    <path d="M121 75 L137 71" stroke-width="7"/>
+    <path d="M109 119 L116 137" stroke-width="3"/>
+  </g>
+</svg>

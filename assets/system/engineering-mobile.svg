@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="820" viewBox="0 0 640 820" role="img" aria-labelledby="title desc">
+  <title id="title">How I build — mobile</title>
+  <desc id="desc">Mobile engineering workflow from idea through monitoring and evolution.</desc>
+  <rect width="640" height="820" fill="#0B0F17"/>
+  <path d="M44 1 H596" stroke="#1C2632"/>
+  <text x="44" y="64" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="34" font-weight="720">HOW I BUILD</text>
+  <text x="44" y="101" fill="#8F99A6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">Build, test, secure, ship, observe — then evolve.</text>
+
+  <path d="M92 166 V320" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M92 320 L102 358" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M102 358 V576" stroke="#168CFF" stroke-width="3"/>
+  <path d="M102 576 V636" stroke="#34404E" stroke-width="1.5"/>
+
+  <g font-family="SFMono-Regular,Consolas,monospace" font-size="13" letter-spacing="1.2">
+    <g><circle cx="92" cy="184" r="6" fill="#D9AE57"/><text x="126" y="189" fill="#F5F3ED">IDEA</text></g>
+    <g><circle cx="92" cy="268" r="6" fill="#D9AE57"/><text x="126" y="273" fill="#F5F3ED">ARCHITECT</text></g>
+    <g><circle cx="102" cy="378" r="6" fill="#168CFF"/><text x="136" y="383" fill="#65C7FF">BUILD</text></g>
+    <g><circle cx="102" cy="442" r="6" fill="#168CFF"/><text x="136" y="447" fill="#65C7FF">TEST</text></g>
+    <g><circle cx="102" cy="506" r="6" fill="#168CFF"/><text x="136" y="511" fill="#65C7FF">SECURE</text></g>
+    <g><circle cx="102" cy="570" r="6" fill="#168CFF"/><text x="136" y="575" fill="#65C7FF">SHIP</text></g>
+    <g><circle cx="102" cy="634" r="5" fill="#7A8695"/><text x="136" y="639" fill="#A5ADB8">MONITOR / EVOLVE</text></g>
+  </g>
+
+  <g transform="translate(326 190)">
+    <text x="0" y="0" fill="#D9AE57" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="680">Architecture</text>
+    <text x="0" y="31" fill="#9AA4B0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Clear boundaries.</text>
+    <text x="0" y="55" fill="#9AA4B0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Reusable systems.</text>
+
+    <text x="0" y="176" fill="#65C7FF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="680">Reliability</text>
+    <text x="0" y="207" fill="#9AA4B0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">CI · tests · smoke checks.</text>
+    <text x="0" y="231" fill="#9AA4B0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Recovery paths.</text>
+
+    <text x="0" y="352" fill="#D9AE57" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="680">Security</text>
+    <text x="0" y="383" fill="#9AA4B0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Least privilege.</text>
+    <text x="0" y="407" fill="#9AA4B0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Secret scanning · audits.</text>
+  </g>
+
+  <path d="M44 766 H272" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M272 766 L310 756" stroke="#168CFF" stroke-width="3"/>
+  <path d="M310 756 H596" stroke="#263140"/>
+</svg>

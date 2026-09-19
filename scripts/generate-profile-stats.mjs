@@ -20,8 +20,6 @@ if (!response.ok) {
 
 const repos = await response.json();
 const owned = repos.filter((repo) => !repo.fork);
-const stars = owned.reduce((total, repo) => total + repo.stargazers_count, 0);
-const forks = owned.reduce((total, repo) => total + repo.forks_count, 0);
 const latest =
   owned.find((repo) => !repo.archived && repo.name !== username) ?? null;
 
@@ -33,33 +31,67 @@ const escapeXml = (value) =>
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&apos;');
 
-const repoLabel = owned.length === 1 ? 'repository' : 'repositories';
-const forkLabel = forks === 1 ? 'fork' : 'forks';
-const latestLabel = latest
-  ? `Latest public activity: ${latest.name}`
-  : 'No public repository activity';
+const pad = (value) => String(value).padStart(2, '0');
+const latestName = latest?.name ?? 'no-public-signal';
+const latestDate = latest?.pushed_at?.slice(0, 10) ?? '—';
 
-const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="760" height="190" viewBox="0 0 760 190" role="img" aria-labelledby="title desc">
-  <title id="title">Addey34 public GitHub snapshot</title>
-  <desc id="desc">${owned.length} public ${repoLabel}, ${stars} stars and ${forks} ${forkLabel}.</desc>
-  <rect width="760" height="190" rx="18" fill="#0d1117"/>
-  <rect x="1" y="1" width="758" height="188" rx="17" fill="none" stroke="#30363d"/>
-  <text x="34" y="43" fill="#f0f6fc" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="22" font-weight="700">Public GitHub snapshot</text>
-  <text x="34" y="67" fill="#8b949e" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="13">Generated from the GitHub REST API</text>
+const desktopSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" viewBox="0 0 1200 260" role="img" aria-labelledby="title desc">
+  <title id="title">GitHub live data</title>
+  <desc id="desc">${owned.length} public repositories. Latest public activity: ${escapeXml(latestName)} on ${latestDate}. Generated from the GitHub REST API.</desc>
+  <rect width="1200" height="260" fill="#0B0F17"/>
+  <path d="M72 1 H1128" stroke="#1C2632"/>
 
-  <text x="34" y="118" fill="#f0f6fc" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="28" font-weight="700">${owned.length}</text>
-  <text x="34" y="140" fill="#8b949e" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="13">public repos</text>
+  <text x="72" y="58" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="32" font-weight="720">GITHUB / LIVE DATA</text>
+  <text x="1128" y="55" fill="#65C7FF" text-anchor="end" font-family="SFMono-Regular,Consolas,monospace" font-size="9.5" letter-spacing="1.8">REST API · DAILY SYNC</text>
 
-  <text x="210" y="118" fill="#f0f6fc" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="28" font-weight="700">${stars}</text>
-  <text x="210" y="140" fill="#8b949e" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="13">stars</text>
+  <text x="72" y="142" fill="#F2D58A" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="54" font-weight="720">${pad(owned.length)}</text>
+  <text x="72" y="168" fill="#8F99A6" font-family="SFMono-Regular,Consolas,monospace" font-size="9.5" letter-spacing="1.5">PUBLIC REPOSITORIES</text>
 
-  <text x="350" y="118" fill="#f0f6fc" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="28" font-weight="700">${forks}</text>
-  <text x="350" y="140" fill="#8b949e" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="13">${forkLabel}</text>
+  <path d="M270 92 V187" stroke="#263140"/>
 
-  <text x="500" y="111" fill="#f0f6fc" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="15" font-weight="600">${escapeXml(latestLabel)}</text>
-  <text x="500" y="136" fill="#8b949e" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="12">refreshes automatically</text>
-</svg>
-`;
+  <text x="316" y="113" fill="#7C8591" font-family="SFMono-Regular,Consolas,monospace" font-size="9.5" letter-spacing="1.8">LATEST PUBLIC ACTIVITY</text>
+  <text x="316" y="151" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="27" font-weight="680">${escapeXml(latestName)}</text>
+  <text x="316" y="179" fill="#65C7FF" font-family="SFMono-Regular,Consolas,monospace" font-size="10">${latestDate}</text>
 
-await mkdir('assets', { recursive: true });
-await writeFile('assets/github-stats.svg', svg);
+  <path d="M738 92 V187" stroke="#263140"/>
+
+  <text x="784" y="113" fill="#7C8591" font-family="SFMono-Regular,Consolas,monospace" font-size="9.5" letter-spacing="1.8">PROFILE AUTOMATION</text>
+  <text x="784" y="151" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" font-weight="650">Self-hosted signal</text>
+  <text x="784" y="179" fill="#8F99A6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13">GitHub Actions + REST API · no stats service</text>
+
+  <path d="M72 224 H374" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M374 224 L416 214" stroke="#168CFF" stroke-width="3"/>
+  <path d="M416 214 H1128" stroke="#263140"/>
+  <text x="1128" y="239" fill="#6B7581" text-anchor="end" font-family="SFMono-Regular,Consolas,monospace" font-size="9">PUBLIC DATA ONLY · AUTO-REFRESHED</text>
+</svg>`;
+
+const mobileSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="640" height="500" viewBox="0 0 640 500" role="img" aria-labelledby="title desc">
+  <title id="title">GitHub live data — mobile</title>
+  <desc id="desc">${owned.length} public repositories. Latest public activity: ${escapeXml(latestName)} on ${latestDate}. Generated from the GitHub REST API.</desc>
+  <rect width="640" height="500" fill="#0B0F17"/>
+  <path d="M44 1 H596" stroke="#1C2632"/>
+
+  <text x="44" y="60" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="720">GITHUB / LIVE DATA</text>
+  <text x="596" y="89" fill="#65C7FF" text-anchor="end" font-family="SFMono-Regular,Consolas,monospace" font-size="9">REST API · DAILY SYNC</text>
+
+  <text x="44" y="162" fill="#F2D58A" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="54" font-weight="720">${pad(owned.length)}</text>
+  <text x="44" y="189" fill="#8F99A6" font-family="SFMono-Regular,Consolas,monospace" font-size="10">PUBLIC REPOSITORIES</text>
+
+  <path d="M44 225 H596" stroke="#263140"/>
+
+  <text x="44" y="267" fill="#7C8591" font-family="SFMono-Regular,Consolas,monospace" font-size="9.5" letter-spacing="1.4">LATEST PUBLIC ACTIVITY</text>
+  <text x="44" y="307" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="27" font-weight="680">${escapeXml(latestName)}</text>
+  <text x="44" y="336" fill="#65C7FF" font-family="SFMono-Regular,Consolas,monospace" font-size="10">${latestDate}</text>
+
+  <path d="M44 371 H596" stroke="#263140"/>
+
+  <text x="44" y="411" fill="#D9AE57" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="680">Self-hosted profile signal</text>
+  <text x="44" y="442" fill="#8F99A6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">GitHub Actions + REST API · no stats service</text>
+</svg>`;
+
+
+await mkdir('assets/github', { recursive: true });
+await Promise.all([
+  writeFile('assets/github/telemetry.svg', desktopSvg),
+  writeFile('assets/github/telemetry-mobile.svg', mobileSvg),
+]);

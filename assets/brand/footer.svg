@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="250" viewBox="0 0 1200 250" role="img" aria-labelledby="title desc">
+  <title id="title">Adrian Guichard signature</title>
+  <desc id="desc">AG signature footer with the phrase From idea to running system.</desc>
+  <rect width="1200" height="250" fill="#06080D"/>
+  <path d="M72 1 H1128" stroke="#1C2632"/>
+
+  <g transform="translate(60 52) scale(.74)">
+    <g fill="none" stroke="#D9AE57" stroke-linecap="square" stroke-linejoin="miter">
+      <path d="M116 40 A52 52 0 1 0 126 102" stroke-width="11"/>
+      <path d="M47 119 L79 38 L108 119" stroke-width="11"/>
+      <path d="M61 88 H126" stroke-width="9"/>
+    </g>
+  </g>
+
+  <text x="208" y="91" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="34" font-weight="720">FROM IDEA TO RUNNING SYSTEM.</text>
+  <text x="208" y="127" fill="#8F99A6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">Adrian Guichard · full-stack development · products · interactive systems</text>
+  <path d="M208 166 H532" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M532 166 L574 156" stroke="#168CFF" stroke-width="3"/>
+  <path d="M574 156 H910" stroke="#263140"/>
+  <text x="1128" y="206" fill="#707A86" text-anchor="end" font-family="SFMono-Regular,Consolas,monospace" font-size="9.5" letter-spacing="1.4">BUILD · SHIP · EVOLVE</text>
+</svg>
