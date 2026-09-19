@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="260" viewBox="0 0 580 260" role="img" aria-labelledby="title desc">
+  <title id="title">SITEGUARDIAN</title>
+  <desc id="desc">Detect website failures before clients do. LIVE / PILOT.</desc>
+  <rect width="580" height="260" rx="20" fill="#0B0F17"/>
+  <rect x="1" y="1" width="578" height="258" rx="19" fill="none" stroke="#263140"/>
+  <path d="M0 20 Q0 0 20 0 H184" stroke="#D9AE57" stroke-width="2" fill="none"/>
+  <path d="M184 0 H228" stroke="#46D39A" stroke-width="3"/>
+  <path d="M552 0 H580 V66 L564 70 V16 H552 Z" fill="#101722"/>
+  <path d="M564 70 L580 66" stroke="#46D39A" stroke-width="3"/>
+
+  <text x="28" y="38" fill="#778290" font-family="SFMono-Regular,Consolas,monospace" font-size="9" letter-spacing="2.2">AG / SYSTEM 04</text>
+  <text x="28" y="83" fill="#46D39A" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="2.2">WEB RELIABILITY</text>
+  <text x="28" y="122" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="28" font-weight="760" letter-spacing="-.8">SITEGUARDIAN</text>
+  <text x="28" y="151" fill="#A5ADB8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Detect website failures before clients do.</text>
+  <text x="28" y="185" fill="#66717E" font-family="SFMono-Regular,Consolas,monospace" font-size="8.8" letter-spacing="1.05">TYPESCRIPT · POSTGRESQL · STRIPE · CI</text>
+
+  <path d="M28 211 H178" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M178 211 L209 203" stroke="#46D39A" stroke-width="3"/>
+  <text x="28" y="237" fill="#8893A0" font-family="SFMono-Regular,Consolas,monospace" font-size="9" letter-spacing="1.35">LIVE / PILOT</text>
+
+  
+    <g transform="translate(405 78)" fill="none">
+      <circle cx="82" cy="62" r="58" stroke="#263140"/>
+      <circle cx="82" cy="62" r="42" stroke="#46D39A" stroke-opacity=".45"/>
+      <path d="M8 64 H43 L54 43 L70 88 L84 58 H108 L119 44 H156" stroke="#46D39A" stroke-width="3"/>
+      <circle cx="156" cy="44" r="5" fill="#86EFAC" stroke="none"/>
+      <path d="M57 20 A46 46 0 0 1 120 38" stroke="#D9AE57" stroke-width="2"/>
+    </g>
+</svg>
