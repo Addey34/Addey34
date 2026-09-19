@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="28" viewBox="0 0 1200 28" role="img" aria-labelledby="title desc">
+  <title id="title">AG divider</title>
+  <desc id="desc">A minimal gold and electric-blue divider from the AG visual identity.</desc>
+  <rect width="1200" height="28" fill="#F4F1E8"/>
+  <path d="M72 15 H458" stroke="#9A6C17" stroke-width="2"/>
+  <path d="M458 15 L500 5" stroke="#9A6C17" stroke-width="2"/>
+  <path d="M500 5 H742" stroke="#006BDD" stroke-width="3"/>
+  <path d="M742 5 H1128" stroke="#CDD2D8"/>
+</svg>
