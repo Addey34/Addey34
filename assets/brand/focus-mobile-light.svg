@@ -10,25 +10,25 @@
 
   <g transform="translate(44 138)">
     <text x="0" y="0" fill="#9A6C17" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="680">Frontend &amp; interaction</text>
-    <text x="0" y="31" fill="#586170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">TypeScript · React · Three.js · WebGL · responsive UI</text>
+    <text x="0" y="31" fill="#586170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">React · TypeScript · Three.js · WebGL</text>
     <path d="M0 72 H552" stroke="#CDD2D8"/>
   </g>
 
   <g transform="translate(44 252)">
     <text x="0" y="0" fill="#168CFF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="680">Backend &amp; data</text>
-    <text x="0" y="31" fill="#586170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">Node.js · Express · FastAPI · MongoDB · PostgreSQL</text>
+    <text x="0" y="31" fill="#586170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">Node · Express · FastAPI · MongoDB · PostgreSQL</text>
     <path d="M0 72 H552" stroke="#CDD2D8"/>
   </g>
 
   <g transform="translate(44 366)">
     <text x="0" y="0" fill="#9A6C17" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="680">Engineering &amp; quality</text>
-    <text x="0" y="31" fill="#586170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">Architecture · tests · security · CI · Docker · Linux</text>
+    <text x="0" y="31" fill="#586170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">Architecture · tests · security · CI · Docker</text>
     <path d="M0 72 H552" stroke="#CDD2D8"/>
   </g>
 
   <g transform="translate(44 480)">
     <text x="0" y="0" fill="#168CFF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="680">Exploring</text>
-    <text x="0" y="31" fill="#586170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">Realtime · AI tooling · automation · robotics</text>
+    <text x="0" y="31" fill="#586170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">Realtime · AI · automation · robotics</text>
   </g>
 
   <path d="M44 568 H270" stroke="#9A6C17" stroke-width="2"/>
