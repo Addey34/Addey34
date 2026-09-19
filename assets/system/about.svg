@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">About Adrian Guichard</title>
+  <desc id="desc">A personal profile describing Adrian Guichard's approach to product engineering, interactive systems, and reliable software delivery.</desc>
+  <rect width="1200" height="420" fill="#0B0F17"/>
+  <path d="M72 1 H1128" stroke="#1C2632"/>
+
+  <text x="72" y="62" fill="#7C8591" font-family="SFMono-Regular,Consolas,monospace" font-size="10.5" letter-spacing="2.3">ABOUT</text>
+  <text x="72" y="118" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="38" font-weight="720">I LIKE BUILDING THE WHOLE THING.</text>
+
+  <path d="M72 146 H320" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M320 146 L362 136" stroke="#168CFF" stroke-width="3"/>
+
+  <text x="72" y="197" fill="#C3CAD3" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18">
+    I’m a self-taught full-stack developer who enjoys turning an idea into a complete, working product.
+  </text>
+  <text x="72" y="228" fill="#9AA4B0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16">
+    Interface, interaction, backend, architecture, testing, deployment and reliability all matter to me.
+  </text>
+
+  <g transform="translate(72 292)">
+    <text x="0" y="0" fill="#F2D58A" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="680">Product engineering</text>
+    <text x="0" y="33" fill="#8F99A6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14.5">Complete web products, clear UX, useful systems.</text>
+  </g>
+
+  <g transform="translate(430 292)">
+    <text x="0" y="0" fill="#65C7FF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="680">Interactive systems</text>
+    <text x="0" y="33" fill="#8F99A6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14.5">3D, realtime, games, simulation and rich interfaces.</text>
+  </g>
+
+  <g transform="translate(804 292)">
+    <text x="0" y="0" fill="#F2D58A" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="680">Reliable delivery</text>
+    <text x="0" y="33" fill="#8F99A6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14.5">Architecture, tests, security, CI and production hardening.</text>
+  </g>
+
+  <path d="M72 378 H394" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M394 378 L436 368" stroke="#168CFF" stroke-width="3"/>
+  <path d="M436 368 H1128" stroke="#263140"/>
+</svg>
