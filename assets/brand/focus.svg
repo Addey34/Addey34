@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="250" viewBox="0 0 1200 250" role="img" aria-labelledby="title desc">
+  <title id="title">Current focus areas</title>
+  <desc id="desc">Frontend and interaction, backend and data, engineering and quality, and exploration areas.</desc>
+  <rect width="1200" height="250" fill="#06080D"/>
+  <path d="M72 1 H1128" stroke="#1C2632"/>
+
+  <text x="72" y="55" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="720">CURRENT FOCUS</text>
+  <text x="1128" y="52" fill="#7C8591" text-anchor="end" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="1.7">BALANCED ACROSS THE STACK</text>
+
+  <g transform="translate(72 104)">
+    <text x="0" y="0" fill="#D9AE57" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="680">Frontend &amp; interaction</text>
+    <text x="0" y="31" fill="#9AA4B0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">TypeScript · React · Three.js · WebGL · responsive UI</text>
+  </g>
+
+  <g transform="translate(360 104)">
+    <text x="0" y="0" fill="#65C7FF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="680">Backend &amp; data</text>
+    <text x="0" y="31" fill="#9AA4B0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Node.js · Express · FastAPI · MongoDB · PostgreSQL</text>
+  </g>
+
+  <g transform="translate(654 104)">
+    <text x="0" y="0" fill="#D9AE57" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="680">Engineering &amp; quality</text>
+    <text x="0" y="31" fill="#9AA4B0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Architecture · testing · security · CI · Docker · Linux</text>
+  </g>
+
+  <g transform="translate(944 104)">
+    <text x="0" y="0" fill="#65C7FF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="680">Exploring</text>
+    <text x="0" y="31" fill="#9AA4B0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Realtime · AI tooling · automation · robotics</text>
+  </g>
+
+  <path d="M72 210 H390" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M390 210 L432 200" stroke="#168CFF" stroke-width="3"/>
+  <path d="M432 200 H1128" stroke="#263140"/>
+</svg>
