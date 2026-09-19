@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Build loop — mobile</title>
+  <desc id="desc">Mobile engineering loop from idea through design, build, test, secure, ship and improve.</desc>
+  <rect width="640" height="360" fill="#F4F1E8"/>
+  <path d="M44 1 H596" stroke="#D2D5D8"/>
+  <text x="44" y="55" fill="#0B0E14" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="720">BUILD LOOP</text>
+  <text x="596" y="53" fill="#66717E" text-anchor="end" font-family="SFMono-Regular,Consolas,monospace" font-size="9.5">SHIP · LEARN · IMPROVE</text>
+
+  <path d="M80 108 V171" stroke="#9A6C17" stroke-width="2"/>
+  <path d="M80 171 L90 202" stroke="#9A6C17" stroke-width="2"/>
+  <path d="M90 202 V309" stroke="#006BDD" stroke-width="3"/>
+
+  <g font-family="SFMono-Regular,Consolas,monospace" font-size="12" letter-spacing="1.1">
+    <circle cx="80" cy="116" r="6" fill="#9A6C17"/><text x="112" y="121" fill="#0B0E14">IDEA</text>
+    <circle cx="80" cy="164" r="6" fill="#9A6C17"/><text x="112" y="169" fill="#0B0E14">DESIGN</text>
+    <circle cx="90" cy="216" r="6" fill="#006BDD"/><text x="122" y="221" fill="#168CFF">BUILD</text>
+    <circle cx="90" cy="264" r="6" fill="#006BDD"/><text x="122" y="269" fill="#168CFF">TEST · SECURE</text>
+    <circle cx="90" cy="312" r="6" fill="#006BDD"/><text x="122" y="317" fill="#168CFF">SHIP · IMPROVE</text>
+  </g>
+
+  <g transform="translate(350 118)">
+    <text x="0" y="0" fill="#9A6C17" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="680">Clear structure</text>
+    <text x="0" y="31" fill="#586170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Understand the system.</text>
+    <text x="0" y="84" fill="#168CFF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="680">End to end</text>
+    <text x="0" y="115" fill="#586170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">UI to production.</text>
+    <text x="0" y="168" fill="#9A6C17" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="680">Iterate</text>
+    <text x="0" y="199" fill="#586170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Test, learn, improve.</text>
+  </g>
+</svg>

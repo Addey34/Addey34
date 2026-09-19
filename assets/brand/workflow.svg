@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="190" viewBox="0 0 1200 190" role="img" aria-labelledby="title desc">
+  <title id="title">Build loop</title>
+  <desc id="desc">Idea, design, build, test, secure, ship and improve arranged as a continuous engineering loop.</desc>
+  <rect width="1200" height="190" fill="#06080D"/>
+  <path d="M72 1 H1128" stroke="#1C2632"/>
+  <text x="72" y="52" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="29" font-weight="720">BUILD LOOP</text>
+  <text x="1128" y="49" fill="#7C8591" text-anchor="end" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="1.7">KEEP IT CLEAR · SHIP · LEARN · IMPROVE</text>
+
+  <path d="M84 116 H258" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M258 116 L292 106" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M292 106 H954" stroke="#168CFF" stroke-width="3"/>
+  <path d="M954 106 H1116" stroke="#34404E" stroke-width="1.5"/>
+
+  <g font-family="SFMono-Regular,Consolas,monospace" font-size="10.5" letter-spacing="1.1">
+    <circle cx="98" cy="116" r="6" fill="#D9AE57"/><text x="82" y="145" fill="#C7CDD5">IDEA</text>
+    <circle cx="245" cy="116" r="6" fill="#D9AE57"/><text x="220" y="145" fill="#C7CDD5">DESIGN</text>
+    <circle cx="380" cy="106" r="6" fill="#168CFF"/><text x="359" y="135" fill="#65C7FF">BUILD</text>
+    <circle cx="515" cy="106" r="6" fill="#168CFF"/><text x="497" y="135" fill="#65C7FF">TEST</text>
+    <circle cx="650" cy="106" r="6" fill="#168CFF"/><text x="624" y="135" fill="#65C7FF">SECURE</text>
+    <circle cx="785" cy="106" r="6" fill="#168CFF"/><text x="765" y="135" fill="#65C7FF">SHIP</text>
+    <circle cx="926" cy="106" r="6" fill="#168CFF"/><text x="896" y="135" fill="#65C7FF">IMPROVE</text>
+  </g>
+</svg>
