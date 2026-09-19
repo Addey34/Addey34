@@ -20,8 +20,6 @@ if (!response.ok) {
 
 const repos = await response.json();
 const owned = repos.filter((repo) => !repo.fork);
-const stars = owned.reduce((total, repo) => total + repo.stargazers_count, 0);
-const forks = owned.reduce((total, repo) => total + repo.forks_count, 0);
 const latest =
   owned.find((repo) => !repo.archived && repo.name !== username) ?? null;
 
@@ -36,7 +34,6 @@ const escapeXml = (value) =>
 const pad = (value) => String(value).padStart(2, '0');
 const latestName = latest?.name ?? 'no-public-signal';
 const latestDate = latest?.pushed_at?.slice(0, 10) ?? '—';
-const forkLabel = forks === 1 ? 'FORK' : 'FORKS';
 
 const desktopSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" viewBox="0 0 1200 260" role="img" aria-labelledby="title desc">
   <title id="title">GitHub live data</title>
@@ -65,7 +62,7 @@ const desktopSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height=
   <path d="M72 224 H374" stroke="#D9AE57" stroke-width="2"/>
   <path d="M374 224 L416 214" stroke="#168CFF" stroke-width="3"/>
   <path d="M416 214 H1128" stroke="#263140"/>
-  <text x="1128" y="239" fill="#6B7581" text-anchor="end" font-family="SFMono-Regular,Consolas,monospace" font-size="9">${stars} STARS · ${forks} ${forkLabel}</text>
+  <text x="1128" y="239" fill="#6B7581" text-anchor="end" font-family="SFMono-Regular,Consolas,monospace" font-size="9">PUBLIC DATA ONLY · AUTO-REFRESHED</text>
 </svg>`;
 
 const mobileSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="640" height="500" viewBox="0 0 640 500" role="img" aria-labelledby="title desc">
