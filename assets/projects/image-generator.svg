@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="260" viewBox="0 0 580 260" role="img" aria-labelledby="title desc">
+  <title id="title">IMAGE GENERATOR</title>
+  <desc id="desc">Local-first generation for image, video and audio. ACTIVE DEVELOPMENT / PRIVATE SOURCE.</desc>
+  <rect width="580" height="260" rx="20" fill="#0B0F17"/>
+  <rect x="1" y="1" width="578" height="258" rx="19" fill="none" stroke="#263140"/>
+  <path d="M0 20 Q0 0 20 0 H184" stroke="#D9AE57" stroke-width="2" fill="none"/>
+  <path d="M184 0 H228" stroke="#F28BC3" stroke-width="3"/>
+  <path d="M552 0 H580 V66 L564 70 V16 H552 Z" fill="#101722"/>
+  <path d="M564 70 L580 66" stroke="#F28BC3" stroke-width="3"/>
+
+  <text x="28" y="38" fill="#778290" font-family="SFMono-Regular,Consolas,monospace" font-size="9" letter-spacing="2.2">AG / SYSTEM 05</text>
+  <text x="28" y="83" fill="#F28BC3" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="2.2">GENERATIVE AI</text>
+  <text x="28" y="122" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="28" font-weight="760" letter-spacing="-.8">IMAGE GENERATOR</text>
+  <text x="28" y="151" fill="#A5ADB8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Local-first generation for image, video and audio.</text>
+  <text x="28" y="185" fill="#66717E" font-family="SFMono-Regular,Consolas,monospace" font-size="8.8" letter-spacing="1.05">PYTHON · FASTAPI · PYTORCH · DIFFUSERS</text>
+
+  <path d="M28 211 H178" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M178 211 L209 203" stroke="#F28BC3" stroke-width="3"/>
+  <text x="28" y="237" fill="#8893A0" font-family="SFMono-Regular,Consolas,monospace" font-size="9" letter-spacing="1.35">ACTIVE DEVELOPMENT / PRIVATE SOURCE</text>
+
+  
+    <g transform="translate(405 58)">
+      <rect x="99" y="26" width="64" height="98" rx="11" fill="#15121F" stroke="#F28BC3"/>
+      <g fill="#F28BC3" opacity=".9">
+        <circle cx="10" cy="30" r="3"/><circle cx="34" cy="14" r="2.5"/><circle cx="48" cy="48" r="4"/>
+        <circle cx="18" cy="78" r="2"/><circle cx="62" cy="94" r="3"/><circle cx="32" cy="126" r="3.5"/>
+        <circle cx="76" cy="32" r="2"/><circle cx="78" cy="116" r="2.5"/>
+      </g>
+      <g stroke="#C084FC" stroke-width="1.5" opacity=".55">
+        <path d="M12 30 L99 48"/><path d="M48 48 L99 66"/><path d="M18 78 L99 82"/>
+        <path d="M62 94 L99 98"/><path d="M32 126 L99 113"/>
+      </g>
+      <path d="M117 58 H146 M117 74 H151 M117 90 H139" stroke="#D9AE57" stroke-width="2"/>
+    </g>
+</svg>
