@@ -26,15 +26,15 @@
 
   <g transform="translate(72 258)">
     <text x="0" y="0" fill="#D9AE57" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="680">Architecture</text>
-    <text x="0" y="31" fill="#9AA4B0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13.5">Explicit boundaries. Reusable systems. Understandable growth.</text>
+    <text x="0" y="31" fill="#9AA4B0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13.5">Clear boundaries. Reusable systems. Room to grow.</text>
   </g>
   <g transform="translate(442 258)">
     <text x="0" y="0" fill="#65C7FF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="680">Reliability</text>
-    <text x="0" y="31" fill="#9AA4B0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13.5">CI gates. Tests. Smoke checks. Monitoring and recovery.</text>
+    <text x="0" y="31" fill="#9AA4B0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13.5">CI gates. Tests. Smoke checks. Recovery paths.</text>
   </g>
   <g transform="translate(810 258)">
     <text x="0" y="0" fill="#D9AE57" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="680">Security</text>
-    <text x="0" y="31" fill="#9AA4B0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13.5">Least privilege. Secret scanning. Audits by default.</text>
+    <text x="0" y="31" fill="#9AA4B0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13.5">Least privilege. Secret scanning. Dependency audits.</text>
   </g>
 
   <path d="M72 348 H376" stroke="#D9AE57" stroke-width="2"/>
