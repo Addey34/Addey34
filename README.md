@@ -50,10 +50,6 @@ I'm **Adrian Guichard**, a self-taught **full-stack JavaScript / TypeScript deve
   </picture>
 </p>
 
-<p align="center">
-  <sub><strong>Clear structure</strong> · understand the whole path · test, secure, ship · learn and improve</sub>
-</p>
-
 <a id="toolkit"></a>
 
 <p align="center">
@@ -91,10 +87,6 @@ Realtime systems · automation · local AI · application security · production
 I’m still expanding my scope step by step. The goal isn’t to collect technologies — it’s to become more capable of building complete systems while keeping them understandable.
 
 </details>
-
-<p align="center">
-  <em>Still learning. Still building. Understanding a little more of the whole system each time.</em>
-</p>
 
 <p align="center">
   <picture>
