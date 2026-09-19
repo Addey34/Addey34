@@ -38,7 +38,7 @@ const latestName = latest?.name ?? 'no-public-signal';
 const latestDate = latest?.pushed_at?.slice(0, 10) ?? '—';
 const forkLabel = forks === 1 ? 'FORK' : 'FORKS';
 
-const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" viewBox="0 0 1200 260" role="img" aria-labelledby="title desc">
+const desktopSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" viewBox="0 0 1200 260" role="img" aria-labelledby="title desc">
   <title id="title">AG GitHub telemetry</title>
   <desc id="desc">${owned.length} public repositories. Latest public activity: ${escapeXml(latestName)} on ${latestDate}. Generated from the GitHub REST API.</desc>
   <rect width="1200" height="260" rx="24" fill="#0B0F17"/>
@@ -70,5 +70,33 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" v
 </svg>
 `;
 
+const mobileSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="640" height="500" viewBox="0 0 640 500" role="img" aria-labelledby="title desc">
+  <title id="title">AG GitHub telemetry — mobile</title>
+  <desc id="desc">${owned.length} public repositories. Latest public activity: ${escapeXml(latestName)} on ${latestDate}. Generated from the GitHub REST API.</desc>
+  <rect width="640" height="500" rx="24" fill="#0B0F17"/>
+  <rect x="1" y="1" width="638" height="498" rx="23" fill="none" stroke="#1D2632"/>
+  <text x="44" y="48" fill="#778290" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="2.2">AG // PUBLIC TELEMETRY</text>
+  <circle cx="586" cy="42" r="5" fill="#168CFF"/>
+
+  <text x="44" y="126" fill="#F2D58A" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="52" font-weight="760">${pad(owned.length)}</text>
+  <text x="44" y="153" fill="#8F99A6" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="1.5">PUBLIC REPOSITORIES</text>
+
+  <path d="M44 194 H596" stroke="#263140"/>
+
+  <text x="44" y="239" fill="#778290" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="1.8">LATEST PUBLIC SIGNAL</text>
+  <text x="44" y="278" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="28" font-weight="700">${escapeXml(latestName)}</text>
+  <text x="44" y="307" fill="#65C7FF" font-family="SFMono-Regular,Consolas,monospace" font-size="11">${latestDate}</text>
+
+  <path d="M44 348 H596" stroke="#263140"/>
+
+  <text x="44" y="392" fill="#D9AE57" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="1.8">AUTOMATION</text>
+  <text x="44" y="425" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="650">GitHub Actions + REST API</text>
+  <text x="44" y="452" fill="#8F99A6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Self-hosted profile signal · no stats service</text>
+</svg>
+`;
+
 await mkdir('assets/github', { recursive: true });
-await writeFile('assets/github/telemetry.svg', svg);
+await Promise.all([
+  writeFile('assets/github/telemetry.svg', desktopSvg),
+  writeFile('assets/github/telemetry-mobile.svg', mobileSvg),
+]);
