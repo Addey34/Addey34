@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">AG monogram</title>
+  <desc id="desc">A geometric AG monogram built from a gold arc, a structural A and a precise electric-blue signal cut.</desc>
+  <defs>
+    <linearGradient id="gold" x1="34" y1="28" x2="120" y2="130" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F2D58A"/>
+      <stop offset="0.45" stop-color="#D9AE57"/>
+      <stop offset="1" stop-color="#A97926"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="92" y1="52" x2="135" y2="110" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#65C7FF"/>
+      <stop offset="1" stop-color="#168CFF"/>
+    </linearGradient>
+  </defs>
+
+  <g fill="none" stroke-linecap="square" stroke-linejoin="miter">
+    <!-- G / arc: intentionally interrupted at the active-right quadrant -->
+    <path
+      d="M116 40
+         A52 52 0 1 0 126 102"
+      stroke="url(#gold)"
+      stroke-width="11"
+    />
+
+    <!-- A: asymmetrical apex and lowered crossbar avoid a stock monogram silhouette -->
+    <path
+      d="M47 119 L79 38 L106 119"
+      stroke="url(#gold)"
+      stroke-width="11"
+    />
+    <path
+      d="M61 88 H94"
+      stroke="#D9AE57"
+      stroke-width="9"
+    />
+
+    <!-- G crossbar / signal: blue exits the structure through a 14° authored cut -->
+    <path
+      d="M91 81 H126"
+      stroke="#D9AE57"
+      stroke-width="11"
+    />
+    <path
+      d="M121 75 L137 71"
+      stroke="url(#blue)"
+      stroke-width="7"
+    />
+
+    <!-- precision cut -->
+    <path
+      d="M105 114 L112 132"
+      stroke="#06080D"
+      stroke-width="5"
+    />
+    <path
+      d="M109 119 L116 137"
+      stroke="#168CFF"
+      stroke-width="3"
+    />
+  </g>
+</svg>
