@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="250" viewBox="0 0 1200 250" role="img" aria-labelledby="title desc">
+  <title id="title">Current focus areas</title>
+  <desc id="desc">Frontend and interaction, backend and data, engineering and quality, and exploration areas.</desc>
+  <rect width="1200" height="250" fill="#F4F1E8"/>
+  <path d="M72 1 H1128" stroke="#D2D5D8"/>
+
+  <text x="72" y="55" fill="#0B0E14" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="720">CURRENT FOCUS</text>
+  <text x="1128" y="52" fill="#66717E" text-anchor="end" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="1.7">BALANCED ACROSS THE STACK</text>
+
+  <g transform="translate(72 104)">
+    <text x="0" y="0" fill="#9A6C17" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="680">Frontend &amp; interaction</text>
+    <text x="0" y="31" fill="#586170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">React · TypeScript · Three.js · WebGL</text>
+  </g>
+
+  <g transform="translate(360 104)">
+    <text x="0" y="0" fill="#168CFF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="680">Backend &amp; data</text>
+    <text x="0" y="31" fill="#586170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Node · Express · FastAPI · MongoDB · PostgreSQL</text>
+  </g>
+
+  <g transform="translate(654 104)">
+    <text x="0" y="0" fill="#9A6C17" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="680">Engineering &amp; quality</text>
+    <text x="0" y="31" fill="#586170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Architecture · tests · security · CI · Docker</text>
+  </g>
+
+  <g transform="translate(944 104)">
+    <text x="0" y="0" fill="#168CFF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="680">Exploring</text>
+    <text x="0" y="31" fill="#586170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Realtime · AI · automation · robotics</text>
+  </g>
+
+  <path d="M72 210 H390" stroke="#9A6C17" stroke-width="2"/>
+  <path d="M390 210 L432 200" stroke="#006BDD" stroke-width="3"/>
+  <path d="M432 200 H1128" stroke="#CDD2D8"/>
+</svg>

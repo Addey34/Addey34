@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="610" viewBox="0 0 640 610" role="img" aria-labelledby="title desc">
+  <title id="title">Adrian Guichard — mobile profile header</title>
+  <desc id="desc">Mobile editorial profile header using the AG monogram, warm gold and electric blue.</desc>
+  <rect width="640" height="610" fill="#F4F1E8"/>
+  <path d="M0 1 H640" stroke="#D2D5D8"/>
+  <path d="M44 70 V540" stroke="#9A6C17" stroke-width="2"/>
+
+  <text x="68" y="46" fill="#66717E" font-family="SFMono-Regular,Consolas,monospace" font-size="9.5" letter-spacing="1.8">FULL-STACK / PRODUCTS / SYSTEMS</text>
+  <text x="596" y="46" fill="#9A6C17" text-anchor="end" font-family="SFMono-Regular,Consolas,monospace" font-size="9.5">FR</text>
+
+  <g transform="translate(66 82) scale(.68)">
+    <g fill="none" stroke="#9A6C17" stroke-linecap="square" stroke-linejoin="miter">
+      <path d="M116 40 A52 52 0 1 0 126 102" stroke-width="11"/>
+      <path d="M47 119 L79 38 L108 119" stroke-width="11"/>
+      <path d="M61 88 H126" stroke-width="9"/>
+    </g>
+  </g>
+
+  <text x="182" y="145" fill="#0B0E14" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="52" font-weight="760" letter-spacing="-1.9">ADRIAN</text>
+  <text x="182" y="199" fill="#0B0E14" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="52" font-weight="760" letter-spacing="-1.9">GUICHARD</text>
+
+  <path d="M68 244 H286" stroke="#9A6C17" stroke-width="2"/>
+  <path d="M286 244 L326 234" stroke="#9A6C17" stroke-width="2"/>
+  <path d="M326 234 H514" stroke="#006BDD" stroke-width="3"/>
+
+  <text x="68" y="300" fill="#343C47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19">I build web products and interactive systems —</text>
+  <text x="68" y="329" fill="#343C47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19">learning across the full stack.</text>
+
+  <text x="68" y="392" fill="#66717E" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="1.8">PRACTICE</text>
+  <text x="68" y="438" fill="#B9821E" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="680">FROM IDEA</text>
+  <text x="68" y="475" fill="#0B0E14" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="680">TO RUNNING SYSTEM.</text>
+
+  <path d="M68 523 H286" stroke="#9A6C17" stroke-width="2"/>
+  <path d="M286 523 L326 513" stroke="#006BDD" stroke-width="3"/>
+  <path d="M326 513 H596" stroke="#CDD2D8"/>
+  <text x="596" y="556" fill="#586170" text-anchor="end" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13">frontend · backend · realtime · tooling</text>
+</svg>
