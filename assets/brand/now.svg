@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="150" viewBox="0 0 1200 150" role="img" aria-labelledby="title desc">
+  <title id="title">Currently</title>
+  <desc id="desc">Current areas of work and learning: refining web products, deepening backend architecture, working with realtime and local AI, and exploring automation and robotics.</desc>
+  <rect width="1200" height="150" fill="#06080D"/>
+  <path d="M72 1 H1128" stroke="#1C2632"/>
+  <text x="72" y="46" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="25" font-weight="720">NOW</text>
+  <text x="1128" y="44" fill="#7C8591" text-anchor="end" font-family="SFMono-Regular,Consolas,monospace" font-size="9.5" letter-spacing="1.6">CURRENTLY BUILDING / LEARNING</text>
+
+  <g font-family="Inter,Segoe UI,Arial,sans-serif">
+    <g transform="translate(72 88)">
+      <circle cx="5" cy="-5" r="5" fill="#D9AE57"/>
+      <text x="20" y="0" fill="#F2D58A" font-size="14" font-weight="680">REFINING</text>
+      <text x="20" y="25" fill="#9AA4B0" font-size="13.5">web products &amp; UX</text>
+    </g>
+    <g transform="translate(340 88)">
+      <circle cx="5" cy="-5" r="5" fill="#168CFF"/>
+      <text x="20" y="0" fill="#65C7FF" font-size="14" font-weight="680">DEEPENING</text>
+      <text x="20" y="25" fill="#9AA4B0" font-size="13.5">backend &amp; architecture</text>
+    </g>
+    <g transform="translate(636 88)">
+      <circle cx="5" cy="-5" r="5" fill="#D9AE57"/>
+      <text x="20" y="0" fill="#F2D58A" font-size="14" font-weight="680">BUILDING WITH</text>
+      <text x="20" y="25" fill="#9AA4B0" font-size="13.5">realtime &amp; local AI</text>
+    </g>
+    <g transform="translate(914 88)">
+      <circle cx="5" cy="-5" r="5" fill="#168CFF"/>
+      <text x="20" y="0" fill="#65C7FF" font-size="14" font-weight="680">EXPLORING</text>
+      <text x="20" y="25" fill="#9AA4B0" font-size="13.5">automation &amp; robotics</text>
+    </g>
+  </g>
+</svg>
