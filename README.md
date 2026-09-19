@@ -8,42 +8,34 @@
 </p>
 
 <p align="center">
-  <a href="#about"><strong>About</strong></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="#now"><strong>Now</strong></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="#workflow"><strong>Workflow</strong></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="#toolkit"><strong>Toolkit</strong></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="https://adrianguichard.dev"><strong>Portfolio</strong></a>
+  <a href="#about"><img src="./assets/brand/nav-about-v7.svg" alt="About" /></a>
+  <a href="#current"><img src="./assets/brand/nav-current-v7.svg" alt="Current" /></a>
+  <a href="#workflow"><img src="./assets/brand/nav-workflow-v7.svg" alt="Workflow" /></a>
+  <a href="#toolkit"><img src="./assets/brand/nav-toolkit-v7.svg" alt="Toolkit" /></a>
+  <a href="https://adrianguichard.dev"><img src="./assets/brand/nav-portfolio-v7.svg" alt="Portfolio" /></a>
 </p>
 
 <a id="about"></a>
 
-## About
-
-I'm **Adrian Guichard**, a self-taught **full-stack JavaScript / TypeScript developer** based in Montpellier, France. I started with frontend and interaction, then kept expanding toward backend, data, testing, security and delivery to better understand the whole product.
-
-<a id="now"></a>
-
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: light) and (max-width: 640px)" srcset="./assets/brand/now-mobile-light.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="./assets/brand/now-light.svg" />
-    <source media="(max-width: 640px)" srcset="./assets/brand/now-mobile.svg" />
-    <img src="./assets/brand/now.svg" alt="Currently refining web products and UX, deepening backend architecture, building with realtime and local AI, and exploring automation and robotics" />
+    <source media="(prefers-color-scheme: light) and (max-width: 640px)" srcset="./assets/brand/about-header-mobile-light.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="./assets/brand/about-header-light.svg" />
+    <source media="(max-width: 640px)" srcset="./assets/brand/about-header-mobile.svg" />
+    <img src="./assets/brand/about-header.svg" alt="About Adrian Guichard" />
   </picture>
 </p>
 
-<a id="focus"></a>
+I'm **Adrian Guichard**, a self-taught **full-stack JavaScript / TypeScript developer** based in Montpellier, France. I started with frontend and interaction, then kept expanding toward backend, data, testing, security and delivery to better understand the whole product.
+
+<a id="current"></a>
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: light) and (max-width: 640px)" srcset="./assets/brand/focus-mobile-light.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="./assets/brand/focus-light.svg" />
-    <source media="(max-width: 640px)" srcset="./assets/brand/focus-mobile.svg" />
-    <img src="./assets/brand/focus.svg" alt="Current focus: frontend and interaction, backend and data, engineering and quality, and exploration" />
+    <source media="(prefers-color-scheme: light) and (max-width: 640px)" srcset="./assets/brand/current-mobile-light.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="./assets/brand/current-light.svg" />
+    <source media="(max-width: 640px)" srcset="./assets/brand/current-mobile.svg" />
+    <img src="./assets/brand/current.svg" alt="Current focus across frontend, backend, engineering, delivery, realtime, local AI, automation and robotics" />
   </picture>
 </p>
 
@@ -58,13 +50,16 @@ I'm **Adrian Guichard**, a self-taught **full-stack JavaScript / TypeScript deve
   </picture>
 </p>
 
-<p align="center">
-  <sub><strong>Clear structure</strong> · understand the whole path · test, secure, ship · learn and improve</sub>
-</p>
-
 <a id="toolkit"></a>
 
-## Toolkit
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: light) and (max-width: 640px)" srcset="./assets/brand/toolkit-header-mobile-light.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="./assets/brand/toolkit-header-light.svg" />
+    <source media="(max-width: 640px)" srcset="./assets/brand/toolkit-header-mobile.svg" />
+    <img src="./assets/brand/toolkit-header.svg" alt="Current toolkit" />
+  </picture>
+</p>
 
 **Frontend** — `TypeScript` `JavaScript` `React` `Vite` `Three.js` `WebGL`  
 **Backend & realtime** — `Node.js` `Express` `FastAPI` `REST` `WebSocket` `Nakama`  
@@ -94,10 +89,6 @@ I’m still expanding my scope step by step. The goal isn’t to collect technol
 </details>
 
 <p align="center">
-  <em>Still learning. Still building. Understanding a little more of the whole system each time.</em>
-</p>
-
-<p align="center">
   <picture>
     <source media="(prefers-color-scheme: light) and (max-width: 640px)" srcset="./assets/brand/footer-mobile-light.svg" />
     <source media="(prefers-color-scheme: light)" srcset="./assets/brand/footer-light.svg" />
@@ -107,9 +98,7 @@ I’m still expanding my scope step by step. The goal isn’t to collect technol
 </p>
 
 <p align="center">
-  <a href="https://adrianguichard.dev">Portfolio</a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="https://www.linkedin.com/in/adrianguichard/">LinkedIn</a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="mailto:adrian34470@gmail.com">Email</a>
+  <a href="https://adrianguichard.dev"><img src="./assets/brand/nav-portfolio-v7.svg" alt="Portfolio" /></a>
+  <a href="https://www.linkedin.com/in/adrianguichard/"><img src="./assets/brand/nav-linkedin-v7.svg" alt="LinkedIn" /></a>
+  <a href="mailto:adrian34470@gmail.com"><img src="./assets/brand/nav-email-v7.svg" alt="Email" /></a>
 </p>

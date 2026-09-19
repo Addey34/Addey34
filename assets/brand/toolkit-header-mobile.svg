@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="118" viewBox="0 0 640 118" role="img" aria-labelledby="title desc">
+  <title id="title">TOOLKIT</title>
+  <desc id="desc">TOOLKIT section header in the AG visual system.</desc>
+  <rect width="640" height="118" fill="#06080D"/>
+  <path d="M44 1 H596" stroke="#1C2632"/>
+  <text x="44" y="52" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="27" font-weight="720">TOOLKIT</text>
+  <text x="596" y="50" fill="#7C8591" text-anchor="end" font-family="SFMono-Regular,Consolas,monospace" font-size="8.5" letter-spacing="1.5">CURRENT · CURATED · NOT EXHAUSTIVE</text>
+  <path d="M44 86 H250" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M250 86 L286 77" stroke="#168CFF" stroke-width="3"/>
+  <path d="M286 77 H596" stroke="#263140"/>
+</svg>

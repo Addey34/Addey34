@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="650" viewBox="0 0 640 650" role="img" aria-labelledby="title desc">
+  <title id="title">Current profile focus — mobile</title>
+  <desc id="desc">Mobile current focus across frontend, backend, engineering and realtime exploration.</desc>
+  <rect width="640" height="650" fill="#F4F1E8"/>
+  <path d="M44 1 H596" stroke="#D2D5D8"/>
+  <text x="44" y="56" fill="#0B0E14" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="720">CURRENT</text>
+  <text x="596" y="53" fill="#66717E" text-anchor="end" font-family="SFMono-Regular,Consolas,monospace" font-size="9">BUILD · LEARN · REFINE</text>
+
+  <g transform="translate(44 112)">
+    <text x="0" y="0" fill="#9A6C17" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700">FRONTEND &amp; INTERACTION</text>
+    <text x="0" y="31" fill="#343C47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">React · TypeScript · Three.js · WebGL</text>
+    <text x="0" y="62" fill="#586170" font-family="SFMono-Regular,Consolas,monospace" font-size="10">REFINING · WEB PRODUCTS &amp; UX</text>
+    <path d="M0 92 H552" stroke="#CDD2D8"/>
+  </g>
+
+  <g transform="translate(44 242)">
+    <text x="0" y="0" fill="#168CFF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700">BACKEND &amp; DATA</text>
+    <text x="0" y="31" fill="#343C47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Node · Express · FastAPI · MongoDB · PostgreSQL</text>
+    <text x="0" y="62" fill="#586170" font-family="SFMono-Regular,Consolas,monospace" font-size="10">DEEPENING · ARCHITECTURE &amp; APIS</text>
+    <path d="M0 92 H552" stroke="#CDD2D8"/>
+  </g>
+
+  <g transform="translate(44 372)">
+    <text x="0" y="0" fill="#9A6C17" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700">ENGINEERING &amp; DELIVERY</text>
+    <text x="0" y="31" fill="#343C47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Architecture · tests · security · CI · Docker · Linux</text>
+    <text x="0" y="62" fill="#586170" font-family="SFMono-Regular,Consolas,monospace" font-size="10">IMPROVING · RELIABILITY &amp; PRODUCTION</text>
+    <path d="M0 92 H552" stroke="#CDD2D8"/>
+  </g>
+
+  <g transform="translate(44 502)">
+    <text x="0" y="0" fill="#168CFF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700">REALTIME &amp; EXPLORATION</text>
+    <text x="0" y="31" fill="#343C47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">WebSocket · Nakama · local AI · automation</text>
+    <text x="0" y="62" fill="#586170" font-family="SFMono-Regular,Consolas,monospace" font-size="10">EXPLORING · REALTIME &amp; ROBOTICS</text>
+  </g>
+
+  <path d="M44 616 H266" stroke="#9A6C17" stroke-width="2"/>
+  <path d="M266 616 L304 606" stroke="#006BDD" stroke-width="3"/>
+  <path d="M304 606 H596" stroke="#CDD2D8"/>
+</svg>

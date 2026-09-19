@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="138" height="44" viewBox="0 0 138 44" role="img" aria-labelledby="title desc">
+  <title id="title">EMAIL</title>
+  <desc id="desc">AG navigation button for email.</desc>
+  <rect x="1" y="1" width="136" height="42" fill="none" stroke="#263140"/>
+  <path d="M1 43 H94" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M94 43 L109 38" stroke="#168CFF" stroke-width="2.5"/>
+  <text x="14" y="27" fill="#D9AE57" font-family="SFMono-Regular,Consolas,monospace" font-size="11" font-weight="700" letter-spacing="1.2">EMAIL</text>
+  <circle cx="123" cy="15" r="3.5" fill="#168CFF"/>
+</svg>
