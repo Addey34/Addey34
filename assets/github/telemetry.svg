@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" viewBox="0 0 1200 260" role="img" aria-labelledby="title desc">
   <title id="title">GitHub live data</title>
-  <desc id="desc">Five public repositories. Latest public activity: ludora-showcase on 2026-09-19. Generated from the GitHub REST API.</desc>
+  <desc id="desc">5 public repositories. Latest public activity: ludora-showcase on 2026-09-19. Generated from the GitHub REST API.</desc>
   <rect width="1200" height="260" fill="#0B0F17"/>
   <path d="M72 1 H1128" stroke="#1C2632"/>
 
