@@ -1,99 +1,64 @@
-## ✨ Tech Stack
+# Adrian Guichard
 
-<div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&duration=2000&pause=800&color=FAD02E&center=true&vCenter=true&width=800&repeat=true&lines=Frontend+%7C+Backend+%7C+Databases+%7C+3D+%7C+Tools" alt="Tech Stack Categories" />
-</div>
+**Full-Stack JavaScript/TypeScript Developer · Web Products · 3D · Developer Tools**
 
----
+I build complete web products, interactive 3D experiences and developer-focused tools — from architecture and backend services to polished frontend experiences, CI and production hardening.
 
-### 🖥️ Frontend & Frameworks
-<div align="center">
-  <a href="https://developer.mozilla.org/fr/docs/Web/HTML"><img src="https://www.image-heberg.fr/files/17820116013076745711.png" width="66" alt="HTML" /></a>
-  <a href="https://developer.mozilla.org/fr/docs/Web/CSS"><img src="https://www.image-heberg.fr/files/17820115422007234762.png" width="66" alt="CSS" /></a>
-  <a href="https://tailwindcss.com/"><img src="http://www.image-heberg.fr/files/17477429092818001650.png" width="66" alt="Tailwind CSS" /></a>
-  <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript"><img src="https://www.image-heberg.fr/files/1782011611578652962.png" width="66" alt="JavaScript" /></a>
-  <a href="https://www.typescriptlang.org/"><img src="http://www.image-heberg.fr/files/17820122553625039680.png" width="66" alt="TypeScript" /></a>
-  <a href="https://reactjs.org/"><img src="http://www.image-heberg.fr/files/17477427563377377182.png" width="66" alt="React" /></a>
-  <a href="https://astro.build/"><img src="http://www.image-heberg.fr/files/17477428683275647821.png" width="66" alt="Astro" /></a>
-</div>
+[Portfolio](https://adrianguichard.dev) · [LinkedIn](https://www.linkedin.com/in/adrianguichard/) · [Email](mailto:adrian34470@gmail.com)
 
 ---
 
-### ⚙️ Backend
-<div align="center">
-  <a href="https://nodejs.org/"><img src="http://www.image-heberg.fr/files/1747742978813725633.png" width="66" alt="Node.js" /></a>
-  <a href="https://expressjs.com/"><img src="http://www.image-heberg.fr/files/17477429953518088379.png" width="66" alt="Express" /></a>
-</div>
+## Selected projects
+
+| Project | What it is | Stack / focus | Links |
+| --- | --- | --- | --- |
+| **Galaxy** | Real-time 3D solar-system explorer with scientific ephemerides, true-scale exploration and spacecraft/interstellar-object data. | TypeScript, Three.js, astronomy-engine, Playwright, Vite | [Live](https://galaxy.adrianguichard.dev/) · [Source](https://github.com/Addey34/galaxy-3d) |
+| **Ludora** | Browser gaming platform with dozens of games, shared progression, leaderboards and online multiplayer. | TypeScript, Vite MPA, Nakama, Canvas, PWA | [Live](https://ludora.adrianguichard.dev/) |
+| **MagNotes** | Visual knowledge workspace with infinite canvas, Markdown cards, links, Kanban, agenda and timeline views. | React, TypeScript, Node.js, MongoDB, Docker | [Live](https://magnotes.adrianguichard.dev/) · [Frontend](https://github.com/Addey34/magnotes-frontend) |
+| **SiteGuardian** | Website-health monitoring SaaS prototype with authenticated workspaces, scans, incidents, notifications, billing and recovery workflows. | TypeScript, PostgreSQL, Stripe, Docker, GitHub Actions | [Live](https://siteguardian.adrianguichard.dev/) |
+| **Image Generator Local** | Local + hosted generative-AI studio for image, video and audio generation with GPU-aware scheduling and hybrid execution. | Python, FastAPI, PyTorch, Diffusers, TypeScript | Private source |
+| **DevisFlow** | Quote-management product for independent tradespeople, focused on fast quote creation and follow-up workflows. | TypeScript, Vite, domain-driven modules | [Live](https://devisflow.adrianguichard.dev/) |
 
 ---
 
-### 🗃️ Databases & ORM
-<div align="center">
-  <a href="https://www.postgresql.org/"><img src="http://www.image-heberg.fr/files/17477444703112288170.png" width="66" alt="PostgreSQL" /></a>
-  <a href="https://www.mongodb.com/"><img src="http://www.image-heberg.fr/files/17477444981445582964.png" width="66" alt="MongoDB" /></a>
-  <a href="https://www.prisma.io/"><img src="http://www.image-heberg.fr/files/17477446591937434430.png" width="66" alt="Prisma" /></a>
-</div>
+## Core stack
+
+**Frontend**  
+`TypeScript` · `JavaScript` · `React` · `Vite` · `Three.js` · `Canvas/WebGL`
+
+**Backend**  
+`Node.js` · `Express` · `FastAPI` · `REST` · `WebSocket`
+
+**Data**  
+`MongoDB` · `PostgreSQL`
+
+**Engineering & delivery**  
+`Docker` · `GitHub Actions` · `Linux` · `pnpm` · `Playwright` · `Vitest/Jest` · `ESLint` · `Prettier` · `Gitleaks`
 
 ---
 
-### 🎮 3D & Animation
-<div align="center">
-  <a href="https://threejs.org/"><img src="http://www.image-heberg.fr/files/17477447272539662852.png" width="66" alt="Three.js" /></a>
-</div>
+## How I build
+
+- Strict typing and explicit architecture before feature sprawl.
+- CI gates for formatting, linting, type-checking, tests, builds and dependency audits.
+- Security-minded defaults: secret scanning, pinned CI dependencies and least-privilege workflows.
+- Graceful degradation for networked features so local/core functionality remains usable.
+- Production-oriented validation with smoke tests, monitoring and reproducible deployment paths.
 
 ---
 
-### 🛠️ DevOps & Tools
-<div align="center">
-  <a href="https://devin.ai/"><img src="http://www.image-heberg.fr/files/17820123623851584136.png" width="66" alt="Devin.ai" /></a>
-  <a href="https://claude.ai/"><img src="http://www.image-heberg.fr/files/17820123343380518941.png" width="66" alt="Claude" /></a>
-  <a href="https://www.github.com/"><img src="http://www.image-heberg.fr/files/17477431441111676110.png" width="66" alt="Github" /></a>
-  <a href="https://www.linux.org/"><img src="http://www.image-heberg.fr/files/17477461671095534012.png" width="66" alt="Linux" /></a>
-  <a href="https://www.docker.com/"><img src="http://www.image-heberg.fr/files/17477431031357597547.png" width="66" alt="Docker" /></a>
-</div>
-
----
-
-## 📈 GitHub Stats
-<div align="center">
-  <a href="#">
-    <img height="180em" src="https://github-stats-extended.vercel.app/api?username=Addey34&theme=great-gatsby&show_icons=true" />
-  </a>
-  <a href="#">
-    <img height="180em" src="https://github-stats-extended.vercel.app/api/top-langs/?username=Addey34&theme=great-gatsby&layout=compact&exclude_repo=Addey34&langs_count=6&card_width=350" />
-  </a>
-</div>
-
----
-
-### 📬 Let's Connect!
-<p align="center">
-  Looking for a motivated developer for your team? Let's discuss how I can contribute to your projects!
-</p>
-
-<div align="center">
-  <a href="https://www.linkedin.com/in/adrianguichard/"><img src="http://www.image-heberg.fr/files/17477433122997929382.png" width="66" alt="LinkedIn" /></a>
-  <a href="mailto:adrian34470@gmail.com"><img src="http://www.image-heberg.fr/files/17477433311520144312.png" width="66" alt="Email" /></a>
-  <a href="https://adrianguichard.dev"><img src="http://www.image-heberg.fr/files/17477433502902743753.png" width="66" alt="Portfolio" /></a>
-</div>
-
----
-
-## 🎯 Looking for an Apprenticeship!
-<div align="center">
-  <p>🔹 Available for a work-study program</p>
-  <p>🔹 Passionate about learning and contributing</p>
-  <p>🔹 Open to exciting challenges</p>
-</div>
-
----
+## Public GitHub snapshot
 
 <p align="center">
-  📩 Contact me: <a href="mailto:adrian34470@gmail.com">adrian34470@gmail.com</a>
+  <img src="./assets/github-stats.svg" alt="Public GitHub statistics for Addey34" />
 </p>
+
+This card is generated by this repository's own GitHub Actions workflow from the public GitHub REST API — no third-party stats service.
 
 ---
 
-<p align="center">
-  ⭐ Thanks for visiting! Feel free to explore my repositories and reach out for collaboration opportunities. 🚀
-</p>
+## Contact
+
+If you want to discuss a product, interactive experience, full-stack system or technical collaboration:
+
+**[adrianguichard.dev](https://adrianguichard.dev)** · **[LinkedIn](https://www.linkedin.com/in/adrianguichard/)** · **[adrian34470@gmail.com](mailto:adrian34470@gmail.com)**
