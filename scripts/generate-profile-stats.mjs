@@ -22,7 +22,8 @@ const repos = await response.json();
 const owned = repos.filter((repo) => !repo.fork);
 const stars = owned.reduce((total, repo) => total + repo.stargazers_count, 0);
 const forks = owned.reduce((total, repo) => total + repo.forks_count, 0);
-const latest = owned.find((repo) => !repo.archived) ?? null;
+const latest =
+  owned.find((repo) => !repo.archived && repo.name !== username) ?? null;
 
 const escapeXml = (value) =>
   String(value)
