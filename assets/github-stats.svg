@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="190" viewBox="0 0 760 190" role="img" aria-labelledby="title desc">
+  <title id="title">Addey34 public GitHub snapshot</title>
+  <desc id="desc">4 public repositories, 0 stars and 1 fork.</desc>
+  <rect width="760" height="190" rx="18" fill="#0d1117"/>
+  <rect x="1" y="1" width="758" height="188" rx="17" fill="none" stroke="#30363d"/>
+  <text x="34" y="43" fill="#f0f6fc" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="22" font-weight="700">Public GitHub snapshot</text>
+  <text x="34" y="67" fill="#8b949e" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="13">Generated from the GitHub REST API</text>
+  <text x="34" y="118" fill="#f0f6fc" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="28" font-weight="700">4</text>
+  <text x="34" y="140" fill="#8b949e" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="13">public repos</text>
+  <text x="210" y="118" fill="#f0f6fc" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="28" font-weight="700">0</text>
+  <text x="210" y="140" fill="#8b949e" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="13">stars</text>
+  <text x="350" y="118" fill="#f0f6fc" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="28" font-weight="700">1</text>
+  <text x="350" y="140" fill="#8b949e" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="13">fork</text>
+  <text x="500" y="111" fill="#f0f6fc" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="15" font-weight="600">Latest public activity: galaxy-3d</text>
+  <text x="500" y="136" fill="#8b949e" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="12">refreshes automatically</text>
+</svg>
