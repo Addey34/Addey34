@@ -20,16 +20,32 @@
 
 ---
 
-## 🚀 Featured builds
+## Featured builds
 
-| Project | Product | Engineering focus |
-| --- | --- | --- |
-| 🌌 **[Galaxy](https://galaxy.adrianguichard.dev/)** | Interactive 3D solar-system explorer | TypeScript · Three.js · astronomical data · Playwright |
-| 🎮 **[Ludora](https://ludora.adrianguichard.dev/)** | Browser gaming platform | TypeScript · realtime · Nakama · PWA · [showcase](https://github.com/Addey34/ludora-showcase) |
-| 🧠 **[MagNotes](https://magnotes.adrianguichard.dev/)** | Visual knowledge workspace | React · Node.js · MongoDB · Docker |
-| 🛡️ **[SiteGuardian](https://siteguardian.adrianguichard.dev/)** | Website monitoring product | TypeScript · PostgreSQL · Stripe · CI |
-| ✨ **Image Generator Local** | Hybrid local/hosted generative-AI studio | Python · FastAPI · PyTorch · Diffusers |
-| 📄 **[DevisFlow](https://devisflow.adrianguichard.dev/)** | Quote and follow-up product | TypeScript · Vite · domain-oriented architecture |
+<p align="center">
+  <a href="https://galaxy.adrianguichard.dev/"><img src="./assets/projects/galaxy.svg" width="49%" alt="Galaxy — real-time 3D solar-system explorer" /></a>
+  <a href="https://ludora.adrianguichard.dev/"><img src="./assets/projects/ludora.svg" width="49%" alt="Ludora — browser gaming platform" /></a>
+</p>
+
+<p align="center">
+  <a href="https://magnotes.adrianguichard.dev/"><img src="./assets/projects/magnotes.svg" width="49%" alt="MagNotes — visual knowledge workspace" /></a>
+  <a href="https://siteguardian.adrianguichard.dev/"><img src="./assets/projects/siteguardian.svg" width="49%" alt="SiteGuardian — website monitoring product" /></a>
+</p>
+
+<p align="center">
+  <img src="./assets/projects/image-generator.svg" width="49%" alt="Image Generator — local-first generative AI studio" />
+  <a href="https://devisflow.adrianguichard.dev/"><img src="./assets/projects/devisflow.svg" width="49%" alt="DevisFlow — quote workflow product" /></a>
+</p>
+
+<p align="center">
+  <sub>
+    <a href="https://github.com/Addey34/galaxy-3d">Galaxy source</a>
+    ·
+    <a href="https://github.com/Addey34/ludora-showcase">Ludora showcase</a>
+    ·
+    <a href="https://github.com/Addey34/magnotes-frontend">MagNotes frontend</a>
+  </sub>
+</p>
 
 ---
 
