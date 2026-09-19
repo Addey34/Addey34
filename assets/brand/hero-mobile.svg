@@ -1,12 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="640" height="600" viewBox="0 0 640 600" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="610" viewBox="0 0 640 610" role="img" aria-labelledby="title desc">
   <title id="title">Adrian Guichard — mobile profile header</title>
-  <desc id="desc">Mobile AG profile header with gold monogram, name, positioning and electric-blue signal.</desc>
-  <rect width="640" height="600" rx="24" fill="#06080D"/>
-  <rect x="1" y="1" width="638" height="598" rx="23" fill="none" stroke="#1D2632"/>
-  <text x="44" y="48" fill="#778290" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="2.4">AG // SYSTEM PROFILE</text>
-  <text x="596" y="48" fill="#D9AE57" text-anchor="end" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="1.8">FR</text>
+  <desc id="desc">Mobile editorial profile header using the AG monogram, warm gold and electric blue.</desc>
+  <rect width="640" height="610" fill="#06080D"/>
+  <path d="M0 1 H640" stroke="#1B2430"/>
+  <path d="M44 70 V540" stroke="#D9AE57" stroke-width="2"/>
 
-  <g transform="translate(34 78) scale(.82)">
+  <text x="68" y="46" fill="#7C8591" font-family="SFMono-Regular,Consolas,monospace" font-size="9.5" letter-spacing="1.8">FULL-STACK / PRODUCTS / SYSTEMS</text>
+  <text x="596" y="46" fill="#D9AE57" text-anchor="end" font-family="SFMono-Regular,Consolas,monospace" font-size="9.5">FR</text>
+
+  <g transform="translate(66 82) scale(.68)">
     <g fill="none" stroke="#D9AE57" stroke-linecap="square" stroke-linejoin="miter">
       <path d="M116 40 A52 52 0 1 0 126 102" stroke-width="11"/>
       <path d="M47 119 L79 38 L108 119" stroke-width="11"/>
@@ -14,23 +16,22 @@
     </g>
   </g>
 
-  <text x="186" y="145" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="50" font-weight="760" letter-spacing="-1.7">ADRIAN</text>
-  <text x="186" y="198" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="50" font-weight="760" letter-spacing="-1.7">GUICHARD</text>
+  <text x="182" y="145" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="52" font-weight="760" letter-spacing="-1.9">ADRIAN</text>
+  <text x="182" y="199" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="52" font-weight="760" letter-spacing="-1.9">GUICHARD</text>
 
-  <path d="M44 246 H294" stroke="#D9AE57" stroke-width="2"/>
-  <path d="M294 246 L334 236" stroke="#D9AE57" stroke-width="2"/>
-  <path d="M334 236 H510" stroke="#168CFF" stroke-width="3"/>
-  <circle cx="510" cy="236" r="4" fill="#65C7FF"/>
+  <path d="M68 244 H286" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M286 244 L326 234" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M326 234 H514" stroke="#168CFF" stroke-width="3"/>
 
-  <text x="44" y="296" fill="#65C7FF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="680" letter-spacing="1.7">FULL-STACK · PRODUCT BUILDER</text>
-  <text x="44" y="328" fill="#65C7FF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="680" letter-spacing="1.7">INTERACTIVE SYSTEMS</text>
+  <text x="68" y="300" fill="#C4CAD2" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19">I design and build complete products —</text>
+  <text x="68" y="329" fill="#C4CAD2" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19">from architecture to production.</text>
 
-  <text x="44" y="380" fill="#A5ADB8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18">Architecture, interfaces and systems</text>
-  <text x="44" y="408" fill="#A5ADB8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18">built all the way to production.</text>
+  <text x="68" y="392" fill="#7C8591" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="1.8">PRACTICE</text>
+  <text x="68" y="438" fill="#F2D58A" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="680">FROM IDEA</text>
+  <text x="68" y="475" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="680">TO RUNNING SYSTEM.</text>
 
-  <text x="44" y="478" fill="#F2D58A" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="27" font-weight="700">FROM IDEA</text>
-  <text x="44" y="512" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="27" font-weight="700">TO RUNNING SYSTEM.</text>
-  <path d="M44 548 H302" stroke="#D9AE57" stroke-width="2"/>
-  <path d="M302 548 L341 538" stroke="#168CFF" stroke-width="3"/>
-  <text x="596" y="566" fill="#66717E" text-anchor="end" font-family="SFMono-Regular,Consolas,monospace" font-size="9" letter-spacing="1.5">BUILD / SHIP / EVOLVE</text>
+  <path d="M68 523 H286" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M286 523 L326 513" stroke="#168CFF" stroke-width="3"/>
+  <path d="M326 513 H596" stroke="#283341"/>
+  <text x="596" y="556" fill="#7F8996" text-anchor="end" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13">products · realtime · tools · AI</text>
 </svg>
