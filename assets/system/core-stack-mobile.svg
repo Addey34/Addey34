@@ -1,35 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="640" height="760" viewBox="0 0 640 760" role="img" aria-labelledby="title desc">
-  <title id="title">Core stack — mobile</title>
-  <desc id="desc">Mobile overview of interface, backend, data and delivery tooling.</desc>
-  <rect width="640" height="760" rx="24" fill="#06080D"/>
-  <rect x="1" y="1" width="638" height="758" rx="23" fill="none" stroke="#1D2632"/>
-  <text x="44" y="48" fill="#778290" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="2.2">AG // CURRENT TOOLING</text>
-  <text x="44" y="96" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="32" font-weight="700">CORE STACK</text>
-  <text x="44" y="126" fill="#8F99A6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">Tools change. Principles stay.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="720" viewBox="0 0 640 720" role="img" aria-labelledby="title desc">
+  <title id="title">Current toolkit — mobile</title>
+  <desc id="desc">Mobile overview of interface, backend, data and delivery tools.</desc>
+  <rect width="640" height="720" fill="#06080D"/>
+  <path d="M44 1 H596" stroke="#1C2632"/>
+  <text x="44" y="64" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="34" font-weight="720">CURRENT TOOLKIT</text>
+  <path d="M44 90 H236" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M236 90 L274 80" stroke="#168CFF" stroke-width="3"/>
 
-  <g transform="translate(44 182)">
-    <text x="0" y="0" fill="#D9AE57" font-family="SFMono-Regular,Consolas,monospace" font-size="11" letter-spacing="2">INTERFACE</text>
-    <text x="0" y="38" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20">TypeScript · React · Three.js</text>
-    <text x="0" y="68" fill="#A5ADB8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16">Canvas / WebGL · Vite</text>
-    <path d="M0 102 H552" stroke="#263140"/>
+  <g transform="translate(44 150)">
+    <text x="0" y="0" fill="#D9AE57" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" font-weight="680">Interface</text>
+    <text x="0" y="39" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20">TypeScript · React · Three.js</text>
+    <text x="0" y="69" fill="#9AA4B0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16">Canvas / WebGL · Vite</text>
+    <path d="M0 106 H552" stroke="#263140"/>
   </g>
-
-  <g transform="translate(44 326)">
-    <text x="0" y="0" fill="#65C7FF" font-family="SFMono-Regular,Consolas,monospace" font-size="11" letter-spacing="2">BACKEND / REALTIME</text>
-    <text x="0" y="38" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20">Node.js · Express · FastAPI</text>
-    <text x="0" y="68" fill="#A5ADB8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16">REST · WebSocket · Nakama</text>
-    <path d="M0 102 H552" stroke="#263140"/>
+  <g transform="translate(44 300)">
+    <text x="0" y="0" fill="#65C7FF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" font-weight="680">Backend &amp; realtime</text>
+    <text x="0" y="39" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20">Node.js · Express · FastAPI</text>
+    <text x="0" y="69" fill="#9AA4B0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16">REST · WebSocket · Nakama</text>
+    <path d="M0 106 H552" stroke="#263140"/>
   </g>
-
-  <g transform="translate(44 470)">
-    <text x="0" y="0" fill="#D9AE57" font-family="SFMono-Regular,Consolas,monospace" font-size="11" letter-spacing="2">DATA</text>
-    <text x="0" y="38" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20">PostgreSQL · MongoDB</text>
-    <path d="M0 102 H552" stroke="#263140"/>
+  <g transform="translate(44 450)">
+    <text x="0" y="0" fill="#D9AE57" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" font-weight="680">Data</text>
+    <text x="0" y="39" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20">PostgreSQL · MongoDB</text>
+    <path d="M0 106 H552" stroke="#263140"/>
   </g>
-
-  <g transform="translate(44 604)">
-    <text x="0" y="0" fill="#65C7FF" font-family="SFMono-Regular,Consolas,monospace" font-size="11" letter-spacing="2">DELIVERY / QUALITY</text>
-    <text x="0" y="38" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19">Docker · Linux · GitHub Actions</text>
-    <text x="0" y="68" fill="#A5ADB8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16">pnpm · Playwright · Vitest · Gitleaks</text>
+  <g transform="translate(44 590)">
+    <text x="0" y="0" fill="#65C7FF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" font-weight="680">Delivery &amp; quality</text>
+    <text x="0" y="39" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19">Docker · Linux · GitHub Actions</text>
+    <text x="0" y="69" fill="#9AA4B0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16">pnpm · Playwright · Vitest · Gitleaks</text>
   </g>
 </svg>
