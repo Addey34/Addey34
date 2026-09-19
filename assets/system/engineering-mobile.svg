@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="850" viewBox="0 0 640 850" role="img" aria-labelledby="title desc">
+  <title id="title">Engineering system — mobile</title>
+  <desc id="desc">Mobile engineering workflow from idea through monitoring and evolution.</desc>
+  <rect width="640" height="850" rx="24" fill="#0B0F17"/>
+  <rect x="1" y="1" width="638" height="848" rx="23" fill="none" stroke="#1D2632"/>
+  <text x="44" y="48" fill="#778290" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="2.2">AG // ENGINEERING SYSTEM</text>
+  <text x="44" y="98" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="31" font-weight="700">FROM IDEA TO OPERATION</text>
+  <text x="44" y="130" fill="#8F99A6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">Build, test, secure, ship, observe — then evolve.</text>
+
+  <path d="M92 190 V345" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M92 345 L102 383" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M102 383 V600" stroke="#168CFF" stroke-width="3"/>
+  <path d="M102 600 V660" stroke="#34404E" stroke-width="1.5"/>
+
+  <g font-family="SFMono-Regular,Consolas,monospace" font-size="13" letter-spacing="1.4">
+    <g><circle cx="92" cy="206" r="6" fill="#D9AE57"/><text x="126" y="211" fill="#F5F3ED">IDEA</text></g>
+    <g><circle cx="92" cy="290" r="6" fill="#D9AE57"/><text x="126" y="295" fill="#F5F3ED">ARCHITECT</text></g>
+    <g><circle cx="102" cy="402" r="6" fill="#168CFF"/><text x="136" y="407" fill="#65C7FF">BUILD</text></g>
+    <g><circle cx="102" cy="466" r="6" fill="#168CFF"/><text x="136" y="471" fill="#65C7FF">TEST</text></g>
+    <g><circle cx="102" cy="530" r="6" fill="#168CFF"/><text x="136" y="535" fill="#65C7FF">SECURE</text></g>
+    <g><circle cx="102" cy="594" r="6" fill="#168CFF"/><text x="136" y="599" fill="#65C7FF">SHIP</text></g>
+    <g><circle cx="102" cy="658" r="5" fill="#7A8695"/><text x="136" y="663" fill="#A5ADB8">MONITOR / EVOLVE</text></g>
+  </g>
+
+  <g transform="translate(330 210)">
+    <text x="0" y="0" fill="#D9AE57" font-family="SFMono-Regular,Consolas,monospace" font-size="11" letter-spacing="1.7">01 / ARCHITECTURE</text>
+    <text x="0" y="31" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16">Explicit boundaries.</text>
+    <text x="0" y="56" fill="#8F99A6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Reusable systems.</text>
+    <text x="0" y="81" fill="#8F99A6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Understandable growth.</text>
+
+    <text x="0" y="175" fill="#65C7FF" font-family="SFMono-Regular,Consolas,monospace" font-size="11" letter-spacing="1.7">02 / RELIABILITY</text>
+    <text x="0" y="206" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16">CI · tests · smoke checks.</text>
+    <text x="0" y="231" fill="#8F99A6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Monitoring and recovery.</text>
+
+    <text x="0" y="325" fill="#D9AE57" font-family="SFMono-Regular,Consolas,monospace" font-size="11" letter-spacing="1.7">03 / SECURITY</text>
+    <text x="0" y="356" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16">Least privilege.</text>
+    <text x="0" y="381" fill="#8F99A6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Secret scanning · audits.</text>
+  </g>
+
+  <path d="M44 790 H286" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M286 790 L324 780" stroke="#168CFF" stroke-width="3"/>
+  <path d="M324 780 H596" stroke="#263140"/>
+</svg>
