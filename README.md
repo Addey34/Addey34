@@ -1,64 +1,85 @@
-# Adrian Guichard
+<p align="center">
+  <img src="./assets/profile-hero.svg" alt="Adrian Guichard — Full-Stack Developer" />
+</p>
 
-**Full-Stack JavaScript/TypeScript Developer · Web Products · 3D · Developer Tools**
+<p align="center">
+  <a href="https://adrianguichard.dev"><strong>Portfolio</strong></a>
+  ·
+  <a href="https://www.linkedin.com/in/adrianguichard/"><strong>LinkedIn</strong></a>
+  ·
+  <a href="mailto:adrian34470@gmail.com"><strong>Email</strong></a>
+</p>
 
-I build complete web products, interactive 3D experiences and developer-focused tools — from architecture and backend services to polished frontend experiences, CI and production hardening.
-
-[Portfolio](https://adrianguichard.dev) · [LinkedIn](https://www.linkedin.com/in/adrianguichard/) · [Email](mailto:adrian34470@gmail.com)
-
----
-
-## Selected projects
-
-| Project | What it is | Stack / focus | Links |
-| --- | --- | --- | --- |
-| **Galaxy** | Real-time 3D solar-system explorer with scientific ephemerides, true-scale exploration and spacecraft/interstellar-object data. | TypeScript, Three.js, astronomy-engine, Playwright, Vite | [Live](https://galaxy.adrianguichard.dev/) · [Source](https://github.com/Addey34/galaxy-3d) |
-| **Ludora** | Browser gaming platform with dozens of games, shared progression, leaderboards and online multiplayer. | TypeScript, Vite MPA, Nakama, Canvas, PWA | [Live](https://ludora.adrianguichard.dev/) |
-| **MagNotes** | Visual knowledge workspace with infinite canvas, Markdown cards, links, Kanban, agenda and timeline views. | React, TypeScript, Node.js, MongoDB, Docker | [Live](https://magnotes.adrianguichard.dev/) · [Frontend](https://github.com/Addey34/magnotes-frontend) |
-| **SiteGuardian** | Website-health monitoring SaaS prototype with authenticated workspaces, scans, incidents, notifications, billing and recovery workflows. | TypeScript, PostgreSQL, Stripe, Docker, GitHub Actions | [Live](https://siteguardian.adrianguichard.dev/) |
-| **Image Generator Local** | Local + hosted generative-AI studio for image, video and audio generation with GPU-aware scheduling and hybrid execution. | Python, FastAPI, PyTorch, Diffusers, TypeScript | Private source |
-| **DevisFlow** | Quote-management product for independent tradespeople, focused on fast quote creation and follow-up workflows. | TypeScript, Vite, domain-driven modules | [Live](https://devisflow.adrianguichard.dev/) |
+<p align="center">
+  Building web products, developer tools and interactive 3D experiences with a strong focus on architecture, reliability and production quality.
+</p>
 
 ---
 
-## Core stack
+## 🚀 Featured builds
+
+| Project | Product | Engineering focus |
+| --- | --- | --- |
+| 🌌 **[Galaxy](https://galaxy.adrianguichard.dev/)** | Interactive 3D solar-system explorer | TypeScript · Three.js · astronomical data · Playwright |
+| 🎮 **[Ludora](https://ludora.adrianguichard.dev/)** | Browser gaming platform | TypeScript · realtime · Nakama · PWA · [showcase](https://github.com/Addey34/ludora-showcase) |
+| 🧠 **[MagNotes](https://magnotes.adrianguichard.dev/)** | Visual knowledge workspace | React · Node.js · MongoDB · Docker |
+| 🛡️ **[SiteGuardian](https://siteguardian.adrianguichard.dev/)** | Website monitoring product | TypeScript · PostgreSQL · Stripe · CI |
+| ✨ **Image Generator Local** | Hybrid local/hosted generative-AI studio | Python · FastAPI · PyTorch · Diffusers |
+| 📄 **[DevisFlow](https://devisflow.adrianguichard.dev/)** | Quote and follow-up product | TypeScript · Vite · domain-oriented architecture |
+
+---
+
+## ⚙️ Core stack
 
 **Frontend**  
-`TypeScript` · `JavaScript` · `React` · `Vite` · `Three.js` · `Canvas/WebGL`
+`TypeScript` · `JavaScript` · `React` · `Vite` · `Three.js` · `Canvas / WebGL`
 
-**Backend**  
-`Node.js` · `Express` · `FastAPI` · `REST` · `WebSocket`
+**Backend & systems**  
+`Node.js` · `Express` · `FastAPI` · `REST` · `WebSocket` · `Nakama`
 
-**Data**  
-`MongoDB` · `PostgreSQL`
+**Data & delivery**  
+`MongoDB` · `PostgreSQL` · `Docker` · `Linux` · `GitHub Actions`
 
-**Engineering & delivery**  
-`Docker` · `GitHub Actions` · `Linux` · `pnpm` · `Playwright` · `Vitest/Jest` · `ESLint` · `Prettier` · `Gitleaks`
-
----
-
-## How I build
-
-- Strict typing and explicit architecture before feature sprawl.
-- CI gates for formatting, linting, type-checking, tests, builds and dependency audits.
-- Security-minded defaults: secret scanning, pinned CI dependencies and least-privilege workflows.
-- Graceful degradation for networked features so local/core functionality remains usable.
-- Production-oriented validation with smoke tests, monitoring and reproducible deployment paths.
+**Quality**  
+`pnpm` · `Playwright` · `Vitest / Jest` · `ESLint` · `Prettier` · `Gitleaks`
 
 ---
 
-## Public GitHub snapshot
+## 🧭 Engineering style
+
+I prefer systems that stay understandable as they grow.
+
+- strict typing and explicit architecture;
+- reusable platform layers instead of duplicated feature code;
+- CI gates before merge;
+- security-minded defaults and secret scanning;
+- graceful degradation for optional network features;
+- smoke tests, monitoring and reproducible deployment paths.
+
+---
+
+## 📊 Public GitHub snapshot
 
 <p align="center">
   <img src="./assets/github-stats.svg" alt="Public GitHub statistics for Addey34" />
 </p>
 
-This card is generated by this repository's own GitHub Actions workflow from the public GitHub REST API — no third-party stats service.
+<p align="center">
+  <sub>Generated by this repository's own GitHub Actions workflow from the public GitHub REST API.</sub>
+</p>
 
 ---
 
-## Contact
+## 🤝 Contact
 
-If you want to discuss a product, interactive experience, full-stack system or technical collaboration:
+<p align="center">
+  <strong>Web product · interactive experience · full-stack system · technical collaboration</strong>
+</p>
 
-**[adrianguichard.dev](https://adrianguichard.dev)** · **[LinkedIn](https://www.linkedin.com/in/adrianguichard/)** · **[adrian34470@gmail.com](mailto:adrian34470@gmail.com)**
+<p align="center">
+  <a href="https://adrianguichard.dev">adrianguichard.dev</a>
+  ·
+  <a href="https://www.linkedin.com/in/adrianguichard/">LinkedIn</a>
+  ·
+  <a href="mailto:adrian34470@gmail.com">adrian34470@gmail.com</a>
+</p>
