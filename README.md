@@ -1,17 +1,12 @@
 <p align="center">
-  <img src="./assets/profile-hero.svg" alt="Adrian Guichard — Full-Stack Developer" />
+  <img src="./assets/brand/hero.svg" alt="Adrian Guichard — Full-Stack Developer and Product Builder" />
 </p>
 
 <p align="center">
-  <a href="https://adrianguichard.dev"><strong>Portfolio</strong></a>
-  ·
-  <a href="https://www.linkedin.com/in/adrianguichard/"><strong>LinkedIn</strong></a>
-  ·
-  <a href="mailto:adrian34470@gmail.com"><strong>Email</strong></a>
-</p>
-
-<p align="center">
-  Building web products, developer tools and interactive 3D experiences with a strong focus on architecture, reliability and production quality.
+  <a href="https://adrianguichard.dev"><img src="./assets/brand/nav-portfolio.svg" width="22%" alt="Portfolio" /></a>
+  <a href="#featured-builds"><img src="./assets/brand/nav-projects.svg" width="22%" alt="Projects" /></a>
+  <a href="https://www.linkedin.com/in/adrianguichard/"><img src="./assets/brand/nav-linkedin.svg" width="22%" alt="LinkedIn" /></a>
+  <a href="mailto:adrian34470@gmail.com"><img src="./assets/brand/nav-contact.svg" width="22%" alt="Contact" /></a>
 </p>
 
 ---
