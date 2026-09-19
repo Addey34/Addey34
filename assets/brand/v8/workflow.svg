@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="230" viewBox="0 0 1120 230" role="img" aria-labelledby="title desc">
+<title id="title">Build loop</title>
+<desc id="desc">Idea, design, build, test, secure, ship and improve.</desc>
+
+<rect width="1120" height="230" fill="#06080D"/>
+<path d="M18 18 H1024 M1056 18 H1102 V212 H96 M64 212 H18 V18" fill="none" stroke="#273240" stroke-width="1.5"/>
+<path d="M1024 18 H1048 L1060 30" fill="none" stroke="#168CFF" stroke-width="2.5"/>
+<path d="M96 212 H72 L60 200" fill="none" stroke="#168CFF" stroke-width="2.5"/>
+<path d="M42 42 V188" stroke="#18212C"/>
+<circle cx="42" cy="58" r="4" fill="#168CFF"/>
+<circle cx="42" cy="172" r="4" fill="#168CFF"/>
+<path d="M37 92 H47 M37 116 H47 M37 140 H47" stroke="#273240"/>
+<text x="66" y="44" fill="#65C7FF" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="1.8">20</text>
+<text x="102" y="44" fill="#99A3AF" font-family="SFMono-Regular,Consolas,monospace" font-size="9.5" letter-spacing="1.7">WORKFLOW / LOOP</text>
+<g transform="translate(1034 178)">
+  <circle cx="0" cy="0" r="4" fill="#168CFF"/>
+  <circle cx="18" cy="0" r="3" fill="#168CFF"/>
+  <path d="M4 0 H15" stroke="#273240" stroke-width="1.5"/>
+</g>
+<text x="66" y="88" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="720">BUILD LOOP</text>
+<text x="66" y="116" fill="#99A3AF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12.5">A simple loop for turning ideas into systems that keep improving</text><path d="M98 162 H209" stroke="#273240" stroke-width="2"/><circle cx="82" cy="162" r="7" fill="#D9AE57"/><text x="64" y="193" fill="#F2D58A" font-family="SFMono-Regular,Consolas,monospace" font-size="10.5">IDEA</text><path d="M243 162 H354" stroke="#273240" stroke-width="2"/><circle cx="227" cy="162" r="7" fill="#D9AE57"/><text x="209" y="193" fill="#F2D58A" font-family="SFMono-Regular,Consolas,monospace" font-size="10.5">DESIGN</text><path d="M388 162 H499" stroke="#273240" stroke-width="2"/><circle cx="372" cy="162" r="7" fill="#168CFF"/><text x="354" y="193" fill="#65C7FF" font-family="SFMono-Regular,Consolas,monospace" font-size="10.5">BUILD</text><path d="M533 162 H644" stroke="#273240" stroke-width="2"/><circle cx="517" cy="162" r="7" fill="#168CFF"/><text x="499" y="193" fill="#65C7FF" font-family="SFMono-Regular,Consolas,monospace" font-size="10.5">TEST</text><path d="M678 162 H789" stroke="#273240" stroke-width="2"/><circle cx="662" cy="162" r="7" fill="#168CFF"/><text x="644" y="193" fill="#65C7FF" font-family="SFMono-Regular,Consolas,monospace" font-size="10.5">SECURE</text><path d="M823 162 H934" stroke="#273240" stroke-width="2"/><circle cx="807" cy="162" r="7" fill="#168CFF"/><text x="789" y="193" fill="#65C7FF" font-family="SFMono-Regular,Consolas,monospace" font-size="10.5">SHIP</text><circle cx="952" cy="162" r="7" fill="#168CFF"/><text x="934" y="193" fill="#65C7FF" font-family="SFMono-Regular,Consolas,monospace" font-size="10.5">IMPROVE</text>
+</svg>
