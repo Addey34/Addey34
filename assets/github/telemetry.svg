@@ -25,5 +25,5 @@
   <path d="M72 224 H374" stroke="#D9AE57" stroke-width="2"/>
   <path d="M374 224 L416 214" stroke="#168CFF" stroke-width="3"/>
   <path d="M416 214 H1128" stroke="#263140"/>
-  <text x="1128" y="239" fill="#6B7581" text-anchor="end" font-family="SFMono-Regular,Consolas,monospace" font-size="9">0 STARS · 1 FORK</text>
+  <text x="1128" y="239" fill="#6B7581" text-anchor="end" font-family="SFMono-Regular,Consolas,monospace" font-size="9">PUBLIC DATA ONLY · AUTO-REFRESHED</text>
 </svg>
