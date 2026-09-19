@@ -23,18 +23,14 @@
   <!-- mark -->
   <g transform="translate(72 226) scale(1.58)">
     <g fill="none" stroke-linecap="square" stroke-linejoin="miter">
-      <path d="M116 40 A52 52 0 1 0 126 102" stroke="url(#goldBoard)" stroke-width="11"/>
-      <path d="M47 119 L79 38 L106 119" stroke="url(#goldBoard)" stroke-width="11"/>
-      <path d="M61 88 H94" stroke="#D9AE57" stroke-width="9"/>
-      <path d="M91 81 H126" stroke="#D9AE57" stroke-width="11"/>
-      <path d="M121 75 L137 71" stroke="url(#blueBoard)" stroke-width="7"/>
-      <path d="M105 114 L112 132" stroke="#06080D" stroke-width="5"/>
-      <path d="M109 119 L116 137" stroke="#168CFF" stroke-width="3"/>
+      <path d="M116 40 A52 52 0 1 0 126 102" stroke="#D9AE57" stroke-width="11"/>
+      <path d="M47 119 L79 38 L108 119" stroke="#D9AE57" stroke-width="11"/>
+      <path d="M61 88 H126" stroke="#D9AE57" stroke-width="9"/>
     </g>
   </g>
 
   <text x="72" y="522" fill="#D9AE57" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="2">MONOGRAM</text>
-  <text x="72" y="548" fill="#98A1AE" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13">Recognizable without framework symbols, gradients or decorative effects.</text>
+  <text x="72" y="548" fill="#98A1AE" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13">Primary mark: flat gold or monochrome. Electric blue belongs to the signal system, not the logo.</text>
 
   <!-- type sample -->
   <text x="420" y="258" fill="#D9AE57" font-family="SFMono-Regular,Consolas,monospace" font-size="11" letter-spacing="3">DISPLAY</text>
