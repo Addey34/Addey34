@@ -1,0 +1,109 @@
+name: Profile QA
+
+on:
+  pull_request:
+    paths:
+      - README.md
+      - assets/**
+      - brand/**
+      - scripts/**
+      - .github/workflows/profile-*.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+
+      - name: Setup Node
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: 22
+          package-manager-cache: false
+
+      - name: Check JavaScript syntax
+        run: |
+          node --check brand/brand-tokens.mjs
+          node --check brand/projects.mjs
+          node --check scripts/generate-profile-stats.mjs
+
+      - name: Validate SVG XML and accessibility metadata
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+
+          failures = []
+          for path in sorted(Path("assets").rglob("*.svg")):
+              try:
+                  root = ET.parse(path).getroot()
+              except Exception as exc:
+                  failures.append(f"{path}: invalid XML: {exc}")
+                  continue
+
+              ns = "{http://www.w3.org/2000/svg}"
+              title = root.find(f"{ns}title")
+              desc = root.find(f"{ns}desc")
+              if title is None or not (title.text or "").strip():
+                  failures.append(f"{path}: missing non-empty <title>")
+              if desc is None or not (desc.text or "").strip():
+                  failures.append(f"{path}: missing non-empty <desc>")
+
+          if failures:
+              raise SystemExit("\n".join(failures))
+
+          print("All SVG assets are valid and include title/desc metadata.")
+          PY
+
+      - name: Validate README local assets
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          readme = Path("README.md").read_text(encoding="utf-8")
+          refs = sorted(set(re.findall(r'(?:src|href)="(\./[^"#?]+)', readme)))
+          missing = [ref for ref in refs if not Path(ref[2:]).exists()]
+
+          external_images = [
+              src for src in re.findall(r'<img[^>]+src="([^"]+)"', readme)
+              if not src.startswith("./assets/")
+          ]
+
+          if missing:
+              raise SystemExit("Missing local README assets:\n" + "\n".join(missing))
+          if external_images:
+              raise SystemExit(
+                  "README images must be self-hosted:\n" + "\n".join(external_images)
+              )
+
+          print(f"Validated {len(refs)} local README references.")
+          PY
+
+      - name: Validate project registry
+        run: |
+          node --input-type=module - <<'NODE'
+          import { existsSync } from 'node:fs';
+          import { projects } from './brand/projects.mjs';
+
+          const ids = new Set();
+          for (const project of projects) {
+            if (ids.has(project.id)) {
+              throw new Error(`Duplicate project id: ${project.id}`);
+            }
+            ids.add(project.id);
+
+            const path = `assets/projects/${project.id}.svg`;
+            if (!existsSync(path)) {
+              throw new Error(`Missing project card: ${path}`);
+            }
+          }
+
+          console.log(`Validated ${projects.length} project cards.`);
+          NODE
