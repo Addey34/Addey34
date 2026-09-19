@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="260" viewBox="0 0 580 260" role="img" aria-labelledby="title desc">
+  <title id="title">MAGNOTES</title>
+  <desc id="desc">A visual workspace for connected thought. LIVE / ACTIVE DEVELOPMENT.</desc>
+  <rect width="580" height="260" rx="20" fill="#0B0F17"/>
+  <rect x="1" y="1" width="578" height="258" rx="19" fill="none" stroke="#263140"/>
+  <path d="M0 20 Q0 0 20 0 H184" stroke="#D9AE57" stroke-width="2" fill="none"/>
+  <path d="M184 0 H228" stroke="#A78BFA" stroke-width="3"/>
+  <path d="M552 0 H580 V66 L564 70 V16 H552 Z" fill="#101722"/>
+  <path d="M564 70 L580 66" stroke="#A78BFA" stroke-width="3"/>
+
+  <text x="28" y="38" fill="#778290" font-family="SFMono-Regular,Consolas,monospace" font-size="9" letter-spacing="2.2">AG / SYSTEM 03</text>
+  <text x="28" y="83" fill="#A78BFA" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="2.2">KNOWLEDGE WORKSPACE</text>
+  <text x="28" y="122" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="28" font-weight="760" letter-spacing="-.8">MAGNOTES</text>
+  <text x="28" y="151" fill="#A5ADB8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">A visual workspace for connected thought.</text>
+  <text x="28" y="185" fill="#66717E" font-family="SFMono-Regular,Consolas,monospace" font-size="8.8" letter-spacing="1.05">REACT · TYPESCRIPT · NODE · MONGODB</text>
+
+  <path d="M28 211 H178" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M178 211 L209 203" stroke="#A78BFA" stroke-width="3"/>
+  <text x="28" y="237" fill="#8893A0" font-family="SFMono-Regular,Consolas,monospace" font-size="9" letter-spacing="1.35">LIVE / ACTIVE DEVELOPMENT</text>
+
+  
+    <g transform="translate(408 58)" fill="none">
+      <rect x="8" y="16" width="72" height="48" rx="9" fill="#171428" stroke="#A78BFA"/>
+      <rect x="88" y="80" width="76" height="48" rx="9" fill="#171428" stroke="#D8B4FE"/>
+      <rect x="18" y="118" width="60" height="38" rx="8" fill="#121722" stroke="#384356"/>
+      <path d="M80 48 C112 48 110 84 126 84" stroke="#A78BFA" stroke-width="2"/>
+      <path d="M48 64 C48 91 48 100 48 118" stroke="#536074"/>
+      <circle cx="80" cy="48" r="4" fill="#A78BFA" stroke="none"/>
+      <circle cx="126" cy="84" r="4" fill="#D8B4FE" stroke="none"/>
+    </g>
+</svg>
