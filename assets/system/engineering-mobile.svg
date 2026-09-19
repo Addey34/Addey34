@@ -23,12 +23,12 @@
 
   <g transform="translate(326 190)">
     <text x="0" y="0" fill="#D9AE57" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="680">Architecture</text>
-    <text x="0" y="31" fill="#9AA4B0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Explicit boundaries.</text>
+    <text x="0" y="31" fill="#9AA4B0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Clear boundaries.</text>
     <text x="0" y="55" fill="#9AA4B0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Reusable systems.</text>
 
     <text x="0" y="176" fill="#65C7FF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="680">Reliability</text>
     <text x="0" y="207" fill="#9AA4B0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">CI · tests · smoke checks.</text>
-    <text x="0" y="231" fill="#9AA4B0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Monitoring and recovery.</text>
+    <text x="0" y="231" fill="#9AA4B0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Recovery paths.</text>
 
     <text x="0" y="352" fill="#D9AE57" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="680">Security</text>
     <text x="0" y="383" fill="#9AA4B0" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Least privilege.</text>
