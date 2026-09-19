@@ -57,10 +57,10 @@
 ## 📈 GitHub Stats
 <div align="center">
   <a href="#">
-    <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Addey34&theme=great-gatsby&show_icons=true" />
+    <img height="180em" src="https://github-stats-extended.vercel.app/api?username=Addey34&theme=great-gatsby&show_icons=true" />
   </a>
   <a href="#">
-    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Addey34&theme=great-gatsby&layout=compact&exclude_repo=Addey34&langs_count=6&card_width=350" />
+    <img height="180em" src="https://github-stats-extended.vercel.app/api/top-langs/?username=Addey34&theme=great-gatsby&layout=compact&exclude_repo=Addey34&langs_count=6&card_width=350" />
   </a>
 </div>
 
