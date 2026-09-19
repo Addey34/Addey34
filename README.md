@@ -22,7 +22,7 @@ I like building the whole product rather than stopping at one layer: **interface
 My work sits mainly at the intersection of **product engineering**, **interactive systems**, **3D / realtime experiences**, and **developer tooling / automation**. I care about software that is useful, technically solid, and still understandable as it grows.
 
 <p align="center">
-  <img src="./assets/brand/signal-line.svg" alt="" />
+  <img src="./assets/brand/divider.svg" alt="" />
 </p>
 
 ## What I build
@@ -47,19 +47,15 @@ Developer tools, AI-assisted workflows, monitoring, infrastructure automation an
 
 ## Current toolkit
 
-| Area | Tools |
-| --- | --- |
-| **Frontend** | TypeScript · JavaScript · React · Vite · Three.js · Canvas / WebGL |
-| **Backend & realtime** | Node.js · Express · FastAPI · REST · WebSocket · Nakama |
-| **Data** | PostgreSQL · MongoDB |
-| **Quality** | Playwright · Vitest / Jest · ESLint · Prettier · Gitleaks |
-| **Delivery** | pnpm · Docker · Linux · GitHub Actions |
+- **Frontend** — TypeScript · JavaScript · React · Vite · Three.js · Canvas / WebGL
+- **Backend & realtime** — Node.js · Express · FastAPI · REST · WebSocket · Nakama
+- **Data** — PostgreSQL · MongoDB
+- **Quality** — Playwright · Vitest / Jest · ESLint · Prettier · Gitleaks
+- **Delivery** — pnpm · Docker · Linux · GitHub Actions
 
 ## Direction
 
-I'm continuing to push deeper into **backend architecture, realtime systems, automation, AI tooling and production hardening**, while keeping the strong frontend and interactive side that got me into development in the first place.
-
-The long-term goal is simple: build increasingly ambitious systems without losing clarity, reliability or control of the full product lifecycle.
+I'm continuing to push deeper into **backend architecture, realtime systems, automation, AI tooling and production hardening**, while keeping the strong frontend and interactive side that got me into development in the first place. The goal is to build increasingly ambitious systems without losing clarity, reliability or control of the full product lifecycle.
 
 <p align="center">
   <picture>
