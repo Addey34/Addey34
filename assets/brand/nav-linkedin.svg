@@ -1,8 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="250" height="58" viewBox="0 0 250 58" role="img" aria-label="LINKEDIN">
-  <rect width="250" height="58" rx="10" fill="#0B0F17"/>
-  <path d="M0.5 0.5 H249.5 V57.5 H0.5 Z" fill="none" stroke="#263140"/>
-  <text x="18" y="35" fill="#D9AE57" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="1.5">03</text>
-  <text x="52" y="35" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="650" letter-spacing="1.7">LINKEDIN</text>
-  <path d="M205 30 H225" stroke="#D9AE57" stroke-width="2"/>
-  <path d="M225 30 L239 26.5" stroke="#168CFF" stroke-width="3"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="165" height="48" viewBox="0 0 165 48" role="img" aria-labelledby="title desc">
+  <title id="title">LINKEDIN</title>
+  <desc id="desc">Navigation link to linkedin.</desc>
+  <rect width="165" height="48" rx="8" fill="#0B0F17"/>
+  <rect x=".5" y=".5" width="164" height="47" rx="7.5" fill="none" stroke="#263140"/>
+  <text x="14" y="29" fill="#D9AE57" font-family="SFMono-Regular,Consolas,monospace" font-size="8.5" letter-spacing="1">03</text>
+  <text x="38" y="29" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11.5" font-weight="680" letter-spacing="1.15">LINKEDIN</text>
+  <path d="M137 24 H148" stroke="#D9AE57" stroke-width="1.5"/>
+  <path d="M148 24 L158 21.5" stroke="#168CFF" stroke-width="2.5"/>
 </svg>
