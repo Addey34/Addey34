@@ -7,9 +7,9 @@
 
 <p align="center">
   <a href="https://adrianguichard.dev"><img src="./assets/brand/nav-portfolio.svg" alt="Portfolio" /></a>
-  <a href="#featured-systems"><img src="./assets/brand/nav-projects.svg" width="22%" alt="Projects" /></a>
-  <a href="https://www.linkedin.com/in/adrianguichard/"><img src="./assets/brand/nav-linkedin.svg" width="22%" alt="LinkedIn" /></a>
-  <a href="mailto:adrian34470@gmail.com"><img src="./assets/brand/nav-contact.svg" width="22%" alt="Contact" /></a>
+  <a href="#featured-systems"><img src="./assets/brand/nav-projects.svg" alt="Projects" /></a>
+  <a href="https://www.linkedin.com/in/adrianguichard/"><img src="./assets/brand/nav-linkedin.svg" alt="LinkedIn" /></a>
+  <a href="mailto:adrian34470@gmail.com"><img src="./assets/brand/nav-contact.svg" alt="Contact" /></a>
 </p>
 
 
@@ -28,7 +28,7 @@
 </p>
 
 
-<a id="featured-systems"></a>\n\n## Featured systems
+<a id="featured-systems"></a>
 
 <p align="center">
   <a href="https://galaxy.adrianguichard.dev/"><img src="./assets/projects/galaxy.svg" alt="Galaxy — real-time 3D solar-system explorer" /></a>
@@ -55,13 +55,9 @@
 </p>
 
 <p align="center">
-  <sub>
-    SOURCE — <a href="https://github.com/Addey34/galaxy-3d">GALAXY</a>
-    &nbsp;&nbsp;·&nbsp;&nbsp;
-    SHOWCASE — <a href="https://github.com/Addey34/ludora-showcase">LUDORA</a>
-    &nbsp;&nbsp;·&nbsp;&nbsp;
-    SOURCE — <a href="https://github.com/Addey34/magnotes-frontend">MAGNOTES</a>
-  </sub>
+  <a href="https://github.com/Addey34/galaxy-3d"><img src="./assets/brand/link-galaxy-source.svg" alt="Galaxy source" /></a>
+  <a href="https://github.com/Addey34/ludora-showcase"><img src="./assets/brand/link-ludora-showcase.svg" alt="Ludora showcase" /></a>
+  <a href="https://github.com/Addey34/magnotes-frontend"><img src="./assets/brand/link-magnotes-source.svg" alt="MagNotes source" /></a>
 </p>
 
 
@@ -103,6 +99,6 @@
 
 <p align="center">
   <a href="https://adrianguichard.dev"><img src="./assets/brand/nav-portfolio.svg" alt="Portfolio" /></a>
-  <a href="https://www.linkedin.com/in/adrianguichard/"><img src="./assets/brand/nav-linkedin.svg" width="24%" alt="LinkedIn" /></a>
-  <a href="mailto:adrian34470@gmail.com"><img src="./assets/brand/nav-contact.svg" width="24%" alt="Contact" /></a>
+  <a href="https://www.linkedin.com/in/adrianguichard/"><img src="./assets/brand/nav-linkedin.svg" alt="LinkedIn" /></a>
+  <a href="mailto:adrian34470@gmail.com"><img src="./assets/brand/nav-contact.svg" alt="Contact" /></a>
 </p>
