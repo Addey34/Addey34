@@ -10,7 +10,7 @@
 <p align="center">
   <a href="#about"><strong>About</strong></a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="#focus"><strong>Focus</strong></a>
+  <a href="#now"><strong>Now</strong></a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="#workflow"><strong>Workflow</strong></a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
@@ -24,6 +24,17 @@
 ## About
 
 I'm **Adrian Guichard**, a self-taught **full-stack JavaScript / TypeScript developer** based in Montpellier, France. I started with frontend and interaction, then kept expanding toward backend, data, testing, security and delivery to better understand the whole product.
+
+<a id="now"></a>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: light) and (max-width: 640px)" srcset="./assets/brand/now-mobile-light.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="./assets/brand/now-light.svg" />
+    <source media="(max-width: 640px)" srcset="./assets/brand/now-mobile.svg" />
+    <img src="./assets/brand/now.svg" alt="Currently refining web products and UX, deepening backend architecture, building with realtime and local AI, and exploring automation and robotics" />
+  </picture>
+</p>
 
 <a id="focus"></a>
 

@@ -5,7 +5,7 @@
   <path d="M72 1 H1128" stroke="#1C2632"/>
 
   <text x="72" y="55" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="720">CURRENT FOCUS</text>
-  <text x="1128" y="52" fill="#7C8591" text-anchor="end" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="1.7">BALANCED ACROSS THE STACK</text>
+  <text x="1128" y="52" fill="#7C8591" text-anchor="end" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="1.7">ACROSS THE STACK</text>
 
   <g transform="translate(72 112)">
     <text x="0" y="0" fill="#D9AE57" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" font-weight="680">Frontend &amp; interaction</text>

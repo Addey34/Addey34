@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="280" viewBox="0 0 640 280" role="img" aria-labelledby="title desc">
+  <title id="title">Currently — mobile</title>
+  <desc id="desc">Mobile current areas: refining web products, deepening backend architecture, realtime and local AI, automation and robotics.</desc>
+  <rect width="640" height="280" fill="#06080D"/>
+  <path d="M44 1 H596" stroke="#1C2632"/>
+  <text x="44" y="50" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="27" font-weight="720">NOW</text>
+  <text x="596" y="48" fill="#7C8591" text-anchor="end" font-family="SFMono-Regular,Consolas,monospace" font-size="9">BUILDING / LEARNING</text>
+
+  <g font-family="Inter,Segoe UI,Arial,sans-serif">
+    <g transform="translate(44 100)">
+      <text x="0" y="0" fill="#F2D58A" font-size="15" font-weight="680">REFINING</text>
+      <text x="0" y="25" fill="#9AA4B0" font-size="13.5">web products &amp; UX</text>
+    </g>
+    <g transform="translate(326 100)">
+      <text x="0" y="0" fill="#65C7FF" font-size="15" font-weight="680">DEEPENING</text>
+      <text x="0" y="25" fill="#9AA4B0" font-size="13.5">backend &amp; architecture</text>
+    </g>
+    <path d="M44 154 H596" stroke="#263140"/>
+    <g transform="translate(44 202)">
+      <text x="0" y="0" fill="#F2D58A" font-size="15" font-weight="680">BUILDING WITH</text>
+      <text x="0" y="25" fill="#9AA4B0" font-size="13.5">realtime &amp; local AI</text>
+    </g>
+    <g transform="translate(326 202)">
+      <text x="0" y="0" fill="#65C7FF" font-size="15" font-weight="680">EXPLORING</text>
+      <text x="0" y="25" fill="#9AA4B0" font-size="13.5">automation &amp; robotics</text>
+    </g>
+  </g>
+</svg>
