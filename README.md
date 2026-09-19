@@ -49,32 +49,15 @@
 
 ---
 
-## ⚙️ Core stack
+## Engineering
 
-**Frontend**  
-`TypeScript` · `JavaScript` · `React` · `Vite` · `Three.js` · `Canvas / WebGL`
+<p align="center">
+  <img src="./assets/system/engineering.svg" alt="Engineering workflow from idea to operation" />
+</p>
 
-**Backend & systems**  
-`Node.js` · `Express` · `FastAPI` · `REST` · `WebSocket` · `Nakama`
-
-**Data & delivery**  
-`MongoDB` · `PostgreSQL` · `Docker` · `Linux` · `GitHub Actions`
-
-**Quality**  
-`pnpm` · `Playwright` · `Vitest / Jest` · `ESLint` · `Prettier` · `Gitleaks`
-
----
-
-## 🧭 Engineering style
-
-I prefer systems that stay understandable as they grow.
-
-- strict typing and explicit architecture;
-- reusable platform layers instead of duplicated feature code;
-- CI gates before merge;
-- security-minded defaults and secret scanning;
-- graceful degradation for optional network features;
-- smoke tests, monitoring and reproducible deployment paths.
+<p align="center">
+  <img src="./assets/system/core-stack.svg" alt="Current core technical stack" />
+</p>
 
 ---
 
