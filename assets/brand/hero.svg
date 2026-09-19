@@ -1,16 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-labelledby="title desc">
   <title id="title">Adrian Guichard — Full-Stack Developer and Product Builder</title>
-  <desc id="desc">Editorial dark profile header using the AG gold monogram and a restrained electric-blue signal line.</desc>
-  <rect width="1200" height="430" rx="24" fill="#06080D"/>
-  <rect x="1" y="1" width="1198" height="428" rx="23" fill="none" stroke="#1D2632"/>
+  <desc id="desc">An editorial black, gold and electric-blue profile header built around the AG monogram and Adrian Guichard's product-engineering practice.</desc>
+  <rect width="1200" height="430" fill="#06080D"/>
+  <path d="M0 1 H1200" stroke="#1B2430"/>
+  <path d="M72 72 V352" stroke="#D9AE57" stroke-width="2"/>
 
-  <path d="M1100 1 H1199 V104 L1179 109 V21 H1100 Z" fill="#0B0F17"/>
-  <path d="M1179 109 L1199 104" stroke="#168CFF" stroke-width="3"/>
+  <text x="96" y="54" fill="#7C8591" font-family="SFMono-Regular,Consolas,monospace" font-size="10.5" letter-spacing="2.6">FULL-STACK / PRODUCTS / INTERACTIVE SYSTEMS</text>
+  <text x="1128" y="54" fill="#D9AE57" text-anchor="end" font-family="SFMono-Regular,Consolas,monospace" font-size="10.5" letter-spacing="2">MONTPELLIER · FRANCE</text>
 
-  <text x="72" y="56" fill="#778290" font-family="SFMono-Regular,Consolas,monospace" font-size="11" letter-spacing="3">AG // SYSTEM PROFILE 01</text>
-  <text x="1128" y="56" fill="#D9AE57" text-anchor="end" font-family="SFMono-Regular,Consolas,monospace" font-size="11" letter-spacing="2.4">MONTPELLIER · FR</text>
-
-  <g transform="translate(70 92) scale(.88)">
+  <g transform="translate(95 90) scale(.78)">
     <g fill="none" stroke="#D9AE57" stroke-linecap="square" stroke-linejoin="miter">
       <path d="M116 40 A52 52 0 1 0 126 102" stroke-width="11"/>
       <path d="M47 119 L79 38 L108 119" stroke-width="11"/>
@@ -18,32 +16,28 @@
     </g>
   </g>
 
-  <text x="258" y="151" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="67" font-weight="760" letter-spacing="-2.3">ADRIAN</text>
-  <text x="258" y="218" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="67" font-weight="760" letter-spacing="-2.3">GUICHARD</text>
+  <text x="245" y="154" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="72" font-weight="760" letter-spacing="-2.8">ADRIAN</text>
+  <text x="245" y="224" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="72" font-weight="760" letter-spacing="-2.8">GUICHARD</text>
 
-  <path d="M260 244 H578" stroke="#D9AE57" stroke-width="2"/>
-  <path d="M578 244 L622 233" stroke="#D9AE57" stroke-width="2"/>
-  <path d="M622 233 H747" stroke="#168CFF" stroke-width="3"/>
-  <circle cx="747" cy="233" r="4" fill="#65C7FF"/>
+  <path d="M247 253 H566" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M566 253 L610 242" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M610 242 H770" stroke="#168CFF" stroke-width="3"/>
+  <circle cx="770" cy="242" r="4" fill="#65C7FF"/>
 
-  <text x="258" y="283" fill="#65C7FF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="680" letter-spacing="2.4">FULL-STACK · PRODUCT BUILDER · INTERACTIVE SYSTEMS</text>
-  <text x="258" y="319" fill="#A5ADB8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18">Architecture, interfaces and systems built all the way to production.</text>
+  <text x="245" y="296" fill="#C4CAD2" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19">I design and build complete products — from architecture to production.</text>
+  <text x="245" y="328" fill="#7F8996" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">Web products · realtime experiences · developer tools · AI systems</text>
 
-  <g transform="translate(890 118)">
-    <path d="M0 0 H238" stroke="#263140"/>
-    <text x="0" y="34" fill="#778290" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="2.5">POSITION</text>
-    <text x="0" y="79" fill="#F2D58A" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="25" font-weight="650">FROM IDEA</text>
-    <text x="0" y="113" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="25" font-weight="650">TO RUNNING</text>
-    <text x="0" y="147" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="25" font-weight="650">SYSTEM.</text>
-    <path d="M0 174 H122" stroke="#D9AE57" stroke-width="2"/>
-    <path d="M122 174 L158 165" stroke="#168CFF" stroke-width="3"/>
-    <text x="0" y="210" fill="#778290" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="1.8">BUILD / SHIP / EVOLVE</text>
+  <g transform="translate(888 108)">
+    <text x="0" y="0" fill="#7C8591" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="2">PRACTICE</text>
+    <text x="0" y="53" fill="#F2D58A" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="31" font-weight="650">FROM IDEA</text>
+    <text x="0" y="93" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="31" font-weight="650">TO RUNNING</text>
+    <text x="0" y="133" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="31" font-weight="650">SYSTEM.</text>
+    <path d="M0 168 H108" stroke="#D9AE57" stroke-width="2"/>
+    <path d="M108 168 L149 158" stroke="#168CFF" stroke-width="3"/>
   </g>
 
-  <path d="M72 380 H422" stroke="#D9AE57" stroke-width="2"/>
-  <path d="M422 380 L466 369" stroke="#D9AE57" stroke-width="2"/>
-  <path d="M466 369 H760" stroke="#168CFF" stroke-width="3"/>
-  <path d="M760 369 H1128" stroke="#263140" stroke-width="1"/>
-  <text x="72" y="405" fill="#778290" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="2">STRUCTURE</text>
-  <text x="480" y="396" fill="#65C7FF" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="2">ACTIVE SIGNAL</text>
+  <path d="M96 382 H446" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M446 382 L491 371" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M491 371 H825" stroke="#168CFF" stroke-width="3"/>
+  <path d="M825 371 H1128" stroke="#283341"/>
 </svg>
