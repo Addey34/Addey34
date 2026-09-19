@@ -12,21 +12,21 @@
     <text x="0" y="0" fill="#D9AE57" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="54" font-weight="300">01</text>
     <text x="90" y="-2" fill="#F2D58A" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" font-weight="720" letter-spacing="1.4">BUILD</text>
     <text x="90" y="34" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17">Web products &amp; SaaS</text>
-    <text x="90" y="64" fill="#8F99A6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13.5">Interfaces, APIs, data and production delivery.</text>
+    <text x="90" y="64" fill="#8F99A6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13.5">Interfaces, APIs, data, production.</text>
   </g>
 
   <g transform="translate(432 142)">
     <text x="0" y="0" fill="#D9AE57" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="54" font-weight="300">02</text>
     <text x="90" y="-2" fill="#F2D58A" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" font-weight="720" letter-spacing="1.4">SIMULATE</text>
     <text x="90" y="34" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17">3D, games &amp; realtime</text>
-    <text x="90" y="64" fill="#8F99A6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13.5">Interactive systems with motion, state and space.</text>
+    <text x="90" y="64" fill="#8F99A6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13.5">Motion, state, space, realtime.</text>
   </g>
 
   <g transform="translate(792 142)">
     <text x="0" y="0" fill="#D9AE57" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="54" font-weight="300">03</text>
     <text x="90" y="-2" fill="#F2D58A" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" font-weight="720" letter-spacing="1.4">AUTOMATE</text>
     <text x="90" y="34" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17">AI, tooling &amp; infrastructure</text>
-    <text x="90" y="64" fill="#8F99A6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13.5">Systems that observe, generate, connect and operate.</text>
+    <text x="90" y="64" fill="#8F99A6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13.5">Observe, generate, connect, operate.</text>
   </g>
 
   <path d="M72 284 H388" stroke="#D9AE57" stroke-width="2"/>
