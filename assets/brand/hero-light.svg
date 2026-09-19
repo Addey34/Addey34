@@ -24,8 +24,8 @@
   <path d="M610 242 H770" stroke="#006BDD" stroke-width="3"/>
   <circle cx="770" cy="242" r="4" fill="#168CFF"/>
 
-  <text x="245" y="296" fill="#343C47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19">I design and build complete products — from architecture to production.</text>
-  <text x="245" y="328" fill="#586170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">Web products · realtime experiences · developer tools · AI systems</text>
+  <text x="245" y="296" fill="#343C47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19">I build web products and interactive systems — learning across the full stack.</text>
+  <text x="245" y="328" fill="#586170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">Frontend · backend · realtime · tooling · 3D</text>
 
   <g transform="translate(888 108)">
     <text x="0" y="0" fill="#66717E" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="2">PRACTICE</text>
