@@ -77,3 +77,17 @@ Preferred permanent close:
 **FROM IDEA TO RUNNING SYSTEM.**
 
 This is a positioning line, not a slogan that must appear in every asset.
+
+
+## Editorial restraint
+
+The profile must not look like a generic cyber-dashboard or AI-generated "premium tech" concept.
+
+- Rounded cards are not the default composition.
+- Repeated micro-labels such as `AG // SYSTEM` are used sparingly, never as filler.
+- Large typography, spacing and alignment carry the identity before decorative graphics.
+- One section may intentionally behave like an instrument panel: GitHub live data.
+- Gold is authored structure; electric blue is the active interruption.
+- Effects are secondary. The system must remain convincing with flat color, no glow and no gradients.
+- Project artwork may be expressive, but the AG frame stays quieter than the product identity.
+- The profile should feel closer to an editorial identity system than a SaaS dashboard.
