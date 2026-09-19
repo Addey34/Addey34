@@ -1,9 +1,12 @@
 <p align="center">
-  <img src="./assets/brand/hero.svg" alt="Adrian Guichard — Full-Stack Developer and Product Builder" />
+  <picture>
+    <source media="(max-width: 640px)" srcset="./assets/brand/hero-mobile.svg" />
+    <img src="./assets/brand/hero.svg" alt="Adrian Guichard — Full-Stack Developer and Product Builder" />
+  </picture>
 </p>
 
 <p align="center">
-  <a href="https://adrianguichard.dev"><img src="./assets/brand/nav-portfolio.svg" width="22%" alt="Portfolio" /></a>
+  <a href="https://adrianguichard.dev"><img src="./assets/brand/nav-portfolio.svg" alt="Portfolio" /></a>
   <a href="#featured-systems"><img src="./assets/brand/nav-projects.svg" width="22%" alt="Projects" /></a>
   <a href="https://www.linkedin.com/in/adrianguichard/"><img src="./assets/brand/nav-linkedin.svg" width="22%" alt="LinkedIn" /></a>
   <a href="mailto:adrian34470@gmail.com"><img src="./assets/brand/nav-contact.svg" width="22%" alt="Contact" /></a>
@@ -11,11 +14,17 @@
 
 
 <p align="center">
-  <img src="./assets/system/what-i-build.svg" alt="What I Build — products, interactive systems and automation" />
+  <picture>
+    <source media="(max-width: 640px)" srcset="./assets/system/what-i-build-mobile.svg" />
+    <img src="./assets/system/what-i-build.svg" alt="What I Build — products, interactive systems and automation" />
+  </picture>
 </p>
 
 <p align="center">
-  <img src="./assets/system/product-ecosystem.svg" alt="AG product ecosystem map" />
+  <picture>
+    <source media="(max-width: 640px)" srcset="./assets/system/product-ecosystem-mobile.svg" />
+    <img src="./assets/system/product-ecosystem.svg" alt="AG product ecosystem map" />
+  </picture>
 </p>
 
 ---
@@ -61,11 +70,17 @@
 ## Engineering
 
 <p align="center">
-  <img src="./assets/system/engineering.svg" alt="Engineering workflow from idea to operation" />
+  <picture>
+    <source media="(max-width: 640px)" srcset="./assets/system/engineering-mobile.svg" />
+    <img src="./assets/system/engineering.svg" alt="Engineering workflow from idea to operation" />
+  </picture>
 </p>
 
 <p align="center">
-  <img src="./assets/system/core-stack.svg" alt="Current core technical stack" />
+  <picture>
+    <source media="(max-width: 640px)" srcset="./assets/system/core-stack-mobile.svg" />
+    <img src="./assets/system/core-stack.svg" alt="Current core technical stack" />
+  </picture>
 </p>
 
 ---
@@ -73,7 +88,10 @@
 ## Public telemetry
 
 <p align="center">
-  <img src="./assets/github/telemetry.svg" alt="AG public GitHub telemetry" />
+  <picture>
+    <source media="(max-width: 640px)" srcset="./assets/github/telemetry-mobile.svg" />
+    <img src="./assets/github/telemetry.svg" alt="AG public GitHub telemetry" />
+  </picture>
 </p>
 
 <p align="center">
@@ -85,11 +103,14 @@
 <a id="contact"></a>
 
 <p align="center">
-  <img src="./assets/brand/footer.svg" alt="From idea to running system — Adrian Guichard" />
+  <picture>
+    <source media="(max-width: 640px)" srcset="./assets/brand/footer-mobile.svg" />
+    <img src="./assets/brand/footer.svg" alt="From idea to running system — Adrian Guichard" />
+  </picture>
 </p>
 
 <p align="center">
-  <a href="https://adrianguichard.dev"><img src="./assets/brand/nav-portfolio.svg" width="24%" alt="Portfolio" /></a>
+  <a href="https://adrianguichard.dev"><img src="./assets/brand/nav-portfolio.svg" alt="Portfolio" /></a>
   <a href="https://www.linkedin.com/in/adrianguichard/"><img src="./assets/brand/nav-linkedin.svg" width="24%" alt="LinkedIn" /></a>
   <a href="mailto:adrian34470@gmail.com"><img src="./assets/brand/nav-contact.svg" width="24%" alt="Contact" /></a>
 </p>
