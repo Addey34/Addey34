@@ -9,6 +9,15 @@
   <a href="mailto:adrian34470@gmail.com"><img src="./assets/brand/nav-contact.svg" width="22%" alt="Contact" /></a>
 </p>
 
+
+<p align="center">
+  <img src="./assets/system/what-i-build.svg" alt="What I Build — products, interactive systems and automation" />
+</p>
+
+<p align="center">
+  <img src="./assets/system/product-ecosystem.svg" alt="AG product ecosystem map" />
+</p>
+
 ---
 
 ## 🚀 Featured builds
