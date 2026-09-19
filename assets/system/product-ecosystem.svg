@@ -1,83 +1,49 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
-  <title id="title">AG System Map</title>
-  <desc id="desc">A visual map connecting Adrian Guichard's six current product systems around the AG identity.</desc>
-  <rect width="1200" height="500" rx="24" fill="#06080D"/>
-  <rect x="1" y="1" width="1198" height="498" rx="23" fill="none" stroke="#1D2632"/>
+  <title id="title">Selected systems</title>
+  <desc id="desc">Six current products connected to a shared AG engineering core.</desc>
+  <rect width="1200" height="500" fill="#06080D"/>
+  <path d="M72 1 H1128" stroke="#1C2632"/>
 
-  <text x="72" y="58" fill="#778290" font-family="SFMono-Regular,Consolas,monospace" font-size="11" letter-spacing="3">AG // SYSTEM MAP</text>
-  <text x="72" y="104" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="700">PRODUCT ECOSYSTEM</text>
-  <text x="72" y="134" fill="#8F99A6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Different products. One engineering core.</text>
+  <text x="72" y="64" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="34" font-weight="720">SELECTED SYSTEMS</text>
+  <text x="1128" y="61" fill="#7C8591" text-anchor="end" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="2">DIFFERENT PRODUCTS / SHARED PRACTICE</text>
+  <path d="M72 90 H276" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M276 90 L316 80" stroke="#168CFF" stroke-width="3"/>
 
-  <!-- central structure -->
-  <circle cx="600" cy="286" r="88" fill="#0B0F17" stroke="#2A3441"/>
-  <circle cx="600" cy="286" r="70" fill="none" stroke="#D9AE57" stroke-opacity=".35"/>
-  <g transform="translate(548 234) scale(.65)">
+  <circle cx="600" cy="282" r="84" fill="#0B0F17" stroke="#303B49"/>
+  <circle cx="600" cy="282" r="64" fill="none" stroke="#D9AE57" stroke-opacity=".42"/>
+  <g transform="translate(552 234) scale(.6)">
     <g fill="none" stroke="#D9AE57" stroke-linecap="square" stroke-linejoin="miter">
       <path d="M116 40 A52 52 0 1 0 126 102" stroke-width="11"/>
       <path d="M47 119 L79 38 L108 119" stroke-width="11"/>
       <path d="M61 88 H126" stroke-width="9"/>
     </g>
   </g>
-  <text x="600" y="392" fill="#778290" text-anchor="middle" font-family="SFMono-Regular,Consolas,monospace" font-size="9" letter-spacing="2">CORE / ARCHITECTURE</text>
 
-  <!-- structural links -->
-  <g fill="none" stroke="#343F4D" stroke-width="1.2">
-    <path d="M530 243 L353 177 L235 177"/>
-    <path d="M670 243 L847 177 L965 177"/>
-    <path d="M510 306 L329 330 L212 330"/>
-    <path d="M690 306 L871 330 L988 330"/>
-    <path d="M550 352 L430 421 L312 421"/>
-    <path d="M650 352 L770 421 L888 421"/>
+  <g fill="none" stroke="#34404E" stroke-width="1.2">
+    <path d="M528 244 L360 176 L232 176"/>
+    <path d="M672 244 L840 176 L968 176"/>
+    <path d="M514 300 L330 314 L212 314"/>
+    <path d="M686 300 L870 314 L988 314"/>
+    <path d="M548 352 L432 414 L318 414"/>
+    <path d="M652 352 L768 414 L882 414"/>
   </g>
-
-  <!-- active signal fragments -->
   <g fill="none" stroke="#168CFF" stroke-width="3">
-    <path d="M433 207 L393 192"/>
-    <path d="M767 207 L807 192"/>
-    <path d="M422 318 L382 323"/>
-    <path d="M778 318 L818 323"/>
-    <path d="M493 385 L464 402"/>
-    <path d="M707 385 L736 402"/>
+    <path d="M433 207 L394 192"/><path d="M767 207 L806 192"/>
+    <path d="M425 307 L385 310"/><path d="M775 307 L815 310"/>
+    <path d="M494 381 L466 396"/><path d="M706 381 L734 396"/>
   </g>
 
-  <!-- nodes -->
   <g font-family="Inter,Segoe UI,Arial,sans-serif">
-    <g transform="translate(72 146)">
-      <circle cx="18" cy="31" r="6" fill="#5EA8FF"/>
-      <text x="40" y="26" fill="#F5F3ED" font-size="18" font-weight="700">GALAXY</text>
-      <text x="40" y="48" fill="#778290" font-family="SFMono-Regular,Consolas,monospace" font-size="9" letter-spacing="1.8">SPACE / 3D / SCIENCE</text>
-    </g>
-
-    <g transform="translate(888 146)">
-      <circle cx="18" cy="31" r="6" fill="#4DD8D0"/>
-      <text x="40" y="26" fill="#F5F3ED" font-size="18" font-weight="700">LUDORA</text>
-      <text x="40" y="48" fill="#778290" font-family="SFMono-Regular,Consolas,monospace" font-size="9" letter-spacing="1.8">GAMES / REALTIME / PLATFORM</text>
-    </g>
-
-    <g transform="translate(72 300)">
-      <circle cx="18" cy="31" r="6" fill="#A78BFA"/>
-      <text x="40" y="26" fill="#F5F3ED" font-size="18" font-weight="700">MAGNOTES</text>
-      <text x="40" y="48" fill="#778290" font-family="SFMono-Regular,Consolas,monospace" font-size="9" letter-spacing="1.8">KNOWLEDGE / WORKSPACE</text>
-    </g>
-
-    <g transform="translate(888 300)">
-      <circle cx="18" cy="31" r="6" fill="#46D39A"/>
-      <text x="40" y="26" fill="#F5F3ED" font-size="18" font-weight="700">SITEGUARDIAN</text>
-      <text x="40" y="48" fill="#778290" font-family="SFMono-Regular,Consolas,monospace" font-size="9" letter-spacing="1.8">MONITORING / RELIABILITY</text>
-    </g>
-
-    <g transform="translate(176 392)">
-      <circle cx="18" cy="31" r="6" fill="#F28BC3"/>
-      <text x="40" y="26" fill="#F5F3ED" font-size="18" font-weight="700">IMAGE GENERATOR</text>
-      <text x="40" y="48" fill="#778290" font-family="SFMono-Regular,Consolas,monospace" font-size="9" letter-spacing="1.8">GEN-AI / LOCAL + HOSTED</text>
-    </g>
-
-    <g transform="translate(784 392)">
-      <circle cx="18" cy="31" r="6" fill="#5BC7FF"/>
-      <text x="40" y="26" fill="#F5F3ED" font-size="18" font-weight="700">DEVISFLOW</text>
-      <text x="40" y="48" fill="#778290" font-family="SFMono-Regular,Consolas,monospace" font-size="9" letter-spacing="1.8">BUSINESS / WORKFLOW</text>
-    </g>
+    <g transform="translate(72 146)"><circle cx="18" cy="31" r="6" fill="#5EA8FF"/><text x="40" y="26" fill="#F5F3ED" font-size="19" font-weight="700">GALAXY</text><text x="40" y="50" fill="#778290" font-family="SFMono-Regular,Consolas,monospace" font-size="9.5">SPACE · 3D · SCIENCE</text></g>
+    <g transform="translate(888 146)"><circle cx="18" cy="31" r="6" fill="#4DD8D0"/><text x="40" y="26" fill="#F5F3ED" font-size="19" font-weight="700">LUDORA</text><text x="40" y="50" fill="#778290" font-family="SFMono-Regular,Consolas,monospace" font-size="9.5">GAMES · REALTIME · PLATFORM</text></g>
+    <g transform="translate(72 284)"><circle cx="18" cy="31" r="6" fill="#A78BFA"/><text x="40" y="26" fill="#F5F3ED" font-size="19" font-weight="700">MAGNOTES</text><text x="40" y="50" fill="#778290" font-family="SFMono-Regular,Consolas,monospace" font-size="9.5">KNOWLEDGE · WORKSPACE</text></g>
+    <g transform="translate(888 284)"><circle cx="18" cy="31" r="6" fill="#46D39A"/><text x="40" y="26" fill="#F5F3ED" font-size="19" font-weight="700">SITEGUARDIAN</text><text x="40" y="50" fill="#778290" font-family="SFMono-Regular,Consolas,monospace" font-size="9.5">MONITORING · RELIABILITY</text></g>
+    <g transform="translate(176 392)"><circle cx="18" cy="31" r="6" fill="#F28BC3"/><text x="40" y="26" fill="#F5F3ED" font-size="19" font-weight="700">IMAGE GENERATOR</text><text x="40" y="50" fill="#778290" font-family="SFMono-Regular,Consolas,monospace" font-size="9.5">GENERATIVE AI · LOCAL FIRST</text></g>
+    <g transform="translate(784 392)"><circle cx="18" cy="31" r="6" fill="#5BC7FF"/><text x="40" y="26" fill="#F5F3ED" font-size="19" font-weight="700">DEVISFLOW</text><text x="40" y="50" fill="#778290" font-family="SFMono-Regular,Consolas,monospace" font-size="9.5">BUSINESS · WORKFLOW</text></g>
   </g>
 
-  <text x="1128" y="468" fill="#596472" text-anchor="end" font-family="SFMono-Regular,Consolas,monospace" font-size="9" letter-spacing="1.8">6 SYSTEMS / 1 CORE</text>
+  <text x="600" y="390" fill="#7C8591" text-anchor="middle" font-family="SFMono-Regular,Consolas,monospace" font-size="9" letter-spacing="1.8">ARCHITECTURE / RELIABILITY / DELIVERY</text>
+  <path d="M72 470 H414" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M414 470 L456 460" stroke="#168CFF" stroke-width="3"/>
+  <path d="M456 460 H1128" stroke="#263140"/>
 </svg>
