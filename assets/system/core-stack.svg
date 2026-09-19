@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-labelledby="title desc">
+  <title id="title">Core technical stack</title>
+  <desc id="desc">A restrained map of the technologies currently used across interface, backend, data and delivery.</desc>
+  <rect width="1200" height="340" rx="24" fill="#06080D"/>
+  <rect x="1" y="1" width="1198" height="338" rx="23" fill="none" stroke="#1D2632"/>
+
+  <text x="72" y="58" fill="#778290" font-family="SFMono-Regular,Consolas,monospace" font-size="11" letter-spacing="3">AG // CURRENT TOOLING</text>
+  <text x="72" y="104" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="700">CORE STACK</text>
+  <text x="72" y="132" fill="#8F99A6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Tools change. Engineering principles stay. These are the tools doing the work now.</text>
+
+  <g transform="translate(72 178)">
+    <text x="0" y="0" fill="#D9AE57" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="2.2">INTERFACE</text>
+    <path d="M0 18 H235" stroke="#263140"/>
+    <text x="0" y="54" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16">TypeScript · React</text>
+    <text x="0" y="82" fill="#A5ADB8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Three.js · Canvas / WebGL · Vite</text>
+  </g>
+
+  <g transform="translate(350 178)">
+    <text x="0" y="0" fill="#65C7FF" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="2.2">BACKEND / REALTIME</text>
+    <path d="M0 18 H235" stroke="#263140"/>
+    <text x="0" y="54" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16">Node.js · Express · FastAPI</text>
+    <text x="0" y="82" fill="#A5ADB8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">REST · WebSocket · Nakama</text>
+  </g>
+
+  <g transform="translate(628 178)">
+    <text x="0" y="0" fill="#D9AE57" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="2.2">DATA</text>
+    <path d="M0 18 H205" stroke="#263140"/>
+    <text x="0" y="54" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16">PostgreSQL · MongoDB</text>
+    <text x="0" y="82" fill="#A5ADB8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Persistence shaped by product needs.</text>
+  </g>
+
+  <g transform="translate(876 178)">
+    <text x="0" y="0" fill="#65C7FF" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="2.2">DELIVERY / QUALITY</text>
+    <path d="M0 18 H252" stroke="#263140"/>
+    <text x="0" y="54" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16">Docker · Linux · GitHub Actions</text>
+    <text x="0" y="82" fill="#A5ADB8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">pnpm · Playwright · Vitest · Gitleaks</text>
+  </g>
+
+  <path d="M72 304 H388" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M388 304 L430 294" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M430 294 H738" stroke="#168CFF" stroke-width="3"/>
+  <path d="M738 294 H1128" stroke="#263140"/>
+</svg>
