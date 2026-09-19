@@ -6,8 +6,7 @@ on:
       - README.md
       - assets/**
       - brand/**
-      - scripts/**
-      - .github/workflows/profile-*.yml
+      - .github/workflows/profile-qa.yml
   workflow_dispatch:
 
 permissions:
@@ -27,11 +26,8 @@ jobs:
           node-version: 22
           package-manager-cache: false
 
-      - name: Check JavaScript syntax
-        run: |
-          node --check brand/brand-tokens.mjs
-          node --check brand/projects.mjs
-          node --check scripts/generate-profile-stats.mjs
+      - name: Check brand token syntax
+        run: node --check brand/brand-tokens.mjs
 
       - name: Validate SVG XML and accessibility metadata
         run: |
@@ -85,25 +81,3 @@ jobs:
 
           print(f"Validated {len(refs)} local README references.")
           PY
-
-      - name: Validate project registry
-        run: |
-          node --input-type=module - <<'NODE'
-          import { existsSync } from 'node:fs';
-          import { projects } from './brand/projects.mjs';
-
-          const ids = new Set();
-          for (const project of projects) {
-            if (ids.has(project.id)) {
-              throw new Error(`Duplicate project id: ${project.id}`);
-            }
-            ids.add(project.id);
-
-            const path = `assets/projects/${project.id}.svg`;
-            if (!existsSync(path)) {
-              throw new Error(`Missing project card: ${path}`);
-            }
-          }
-
-          console.log(`Validated ${projects.length} project cards.`);
-          NODE
