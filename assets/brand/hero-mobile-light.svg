@@ -23,8 +23,8 @@
   <path d="M286 244 L326 234" stroke="#9A6C17" stroke-width="2"/>
   <path d="M326 234 H514" stroke="#006BDD" stroke-width="3"/>
 
-  <text x="68" y="300" fill="#343C47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19">I design and build complete products —</text>
-  <text x="68" y="329" fill="#343C47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19">from architecture to production.</text>
+  <text x="68" y="300" fill="#343C47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19">I build web products and interactive systems —</text>
+  <text x="68" y="329" fill="#343C47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19">learning across the full stack.</text>
 
   <text x="68" y="392" fill="#66717E" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="1.8">PRACTICE</text>
   <text x="68" y="438" fill="#B9821E" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="680">FROM IDEA</text>
@@ -33,5 +33,5 @@
   <path d="M68 523 H286" stroke="#9A6C17" stroke-width="2"/>
   <path d="M286 523 L326 513" stroke="#006BDD" stroke-width="3"/>
   <path d="M326 513 H596" stroke="#CDD2D8"/>
-  <text x="596" y="556" fill="#586170" text-anchor="end" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13">products · realtime · tools · AI</text>
+  <text x="596" y="556" fill="#586170" text-anchor="end" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13">frontend · backend · realtime · tooling</text>
 </svg>
