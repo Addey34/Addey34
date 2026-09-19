@@ -1,30 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="580" height="260" viewBox="0 0 580 260" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
   <title id="title">DEVISFLOW</title>
-  <desc id="desc">Quotes and follow-up without friction. LIVE / MVP.</desc>
-  <rect width="580" height="260" rx="20" fill="#0B0F17"/>
-  <rect x="1" y="1" width="578" height="258" rx="19" fill="none" stroke="#263140"/>
-  <path d="M0 20 Q0 0 20 0 H184" stroke="#D9AE57" stroke-width="2" fill="none"/>
-  <path d="M184 0 H228" stroke="#5BC7FF" stroke-width="3"/>
-  <path d="M552 0 H580 V66 L564 70 V16 H552 Z" fill="#101722"/>
-  <path d="M564 70 L580 66" stroke="#5BC7FF" stroke-width="3"/>
+  <desc id="desc">Quotes and follow-up without friction. LIVE · MVP.</desc>
+  <rect width="1200" height="300" fill="#0B0F17"/>
+  <path d="M0 1 H1200" stroke="#202A36"/>
+  <path d="M0 299 H1200" stroke="#202A36"/>
 
-  <text x="28" y="38" fill="#778290" font-family="SFMono-Regular,Consolas,monospace" font-size="9" letter-spacing="2.2">AG / SYSTEM 06</text>
-  <text x="28" y="83" fill="#5BC7FF" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="2.2">BUSINESS WORKFLOW</text>
-  <text x="28" y="122" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="28" font-weight="760" letter-spacing="-.8">DEVISFLOW</text>
-  <text x="28" y="151" fill="#A5ADB8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14">Quotes and follow-up without friction.</text>
-  <text x="28" y="185" fill="#66717E" font-family="SFMono-Regular,Consolas,monospace" font-size="8.8" letter-spacing="1.05">TYPESCRIPT · VITE · DOMAIN MODULES</text>
+  <text x="70" y="98" fill="#D9AE57" opacity=".58" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="78" font-weight="300">06</text>
+  <text x="186" y="58" fill="#5BC7FF" font-family="SFMono-Regular,Consolas,monospace" font-size="10.5" letter-spacing="2.1">BUSINESS WORKFLOW</text>
+  <text x="186" y="118" fill="#F5F3ED" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="43" font-weight="760" letter-spacing="-1.2">DEVISFLOW</text>
+  <text x="186" y="156" fill="#B3BAC4" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18">Quotes and follow-up without friction.</text>
+  <text x="186" y="203" fill="#687381" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="1.3">TYPESCRIPT · VITE · DOMAIN MODULES</text>
+  <text x="186" y="248" fill="#8E98A5" font-family="SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="1.45">LIVE · MVP</text>
 
-  <path d="M28 211 H178" stroke="#D9AE57" stroke-width="2"/>
-  <path d="M178 211 L209 203" stroke="#5BC7FF" stroke-width="3"/>
-  <text x="28" y="237" fill="#8893A0" font-family="SFMono-Regular,Consolas,monospace" font-size="9" letter-spacing="1.35">LIVE / MVP</text>
+  <path d="M186 270 H430" stroke="#D9AE57" stroke-width="2"/>
+  <path d="M430 270 L472 260" stroke="#5BC7FF" stroke-width="3"/>
+  <path d="M472 260 H754" stroke="#2A3543"/>
 
-  
-    <g transform="translate(408 64)" fill="none">
-      <rect x="6" y="18" width="58" height="78" rx="7" fill="#101722" stroke="#5BC7FF"/>
-      <path d="M20 39 H50 M20 53 H45 M20 67 H53" stroke="#536074"/>
-      <circle cx="91" cy="58" r="6" fill="#5BC7FF" stroke="none"/>
-      <circle cx="140" cy="30" r="6" fill="#93C5FD" stroke="none"/>
-      <circle cx="146" cy="108" r="6" fill="#D9AE57" stroke="none"/>
-      <path d="M64 58 H85 M97 55 L134 33 M97 62 L140 104" stroke="#5BC7FF" stroke-width="2"/>
-    </g>
+  <path d="M803 46 V252" stroke="#263140"/>
+  <g transform="translate(850 60)" fill="none">
+        <rect x="0" y="12" width="102" height="146" rx="10" fill="#101722" stroke="#5BC7FF" stroke-width="2"/>
+        <path d="M24 50 H78 M24 73 H70 M24 96 H84" stroke="#536074" stroke-width="2"/>
+        <circle cx="160" cy="84" r="8" fill="#5BC7FF" stroke="none"/>
+        <circle cx="238" cy="38" r="8" fill="#93C5FD" stroke="none"/>
+        <circle cx="248" cy="164" r="8" fill="#D9AE57" stroke="none"/>
+        <path d="M102 84 H150 M168 80 L230 42 M168 90 L240 158" stroke="#5BC7FF" stroke-width="2.5"/>
+      </g>
 </svg>
