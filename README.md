@@ -27,7 +27,6 @@
   </picture>
 </p>
 
----
 
 <a id="featured-systems"></a>\n\n## Featured systems
 
@@ -57,17 +56,14 @@
 
 <p align="center">
   <sub>
-    <a href="https://github.com/Addey34/galaxy-3d">Galaxy source</a>
-    ·
-    <a href="https://github.com/Addey34/ludora-showcase">Ludora showcase</a>
-    ·
-    <a href="https://github.com/Addey34/magnotes-frontend">MagNotes frontend</a>
+    SOURCE — <a href="https://github.com/Addey34/galaxy-3d">GALAXY</a>
+    &nbsp;&nbsp;·&nbsp;&nbsp;
+    SHOWCASE — <a href="https://github.com/Addey34/ludora-showcase">LUDORA</a>
+    &nbsp;&nbsp;·&nbsp;&nbsp;
+    SOURCE — <a href="https://github.com/Addey34/magnotes-frontend">MAGNOTES</a>
   </sub>
 </p>
 
----
-
-## Engineering
 
 <p align="center">
   <picture>
@@ -83,9 +79,6 @@
   </picture>
 </p>
 
----
-
-## Public telemetry
 
 <p align="center">
   <picture>
@@ -98,7 +91,6 @@
   <sub>Generated from public GitHub data by this repository's own GitHub Actions workflow.</sub>
 </p>
 
----
 
 <a id="contact"></a>
 
