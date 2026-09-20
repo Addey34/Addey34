@@ -27,7 +27,7 @@ The system is built around a continuous **signal spine**.
 - Desktop composition width: 1120px.
 - Mobile composition width: 640px.
 - Hero title: 46px desktop / 37px mobile.
-- Section title: 30px desktop / 26px mobile.
+- Section rail title: 18.5px desktop / 17px mobile.
 - Card title: 17–20px.
 - Supporting text: 12.5–15px.
 - Signal metadata: 10.5–11.5px minimum.
@@ -79,7 +79,11 @@ Reader-facing header mapping:
 - End / Continue — gold.
 - Portfolio, LinkedIn and Email — blue as one outbound-flow family.
 
-Section titles sit directly on the leading Signal rail instead of leaving a detached metadata row above them. Supporting copy stays neutral for readability; accent color is reserved for structure and flow.
+Section titles directly replace the former coordinate labels on the leading Signal rail: y=42 on desktop and y=40 on mobile (End / Continue keeps its terminal rail at y=52 / 50). Their text uses the exact same accent color as the rail, not a brighter decorative variant.
+
+Submodule titles also replace the former coordinate labels and inherit the exact color of their local leader/node. Mobile content uses one continuous section spine and one node/leader per module; overlapping duplicate spine segments are forbidden.
+
+Decorative header microcopy is intentionally removed. Labels such as "SECONDARY · STILL ACTIVE", "EXTERNAL CHANNELS", "CURRENT · CURATED · MODULAR", generic build/learn status strips, and duplicated workflow summaries must not appear in the top-right header area. Supporting product/engineering copy inside the actual modules remains neutral and readable.
 
 
 ## Action semantics

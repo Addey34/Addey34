@@ -243,97 +243,249 @@ jobs:
           PY
 
 
-      - name: Validate semantic accent hierarchy
+      - name: Validate rail-aligned reader hierarchy
         run: |
           python - <<'PY'
           from pathlib import Path
+          import re
           import xml.etree.ElementTree as ET
 
           failures = []
           base = Path("assets/brand/v83/composed")
           actions = Path("assets/brand/v83/actions")
 
-          sections = {
-              "about": ("ABOUT", "gold"),
-              "current": ("CURRENT", "blue"),
-              "workflow": ("WORKFLOW", "blue"),
-              "toolkit": ("TOOLKIT", "gold"),
-              "more": ("MORE / EXPLORATION", "blue"),
-              "contact": ("CONTACT", "blue"),
-              "footer": ("END / CONTINUE", "gold"),
+          colors = {
+              "dark": {"gold": "#D9AE57", "blue": "#168CFF"},
+              "light": {"gold": "#9A6C17", "blue": "#006BDD"},
           }
 
-          dark = {"gold": "#F2D58A", "blue": "#65C7FF"}
-          light = {"gold": "#B9821E", "blue": "#168CFF"}
+          headers = {
+              "about": ("ABOUT", "gold", 42, 40),
+              "current": ("CURRENT", "blue", 42, 40),
+              "workflow": ("WORKFLOW", "blue", 42, 40),
+              "toolkit": ("TOOLKIT", "gold", 42, 40),
+              "more": ("MORE / EXPLORATION", "blue", 42, 40),
+              "contact": ("CONTACT", "blue", 42, 40),
+              "footer": ("END / CONTINUE", "gold", 52, 50),
+          }
 
-          def text_nodes(path):
+          forbidden_header_copy = {
+              "SELF-TAUGHT · FULL-STACK JS / TS",
+              "BUILDING · LEARNING · REFINING",
+              "BUILD · LEARN · REFINE",
+              "IDEA → DESIGN → BUILD → TEST → SECURE → SHIP → IMPROVE",
+              "IDEA → BUILD → SHIP → IMPROVE",
+              "CURRENT · CURATED · MODULAR",
+              "SECONDARY · STILL ACTIVE",
+              "EXTERNAL CHANNELS",
+              "SIGNAL SYSTEM · STILL BUILDING",
+              "STILL BUILDING",
+          }
+
+          desktop_modules = {
+              "about": [
+                  ("ROLE", 110, 135, "gold"),
+                  ("SCOPE", 110, 199, "blue"),
+                  ("PATH", 110, 263, "gold"),
+              ],
+              "current": [
+                  ("FRONTEND & INTERACTION", 110, 143, "gold"),
+                  ("BACKEND & DATA", 616, 143, "blue"),
+                  ("ENGINEERING & DELIVERY", 110, 303, "gold"),
+                  ("REALTIME & EXPLORATION", 616, 303, "blue"),
+              ],
+              "workflow": [
+                  ("IDEA", 80, 122, "gold"),
+                  ("DESIGN", 222, 122, "gold"),
+                  ("BUILD", 364, 122, "blue"),
+                  ("TEST", 506, 122, "blue"),
+                  ("SECURE", 648, 122, "blue"),
+                  ("SHIP", 790, 122, "blue"),
+                  ("IMPROVE", 932, 122, "gold"),
+              ],
+              "toolkit": [
+                  ("FRONTEND", 110, 143, "gold"),
+                  ("BACKEND & REALTIME", 616, 143, "gold"),
+                  ("DATA", 110, 263, "gold"),
+                  ("QUALITY & DELIVERY", 616, 263, "gold"),
+                  ("AI & LOCAL TOOLING", 114, 379, "blue"),
+              ],
+              "more": [
+                  ("WEB", 110, 141, "gold"),
+                  ("CODE QUALITY", 428, 141, "gold"),
+                  ("EXPLORING", 746, 141, "blue"),
+              ],
+          }
+
+          mobile_modules = {
+              "about": [
+                  ("ROLE", 90, 137, 134, "gold"),
+                  ("SCOPE", 90, 221, 218, "blue"),
+                  ("PATH", 90, 305, 302, "gold"),
+              ],
+              "current": [
+                  ("FRONTEND & INTERACTION", 92, 139, 136, "gold"),
+                  ("BACKEND & DATA", 92, 287, 284, "blue"),
+                  ("ENGINEERING & DELIVERY", 92, 435, 432, "gold"),
+                  ("REALTIME & EXPLORATION", 92, 583, 580, "blue"),
+              ],
+              "toolkit": [
+                  ("FRONTEND", 76, 136, 138, "gold"),
+                  ("BACKEND & REALTIME", 76, 238, 240, "gold"),
+                  ("DATA", 76, 340, 342, "gold"),
+                  ("QUALITY & DELIVERY", 76, 442, 444, "gold"),
+                  ("AI & LOCAL TOOLING", 76, 552, 560, "blue"),
+              ],
+              "more": [
+                  ("WEB", 76, 134, 136, "gold"),
+                  ("CODE QUALITY", 76, 228, 230, "gold"),
+                  ("EXPLORING", 76, 312, 314, "blue"),
+              ],
+          }
+
+          def nodes(path):
               root = ET.parse(path).getroot()
-              return [
-                  node for node in root.iter()
-                  if node.tag.endswith("text")
-              ]
+              return list(root.iter())
 
-          for family, (title, accent) in sections.items():
+          def text_node(items, value):
+              return next(
+                  (
+                      node for node in items
+                      if node.tag.endswith("text")
+                      and (node.text or "").strip() == value
+                  ),
+                  None,
+              )
+
+          for family, (title, accent, desktop_y, mobile_y) in headers.items():
               for suffix in [".svg", "-light.svg", "-mobile.svg", "-mobile-light.svg"]:
                   path = base / f"{family}{suffix}"
-                  nodes = text_nodes(path)
-                  node = next(
-                      (n for n in nodes if (n.text or "").strip() == title),
-                      None,
-                  )
+                  items = nodes(path)
+                  node = text_node(items, title)
                   if node is None:
-                      failures.append(f"{path}: missing title {title!r}")
+                      failures.append(f"{path}: missing header {title!r}")
                       continue
 
-                  is_light = "light" in suffix
-                  is_mobile = "mobile" in suffix
-                  expected_fill = (light if is_light else dark)[accent]
-                  expected_y = 60 if family == "footer" and is_mobile else (
-                      62 if family == "footer" else (50 if is_mobile else 52)
-                  )
+                  light = "light" in suffix
+                  mobile = "mobile" in suffix
+                  palette = colors["light" if light else "dark"]
+                  expected_fill = palette[accent]
+                  expected_y = mobile_y if mobile else desktop_y
 
                   if node.attrib.get("fill") != expected_fill:
                       failures.append(
-                          f"{path}: {title!r} must use {accent} accent "
+                          f"{path}: {title!r} must match its rail color "
                           f"{expected_fill}, got {node.attrib.get('fill')}"
                       )
-
-                  try:
-                      actual_y = float(node.attrib["y"])
-                  except (KeyError, ValueError):
-                      failures.append(f"{path}: {title!r} missing numeric y")
-                      continue
-
-                  if actual_y != expected_y:
+                  if float(node.attrib.get("y", "-1")) != expected_y:
                       failures.append(
-                          f"{path}: {title!r} expected y={expected_y}, got {actual_y:g}"
+                          f"{path}: {title!r} must replace the former code at "
+                          f"y={expected_y}"
                       )
 
-          # External actions are all one semantic family: outbound blue flow.
+                  visible = {
+                      (n.text or "").strip()
+                      for n in items
+                      if n.tag.endswith("text")
+                  }
+                  stale = sorted(visible & forbidden_header_copy)
+                  if stale:
+                      failures.append(
+                          f"{path}: redundant header microcopy remains: {stale}"
+                      )
+
+          for family, module_list in desktop_modules.items():
+              for suffix in [".svg", "-light.svg"]:
+                  path = base / f"{family}{suffix}"
+                  items = nodes(path)
+                  palette = colors["light" if "light" in suffix else "dark"]
+                  for title, x, y, accent in module_list:
+                      node = text_node(items, title)
+                      if node is None:
+                          failures.append(f"{path}: missing module title {title!r}")
+                          continue
+                      if float(node.attrib.get("x", "-1")) != x or float(node.attrib.get("y", "-1")) != y:
+                          failures.append(
+                              f"{path}: {title!r} must occupy its former code position "
+                              f"({x}, {y})"
+                          )
+                      if node.attrib.get("fill") != palette[accent]:
+                          failures.append(
+                              f"{path}: {title!r} must match its {accent} leader"
+                          )
+
+          for family, module_list in mobile_modules.items():
+              for suffix in ["-mobile.svg", "-mobile-light.svg"]:
+                  path = base / f"{family}{suffix}"
+                  items = nodes(path)
+                  palette = colors["light" if "light" in suffix else "dark"]
+
+                  # One continuous global spine only; no overlapping second spine.
+                  for node in items:
+                      if not node.tag.endswith("path"):
+                          continue
+                      d = node.attrib.get("d", "")
+                      if re.match(r"^M30 (?!0\b)\d+(?:\.\d+)? V\d+", d):
+                          failures.append(
+                              f"{path}: duplicate mobile spine segment {d!r}"
+                          )
+
+                  for title, x, y, rail_y, accent in module_list:
+                      node = text_node(items, title)
+                      if node is None:
+                          failures.append(f"{path}: missing module title {title!r}")
+                          continue
+                      expected_fill = palette[accent]
+                      if float(node.attrib.get("x", "-1")) != x or float(node.attrib.get("y", "-1")) != y:
+                          failures.append(
+                              f"{path}: {title!r} must occupy its former code position "
+                              f"({x}, {y})"
+                          )
+                      if node.attrib.get("fill") != expected_fill:
+                          failures.append(
+                              f"{path}: {title!r} must match its {accent} leader"
+                          )
+
+                      circle_ok = any(
+                          n.tag.endswith("circle")
+                          and n.attrib.get("cx") == "30"
+                          and float(n.attrib.get("cy", "-1")) == rail_y
+                          and n.attrib.get("fill") == expected_fill
+                          for n in items
+                      )
+                      path_ok = any(
+                          n.tag.endswith("path")
+                          and re.search(rf"\bM30 {rail_y:g} H\d+", n.attrib.get("d", ""))
+                          and n.attrib.get("stroke") == expected_fill
+                          for n in items
+                      )
+                      if not circle_ok or not path_ok:
+                          failures.append(
+                              f"{path}: {title!r} is not connected by one coherent "
+                              f"rail/node at y={rail_y:g}"
+                          )
+
+          # External actions are one outbound blue family.
           for name in ["portfolio", "linkedin", "email"]:
               for suffix, expected_fill in [
                   (".svg", "#168CFF"),
                   ("-light.svg", "#006BDD"),
               ]:
                   path = actions / f"{name}{suffix}"
-                  nodes = text_nodes(path)
-                  node = next(
-                      (n for n in nodes if (n.text or "").strip() == name.upper()),
-                      None,
-                  )
+                  items = nodes(path)
+                  node = text_node(items, name.upper())
                   if node is None:
                       failures.append(f"{path}: missing external action title")
                       continue
                   if node.attrib.get("fill") != expected_fill:
                       failures.append(
-                          f"{path}: external action must use blue {expected_fill}, "
-                          f"got {node.attrib.get('fill')}"
+                          f"{path}: external action must use blue {expected_fill}"
                       )
 
           if failures:
               raise SystemExit("\n".join(failures))
 
-          print("Section titles and outbound actions use semantic Signal accents.")
+          print("Reader-facing titles replace codes and follow coherent Signal rails.")
           PY
 
 
