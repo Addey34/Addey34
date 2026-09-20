@@ -1,43 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="475" viewBox="0 0 1120 475" role="img" aria-labelledby="title desc"><title id="title">Current focus</title><desc id="desc">Compact connected Current section.</desc><rect width="1120" height="475" fill="#F4F1E8"/>
-  <path d="M36 0 V475" stroke="#CDD2D8" stroke-width="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="438" viewBox="0 0 1120 438" role="img" aria-labelledby="title desc"><title id="title">Current focus</title><desc id="desc">Editorial open-frame Current section.</desc><rect width="1120" height="438" fill="#F4F1E8"/>
+  <path d="M36 0 V438" stroke="#CDD2D8" stroke-width="2"/>
   <circle cx="36" cy="40" r="6" fill="#006BDD"/>
   <path d="M36 40 H68" stroke="#006BDD" stroke-width="2"/>
   <text x="80" y="42" fill="#168CFF" font-family="SFMono-Regular,Consolas,monospace" font-size="11.5" font-weight="700" letter-spacing=".9">20</text>
   <text x="80" y="82" fill="#0B0E14" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="32" font-weight="790" >CURRENT</text>
-  <text x="1078" y="80" fill="#586170" font-family="SFMono-Regular,Consolas,monospace" font-size="11.5" font-weight="650" text-anchor="end" letter-spacing=".7">BUILDING · LEARNING · REFINING</text><path d="M560 104 V452" stroke="#CDD2D8" stroke-width="2"/><circle cx="560" cy="104" r="4" fill="#006BDD"/><rect x="72" y="114" width="470" height="156" fill="#FFFFFF" stroke="#CDD2D8"/>
-  <path d="M90 114 V270" stroke="#CDD2D8" stroke-width="1.5"/>
-  <circle cx="90" cy="138" r="5" fill="#9A6C17"/>
-  <path d="M90 138 H116" stroke="#9A6C17" stroke-width="1.5"/>
-  <text x="126" y="141" fill="#B9821E" font-family="SFMono-Regular,Consolas,monospace" font-size="11.5" font-weight="700" letter-spacing=".6">21</text>
-  <text x="106" y="179" fill="#0B0E14" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="745" >FRONTEND &amp; INTERACTION</text>
-  <text x="106" y="215" fill="#343C47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14.5" font-weight="520" >React · TypeScript · Three.js · WebGL</text>
-  <text x="106" y="250" fill="#586170" font-family="SFMono-Regular,Consolas,monospace" font-size="11.5" font-weight="650" letter-spacing=".45">REFINING · WEB PRODUCTS &amp; UX</text>
-  <circle cx="522" cy="134" r="3" fill="#006BDD"/>
-  <path d="M460 134 H512" stroke="#DDE0E3"/><rect x="578" y="114" width="470" height="156" fill="#FFFFFF" stroke="#CDD2D8"/>
-  <path d="M596 114 V270" stroke="#CDD2D8" stroke-width="1.5"/>
-  <circle cx="596" cy="138" r="5" fill="#006BDD"/>
-  <path d="M596 138 H622" stroke="#006BDD" stroke-width="1.5"/>
-  <text x="632" y="141" fill="#168CFF" font-family="SFMono-Regular,Consolas,monospace" font-size="11.5" font-weight="700" letter-spacing=".6">22</text>
-  <text x="612" y="179" fill="#0B0E14" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="745" >BACKEND &amp; DATA</text>
-  <text x="612" y="215" fill="#343C47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14.5" font-weight="520" >Node · Express · FastAPI · PostgreSQL</text>
-  <text x="612" y="250" fill="#586170" font-family="SFMono-Regular,Consolas,monospace" font-size="11.5" font-weight="650" letter-spacing=".45">DEEPENING · ARCHITECTURE &amp; APIS</text>
-  <circle cx="1028" cy="134" r="3" fill="#9A6C17"/>
-  <path d="M966 134 H1018" stroke="#DDE0E3"/><rect x="72" y="294" width="470" height="156" fill="#FFFFFF" stroke="#CDD2D8"/>
-  <path d="M90 294 V450" stroke="#CDD2D8" stroke-width="1.5"/>
-  <circle cx="90" cy="318" r="5" fill="#9A6C17"/>
-  <path d="M90 318 H116" stroke="#9A6C17" stroke-width="1.5"/>
-  <text x="126" y="321" fill="#B9821E" font-family="SFMono-Regular,Consolas,monospace" font-size="11.5" font-weight="700" letter-spacing=".6">23</text>
-  <text x="106" y="359" fill="#0B0E14" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="745" >ENGINEERING &amp; DELIVERY</text>
-  <text x="106" y="395" fill="#343C47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14.5" font-weight="520" >Tests · CI · Docker · Linux · Security</text>
-  <text x="106" y="430" fill="#586170" font-family="SFMono-Regular,Consolas,monospace" font-size="11.5" font-weight="650" letter-spacing=".45">IMPROVING · RELIABILITY &amp; PRODUCTION</text>
-  <circle cx="522" cy="314" r="3" fill="#006BDD"/>
-  <path d="M460 314 H512" stroke="#DDE0E3"/><rect x="578" y="294" width="470" height="156" fill="#FFFFFF" stroke="#CDD2D8"/>
-  <path d="M596 294 V450" stroke="#CDD2D8" stroke-width="1.5"/>
-  <circle cx="596" cy="318" r="5" fill="#006BDD"/>
-  <path d="M596 318 H622" stroke="#006BDD" stroke-width="1.5"/>
-  <text x="632" y="321" fill="#168CFF" font-family="SFMono-Regular,Consolas,monospace" font-size="11.5" font-weight="700" letter-spacing=".6">24</text>
-  <text x="612" y="359" fill="#0B0E14" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="745" >REALTIME &amp; EXPLORATION</text>
-  <text x="612" y="395" fill="#343C47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14.5" font-weight="520" >WebSocket · Nakama · Local AI · Automation</text>
-  <text x="612" y="430" fill="#586170" font-family="SFMono-Regular,Consolas,monospace" font-size="11.5" font-weight="650" letter-spacing=".45">EXPLORING · REALTIME &amp; ROBOTICS</text>
-  <circle cx="1028" cy="314" r="3" fill="#9A6C17"/>
-  <path d="M966 314 H1018" stroke="#DDE0E3"/><circle cx="560" cy="192" r="5" fill="#006BDD"/><path d="M542 192 H578 M542 192 H72" stroke="#CDD2D8" stroke-width="1.5"/><circle cx="560" cy="372" r="5" fill="#9A6C17"/><path d="M542 372 H578 M542 372 H72" stroke="#CDD2D8" stroke-width="1.5"/></svg>
+  <text x="1078" y="80" fill="#586170" font-family="SFMono-Regular,Consolas,monospace" font-size="11.5" font-weight="650" text-anchor="end" letter-spacing=".7">BUILDING · LEARNING · REFINING</text><path d="M560 104 V414" stroke="#CDD2D8" stroke-width="2"/><circle cx="560" cy="104" r="4" fill="#006BDD"/><path d="M72 116 H520 M72 252 H470 M72 116 V252" stroke="#CDD2D8" stroke-width="1.5"/>
+  <circle cx="72" cy="140" r="5" fill="#9A6C17"/>
+  <path d="M72 140 H100" stroke="#9A6C17" stroke-width="1.5"/><text x="110" y="143" fill="#B9821E" font-family="SFMono-Regular,Consolas,monospace" font-size="11.5" font-weight="700" letter-spacing=".55">21</text><text x="90" y="180" fill="#0B0E14" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="745" >FRONTEND &amp; INTERACTION</text><text x="90" y="214" fill="#343C47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14.5" font-weight="520" >React · TypeScript · Three.js · WebGL</text><text x="90" y="238" fill="#586170" font-family="SFMono-Regular,Consolas,monospace" font-size="11.5" font-weight="650" letter-spacing=".4">REFINING · WEB PRODUCTS &amp; UX</text><path d="M578 116 H1026 M578 252 H976 M578 116 V252" stroke="#CDD2D8" stroke-width="1.5"/>
+  <circle cx="578" cy="140" r="5" fill="#006BDD"/>
+  <path d="M578 140 H606" stroke="#006BDD" stroke-width="1.5"/><text x="616" y="143" fill="#168CFF" font-family="SFMono-Regular,Consolas,monospace" font-size="11.5" font-weight="700" letter-spacing=".55">22</text><text x="596" y="180" fill="#0B0E14" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="745" >BACKEND &amp; DATA</text><text x="596" y="214" fill="#343C47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14.5" font-weight="520" >Node · Express · FastAPI · PostgreSQL</text><text x="596" y="238" fill="#586170" font-family="SFMono-Regular,Consolas,monospace" font-size="11.5" font-weight="650" letter-spacing=".4">DEEPENING · ARCHITECTURE &amp; APIS</text><path d="M72 276 H520 M72 412 H470 M72 276 V412" stroke="#CDD2D8" stroke-width="1.5"/>
+  <circle cx="72" cy="300" r="5" fill="#9A6C17"/>
+  <path d="M72 300 H100" stroke="#9A6C17" stroke-width="1.5"/><text x="110" y="303" fill="#B9821E" font-family="SFMono-Regular,Consolas,monospace" font-size="11.5" font-weight="700" letter-spacing=".55">23</text><text x="90" y="340" fill="#0B0E14" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="745" >ENGINEERING &amp; DELIVERY</text><text x="90" y="374" fill="#343C47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14.5" font-weight="520" >Tests · CI · Docker · Linux · Security</text><text x="90" y="398" fill="#586170" font-family="SFMono-Regular,Consolas,monospace" font-size="11.5" font-weight="650" letter-spacing=".4">IMPROVING · RELIABILITY &amp; PRODUCTION</text><path d="M578 276 H1026 M578 412 H976 M578 276 V412" stroke="#CDD2D8" stroke-width="1.5"/>
+  <circle cx="578" cy="300" r="5" fill="#006BDD"/>
+  <path d="M578 300 H606" stroke="#006BDD" stroke-width="1.5"/><text x="616" y="303" fill="#168CFF" font-family="SFMono-Regular,Consolas,monospace" font-size="11.5" font-weight="700" letter-spacing=".55">24</text><text x="596" y="340" fill="#0B0E14" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="745" >REALTIME &amp; EXPLORATION</text><text x="596" y="374" fill="#343C47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14.5" font-weight="520" >WebSocket · Nakama · Local AI · Automation</text><text x="596" y="398" fill="#586170" font-family="SFMono-Regular,Consolas,monospace" font-size="11.5" font-weight="650" letter-spacing=".4">EXPLORING · REALTIME &amp; ROBOTICS</text><circle cx="560" cy="184" r="5" fill="#006BDD"/><path d="M542 184 H578 M542 184 H72" stroke="#CDD2D8" stroke-width="1.5"/><circle cx="560" cy="344" r="5" fill="#9A6C17"/><path d="M542 344 H578 M542 344 H72" stroke="#CDD2D8" stroke-width="1.5"/></svg>
