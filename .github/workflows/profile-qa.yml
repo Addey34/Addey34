@@ -202,8 +202,18 @@ jobs:
           failures = []
           actions = Path("assets/brand/v83/actions")
 
-          internal = ["about", "current", "workflow", "toolkit", "contact"]
-          external = ["portfolio", "linkedin", "email"]
+          internal = {
+              "about": "10",
+              "current": "20",
+              "workflow": "30",
+              "toolkit": "40",
+              "contact": "60",
+          }
+          external = {
+              "portfolio": "61",
+              "linkedin": "62",
+              "email": "63",
+          }
 
           def texts(path):
               root = ET.parse(path).getroot()
@@ -213,19 +223,25 @@ jobs:
                   if node.tag.endswith("text")
               ]
 
-          for name in internal:
+          for name, coord in internal.items():
               for suffix in [".svg", "-light.svg"]:
                   path = actions / f"{name}{suffix}"
                   values = texts(path)
-                  if "↓" not in values or "↗" in values:
-                      failures.append(f"{path}: internal action must use ↓ and not ↗")
+                  signal = f"{coord} ↓"
+                  if signal not in values or any("↗" in value for value in values):
+                      failures.append(
+                          f"{path}: internal action must expose {signal!r} and never ↗"
+                      )
 
-          for name in external:
+          for name, coord in external.items():
               for suffix in [".svg", "-light.svg"]:
                   path = actions / f"{name}{suffix}"
                   values = texts(path)
-                  if "↗" not in values:
-                      failures.append(f"{path}: external action must use ↗")
+                  signal = f"{coord} ↗"
+                  if signal not in values:
+                      failures.append(
+                          f"{path}: external action must expose {signal!r}"
+                      )
 
           readme = Path("README.md").read_text(encoding="utf-8")
           nav_match = re.search(
@@ -242,6 +258,34 @@ jobs:
                       failures.append(f"Primary nav missing internal anchor {anchor}")
               if "https://" in nav or "mailto:" in nav:
                   failures.append("Primary nav must not contain external actions.")
+
+
+          # Contact must flow into the three external actions, then the final footer.
+          contact_pos = readme.find('id="contact"')
+          contact_asset_pos = readme.find("composed/contact.svg")
+          portfolio_pos = readme.find("actions/portfolio.svg")
+          linkedin_pos = readme.find("actions/linkedin.svg")
+          email_pos = readme.find("actions/email.svg")
+          footer_pos = readme.find("composed/footer.svg")
+          positions = [
+              contact_pos,
+              contact_asset_pos,
+              portfolio_pos,
+              linkedin_pos,
+              email_pos,
+              footer_pos,
+          ]
+          if any(pos < 0 for pos in positions) or positions != sorted(positions):
+              failures.append(
+                  "README end sequence must be Contact → 61/62/63 actions → Footer."
+              )
+
+          for name in external:
+              pattern = rf'actions/{name}\.svg" width="150"'
+              if not re.search(pattern, readme):
+                  failures.append(
+                      f"External action {name} must render at the 150px system width."
+                  )
 
           if failures:
               raise SystemExit("\n".join(failures))

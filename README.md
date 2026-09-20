@@ -79,11 +79,11 @@
   </picture>
 </div>
 
-<p align="center">
-  <a href="https://adrianguichard.dev"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/portfolio-light.svg" /><img src="./assets/brand/v83/actions/portfolio.svg" width="170" alt="Portfolio" /></picture></a>
-  <a href="https://www.linkedin.com/in/adrianguichard/"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/linkedin-light.svg" /><img src="./assets/brand/v83/actions/linkedin.svg" width="170" alt="LinkedIn" /></picture></a>
-  <a href="mailto:adrian34470@gmail.com"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/email-light.svg" /><img src="./assets/brand/v83/actions/email.svg" width="170" alt="Email" /></picture></a>
-</p>
+<div align="center">
+  <a href="https://adrianguichard.dev"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/portfolio-light.svg" /><img src="./assets/brand/v83/actions/portfolio.svg" width="150" alt="Portfolio" /></picture></a>
+  <a href="https://www.linkedin.com/in/adrianguichard/"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/linkedin-light.svg" /><img src="./assets/brand/v83/actions/linkedin.svg" width="150" alt="LinkedIn" /></picture></a>
+  <a href="mailto:adrian34470@gmail.com"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/email-light.svg" /><img src="./assets/brand/v83/actions/email.svg" width="150" alt="Email" /></picture></a>
+</div>
 
 <div align="center">
   <picture>
