@@ -113,85 +113,6 @@ jobs:
           PY
 
 
-      - name: Validate Signal coordinate system
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          import re
-          import xml.etree.ElementTree as ET
-
-          expected = {
-              "hero.svg": ["00", "01", "02"],
-              "about.svg": ["10", "11", "12", "13"],
-              "current.svg": ["20", "21", "22", "23", "24"],
-              "workflow.svg": ["30", "31", "32", "33", "34", "35", "36", "37"],
-              "toolkit.svg": ["40", "41", "42", "43", "44", "45"],
-              "more.svg": ["50", "51", "52", "53"],
-              "contact.svg": ["60"],
-              "footer.svg": ["90"],
-          }
-
-          base = Path("assets/brand/v83/composed")
-          failures = []
-
-          for filename, labels in expected.items():
-              path = base / filename
-              root = ET.parse(path).getroot()
-              texts = [
-                  (node.text or "").strip()
-                  for node in root.iter()
-                  if node.tag.endswith("text")
-              ]
-              coords = []
-              for value in texts:
-                  match = re.match(r"^(\d{2})(?:\b|\s|\s*·)", value)
-                  if match:
-                      coords.append(match.group(1))
-              cursor = 0
-              for label in labels:
-                  try:
-                      idx = coords.index(label, cursor)
-                  except ValueError:
-                      failures.append(f"{path}: missing or out-of-order coordinate {label!r}")
-                      break
-                  cursor = idx + 1
-
-          # Mobile must use the same global coordinate family.
-          for filename, labels in expected.items():
-              mobile = filename.replace(".svg", "-mobile.svg")
-              path = base / mobile
-              if not path.exists():
-                  failures.append(f"{path}: missing mobile composition")
-                  continue
-              root = ET.parse(path).getroot()
-              texts = [
-                  (node.text or "").strip()
-                  for node in root.iter()
-                  if node.tag.endswith("text")
-              ]
-              coords = []
-              for value in texts:
-                  match = re.match(r"^(\d{2})(?:\b|\s|\s*·)", value)
-                  if match:
-                      coords.append(match.group(1))
-              # Hero mobile intentionally has no Practice panel.
-              mobile_labels = labels
-              cursor = 0
-              for label in mobile_labels:
-                  try:
-                      idx = coords.index(label, cursor)
-                  except ValueError:
-                      failures.append(f"{path}: missing or out-of-order coordinate {label!r}")
-                      break
-                  cursor = idx + 1
-
-          if failures:
-              raise SystemExit("\n".join(failures))
-
-          print("Signal global coordinate system is coherent across desktop and mobile.")
-          PY
-
-
       - name: Validate action semantics
         run: |
           python - <<'PY'
@@ -201,19 +122,8 @@ jobs:
 
           failures = []
           actions = Path("assets/brand/v83/actions")
-
-          internal = {
-              "about": "10",
-              "current": "20",
-              "workflow": "30",
-              "toolkit": "40",
-              "contact": "60",
-          }
-          external = {
-              "portfolio": "61",
-              "linkedin": "62",
-              "email": "63",
-          }
+          internal = ["about", "current", "workflow", "toolkit", "contact"]
+          external = ["portfolio", "linkedin", "email"]
 
           def texts(path):
               root = ET.parse(path).getroot()
@@ -223,25 +133,35 @@ jobs:
                   if node.tag.endswith("text")
               ]
 
-          for name, coord in internal.items():
+          for name in internal:
               for suffix in [".svg", "-light.svg"]:
                   path = actions / f"{name}{suffix}"
+                  root = ET.parse(path).getroot()
                   values = texts(path)
-                  signal = f"{coord} ↓"
-                  if signal not in values or any("↗" in value for value in values):
-                      failures.append(
-                          f"{path}: internal action must expose {signal!r} and never ↗"
-                      )
+                  desc = next(
+                      ((node.text or "").strip() for node in root.iter()
+                       if node.tag.endswith("desc")),
+                      "",
+                  )
+                  if name.upper() not in values:
+                      failures.append(f"{path}: missing reader-facing title {name.upper()!r}")
+                  if "internal Signal action" not in desc:
+                      failures.append(f"{path}: internal action description is missing")
 
-          for name, coord in external.items():
+          for name in external:
               for suffix in [".svg", "-light.svg"]:
                   path = actions / f"{name}{suffix}"
+                  root = ET.parse(path).getroot()
                   values = texts(path)
-                  signal = f"{coord} ↗"
-                  if signal not in values:
-                      failures.append(
-                          f"{path}: external action must expose {signal!r}"
-                      )
+                  desc = next(
+                      ((node.text or "").strip() for node in root.iter()
+                       if node.tag.endswith("desc")),
+                      "",
+                  )
+                  if name.upper() not in values:
+                      failures.append(f"{path}: missing reader-facing title {name.upper()!r}")
+                  if "external Signal action" not in desc:
+                      failures.append(f"{path}: external action description is missing")
 
           readme = Path("README.md").read_text(encoding="utf-8")
           nav_match = re.search(
@@ -259,8 +179,6 @@ jobs:
               if "https://" in nav or "mailto:" in nav:
                   failures.append("Primary nav must not contain external actions.")
 
-
-          # Contact must flow into the three external actions, then the final footer.
           contact_pos = readme.find('id="contact"')
           contact_asset_pos = readme.find("composed/contact.svg")
           portfolio_pos = readme.find("actions/portfolio.svg")
@@ -277,7 +195,7 @@ jobs:
           ]
           if any(pos < 0 for pos in positions) or positions != sorted(positions):
               failures.append(
-                  "README end sequence must be Contact → 61/62/63 actions → Footer."
+                  "README end sequence must be Contact → external actions → Footer."
               )
 
           for name in external:
@@ -291,6 +209,37 @@ jobs:
               raise SystemExit("\n".join(failures))
 
           print("Internal/external Signal action semantics are coherent.")
+          PY
+
+      - name: Validate reader-facing labels
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          import xml.etree.ElementTree as ET
+
+          failures = []
+          targets = [
+              *sorted(Path("assets/brand/v83/composed").glob("*.svg")),
+              *sorted(Path("assets/brand/v83/actions").glob("*.svg")),
+          ]
+          technical = re.compile(r"^(?:\d{2}(?:\s*[·↓↗].*)?|S\d+)$")
+
+          for path in targets:
+              root = ET.parse(path).getroot()
+              for node in root.iter():
+                  if not node.tag.endswith("text"):
+                      continue
+                  value = (node.text or "").strip()
+                  if technical.match(value):
+                      failures.append(
+                          f"{path}: technical coordinate label {value!r} is reader-facing"
+                      )
+
+          if failures:
+              raise SystemExit("\n".join(failures))
+
+          print("Visible Signal labels are semantic and reader-facing.")
           PY
 
 
