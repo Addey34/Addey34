@@ -338,6 +338,94 @@ jobs:
           print("Editorial Signal sections use open-frame geometry only.")
           PY
 
+
+      - name: Validate open-frame text padding
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          import xml.etree.ElementTree as ET
+
+          failures = []
+          base = Path("assets/brand/v83/composed")
+          targets = [
+              "hero.svg",
+              "hero-mobile.svg",
+              "about.svg",
+              "about-mobile.svg",
+              "current.svg",
+              "current-mobile.svg",
+              "toolkit.svg",
+              "toolkit-mobile.svg",
+              "more.svg",
+              "more-mobile.svg",
+          ]
+
+          frame_re = re.compile(
+              r"M(?P<x>\d+(?:\.\d+)?) "
+              r"(?P<top>\d+(?:\.\d+)?) "
+              r"H(?P<right_top>\d+(?:\.\d+)?) "
+              r"M(?P=x) "
+              r"(?P<bottom>\d+(?:\.\d+)?) "
+              r"H(?P<right_bottom>\d+(?:\.\d+)?) "
+              r"M(?P=x) "
+              r"(?P=top) "
+              r"V(?P=bottom)"
+          )
+
+          for filename in targets:
+              path = base / filename
+              root = ET.parse(path).getroot()
+
+              texts = []
+              for node in root.iter():
+                  if not node.tag.endswith("text"):
+                      continue
+                  try:
+                      x = float(node.attrib["x"])
+                      y = float(node.attrib["y"])
+                  except (KeyError, ValueError):
+                      continue
+                  texts.append((x, y, (node.text or "").strip()))
+
+              frames = []
+              for node in root.iter():
+                  if not node.tag.endswith("path"):
+                      continue
+                  d = node.attrib.get("d", "")
+                  match = frame_re.search(d)
+                  if not match:
+                      continue
+
+                  x = float(match.group("x"))
+                  top = float(match.group("top"))
+                  bottom = float(match.group("bottom"))
+                  right = max(
+                      float(match.group("right_top")),
+                      float(match.group("right_bottom")),
+                  )
+                  frames.append((x, top, right, bottom))
+
+              for left, top, right, bottom in frames:
+                  for x, y, value in texts:
+                      if not (left <= x <= right):
+                          continue
+                      if not (top <= y <= bottom + 16):
+                          continue
+                      margin = bottom - y
+                      if margin < 8:
+                          failures.append(
+                              f"{path}: text {value!r} baseline at y={y:g} "
+                              f"has only {margin:g}px bottom padding inside "
+                              f"frame {top:g}-{bottom:g}"
+                          )
+
+          if failures:
+              raise SystemExit("\n".join(failures))
+
+          print("Open-frame text baselines keep at least 8px bottom padding.")
+          PY
+
       - name: Validate README local assets
         run: |
           python - <<'PY'
