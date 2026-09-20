@@ -30,7 +30,7 @@ The system is built around a continuous **signal spine**.
 - Section rail title: 18.5px desktop / 17px mobile.
 - Card title: 17–20px.
 - Supporting text: 12.5–15px.
-- Signal metadata: 10.5–11.5px minimum.
+- Useful secondary metadata: 12px mobile / 12.5px desktop minimum.
 
 ## Architecture
 
@@ -47,27 +47,33 @@ The README uses composed sections because GitHub does not expose arbitrary CSS l
 
 ## Current visible flow
 
-Hero → Internal navigation → About → Current → Workflow → Toolkit → More / Exploration → Contact → External actions → End / Continue.
+Hero → Internal navigation → About → Current → Workflow → Toolkit → More → Contact → External actions → End / Continue.
 
-## Evolution baseline — V8.16 Foundation
+## Evolution baseline — V8.17 Coherence
 
-This revision is the stable base for future Signal evolution. New visual ideas should extend these rules rather than reintroduce one-off geometry.
+This revision is the current stable base for future Signal evolution. New visual ideas should extend this grammar instead of adding one-off rails, labels or decorative wiring.
 
-- Hero metadata is explicit: **STACK** and **LOCATION** live inside one open-frame metadata module. The AG mark is separated from that data instead of colliding with it.
-- Current uses four equal-length open frames. The center spine is structural only; row junctions use short symmetric ticks instead of long cross-lines through a module.
-- Workflow desktop is a true seven-node rail: the line starts on IDEA and ends on IMPROVE, and every title/subtitle is centered on its node.
-- Workflow mobile is a single vertical timeline. Each node gets one short leader and one two-line text block; no secondary bracket geometry.
+- **Hero** keeps the V8.16 foundation: STACK and LOCATION are explicit metadata modules, while the AG mark remains separate from that data.
+- **About** does not repeat location information already established by Hero.
+- **Current** is four independent open frames. There is no decorative center spine; each module communicates through its own node, leader and frame.
+- **Workflow** is the intentional exception: its rail encodes a real seven-stage sequence, so the shared line has semantic meaning. Secondary verbs remain visible at GitHub scale.
+- **Toolkit** uses the same independent-frame grammar as Current. Its technical lists read as continuous lines instead of artificial left/right fragments. AI & Local Tooling is one wide module with direct copy, not CORE / LOCAL CLI micro-hierarchy.
+- **More** is a simple three-column extension layer. Desktop columns have equal geometry; the section title is not semantically duplicated with EXPLORING.
+- **Contact** is only the branching connector. Portfolio, LinkedIn and Email are named once by the actual action buttons immediately below it.
+- **End / Continue** collects those external channels and closes with the system signature only; decorative AG/year microcopy is omitted.
+- Open frames use a full top rail and a deliberately shorter bottom rail. This asymmetry is part of the Signal grammar, not a per-section improvisation.
 - Dark/light variants share geometry exactly. Mobile is composed intentionally rather than scaled from desktop.
-- Further modules can evolve independently, but should reuse these primitives: spine, node, short leader, open frame, semantic title, neutral supporting copy.
+- Useful secondary information must remain readable after GitHub scaling: 12.5px minimum on desktop and 12px on mobile for status/verb metadata.
 
+Core reusable primitives are: **section spine, semantic node, short leader, open frame, sequence rail when meaningfully justified, semantic title, neutral supporting copy**. A new line or node must communicate a relationship; if it does not, it should not exist.
 
 ## Reader-facing labels
 
 The visible profile uses semantic labels instead of internal coordinate codes.
 
-- Section names are shown directly: About, Current, Workflow, Toolkit, More / Exploration, Contact.
+- Section names are shown directly: About, Current, Workflow, Toolkit, More, Contact.
 - Submodules use their real names directly: Role, Scope, Frontend, Backend & Data, Build, Test, and so on.
-- Contact branches are named Portfolio, LinkedIn and Email.
+- Contact branches terminate in the actual Portfolio, LinkedIn and Email action buttons; the connector does not repeat those names.
 - Internal numbering may exist only as implementation detail; it must not be rendered in the public profile.
 - Technical labels such as `10`, `31`, `61`, `90` or `S1` must never be used as reader-facing copy.
 
@@ -85,7 +91,7 @@ Reader-facing header mapping:
 - Current — blue.
 - Workflow — blue.
 - Toolkit — gold.
-- More / Exploration — blue.
+- More — blue.
 - Contact — blue.
 - End / Continue — gold.
 - Portfolio, LinkedIn and Email — blue as one outbound-flow family.
@@ -112,7 +118,7 @@ The profile closes as one signal sequence:
 
 Contact → Portfolio / LinkedIn / Email → End / Continue.
 
-Contact branches the signal into three named external channels. The footer visually collects those three channels back into one system endpoint. External action buttons use the same 150px rendered width as the primary navigation to preserve rhythm.
+Contact branches the signal directly into the three external action buttons without duplicating their labels. The footer visually collects those channels back into one system endpoint. External action buttons use the same 150px rendered width as the primary navigation to preserve rhythm.
 
 
 ## Editorial open-frame rule
@@ -124,7 +130,7 @@ The primary content sections use open-frame geometry instead of dashboard cards:
 - Current
 - Workflow
 - Toolkit
-- More / Exploration
+- More
 
 These sections may use:
 - the canvas background;

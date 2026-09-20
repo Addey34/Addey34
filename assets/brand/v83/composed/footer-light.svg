@@ -5,4 +5,4 @@
   <circle cx="790" cy="18" r="4" fill="#006BDD"/><circle cx="36" cy="50" r="6" fill="#9A6C17"/>
   <path d="M36 50 H68" stroke="#9A6C17" stroke-width="2"/><text x="80" y="52" fill="#9A6C17" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18.5" font-weight="790" >END / CONTINUE</text><rect x="72" y="108" width="976" height="52" fill="#FFFFFF" stroke="#CDD2D8"/>
   <circle cx="94" cy="134" r="5" fill="#9A6C17"/>
-  <path d="M94 134 H120" stroke="#9A6C17" stroke-width="1.5"/><text x="136" y="141" fill="#0B0E14" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="770" >FROM IDEA TO RUNNING SYSTEM.</text><text x="1018" y="140" fill="#586170" font-family="SFMono-Regular,Consolas,monospace" font-size="11.5" font-weight="650" text-anchor="end" letter-spacing=".6">AG · 2026</text></svg>
+  <path d="M94 134 H120" stroke="#9A6C17" stroke-width="1.5"/><text x="136" y="141" fill="#0B0E14" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="770" >FROM IDEA TO RUNNING SYSTEM.</text></svg>
