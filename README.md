@@ -8,11 +8,11 @@
 </p>
 
 <p align="center">
-  <a href="#about"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/about-light.svg" /><img src="./assets/brand/v83/actions/about.svg" width="170" alt="About" /></picture></a>
-  <a href="#current"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/current-light.svg" /><img src="./assets/brand/v83/actions/current.svg" width="170" alt="Current" /></picture></a>
-  <a href="#workflow"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/workflow-light.svg" /><img src="./assets/brand/v83/actions/workflow.svg" width="170" alt="Workflow" /></picture></a>
-  <a href="#toolkit"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/toolkit-light.svg" /><img src="./assets/brand/v83/actions/toolkit.svg" width="170" alt="Toolkit" /></picture></a>
-  <a href="https://adrianguichard.dev"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/portfolio-light.svg" /><img src="./assets/brand/v83/actions/portfolio.svg" width="170" alt="Portfolio" /></picture></a>
+  <a href="#about"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/about-light.svg" /><img src="./assets/brand/v83/actions/about.svg" width="150" alt="About" /></picture></a>
+  <a href="#current"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/current-light.svg" /><img src="./assets/brand/v83/actions/current.svg" width="150" alt="Current" /></picture></a>
+  <a href="#workflow"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/workflow-light.svg" /><img src="./assets/brand/v83/actions/workflow.svg" width="150" alt="Workflow" /></picture></a>
+  <a href="#toolkit"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/toolkit-light.svg" /><img src="./assets/brand/v83/actions/toolkit.svg" width="150" alt="Toolkit" /></picture></a>
+  <a href="https://adrianguichard.dev"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/portfolio-light.svg" /><img src="./assets/brand/v83/actions/portfolio.svg" width="150" alt="Portfolio" /></picture></a>
 </p>
 
 <a id="about"></a>
