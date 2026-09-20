@@ -1,3 +1,4 @@
+<!-- clean-modular-preview -->
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: light) and (max-width: 640px)" srcset="./assets/brand/v83/composed/hero-mobile-light.svg" />

@@ -113,7 +113,7 @@ jobs:
           PY
 
 
-      - name: Validate action semantics
+      - name: Validate clean modular grammar
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -121,871 +121,139 @@ jobs:
           import xml.etree.ElementTree as ET
 
           failures = []
+          composed = Path("assets/brand/v83/composed")
           actions = Path("assets/brand/v83/actions")
-          internal = ["about", "current", "workflow", "toolkit", "contact"]
-          external = ["portfolio", "linkedin", "email"]
 
-          def texts(path):
-              root = ET.parse(path).getroot()
-              return [
-                  (node.text or "").strip()
-                  for node in root.iter()
-                  if node.tag.endswith("text")
-              ]
+          families = ["hero", "about", "current", "workflow", "toolkit", "more", "contact", "footer"]
+          variants = [".svg", "-light.svg", "-mobile.svg", "-mobile-light.svg"]
+          titles = {
+              "about": "ABOUT",
+              "current": "CURRENT",
+              "workflow": "WORKFLOW",
+              "toolkit": "TOOLKIT",
+              "more": "MORE",
+              "contact": "CONTACT",
+              "footer": "END / CONTINUE",
+          }
+          min_rounded = {
+              "hero": 5,
+              "about": 5,
+              "current": 6,
+              "workflow": 9,
+              "toolkit": 7,
+              "more": 5,
+              "contact": 2,
+              "footer": 3,
+          }
+          forbidden = ("SIGNAL SYSTEM", "V8.", "V9.", "VERSION ", "MODULAR ")
 
-          for name in internal:
+          for family in families:
+              for suffix in variants:
+                  path = composed / f"{family}{suffix}"
+                  root = ET.parse(path).getroot()
+                  mobile = "mobile" in suffix
+                  light = "light" in suffix
+                  width = float(root.attrib.get("width", "0"))
+                  height = float(root.attrib.get("height", "0"))
+                  expected_width = 640 if mobile else 1120
+                  if width != expected_width:
+                      failures.append(f"{path}: expected width {expected_width}, got {width:g}")
+
+                  rail_x = "30" if mobile else "36"
+                  rail = f"M{rail_x} 0 V{height:g}"
+                  if not any(
+                      n.tag.endswith("path") and n.attrib.get("d") == rail
+                      for n in root.iter()
+                  ):
+                      failures.append(f"{path}: missing one continuous left directive rail {rail!r}")
+
+                  rects = [n for n in root.iter() if n.tag.endswith("rect")]
+                  rounded = [
+                      n for n in rects
+                      if float(n.attrib.get("rx", "0") or 0) >= 9
+                  ]
+                  if len(rounded) < min_rounded[family]:
+                      failures.append(
+                          f"{path}: expected at least {min_rounded[family]} rounded title/main/sub-card surfaces, "
+                          f"found {len(rounded)}"
+                      )
+
+                  texts = [
+                      (n.text or "").strip()
+                      for n in root.iter()
+                      if n.tag.endswith("text")
+                  ]
+                  if family in titles and titles[family] not in texts:
+                      failures.append(f"{path}: missing public section title {titles[family]!r}")
+
+                  for value in texts:
+                      upper = value.upper()
+                      if any(marker in upper for marker in forbidden):
+                          failures.append(f"{path}: internal design/version copy leaked publicly: {value!r}")
+
+                  expected_panel = "#EDE7DB" if light else "#0B1118"
+                  expected_card = "#FFFDF8" if light else "#111923"
+                  fills = [n.attrib.get("fill") for n in rects]
+                  if expected_panel not in fills:
+                      failures.append(f"{path}: missing canonical main-card fill {expected_panel}")
+                  if expected_card not in fills:
+                      failures.append(f"{path}: missing canonical sub-card fill {expected_card}")
+
+                  # The new system must not carry legacy ghost/open-frame overlays.
+                  for n in root.iter():
+                      if n.tag.endswith("path") and "opacity" in n.attrib:
+                          failures.append(f"{path}: legacy/decorative path opacity is not allowed")
+
+          action_specs = {
+              "about": ("ABOUT", False),
+              "current": ("CURRENT", False),
+              "workflow": ("WORKFLOW", False),
+              "toolkit": ("TOOLKIT", False),
+              "contact": ("CONTACT", False),
+              "portfolio": ("PORTFOLIO", True),
+              "linkedin": ("LINKEDIN", True),
+              "email": ("EMAIL", True),
+          }
+
+          for name, (label, external) in action_specs.items():
               for suffix in [".svg", "-light.svg"]:
                   path = actions / f"{name}{suffix}"
                   root = ET.parse(path).getroot()
-                  values = texts(path)
-                  desc = next(
-                      ((node.text or "").strip() for node in root.iter()
-                       if node.tag.endswith("desc")),
-                      "",
-                  )
-                  if name.upper() not in values:
-                      failures.append(f"{path}: missing reader-facing title {name.upper()!r}")
-                  if "internal Signal action" not in desc:
-                      failures.append(f"{path}: internal action description is missing")
-
-          for name in external:
-              for suffix in [".svg", "-light.svg"]:
-                  path = actions / f"{name}{suffix}"
-                  root = ET.parse(path).getroot()
-                  values = texts(path)
-                  desc = next(
-                      ((node.text or "").strip() for node in root.iter()
-                       if node.tag.endswith("desc")),
-                      "",
-                  )
-                  if name.upper() not in values:
-                      failures.append(f"{path}: missing reader-facing title {name.upper()!r}")
-                  if "external Signal action" not in desc:
-                      failures.append(f"{path}: external action description is missing")
+                  texts = [
+                      (n.text or "").strip()
+                      for n in root.iter()
+                      if n.tag.endswith("text")
+                  ]
+                  rects = [n for n in root.iter() if n.tag.endswith("rect")]
+                  circles = [n for n in root.iter() if n.tag.endswith("circle")]
+                  if label not in texts:
+                      failures.append(f"{path}: missing action label {label!r}")
+                  if len(rects) != 2:
+                      failures.append(f"{path}: actions should contain only canvas + one button card")
+                  if len(circles) != 1:
+                      failures.append(f"{path}: actions should contain one semantic accent dot")
 
           readme = Path("README.md").read_text(encoding="utf-8")
-          nav_match = re.search(
-              r'<p align="center">\s*(.*?)\s*</p>',
-              readme,
-              re.DOTALL,
-          )
-          if not nav_match:
-              failures.append("Could not find primary navigation block.")
-          else:
-              nav = nav_match.group(1)
-              for anchor in ["#about", "#current", "#workflow", "#toolkit", "#contact"]:
-                  if f'href="{anchor}"' not in nav:
-                      failures.append(f"Primary nav missing internal anchor {anchor}")
-              if "https://" in nav or "mailto:" in nav:
-                  failures.append("Primary nav must not contain external actions.")
-
-          contact_pos = readme.find('id="contact"')
-          contact_asset_pos = readme.find("composed/contact.svg")
-          portfolio_pos = readme.find("actions/portfolio.svg")
-          linkedin_pos = readme.find("actions/linkedin.svg")
-          email_pos = readme.find("actions/email.svg")
-          footer_pos = readme.find("composed/footer.svg")
-          positions = [
-              contact_pos,
-              contact_asset_pos,
-              portfolio_pos,
-              linkedin_pos,
-              email_pos,
-              footer_pos,
+          nav = ["#about", "#current", "#workflow", "#toolkit", "#contact"]
+          for anchor in nav:
+              if f'href="{anchor}"' not in readme:
+                  failures.append(f"README missing internal navigation anchor {anchor}")
+          end_order = [
+              readme.find('id="contact"'),
+              readme.find("actions/portfolio.svg"),
+              readme.find("actions/linkedin.svg"),
+              readme.find("actions/email.svg"),
+              readme.find("composed/footer.svg"),
           ]
-          if any(pos < 0 for pos in positions) or positions != sorted(positions):
-              failures.append(
-                  "README end sequence must be Contact → external actions → Footer."
-              )
-
-          for name in external:
-              pattern = rf'actions/{name}\.svg" width="150"'
-              if not re.search(pattern, readme):
-                  failures.append(
-                      f"External action {name} must render at the 150px system width."
-                  )
+          if any(v < 0 for v in end_order) or end_order != sorted(end_order):
+              failures.append("README end sequence must remain Contact → Portfolio / LinkedIn / Email → Footer")
 
           if failures:
               raise SystemExit("\n".join(failures))
 
-          print("Internal/external Signal action semantics are coherent.")
+          print("Clean modular profile grammar is coherent: rail → title card → main card → semantic sub-cards.")
           PY
 
-      - name: Validate reader-facing labels
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          import re
-          import xml.etree.ElementTree as ET
-
-          failures = []
-          targets = [
-              *sorted(Path("assets/brand/v83/composed").glob("*.svg")),
-              *sorted(Path("assets/brand/v83/actions").glob("*.svg")),
-          ]
-          technical = re.compile(r"^(?:\d{2}(?:\s*[·↓↗].*)?|S\d+)$")
-
-          for path in targets:
-              root = ET.parse(path).getroot()
-              for node in root.iter():
-                  if not node.tag.endswith("text"):
-                      continue
-                  value = (node.text or "").strip()
-                  if technical.match(value):
-                      failures.append(
-                          f"{path}: technical coordinate label {value!r} is reader-facing"
-                      )
-
-          if failures:
-              raise SystemExit("\n".join(failures))
-
-          print("Visible Signal labels are semantic and reader-facing.")
-          PY
-
-
-      - name: Validate rail-aligned reader hierarchy
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          import re
-          import xml.etree.ElementTree as ET
-
-          failures = []
-          base = Path("assets/brand/v83/composed")
-          actions = Path("assets/brand/v83/actions")
-
-          colors = {
-              "dark": {"gold": "#D9AE57", "blue": "#168CFF"},
-              "light": {"gold": "#9A6C17", "blue": "#006BDD"},
-          }
-
-          headers = {
-              "about": ("ABOUT", "gold", 42, 40),
-              "current": ("CURRENT", "blue", 42, 40),
-              "workflow": ("WORKFLOW", "blue", 42, 40),
-              "toolkit": ("TOOLKIT", "gold", 42, 40),
-              "more": ("MORE", "blue", 42, 40),
-              "contact": ("CONTACT", "blue", 42, 40),
-              "footer": ("END / CONTINUE", "gold", 52, 50),
-          }
-
-          forbidden_header_copy = {
-              "SELF-TAUGHT · FULL-STACK JS / TS",
-              "BUILDING · LEARNING · REFINING",
-              "BUILD · LEARN · REFINE",
-              "IDEA → DESIGN → BUILD → TEST → SECURE → SHIP → IMPROVE",
-              "IDEA → BUILD → SHIP → IMPROVE",
-              "CURRENT · CURATED · MODULAR",
-              "SECONDARY · STILL ACTIVE",
-              "EXTERNAL CHANNELS",
-              "SIGNAL SYSTEM · STILL BUILDING",
-              "STILL BUILDING",
-          }
-
-          desktop_modules = {
-              "about": [
-                  ("ROLE", 110, 135, "gold"),
-                  ("SCOPE", 110, 199, "blue"),
-                  ("PATH", 110, 263, "gold"),
-              ],
-              "current": [
-                  ("FRONTEND & INTERACTION", 110, 143, "gold"),
-                  ("BACKEND & DATA", 616, 143, "blue"),
-                  ("ENGINEERING & DELIVERY", 110, 279, "gold"),
-                  ("REALTIME & EXPLORATION", 616, 279, "blue"),
-              ],
-              "workflow": [
-                  ("IDEA", 134, 122, "gold"),
-                  ("DESIGN", 276, 122, "gold"),
-                  ("BUILD", 418, 122, "blue"),
-                  ("TEST", 560, 122, "blue"),
-                  ("SECURE", 702, 122, "blue"),
-                  ("SHIP", 844, 122, "blue"),
-                  ("IMPROVE", 986, 122, "gold"),
-              ],
-              "toolkit": [
-                  ("FRONTEND", 110, 143, "gold"),
-                  ("BACKEND & REALTIME", 616, 143, "gold"),
-                  ("DATA", 110, 263, "gold"),
-                  ("QUALITY & DELIVERY", 616, 263, "gold"),
-                  ("AI & LOCAL TOOLING", 114, 379, "blue"),
-              ],
-              "more": [
-                  ("WEB", 110, 141, "gold"),
-                  ("CODE QUALITY", 428, 141, "gold"),
-                  ("EXPLORING", 746, 141, "blue"),
-              ],
-          }
-
-          mobile_modules = {
-              "about": [
-                  ("ROLE", 90, 137, 134, "gold"),
-                  ("SCOPE", 90, 221, 218, "blue"),
-                  ("PATH", 90, 305, 302, "gold"),
-              ],
-              "current": [
-                  ("FRONTEND & INTERACTION", 92, 139, 136, "gold"),
-                  ("BACKEND & DATA", 92, 269, 266, "blue"),
-                  ("ENGINEERING & DELIVERY", 92, 399, 396, "gold"),
-                  ("REALTIME & EXPLORATION", 92, 529, 526, "blue"),
-              ],
-              "toolkit": [
-                  ("FRONTEND", 76, 136, 138, "gold"),
-                  ("BACKEND & REALTIME", 76, 238, 240, "gold"),
-                  ("DATA", 76, 340, 342, "gold"),
-                  ("QUALITY & DELIVERY", 76, 442, 444, "gold"),
-                  ("AI & LOCAL TOOLING", 76, 552, 560, "blue"),
-              ],
-              "more": [
-                  ("WEB", 76, 134, 136, "gold"),
-                  ("CODE QUALITY", 76, 228, 230, "gold"),
-                  ("EXPLORING", 76, 312, 314, "blue"),
-              ],
-          }
-
-          def nodes(path):
-              root = ET.parse(path).getroot()
-              return list(root.iter())
-
-          def text_node(items, value):
-              return next(
-                  (
-                      node for node in items
-                      if node.tag.endswith("text")
-                      and (node.text or "").strip() == value
-                  ),
-                  None,
-              )
-
-          for family, (title, accent, desktop_y, mobile_y) in headers.items():
-              for suffix in [".svg", "-light.svg", "-mobile.svg", "-mobile-light.svg"]:
-                  path = base / f"{family}{suffix}"
-                  items = nodes(path)
-                  node = text_node(items, title)
-                  if node is None:
-                      failures.append(f"{path}: missing header {title!r}")
-                      continue
-
-                  light = "light" in suffix
-                  mobile = "mobile" in suffix
-                  palette = colors["light" if light else "dark"]
-                  expected_fill = palette[accent]
-                  expected_y = mobile_y if mobile else desktop_y
-
-                  if node.attrib.get("fill") != expected_fill:
-                      failures.append(
-                          f"{path}: {title!r} must match its rail color "
-                          f"{expected_fill}, got {node.attrib.get('fill')}"
-                      )
-                  if float(node.attrib.get("y", "-1")) != expected_y:
-                      failures.append(
-                          f"{path}: {title!r} must replace the former code at "
-                          f"y={expected_y}"
-                      )
-
-                  visible = {
-                      (n.text or "").strip()
-                      for n in items
-                      if n.tag.endswith("text")
-                  }
-                  stale = sorted(visible & forbidden_header_copy)
-                  if stale:
-                      failures.append(
-                          f"{path}: redundant header microcopy remains: {stale}"
-                      )
-
-          for family, module_list in desktop_modules.items():
-              for suffix in [".svg", "-light.svg"]:
-                  path = base / f"{family}{suffix}"
-                  items = nodes(path)
-                  palette = colors["light" if "light" in suffix else "dark"]
-                  for title, x, y, accent in module_list:
-                      node = text_node(items, title)
-                      if node is None:
-                          failures.append(f"{path}: missing module title {title!r}")
-                          continue
-                      if float(node.attrib.get("x", "-1")) != x or float(node.attrib.get("y", "-1")) != y:
-                          failures.append(
-                              f"{path}: {title!r} must occupy its former code position "
-                              f"({x}, {y})"
-                          )
-                      if node.attrib.get("fill") != palette[accent]:
-                          failures.append(
-                              f"{path}: {title!r} must match its {accent} leader"
-                          )
-
-          for family, module_list in mobile_modules.items():
-              for suffix in ["-mobile.svg", "-mobile-light.svg"]:
-                  path = base / f"{family}{suffix}"
-                  items = nodes(path)
-                  palette = colors["light" if "light" in suffix else "dark"]
-
-                  # One continuous global spine only; no overlapping second spine.
-                  for node in items:
-                      if not node.tag.endswith("path"):
-                          continue
-                      d = node.attrib.get("d", "")
-                      if re.match(r"^M30 (?!0\b)\d+(?:\.\d+)? V\d+", d):
-                          failures.append(
-                              f"{path}: duplicate mobile spine segment {d!r}"
-                          )
-
-                  for title, x, y, rail_y, accent in module_list:
-                      node = text_node(items, title)
-                      if node is None:
-                          failures.append(f"{path}: missing module title {title!r}")
-                          continue
-                      expected_fill = palette[accent]
-                      if float(node.attrib.get("x", "-1")) != x or float(node.attrib.get("y", "-1")) != y:
-                          failures.append(
-                              f"{path}: {title!r} must occupy its former code position "
-                              f"({x}, {y})"
-                          )
-                      if node.attrib.get("fill") != expected_fill:
-                          failures.append(
-                              f"{path}: {title!r} must match its {accent} leader"
-                          )
-
-                      circle_ok = any(
-                          n.tag.endswith("circle")
-                          and n.attrib.get("cx") == "30"
-                          and float(n.attrib.get("cy", "-1")) == rail_y
-                          and n.attrib.get("fill") == expected_fill
-                          for n in items
-                      )
-                      path_ok = any(
-                          n.tag.endswith("path")
-                          and re.search(rf"\bM30 {rail_y:g} H\d+", n.attrib.get("d", ""))
-                          and n.attrib.get("stroke") == expected_fill
-                          for n in items
-                      )
-                      if not circle_ok or not path_ok:
-                          failures.append(
-                              f"{path}: {title!r} is not connected by one coherent "
-                              f"rail/node at y={rail_y:g}"
-                          )
-
-          # External actions are one outbound blue family.
-          for name in ["portfolio", "linkedin", "email"]:
-              for suffix, expected_fill in [
-                  (".svg", "#168CFF"),
-                  ("-light.svg", "#006BDD"),
-              ]:
-                  path = actions / f"{name}{suffix}"
-                  items = nodes(path)
-                  node = text_node(items, name.upper())
-                  if node is None:
-                      failures.append(f"{path}: missing external action title")
-                      continue
-                  if node.attrib.get("fill") != expected_fill:
-                      failures.append(
-                          f"{path}: external action must use blue {expected_fill}"
-                      )
-
-          if failures:
-              raise SystemExit("\n".join(failures))
-
-          print("Reader-facing titles replace codes and follow coherent Signal rails.")
-          PY
-
-
-      - name: Validate V8.18 optical polish
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          import xml.etree.ElementTree as ET
-
-          failures = []
-          base = Path("assets/brand/v83/composed")
-
-          def root(path):
-              return ET.parse(path).getroot()
-
-          def text_nodes(svg):
-              return [
-                  node for node in svg.iter()
-                  if node.tag.endswith("text")
-              ]
-
-          def texts(svg):
-              return {
-                  (node.text or "").strip(): node
-                  for node in text_nodes(svg)
-              }
-
-          def paths(svg):
-              return {
-                  node.attrib.get("d", "")
-                  for node in svg.iter()
-                  if node.tag.endswith("path")
-              }
-
-          def require_paths(path, expected):
-              geometry = paths(root(path))
-              missing = sorted(set(expected) - geometry)
-              if missing:
-                  failures.append(f"{path}: missing geometry {missing}")
-              return geometry
-
-          # Hero remains the V8.16 foundation: metadata is structured, not floating.
-          for suffix in [".svg", "-light.svg"]:
-              path = base / f"hero{suffix}"
-              svg = root(path)
-              visible = texts(svg)
-              if "STACK" not in visible or "LOCATION" not in visible:
-                  failures.append(f"{path}: missing STACK / LOCATION metadata modules")
-              require_paths(
-                  path,
-                  ["M80 300 H960 M80 332 H960 M80 300 V332 M600 300 V332"],
-              )
-
-          for suffix in ["-mobile.svg", "-mobile-light.svg"]:
-              path = base / f"hero{suffix}"
-              svg = root(path)
-              visible = texts(svg)
-              if "STACK" not in visible or "LOCATION" not in visible:
-                  failures.append(f"{path}: missing STACK / LOCATION metadata modules")
-              require_paths(
-                  path,
-                  ["M70 352 H586 M70 426 H540 M70 352 V426"],
-              )
-
-          # Current: four independent open frames; no decorative center wiring.
-          for suffix, expected_height in [
-              (".svg", 394),
-              ("-light.svg", 394),
-              ("-mobile.svg", 646),
-              ("-mobile-light.svg", 646),
-          ]:
-              path = base / f"current{suffix}"
-              svg = root(path)
-              if float(svg.attrib.get("height", "0")) != expected_height:
-                  failures.append(
-                      f"{path}: Current optical height must remain {expected_height}px"
-                  )
-
-          current_desktop = [
-              "M72 116 H520 M72 232 H480 M72 116 V232",
-              "M578 116 H1026 M578 232 H986 M578 116 V232",
-              "M72 252 H520 M72 368 H480 M72 252 V368",
-              "M578 252 H1026 M578 368 H986 M578 252 V368",
-          ]
-          current_mobile = [
-              "M54 112 H586 M54 224 H536 M54 112 V224",
-              "M54 242 H586 M54 354 H536 M54 242 V354",
-              "M54 372 H586 M54 484 H536 M54 372 V484",
-              "M54 502 H586 M54 614 H536 M54 502 V614",
-          ]
-          for suffix in [".svg", "-light.svg"]:
-              path = base / f"current{suffix}"
-              geometry = require_paths(path, current_desktop)
-              forbidden = {"M560 116 V412", "M548 184 H572", "M548 344 H572"}
-              stale = sorted(forbidden & geometry)
-              if stale:
-                  failures.append(f"{path}: decorative Current center wiring returned: {stale}")
-
-          for suffix in ["-mobile.svg", "-mobile-light.svg"]:
-              require_paths(base / f"current{suffix}", current_mobile)
-
-          # Workflow stays a true node rail and its secondary verbs must remain readable.
-          stages = [
-              ("IDEA", "CLARIFY", 134),
-              ("DESIGN", "STRUCTURE", 276),
-              ("BUILD", "IMPLEMENT", 418),
-              ("TEST", "VERIFY", 560),
-              ("SECURE", "HARDEN", 702),
-              ("SHIP", "DELIVER", 844),
-              ("IMPROVE", "ITERATE", 986),
-          ]
-          for suffix in [".svg", "-light.svg"]:
-              path = base / f"workflow{suffix}"
-              svg = root(path)
-              visible = texts(svg)
-              geometry = paths(svg)
-              if "M134 150 H986" not in geometry:
-                  failures.append(f"{path}: Workflow rail must run endpoint-to-endpoint")
-              for title, sub, x in stages:
-                  for label in [title, sub]:
-                      node = visible.get(label)
-                      if node is None:
-                          failures.append(f"{path}: missing Workflow label {label!r}")
-                          continue
-                      if float(node.attrib.get("x", "-1")) != x:
-                          failures.append(f"{path}: {label!r} not centered on node x={x}")
-                      if node.attrib.get("text-anchor") != "middle":
-                          failures.append(f"{path}: {label!r} must use text-anchor=middle")
-                  if f"M{x} 134 V166" not in geometry:
-                      failures.append(f"{path}: Workflow tick x={x} drifted")
-
-          mobile_stage_y = [140, 206, 272, 338, 404, 470, 536]
-          for suffix in ["-mobile.svg", "-mobile-light.svg"]:
-              path = base / f"workflow{suffix}"
-              svg = root(path)
-              visible = texts(svg)
-              geometry = paths(svg)
-              for node_y in mobile_stage_y:
-                  if f"M78 {node_y} H110" not in geometry:
-                      failures.append(f"{path}: Workflow leader y={node_y} drifted")
-              if any("M104 " in d and " V" in d for d in geometry):
-                  failures.append(f"{path}: legacy Workflow bracket returned")
-              for title, sub, _ in stages:
-                  title_node = visible.get(title)
-                  sub_node = visible.get(sub)
-                  if title_node is None or sub_node is None:
-                      continue
-                  if title_node.attrib.get("x") != "122" or sub_node.attrib.get("x") != "122":
-                      failures.append(f"{path}: {title}/{sub} must share x=122")
-
-          # Toolkit: same independent-frame grammar as Current; no center wiring.
-          toolkit_desktop = [
-              "M72 116 H520 M72 212 H480 M72 116 V212",
-              "M578 116 H1026 M578 212 H986 M578 116 V212",
-              "M72 236 H520 M72 332 H480 M72 236 V332",
-              "M578 236 H1026 M578 332 H986 M578 236 V332",
-              "M72 352 H1048 M72 438 H1008 M72 352 V438",
-          ]
-          toolkit_mobile = [
-              "M54 112 H586 M54 200 H536 M54 112 V200",
-              "M54 214 H586 M54 302 H536 M54 214 V302",
-              "M54 316 H586 M54 404 H536 M54 316 V404",
-              "M54 418 H586 M54 506 H536 M54 418 V506",
-              "M54 526 H586 M54 634 H536 M54 526 V634",
-          ]
-          for suffix in [".svg", "-light.svg"]:
-              path = base / f"toolkit{suffix}"
-              geometry = require_paths(path, toolkit_desktop)
-              forbidden = {
-                  "M560 104 V438",
-                  "M542 184 H578 M542 184 H72",
-                  "M542 304 H578 M542 304 H72",
-                  "M560 332 V358",
-              }
-              stale = sorted(forbidden & geometry)
-              if stale:
-                  failures.append(f"{path}: decorative Toolkit center wiring returned: {stale}")
-              visible = texts(root(path))
-              if "CORE" in visible or "LOCAL / CLI" in visible:
-                  failures.append(f"{path}: Toolkit reintroduced redundant AI sublabels")
-
-          for suffix in ["-mobile.svg", "-mobile-light.svg"]:
-              path = base / f"toolkit{suffix}"
-              require_paths(path, toolkit_mobile)
-              visible = texts(root(path))
-              if "CORE" in visible or "LOCAL / CLI" in visible:
-                  failures.append(f"{path}: Toolkit reintroduced redundant AI sublabels")
-
-          # More: one semantic title and three equal-width desktop modules.
-          more_desktop = [
-              "M72 112 H372 M72 232 H332 M72 112 V232",
-              "M390 112 H690 M390 232 H650 M390 112 V232",
-              "M708 112 H1008 M708 232 H968 M708 112 V232",
-          ]
-          for suffix in [".svg", "-light.svg"]:
-              path = base / f"more{suffix}"
-              require_paths(path, more_desktop)
-              visible = texts(root(path))
-              if "MORE" not in visible or "MORE / EXPLORATION" in visible:
-                  failures.append(f"{path}: section title must be MORE")
-
-          for suffix in ["-mobile.svg", "-mobile-light.svg"]:
-              path = base / f"more{suffix}"
-              visible = texts(root(path))
-              if "MORE" not in visible or "MORE / EXPLORATION" in visible:
-                  failures.append(f"{path}: section title must be MORE")
-
-          # Contact labels belong to the real action buttons, not the connector SVG.
-          # Branch centers are locked to the centers of the three fixed-width README actions.
-          for suffix in [".svg", "-light.svg", "-mobile.svg", "-mobile-light.svg"]:
-              path = base / f"contact{suffix}"
-              svg = root(path)
-              visible = texts(svg)
-              geometry = paths(svg)
-              mobile = "mobile" in suffix
-              if float(svg.attrib.get("height", "0")) != 120:
-                  failures.append(f"{path}: Contact must stay compact at 120px")
-              duplicate = {"PORTFOLIO", "LINKEDIN", "EMAIL"} & set(visible)
-              if duplicate:
-                  failures.append(f"{path}: duplicate Contact labels remain: {sorted(duplicate)}")
-              expected_branch = (
-                  "M168 90 V120 M320 90 V120 M472 90 V120"
-                  if mobile else
-                  "M356 90 V120 M560 90 V120 M764 90 V120"
-              )
-              if expected_branch not in geometry:
-                  failures.append(
-                      f"{path}: Contact branches are not centered on rendered actions"
-                  )
-
-          # Footer keeps the closing statement, mirrors action centers, and drops decorative author/year microcopy.
-          for suffix in [".svg", "-light.svg", "-mobile.svg", "-mobile-light.svg"]:
-              path = base / f"footer{suffix}"
-              svg = root(path)
-              visible = texts(svg)
-              geometry = paths(svg)
-              mobile = "mobile" in suffix
-              if "FROM IDEA TO RUNNING SYSTEM." not in visible:
-                  failures.append(f"{path}: missing closing signature")
-              if "AG" in visible or "AG · 2026" in visible:
-                  failures.append(f"{path}: redundant AG footer microcopy returned")
-              expected_collect = (
-                  "M168 0 V18 H320 M472 0 V18 H320 V32"
-                  if mobile else
-                  "M356 0 V18 H560 M764 0 V18 H560 V34"
-              )
-              if expected_collect not in geometry:
-                  failures.append(
-                      f"{path}: footer collector is not aligned with rendered actions"
-                  )
-
-          # About does not repeat Hero LOCATION.
-          for suffix in [".svg", "-light.svg", "-mobile.svg", "-mobile-light.svg"]:
-              path = base / f"about{suffix}"
-              visible = texts(root(path))
-              if "MONTPELLIER · FRANCE" in visible or "MONTPELLIER · FR" in visible:
-                  failures.append(f"{path}: duplicate location returned")
-
-          # Useful secondary copy must survive actual GitHub scaling.
-          current_status = {
-              "REFINING · WEB PRODUCTS & UX",
-              "DEEPENING · ARCHITECTURE & APIS",
-              "IMPROVING · RELIABILITY & PRODUCTION",
-              "EXPLORING · REALTIME & ROBOTICS",
-          }
-          workflow_verbs = {
-              "CLARIFY", "STRUCTURE", "IMPLEMENT", "VERIFY",
-              "HARDEN", "DELIVER", "ITERATE",
-          }
-
-          for family, labels, desktop_min, mobile_min in [
-              ("current", current_status, 13.5, 12.5),
-              ("workflow", workflow_verbs, 13.5, 12.5),
-          ]:
-              for suffix in [".svg", "-light.svg", "-mobile.svg", "-mobile-light.svg"]:
-                  path = base / f"{family}{suffix}"
-                  mobile = "mobile" in suffix
-                  minimum = mobile_min if mobile else desktop_min
-                  visible = texts(root(path))
-                  for label in labels:
-                      node = visible.get(label)
-                      if node is None:
-                          failures.append(f"{path}: missing useful secondary label {label!r}")
-                          continue
-                      size = float(node.attrib.get("font-size", "0"))
-                      if size < minimum:
-                          failures.append(
-                              f"{path}: {label!r} font-size {size:g}px below useful "
-                              f"metadata minimum {minimum:g}px"
-                          )
-
-          for family, minimum in [("toolkit", 13.0), ("more", 13.0)]:
-              for suffix in [".svg", "-light.svg", "-mobile.svg", "-mobile-light.svg"]:
-                  path = base / f"{family}{suffix}"
-                  for node in text_nodes(root(path)):
-                      value = (node.text or "").strip()
-                      if not value:
-                          continue
-                      # Section/module headings are already larger; inspect neutral support copy.
-                      fill = node.attrib.get("fill", "")
-                      if fill in {"#D2D8DF", "#343C47"}:
-                          size = float(node.attrib.get("font-size", "0"))
-                          if size < minimum:
-                              failures.append(
-                                  f"{path}: support copy {value!r} is {size:g}px, "
-                                  f"below {minimum:g}px"
-                              )
-
-          if failures:
-              raise SystemExit("\n".join(failures))
-
-          print("V8.18 optical density, action alignment and readability are stable.")
-          PY
-
-
-      - name: Validate editorial open-frame sections
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          import xml.etree.ElementTree as ET
-
-          failures = []
-          base = Path("assets/brand/v83/composed")
-          editorial = [
-              "hero.svg",
-              "about.svg",
-              "current.svg",
-              "workflow.svg",
-              "toolkit.svg",
-              "more.svg",
-              "hero-mobile.svg",
-              "about-mobile.svg",
-              "current-mobile.svg",
-              "workflow-mobile.svg",
-              "toolkit-mobile.svg",
-              "more-mobile.svg",
-          ]
-
-          for filename in editorial:
-              path = base / filename
-              root = ET.parse(path).getroot()
-              rects = [
-                  node for node in root.iter()
-                  if node.tag.endswith("rect")
-              ]
-
-              # Only the full-canvas background rect is allowed.
-              if len(rects) != 1:
-                  failures.append(
-                      f"{path}: editorial sections must contain exactly one rect "
-                      f"(canvas only), found {len(rects)}"
-                  )
-
-          if failures:
-              raise SystemExit("\n".join(failures))
-
-          print("Editorial Signal sections use open-frame geometry only.")
-          PY
-
-
-      - name: Validate open-frame text padding
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          import re
-          import xml.etree.ElementTree as ET
-
-          failures = []
-          base = Path("assets/brand/v83/composed")
-          families = ["hero", "about", "current", "toolkit", "more"]
-          variants = ("", "-light", "-mobile", "-mobile-light")
-          targets = [
-              f"{family}{variant}.svg"
-              for family in families
-              for variant in variants
-          ]
-
-          frame_re = re.compile(
-              r"M(?P<x>\d+(?:\.\d+)?) "
-              r"(?P<top>\d+(?:\.\d+)?) "
-              r"H(?P<right_top>\d+(?:\.\d+)?) "
-              r"M(?P=x) "
-              r"(?P<bottom>\d+(?:\.\d+)?) "
-              r"H(?P<right_bottom>\d+(?:\.\d+)?) "
-              r"M(?P=x) "
-              r"(?P=top) "
-              r"V(?P=bottom)"
-          )
-
-          for filename in targets:
-              path = base / filename
-              root = ET.parse(path).getroot()
-
-              texts = []
-              for node in root.iter():
-                  if not node.tag.endswith("text"):
-                      continue
-                  try:
-                      x = float(node.attrib["x"])
-                      y = float(node.attrib["y"])
-                  except (KeyError, ValueError):
-                      continue
-                  texts.append((x, y, (node.text or "").strip()))
-
-              frames = []
-              for node in root.iter():
-                  if not node.tag.endswith("path"):
-                      continue
-                  d = node.attrib.get("d", "")
-                  match = frame_re.search(d)
-                  if not match:
-                      continue
-
-                  x = float(match.group("x"))
-                  top = float(match.group("top"))
-                  bottom = float(match.group("bottom"))
-                  right = max(
-                      float(match.group("right_top")),
-                      float(match.group("right_bottom")),
-                  )
-                  frames.append((x, top, right, bottom))
-
-              for left, top, right, bottom in frames:
-                  for x, y, value in texts:
-                      if not (left <= x <= right):
-                          continue
-                      if not (top <= y <= bottom + 16):
-                          continue
-                      margin = bottom - y
-                      if margin < 8:
-                          failures.append(
-                              f"{path}: text {value!r} baseline at y={y:g} "
-                              f"has only {margin:g}px bottom padding inside "
-                              f"frame {top:g}-{bottom:g}"
-                          )
-
-          if failures:
-              raise SystemExit("\n".join(failures))
-
-          print("Open-frame text baselines keep at least 8px bottom padding.")
-          PY
-
-      - name: Validate text / connector clearance
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          import re
-          import xml.etree.ElementTree as ET
-
-          failures = []
-          base = Path("assets/brand/v83/composed")
-          targets = sorted(base.glob("*.svg"))
-
-          horizontal_re = re.compile(
-              r"M(?P<x1>\d+(?:\.\d+)?) "
-              r"(?P<y>\d+(?:\.\d+)?) "
-              r"H(?P<x2>\d+(?:\.\d+)?)"
-          )
-
-          for path in targets:
-              root = ET.parse(path).getroot()
-              lines = []
-
-              for node in root.iter():
-                  if not node.tag.endswith("path"):
-                      continue
-                  for match in horizontal_re.finditer(node.attrib.get("d", "")):
-                      x1 = float(match.group("x1"))
-                      x2 = float(match.group("x2"))
-                      y = float(match.group("y"))
-                      lines.append((min(x1, x2), max(x1, x2), y))
-
-              for node in root.iter():
-                  if not node.tag.endswith("text"):
-                      continue
-                  try:
-                      x = float(node.attrib["x"])
-                      baseline = float(node.attrib["y"])
-                      size = float(node.attrib["font-size"])
-                  except (KeyError, ValueError):
-                      continue
-
-                  value = (node.text or "").strip()
-                  glyph_top = baseline - size
-                  glyph_bottom = baseline + 2
-
-                  for left, right, line_y in lines:
-                      if not (left <= x <= right):
-                          continue
-                      if glyph_top <= line_y <= glyph_bottom:
-                          failures.append(
-                              f"{path}: horizontal line y={line_y:g} crosses "
-                              f"text {value!r} at baseline y={baseline:g}"
-                          )
-
-          if failures:
-              raise SystemExit("\n".join(failures))
-
-          print("Horizontal Signal connectors stay clear of text glyph bands.")
-          PY
 
       - name: Validate README local assets
         run: |

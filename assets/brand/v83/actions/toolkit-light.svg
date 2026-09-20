@@ -1,6 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="190" height="64" viewBox="0 0 190 64" role="img" aria-labelledby="title desc"><title id="title">toolkit action</title><desc id="desc">internal Signal action toolkit.</desc><rect width="190" height="64" fill="#F4F1E8"/>
-  <rect x="1" y="1" width="188" height="62" fill="#FFFFFF" stroke="#CDD2D8"/>
-  <path d="M18 1 V63" stroke="#CDD2D8" stroke-width="1.5"/>
-  <circle cx="18" cy="20" r="5" fill="#9A6C17"/>
-  <path d="M18 20 H44" stroke="#9A6C17" stroke-width="1.5"/><text x="54" y="37" fill="#9A6C17" font-family="SFMono-Regular,Consolas,monospace" font-size="13.5" font-weight="700" letter-spacing=".7">TOOLKIT</text><path d="M161 14 V39 M153 31 L161 39 L169 31" fill="none" stroke="#9A6C17" stroke-width="1.5"/>
-    <circle cx="161" cy="14" r="3" fill="#006BDD"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="190" height="64" viewBox="0 0 190 64" role="img" aria-labelledby="title desc"><title id="title">toolkit action</title><desc id="desc">Internal profile action.</desc><rect width="190" height="64" fill="#F4F1E8"/><rect x="1" y="1" width="188" height="62" rx="10" fill="#FFFDF8" stroke="#C5CBD2"/><circle cx="20" cy="32" r="4.5" fill="#9A6C17"/><text x="36" y="37" fill="#9A6C17" font-family="SFMono-Regular,Consolas,monospace" font-size="13.5" font-weight="700" letter-spacing=".6">TOOLKIT</text><path d="M162 17 V40 M154 32 L162 40 L170 32" fill="none" stroke="#9A6C17" stroke-width="1.6"/></svg>

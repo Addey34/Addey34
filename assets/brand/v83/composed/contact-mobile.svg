@@ -1,8 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="640" height="120" viewBox="0 0 640 120" role="img" aria-labelledby="title desc"><title id="title">Contact mobile</title><desc id="desc">Mobile Signal contact branches directly into the external action buttons below.</desc><rect width="640" height="120" fill="#06080D"/>
-  <path d="M30 0 V120" stroke="#273240" stroke-width="2"/>
-  <circle cx="30" cy="38" r="6" fill="#168CFF"/>
-  <path d="M30 38 H62" stroke="#168CFF" stroke-width="2"/><text x="74" y="40" fill="#168CFF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="790" >CONTACT</text><path d="M70 90 H570" stroke="#18212C" stroke-width="1.5"/>
-  <circle cx="168" cy="90" r="5" fill="#168CFF"/>
-  <circle cx="320" cy="90" r="5" fill="#168CFF"/>
-  <circle cx="472" cy="90" r="5" fill="#168CFF"/>
-  <path d="M168 90 V120 M320 90 V120 M472 90 V120" stroke="#273240" stroke-width="1.5"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="170" viewBox="0 0 640 170" role="img" aria-labelledby="title desc"><title id="title">Contact mobile</title><desc id="desc">Mobile contact channels.</desc><rect width="640" height="170" fill="#06080D"/><path d="M30 0 V170" stroke="#273240" stroke-width="2"/><circle cx="30" cy="39" r="6" fill="#168CFF"/><path d="M30 39 H54" stroke="#168CFF" stroke-width="2"/><rect x="54" y="12" width="178" height="54" rx="10" fill="#111923" stroke="#2A3948"/><text x="74" y="46" fill="#168CFF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="790">CONTACT</text><rect x="54" y="84" width="532" height="70" rx="14" fill="#0B1118" stroke="#2A3948"/><path d="M168 118 H472" stroke="#2A3948" stroke-width="2"/><circle cx="168" cy="118" r="6" fill="#168CFF"/><circle cx="320" cy="118" r="6" fill="#168CFF"/><circle cx="472" cy="118" r="6" fill="#168CFF"/><path d="M168 118 V170 M320 118 V170 M472 118 V170" stroke="#2A3948" stroke-width="2"/></svg>
