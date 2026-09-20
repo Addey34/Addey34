@@ -50,31 +50,15 @@ The README uses composed sections because GitHub does not expose arbitrary CSS l
 Hero → Internal navigation → About → Current → Workflow → Toolkit → More / Exploration → Contact → External actions → End / Continue.
 
 
-## Global coordinate system
+## Reader-facing labels
 
-Top-level sections use one stable coordinate grid:
+The visible profile uses semantic labels instead of internal coordinate codes.
 
-- 00 — Profile / Identity
-- 10 — About
-- 20 — Current
-- 30 — Workflow
-- 40 — Toolkit
-- 50 — More / Exploration
-- 60 — Contact
-- 61 — Portfolio
-- 62 — LinkedIn
-- 63 — Email
-- 90 — End / Continue
-
-Submodules inherit the section decade:
-
-- About: 11–13
-- Current: 21–24
-- Workflow: 31–37
-- Toolkit: 41–45
-- More / Exploration: 51–53
-
-This numbering is semantic and follows the visible profile order.
+- Section names are shown directly: About, Current, Workflow, Toolkit, More / Exploration, Contact.
+- Submodules use their real names directly: Role, Scope, Frontend, Backend & Data, Build, Test, and so on.
+- Contact branches are named Portfolio, LinkedIn and Email.
+- Internal numbering may exist only as implementation detail; it must not be rendered in the public profile.
+- Technical labels such as `10`, `31`, `61`, `90` or `S1` must never be used as reader-facing copy.
 
 ## Accent semantics
 
@@ -90,18 +74,17 @@ Top-level section accents follow those semantics rather than alternating for dec
 - Internal navigation actions use a downward signal glyph and remain inside the GitHub profile.
 - External actions use the north-east arrow glyph and leave the profile.
 - Internal navigation contains only profile sections.
-- Portfolio, LinkedIn and Email are grouped only under 60 — Contact and inherit coordinates 61, 62 and 63.
-
-Desktop and mobile hero compositions must expose the same semantic coordinates, including 02 — Practice.
+- Portfolio, LinkedIn and Email are grouped only under Contact.
+- Direction is communicated by the action glyph and geometry, not by numbered labels.
 
 
 ## End-sequence geometry
 
 The profile closes as one signal sequence:
 
-60 Contact → 61 Portfolio / 62 LinkedIn / 63 Email → 90 End / Continue.
+Contact → Portfolio / LinkedIn / Email → End / Continue.
 
-Contact branches the signal into three external channels. The footer visually collects those three channels back into one system endpoint. External action buttons use the same 150px rendered width as the primary navigation to preserve rhythm.
+Contact branches the signal into three named external channels. The footer visually collects those three channels back into one system endpoint. External action buttons use the same 150px rendered width as the primary navigation to preserve rhythm.
 
 
 ## Editorial open-frame rule
