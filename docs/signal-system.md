@@ -49,6 +49,17 @@ The README uses composed sections because GitHub does not expose arbitrary CSS l
 
 Hero → Internal navigation → About → Current → Workflow → Toolkit → More / Exploration → Contact → External actions → End / Continue.
 
+## Evolution baseline — V8.16 Foundation
+
+This revision is the stable base for future Signal evolution. New visual ideas should extend these rules rather than reintroduce one-off geometry.
+
+- Hero metadata is explicit: **STACK** and **LOCATION** live inside one open-frame metadata module. The AG mark is separated from that data instead of colliding with it.
+- Current uses four equal-length open frames. The center spine is structural only; row junctions use short symmetric ticks instead of long cross-lines through a module.
+- Workflow desktop is a true seven-node rail: the line starts on IDEA and ends on IMPROVE, and every title/subtitle is centered on its node.
+- Workflow mobile is a single vertical timeline. Each node gets one short leader and one two-line text block; no secondary bracket geometry.
+- Dark/light variants share geometry exactly. Mobile is composed intentionally rather than scaled from desktop.
+- Further modules can evolve independently, but should reuse these primitives: spine, node, short leader, open frame, semantic title, neutral supporting copy.
+
 
 ## Reader-facing labels
 
