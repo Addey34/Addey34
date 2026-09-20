@@ -3,8 +3,8 @@
   <circle cx="30" cy="38" r="6" fill="#006BDD"/>
   <path d="M30 38 H62" stroke="#006BDD" stroke-width="2"/>
   
-  <text x="74" y="80" fill="#0B0E14" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="28" font-weight="790" >CURRENT</text>
-  <text x="604" y="80" fill="#586170" font-family="SFMono-Regular,Consolas,monospace" font-size="10.5" font-weight="650" text-anchor="end" letter-spacing=".7">BUILD · LEARN · REFINE</text><path d="M30 100 V712" stroke="#CDD2D8" stroke-width="2"/><circle cx="30" cy="176" r="4" fill="#9A6C17"/><path d="M30 176 H54" stroke="#9A6C17" stroke-width="1.5"/><path d="M54 112 H564 M54 242 H514 M54 112 V242" stroke="#CDD2D8" stroke-width="1.5"/>
+  <text x="74" y="50" fill="#168CFF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="26" font-weight="790" >CURRENT</text>
+  <text x="604" y="48" fill="#586170" font-family="SFMono-Regular,Consolas,monospace" font-size="10.5" font-weight="650" text-anchor="end" letter-spacing=".7">BUILD · LEARN · REFINE</text><path d="M30 100 V712" stroke="#CDD2D8" stroke-width="2"/><circle cx="30" cy="176" r="4" fill="#9A6C17"/><path d="M30 176 H54" stroke="#9A6C17" stroke-width="1.5"/><path d="M54 112 H564 M54 242 H514 M54 112 V242" stroke="#CDD2D8" stroke-width="1.5"/>
   <circle cx="54" cy="136" r="4" fill="#9A6C17"/>
   <path d="M54 136 H82" stroke="#9A6C17" stroke-width="1.5"/><text x="72" y="170" fill="#0B0E14" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="745" >FRONTEND &amp; INTERACTION</text><text x="72" y="200" fill="#343C47" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13.5" font-weight="520" >React · TypeScript · Three.js · WebGL</text><text x="72" y="228" fill="#586170" font-family="SFMono-Regular,Consolas,monospace" font-size="10.5" font-weight="650" letter-spacing=".4">REFINING · WEB PRODUCTS &amp; UX</text><circle cx="30" cy="324" r="4" fill="#006BDD"/><path d="M30 324 H54" stroke="#006BDD" stroke-width="1.5"/><path d="M54 260 H564 M54 390 H514 M54 260 V390" stroke="#CDD2D8" stroke-width="1.5"/>
   <circle cx="54" cy="284" r="4" fill="#006BDD"/>

@@ -27,7 +27,7 @@ The system is built around a continuous **signal spine**.
 - Desktop composition width: 1120px.
 - Mobile composition width: 640px.
 - Hero title: 46px desktop / 37px mobile.
-- Section title: 32px desktop / 28px mobile.
+- Section title: 30px desktop / 26px mobile.
 - Card title: 17–20px.
 - Supporting text: 12.5–15px.
 - Signal metadata: 10.5–11.5px minimum.
@@ -67,6 +67,19 @@ The visible profile uses semantic labels instead of internal coordinate codes.
 - Neutral rails: continuity between modules.
 
 Top-level section accents follow those semantics rather than alternating for decoration.
+
+Reader-facing header mapping:
+
+- About — gold.
+- Current — blue.
+- Workflow — blue.
+- Toolkit — gold.
+- More / Exploration — blue.
+- Contact — blue.
+- End / Continue — gold.
+- Portfolio, LinkedIn and Email — blue as one outbound-flow family.
+
+Section titles sit directly on the leading Signal rail instead of leaving a detached metadata row above them. Supporting copy stays neutral for readability; accent color is reserved for structure and flow.
 
 
 ## Action semantics
