@@ -243,6 +243,100 @@ jobs:
           PY
 
 
+      - name: Validate semantic accent hierarchy
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+
+          failures = []
+          base = Path("assets/brand/v83/composed")
+          actions = Path("assets/brand/v83/actions")
+
+          sections = {
+              "about": ("ABOUT", "gold"),
+              "current": ("CURRENT", "blue"),
+              "workflow": ("WORKFLOW", "blue"),
+              "toolkit": ("TOOLKIT", "gold"),
+              "more": ("MORE / EXPLORATION", "blue"),
+              "contact": ("CONTACT", "blue"),
+              "footer": ("END / CONTINUE", "gold"),
+          }
+
+          dark = {"gold": "#F2D58A", "blue": "#65C7FF"}
+          light = {"gold": "#B9821E", "blue": "#168CFF"}
+
+          def text_nodes(path):
+              root = ET.parse(path).getroot()
+              return [
+                  node for node in root.iter()
+                  if node.tag.endswith("text")
+              ]
+
+          for family, (title, accent) in sections.items():
+              for suffix in [".svg", "-light.svg", "-mobile.svg", "-mobile-light.svg"]:
+                  path = base / f"{family}{suffix}"
+                  nodes = text_nodes(path)
+                  node = next(
+                      (n for n in nodes if (n.text or "").strip() == title),
+                      None,
+                  )
+                  if node is None:
+                      failures.append(f"{path}: missing title {title!r}")
+                      continue
+
+                  is_light = "light" in suffix
+                  is_mobile = "mobile" in suffix
+                  expected_fill = (light if is_light else dark)[accent]
+                  expected_y = 60 if family == "footer" and is_mobile else (
+                      62 if family == "footer" else (50 if is_mobile else 52)
+                  )
+
+                  if node.attrib.get("fill") != expected_fill:
+                      failures.append(
+                          f"{path}: {title!r} must use {accent} accent "
+                          f"{expected_fill}, got {node.attrib.get('fill')}"
+                      )
+
+                  try:
+                      actual_y = float(node.attrib["y"])
+                  except (KeyError, ValueError):
+                      failures.append(f"{path}: {title!r} missing numeric y")
+                      continue
+
+                  if actual_y != expected_y:
+                      failures.append(
+                          f"{path}: {title!r} expected y={expected_y}, got {actual_y:g}"
+                      )
+
+          # External actions are all one semantic family: outbound blue flow.
+          for name in ["portfolio", "linkedin", "email"]:
+              for suffix, expected_fill in [
+                  (".svg", "#168CFF"),
+                  ("-light.svg", "#006BDD"),
+              ]:
+                  path = actions / f"{name}{suffix}"
+                  nodes = text_nodes(path)
+                  node = next(
+                      (n for n in nodes if (n.text or "").strip() == name.upper()),
+                      None,
+                  )
+                  if node is None:
+                      failures.append(f"{path}: missing external action title")
+                      continue
+                  if node.attrib.get("fill") != expected_fill:
+                      failures.append(
+                          f"{path}: external action must use blue {expected_fill}, "
+                          f"got {node.attrib.get('fill')}"
+                      )
+
+          if failures:
+              raise SystemExit("\n".join(failures))
+
+          print("Section titles and outbound actions use semantic Signal accents.")
+          PY
+
+
       - name: Validate editorial open-frame sections
         run: |
           python - <<'PY'
