@@ -433,9 +433,9 @@ jobs:
           targets = sorted(base.glob("*.svg"))
 
           horizontal_re = re.compile(
-              r"M(?P<x1>\\d+(?:\\.\\d+)?) "
-              r"(?P<y>\\d+(?:\\.\\d+)?) "
-              r"H(?P<x2>\\d+(?:\\.\\d+)?)"
+              r"M(?P<x1>\d+(?:\.\d+)?) "
+              r"(?P<y>\d+(?:\.\d+)?) "
+              r"H(?P<x2>\d+(?:\.\d+)?)"
           )
 
           for path in targets:
@@ -475,7 +475,7 @@ jobs:
                           )
 
           if failures:
-              raise SystemExit("\\n".join(failures))
+              raise SystemExit("\n".join(failures))
 
           print("Horizontal Signal connectors stay clear of text glyph bands.")
           PY
