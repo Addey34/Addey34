@@ -295,13 +295,13 @@ jobs:
                   ("REALTIME & EXPLORATION", 616, 303, "blue"),
               ],
               "workflow": [
-                  ("IDEA", 80, 122, "gold"),
-                  ("DESIGN", 222, 122, "gold"),
-                  ("BUILD", 364, 122, "blue"),
-                  ("TEST", 506, 122, "blue"),
-                  ("SECURE", 648, 122, "blue"),
-                  ("SHIP", 790, 122, "blue"),
-                  ("IMPROVE", 932, 122, "gold"),
+                  ("IDEA", 134, 122, "gold"),
+                  ("DESIGN", 276, 122, "gold"),
+                  ("BUILD", 418, 122, "blue"),
+                  ("TEST", 560, 122, "blue"),
+                  ("SECURE", 702, 122, "blue"),
+                  ("SHIP", 844, 122, "blue"),
+                  ("IMPROVE", 986, 122, "gold"),
               ],
               "toolkit": [
                   ("FRONTEND", 110, 143, "gold"),
@@ -486,6 +486,144 @@ jobs:
               raise SystemExit("\n".join(failures))
 
           print("Reader-facing titles replace codes and follow coherent Signal rails.")
+          PY
+
+
+      - name: Validate V8.16 foundation geometry
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+
+          failures = []
+          base = Path("assets/brand/v83/composed")
+
+          def root(path):
+              return ET.parse(path).getroot()
+
+          def texts(svg):
+              return {
+                  (node.text or "").strip(): node
+                  for node in svg.iter()
+                  if node.tag.endswith("text")
+              }
+
+          def paths(svg):
+              return {
+                  node.attrib.get("d", "")
+                  for node in svg.iter()
+                  if node.tag.endswith("path")
+              }
+
+          # Hero: profile metadata must live in named modules, never float on a bare rail.
+          for suffix in [".svg", "-light.svg"]:
+              path = base / f"hero{suffix}"
+              svg = root(path)
+              visible = texts(svg)
+              geometry = paths(svg)
+              if "STACK" not in visible or "LOCATION" not in visible:
+                  failures.append(f"{path}: missing STACK / LOCATION metadata modules")
+              expected = "M80 300 H960 M80 332 H960 M80 300 V332 M600 300 V332"
+              if expected not in geometry:
+                  failures.append(f"{path}: desktop Hero metadata frame drifted")
+
+          for suffix in ["-mobile.svg", "-mobile-light.svg"]:
+              path = base / f"hero{suffix}"
+              svg = root(path)
+              visible = texts(svg)
+              geometry = paths(svg)
+              if "STACK" not in visible or "LOCATION" not in visible:
+                  failures.append(f"{path}: missing STACK / LOCATION metadata modules")
+              expected = "M70 352 H586 M70 426 H540 M70 352 V426"
+              if expected not in geometry:
+                  failures.append(f"{path}: mobile Hero metadata frame drifted")
+
+          # Current: equal open-frame lengths and only short center ticks.
+          desktop_frames = {
+              "M72 116 H520 M72 252 H520 M72 116 V252",
+              "M578 116 H1026 M578 252 H1026 M578 116 V252",
+              "M72 276 H520 M72 412 H520 M72 276 V412",
+              "M578 276 H1026 M578 412 H1026 M578 276 V412",
+              "M560 116 V412",
+              "M548 184 H572",
+              "M548 344 H572",
+          }
+          for suffix in [".svg", "-light.svg"]:
+              path = base / f"current{suffix}"
+              geometry = paths(root(path))
+              missing = sorted(desktop_frames - geometry)
+              if missing:
+                  failures.append(f"{path}: Current foundation geometry missing {missing}")
+              if any("M542 184 H578 M542 184 H72" in d or "M542 344 H578 M542 344 H72" in d for d in geometry):
+                  failures.append(f"{path}: legacy long Current cross-connector returned")
+
+          mobile_frames = {
+              "M54 112 H586 M54 242 H586 M54 112 V242",
+              "M54 260 H586 M54 390 H586 M54 260 V390",
+              "M54 408 H586 M54 538 H586 M54 408 V538",
+              "M54 556 H586 M54 686 H586 M54 556 V686",
+          }
+          for suffix in ["-mobile.svg", "-mobile-light.svg"]:
+              path = base / f"current{suffix}"
+              geometry = paths(root(path))
+              missing = sorted(mobile_frames - geometry)
+              if missing:
+                  failures.append(f"{path}: mobile Current frame lengths drifted: {missing}")
+
+          # Workflow: desktop stages are centered exactly on their nodes and rail ends at endpoints.
+          stages = [
+              ("IDEA", "CLARIFY", 134),
+              ("DESIGN", "STRUCTURE", 276),
+              ("BUILD", "IMPLEMENT", 418),
+              ("TEST", "VERIFY", 560),
+              ("SECURE", "HARDEN", 702),
+              ("SHIP", "DELIVER", 844),
+              ("IMPROVE", "ITERATE", 986),
+          ]
+          for suffix in [".svg", "-light.svg"]:
+              path = base / f"workflow{suffix}"
+              svg = root(path)
+              visible = texts(svg)
+              geometry = paths(svg)
+              if "M134 150 H986" not in geometry:
+                  failures.append(f"{path}: Workflow rail must run endpoint-to-endpoint")
+              for title, sub, x in stages:
+                  for label in [title, sub]:
+                      node = visible.get(label)
+                      if node is None:
+                          failures.append(f"{path}: missing Workflow label {label!r}")
+                          continue
+                      if float(node.attrib.get("x", "-1")) != x:
+                          failures.append(f"{path}: {label!r} not centered on node x={x}")
+                      if node.attrib.get("text-anchor") != "middle":
+                          failures.append(f"{path}: {label!r} must use text-anchor=middle")
+                  if f"M{x} 134 V166" not in geometry:
+                      failures.append(f"{path}: Workflow tick x={x} drifted")
+
+          # Mobile Workflow is one simple timeline: node → short leader → two-line copy.
+          mobile_stage_y = [140, 206, 272, 338, 404, 470, 536]
+          for suffix in ["-mobile.svg", "-mobile-light.svg"]:
+              path = base / f"workflow{suffix}"
+              svg = root(path)
+              visible = texts(svg)
+              geometry = paths(svg)
+              for node_y in mobile_stage_y:
+                  if f"M78 {node_y} H110" not in geometry:
+                      failures.append(f"{path}: Workflow leader y={node_y} drifted")
+              if any("M104 " in d and " V" in d for d in geometry):
+                  failures.append(f"{path}: legacy Workflow bracket returned")
+              for title, sub, _ in stages:
+                  title_node = visible.get(title)
+                  sub_node = visible.get(sub)
+                  if title_node is None or sub_node is None:
+                      continue
+                  if title_node.attrib.get("x") != "122" or sub_node.attrib.get("x") != "122":
+                      failures.append(f"{path}: {title}/{sub} must share x=122")
+
+          if failures:
+              raise SystemExit("\n".join(failures))
+
+          print("V8.16 Hero / Current / Workflow foundation geometry is stable.")
           PY
 
 
