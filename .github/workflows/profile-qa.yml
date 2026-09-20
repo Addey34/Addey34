@@ -264,7 +264,7 @@ jobs:
               "current": ("CURRENT", "blue", 42, 40),
               "workflow": ("WORKFLOW", "blue", 42, 40),
               "toolkit": ("TOOLKIT", "gold", 42, 40),
-              "more": ("MORE / EXPLORATION", "blue", 42, 40),
+              "more": ("MORE", "blue", 42, 40),
               "contact": ("CONTACT", "blue", 42, 40),
               "footer": ("END / CONTINUE", "gold", 52, 50),
           }
@@ -489,7 +489,7 @@ jobs:
           PY
 
 
-      - name: Validate V8.16 foundation geometry
+      - name: Validate V8.17 coherence geometry
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -501,11 +501,16 @@ jobs:
           def root(path):
               return ET.parse(path).getroot()
 
+          def text_nodes(svg):
+              return [
+                  node for node in svg.iter()
+                  if node.tag.endswith("text")
+              ]
+
           def texts(svg):
               return {
                   (node.text or "").strip(): node
-                  for node in svg.iter()
-                  if node.tag.endswith("text")
+                  for node in text_nodes(svg)
               }
 
           def paths(svg):
@@ -515,62 +520,61 @@ jobs:
                   if node.tag.endswith("path")
               }
 
-          # Hero: profile metadata must live in named modules, never float on a bare rail.
+          def require_paths(path, expected):
+              geometry = paths(root(path))
+              missing = sorted(set(expected) - geometry)
+              if missing:
+                  failures.append(f"{path}: missing geometry {missing}")
+              return geometry
+
+          # Hero remains the V8.16 foundation: metadata is structured, not floating.
           for suffix in [".svg", "-light.svg"]:
               path = base / f"hero{suffix}"
               svg = root(path)
               visible = texts(svg)
-              geometry = paths(svg)
               if "STACK" not in visible or "LOCATION" not in visible:
                   failures.append(f"{path}: missing STACK / LOCATION metadata modules")
-              expected = "M80 300 H960 M80 332 H960 M80 300 V332 M600 300 V332"
-              if expected not in geometry:
-                  failures.append(f"{path}: desktop Hero metadata frame drifted")
+              require_paths(
+                  path,
+                  ["M80 300 H960 M80 332 H960 M80 300 V332 M600 300 V332"],
+              )
 
           for suffix in ["-mobile.svg", "-mobile-light.svg"]:
               path = base / f"hero{suffix}"
               svg = root(path)
               visible = texts(svg)
-              geometry = paths(svg)
               if "STACK" not in visible or "LOCATION" not in visible:
                   failures.append(f"{path}: missing STACK / LOCATION metadata modules")
-              expected = "M70 352 H586 M70 426 H540 M70 352 V426"
-              if expected not in geometry:
-                  failures.append(f"{path}: mobile Hero metadata frame drifted")
+              require_paths(
+                  path,
+                  ["M70 352 H586 M70 426 H540 M70 352 V426"],
+              )
 
-          # Current: equal open-frame lengths and only short center ticks.
-          desktop_frames = {
-              "M72 116 H520 M72 252 H520 M72 116 V252",
-              "M578 116 H1026 M578 252 H1026 M578 116 V252",
-              "M72 276 H520 M72 412 H520 M72 276 V412",
-              "M578 276 H1026 M578 412 H1026 M578 276 V412",
-              "M560 116 V412",
-              "M548 184 H572",
-              "M548 344 H572",
-          }
+          # Current: four independent open frames; no decorative center wiring.
+          current_desktop = [
+              "M72 116 H520 M72 252 H480 M72 116 V252",
+              "M578 116 H1026 M578 252 H986 M578 116 V252",
+              "M72 276 H520 M72 412 H480 M72 276 V412",
+              "M578 276 H1026 M578 412 H986 M578 276 V412",
+          ]
+          current_mobile = [
+              "M54 112 H586 M54 242 H536 M54 112 V242",
+              "M54 260 H586 M54 390 H536 M54 260 V390",
+              "M54 408 H586 M54 538 H536 M54 408 V538",
+              "M54 556 H586 M54 686 H536 M54 556 V686",
+          ]
           for suffix in [".svg", "-light.svg"]:
               path = base / f"current{suffix}"
-              geometry = paths(root(path))
-              missing = sorted(desktop_frames - geometry)
-              if missing:
-                  failures.append(f"{path}: Current foundation geometry missing {missing}")
-              if any("M542 184 H578 M542 184 H72" in d or "M542 344 H578 M542 344 H72" in d for d in geometry):
-                  failures.append(f"{path}: legacy long Current cross-connector returned")
+              geometry = require_paths(path, current_desktop)
+              forbidden = {"M560 116 V412", "M548 184 H572", "M548 344 H572"}
+              stale = sorted(forbidden & geometry)
+              if stale:
+                  failures.append(f"{path}: decorative Current center wiring returned: {stale}")
 
-          mobile_frames = {
-              "M54 112 H586 M54 242 H586 M54 112 V242",
-              "M54 260 H586 M54 390 H586 M54 260 V390",
-              "M54 408 H586 M54 538 H586 M54 408 V538",
-              "M54 556 H586 M54 686 H586 M54 556 V686",
-          }
           for suffix in ["-mobile.svg", "-mobile-light.svg"]:
-              path = base / f"current{suffix}"
-              geometry = paths(root(path))
-              missing = sorted(mobile_frames - geometry)
-              if missing:
-                  failures.append(f"{path}: mobile Current frame lengths drifted: {missing}")
+              require_paths(base / f"current{suffix}", current_mobile)
 
-          # Workflow: desktop stages are centered exactly on their nodes and rail ends at endpoints.
+          # Workflow stays a true node rail and its secondary verbs must remain readable.
           stages = [
               ("IDEA", "CLARIFY", 134),
               ("DESIGN", "STRUCTURE", 276),
@@ -600,7 +604,6 @@ jobs:
                   if f"M{x} 134 V166" not in geometry:
                       failures.append(f"{path}: Workflow tick x={x} drifted")
 
-          # Mobile Workflow is one simple timeline: node → short leader → two-line copy.
           mobile_stage_y = [140, 206, 272, 338, 404, 470, 536]
           for suffix in ["-mobile.svg", "-mobile-light.svg"]:
               path = base / f"workflow{suffix}"
@@ -620,10 +623,144 @@ jobs:
                   if title_node.attrib.get("x") != "122" or sub_node.attrib.get("x") != "122":
                       failures.append(f"{path}: {title}/{sub} must share x=122")
 
+          # Toolkit: same independent-frame grammar as Current; no center wiring.
+          toolkit_desktop = [
+              "M72 116 H520 M72 212 H480 M72 116 V212",
+              "M578 116 H1026 M578 212 H986 M578 116 V212",
+              "M72 236 H520 M72 332 H480 M72 236 V332",
+              "M578 236 H1026 M578 332 H986 M578 236 V332",
+              "M72 352 H1048 M72 438 H1008 M72 352 V438",
+          ]
+          toolkit_mobile = [
+              "M54 112 H586 M54 200 H536 M54 112 V200",
+              "M54 214 H586 M54 302 H536 M54 214 V302",
+              "M54 316 H586 M54 404 H536 M54 316 V404",
+              "M54 418 H586 M54 506 H536 M54 418 V506",
+              "M54 526 H586 M54 634 H536 M54 526 V634",
+          ]
+          for suffix in [".svg", "-light.svg"]:
+              path = base / f"toolkit{suffix}"
+              geometry = require_paths(path, toolkit_desktop)
+              forbidden = {
+                  "M560 104 V438",
+                  "M542 184 H578 M542 184 H72",
+                  "M542 304 H578 M542 304 H72",
+                  "M560 332 V358",
+              }
+              stale = sorted(forbidden & geometry)
+              if stale:
+                  failures.append(f"{path}: decorative Toolkit center wiring returned: {stale}")
+              visible = texts(root(path))
+              if "CORE" in visible or "LOCAL / CLI" in visible:
+                  failures.append(f"{path}: Toolkit reintroduced redundant AI sublabels")
+
+          for suffix in ["-mobile.svg", "-mobile-light.svg"]:
+              path = base / f"toolkit{suffix}"
+              require_paths(path, toolkit_mobile)
+              visible = texts(root(path))
+              if "CORE" in visible or "LOCAL / CLI" in visible:
+                  failures.append(f"{path}: Toolkit reintroduced redundant AI sublabels")
+
+          # More: one semantic title and three equal-width desktop modules.
+          more_desktop = [
+              "M72 112 H372 M72 232 H332 M72 112 V232",
+              "M390 112 H690 M390 232 H650 M390 112 V232",
+              "M708 112 H1008 M708 232 H968 M708 112 V232",
+          ]
+          for suffix in [".svg", "-light.svg"]:
+              path = base / f"more{suffix}"
+              require_paths(path, more_desktop)
+              visible = texts(root(path))
+              if "MORE" not in visible or "MORE / EXPLORATION" in visible:
+                  failures.append(f"{path}: section title must be MORE")
+
+          for suffix in ["-mobile.svg", "-mobile-light.svg"]:
+              path = base / f"more{suffix}"
+              visible = texts(root(path))
+              if "MORE" not in visible or "MORE / EXPLORATION" in visible:
+                  failures.append(f"{path}: section title must be MORE")
+
+          # Contact labels belong to the real action buttons, not the connector SVG.
+          for suffix in [".svg", "-light.svg", "-mobile.svg", "-mobile-light.svg"]:
+              path = base / f"contact{suffix}"
+              svg = root(path)
+              visible = texts(svg)
+              if float(svg.attrib.get("height", "0")) != 120:
+                  failures.append(f"{path}: Contact must stay compact at 120px")
+              duplicate = {"PORTFOLIO", "LINKEDIN", "EMAIL"} & set(visible)
+              if duplicate:
+                  failures.append(f"{path}: duplicate Contact labels remain: {sorted(duplicate)}")
+
+          # Footer keeps the closing statement but drops decorative author/year microcopy.
+          for suffix in [".svg", "-light.svg", "-mobile.svg", "-mobile-light.svg"]:
+              path = base / f"footer{suffix}"
+              visible = texts(root(path))
+              if "FROM IDEA TO RUNNING SYSTEM." not in visible:
+                  failures.append(f"{path}: missing closing signature")
+              if "AG" in visible or "AG · 2026" in visible:
+                  failures.append(f"{path}: redundant AG footer microcopy returned")
+
+          # About does not repeat Hero LOCATION.
+          for suffix in [".svg", "-light.svg", "-mobile.svg", "-mobile-light.svg"]:
+              path = base / f"about{suffix}"
+              visible = texts(root(path))
+              if "MONTPELLIER · FRANCE" in visible or "MONTPELLIER · FR" in visible:
+                  failures.append(f"{path}: duplicate location returned")
+
+          # Useful secondary copy must survive actual GitHub scaling.
+          current_status = {
+              "REFINING · WEB PRODUCTS & UX",
+              "DEEPENING · ARCHITECTURE & APIS",
+              "IMPROVING · RELIABILITY & PRODUCTION",
+              "EXPLORING · REALTIME & ROBOTICS",
+          }
+          workflow_verbs = {
+              "CLARIFY", "STRUCTURE", "IMPLEMENT", "VERIFY",
+              "HARDEN", "DELIVER", "ITERATE",
+          }
+
+          for family, labels, desktop_min, mobile_min in [
+              ("current", current_status, 12.5, 12.0),
+              ("workflow", workflow_verbs, 12.5, 12.0),
+          ]:
+              for suffix in [".svg", "-light.svg", "-mobile.svg", "-mobile-light.svg"]:
+                  path = base / f"{family}{suffix}"
+                  mobile = "mobile" in suffix
+                  minimum = mobile_min if mobile else desktop_min
+                  visible = texts(root(path))
+                  for label in labels:
+                      node = visible.get(label)
+                      if node is None:
+                          failures.append(f"{path}: missing useful secondary label {label!r}")
+                          continue
+                      size = float(node.attrib.get("font-size", "0"))
+                      if size < minimum:
+                          failures.append(
+                              f"{path}: {label!r} font-size {size:g}px below useful "
+                              f"metadata minimum {minimum:g}px"
+                          )
+
+          for family, minimum in [("toolkit", 13.0), ("more", 13.0)]:
+              for suffix in [".svg", "-light.svg", "-mobile.svg", "-mobile-light.svg"]:
+                  path = base / f"{family}{suffix}"
+                  for node in text_nodes(root(path)):
+                      value = (node.text or "").strip()
+                      if not value:
+                          continue
+                      # Section/module headings are already larger; inspect neutral support copy.
+                      fill = node.attrib.get("fill", "")
+                      if fill in {"#D2D8DF", "#343C47"}:
+                          size = float(node.attrib.get("font-size", "0"))
+                          if size < minimum:
+                              failures.append(
+                                  f"{path}: support copy {value!r} is {size:g}px, "
+                                  f"below {minimum:g}px"
+                              )
+
           if failures:
               raise SystemExit("\n".join(failures))
 
-          print("V8.16 Hero / Current / Workflow foundation geometry is stable.")
+          print("V8.17 coherence geometry and useful-copy readability are stable.")
           PY
 
 
