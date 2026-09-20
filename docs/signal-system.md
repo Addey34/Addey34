@@ -102,3 +102,27 @@ The profile closes as one signal sequence:
 60 Contact → 61 Portfolio / 62 LinkedIn / 63 Email → 90 End / Continue.
 
 Contact branches the signal into three external channels. The footer visually collects those three channels back into one system endpoint. External action buttons use the same 150px rendered width as the primary navigation to preserve rhythm.
+
+
+## Editorial open-frame rule
+
+The primary content sections use open-frame geometry instead of dashboard cards:
+
+- Hero
+- About
+- Current
+- Workflow
+- Toolkit
+- More / Exploration
+
+These sections may use:
+- the canvas background;
+- directive rails;
+- partial top/bottom rules;
+- left spines;
+- nodes;
+- typography.
+
+They should not introduce filled panel rectangles around content blocks. Contact and End / Continue are allowed to use contained terminal surfaces because they represent interaction boundaries and the final system endpoint.
+
+The editorial rule exists to keep the profile closer to an architectural publication than a product dashboard.

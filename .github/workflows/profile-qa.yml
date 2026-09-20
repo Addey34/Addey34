@@ -293,6 +293,51 @@ jobs:
           print("Internal/external Signal action semantics are coherent.")
           PY
 
+
+      - name: Validate editorial open-frame sections
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+
+          failures = []
+          base = Path("assets/brand/v83/composed")
+          editorial = [
+              "hero.svg",
+              "about.svg",
+              "current.svg",
+              "workflow.svg",
+              "toolkit.svg",
+              "more.svg",
+              "hero-mobile.svg",
+              "about-mobile.svg",
+              "current-mobile.svg",
+              "workflow-mobile.svg",
+              "toolkit-mobile.svg",
+              "more-mobile.svg",
+          ]
+
+          for filename in editorial:
+              path = base / filename
+              root = ET.parse(path).getroot()
+              rects = [
+                  node for node in root.iter()
+                  if node.tag.endswith("rect")
+              ]
+
+              # Only the full-canvas background rect is allowed.
+              if len(rects) != 1:
+                  failures.append(
+                      f"{path}: editorial sections must contain exactly one rect "
+                      f"(canvas only), found {len(rects)}"
+                  )
+
+          if failures:
+              raise SystemExit("\n".join(failures))
+
+          print("Editorial Signal sections use open-frame geometry only.")
+          PY
+
       - name: Validate README local assets
         run: |
           python - <<'PY'
