@@ -11,7 +11,7 @@ The system is built around a continuous **signal spine**.
 - Neutral rails = continuity and system structure.
 - Typography carries hierarchy before decoration.
 
-## V8.6 composition rules
+## V8.7 coherence rules
 
 1. Every section begins from the same directive rail.
 2. Related modules connect to shared backbones rather than repeating decorative accents.
@@ -48,3 +48,34 @@ The README uses composed sections because GitHub does not expose arbitrary CSS l
 ## Current visible flow
 
 Hero → Navigation → About → Current → Workflow → Toolkit → More / Exploration → Contact actions → End / Continue.
+
+
+## Global coordinate system
+
+Top-level sections use one stable coordinate grid:
+
+- 00 — Profile / Identity
+- 10 — About
+- 20 — Current
+- 30 — Workflow
+- 40 — Toolkit
+- 50 — More / Exploration
+- 90 — End / Continue
+
+Submodules inherit the section decade:
+
+- About: 11–13
+- Current: 21–24
+- Workflow: 31–37
+- Toolkit: 41–45
+- More / Exploration: 51–53
+
+This numbering is semantic and follows the visible profile order.
+
+## Accent semantics
+
+- Gold: identity, structure, durable capability, authored anchors.
+- Blue: current activity, movement, workflow, exploration, external flow.
+- Neutral rails: continuity between modules.
+
+Top-level section accents follow those semantics rather than alternating for decoration.

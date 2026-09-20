@@ -112,6 +112,73 @@ jobs:
           print(f"Validated readability and sizing for {len(files)} Signal compositions.")
           PY
 
+
+      - name: Validate Signal coordinate system
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+
+          expected = {
+              "hero.svg": ["00 · PROFILE / IDENTITY", "01 · BUILD", "02 · PRACTICE"],
+              "about.svg": ["10", "11 · ROLE", "12 · SCOPE", "13 · PATH"],
+              "current.svg": ["20", "21", "22", "23", "24"],
+              "workflow.svg": ["30", "31", "32", "33", "34", "35", "36", "37"],
+              "toolkit.svg": ["40", "41", "42", "43", "44", "45"],
+              "more.svg": ["50", "51", "52", "53"],
+              "footer.svg": ["90"],
+          }
+
+          base = Path("assets/brand/v83/composed")
+          failures = []
+
+          for filename, labels in expected.items():
+              path = base / filename
+              root = ET.parse(path).getroot()
+              texts = [
+                  (node.text or "").strip()
+                  for node in root.iter()
+                  if node.tag.endswith("text")
+              ]
+              cursor = 0
+              for label in labels:
+                  try:
+                      idx = texts.index(label, cursor)
+                  except ValueError:
+                      failures.append(f"{path}: missing or out-of-order label {label!r}")
+                      break
+                  cursor = idx + 1
+
+          # Mobile must use the same global coordinate family.
+          for filename, labels in expected.items():
+              mobile = filename.replace(".svg", "-mobile.svg")
+              path = base / mobile
+              if not path.exists():
+                  failures.append(f"{path}: missing mobile composition")
+                  continue
+              root = ET.parse(path).getroot()
+              texts = [
+                  (node.text or "").strip()
+                  for node in root.iter()
+                  if node.tag.endswith("text")
+              ]
+              # Hero mobile intentionally has no Practice panel.
+              mobile_labels = labels if filename != "hero.svg" else labels[:2]
+              cursor = 0
+              for label in mobile_labels:
+                  try:
+                      idx = texts.index(label, cursor)
+                  except ValueError:
+                      failures.append(f"{path}: missing or out-of-order label {label!r}")
+                      break
+                  cursor = idx + 1
+
+          if failures:
+              raise SystemExit("\n".join(failures))
+
+          print("Signal global coordinate system is coherent across desktop and mobile.")
+          PY
+
       - name: Validate README local assets
         run: |
           python - <<'PY'
