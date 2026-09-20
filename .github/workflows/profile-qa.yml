@@ -57,6 +57,61 @@ jobs:
           print("All SVG assets are valid and include title/desc metadata.")
           PY
 
+
+      - name: Validate final Signal composition readability
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          import xml.etree.ElementTree as ET
+
+          failures = []
+          composed = Path("assets/brand/v83/composed")
+          files = sorted(composed.glob("*.svg"))
+
+          if not files:
+              failures.append("No V8.3 composed SVG assets found.")
+
+          for path in files:
+              root = ET.parse(path).getroot()
+              width = float(root.attrib.get("width", "0"))
+              is_mobile = "mobile" in path.stem
+              expected_width = 640 if is_mobile else 1120
+              if width != expected_width:
+                  failures.append(
+                      f"{path}: expected width {expected_width}, got {width:g}"
+                  )
+
+              minimum = 9.0 if is_mobile else 9.5
+              for elem in root.iter():
+                  if not elem.tag.endswith("text"):
+                      continue
+                  raw = elem.attrib.get("font-size")
+                  if raw is None:
+                      failures.append(f"{path}: <text> missing font-size")
+                      continue
+                  try:
+                      size = float(raw)
+                  except ValueError:
+                      failures.append(f"{path}: non-numeric font-size {raw!r}")
+                      continue
+                  if size < minimum:
+                      failures.append(
+                          f"{path}: font-size {size:g}px below {minimum:g}px minimum"
+                      )
+
+          readme = Path("README.md").read_text(encoding="utf-8")
+          if "assets/brand/v82/" in readme:
+              failures.append("README still references obsolete V8.2 assets.")
+          if "<details>" in readme or re.search(r"^##?\s", readme, re.MULTILINE):
+              failures.append("Visible candidate README should remain SVG-driven.")
+
+          if failures:
+              raise SystemExit("\n".join(failures))
+
+          print(f"Validated readability and sizing for {len(files)} Signal compositions.")
+          PY
+
       - name: Validate README local assets
         run: |
           python - <<'PY'
