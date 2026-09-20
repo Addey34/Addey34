@@ -421,6 +421,65 @@ jobs:
           print("Open-frame text baselines keep at least 8px bottom padding.")
           PY
 
+      - name: Validate text / connector clearance
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          import xml.etree.ElementTree as ET
+
+          failures = []
+          base = Path("assets/brand/v83/composed")
+          targets = sorted(base.glob("*.svg"))
+
+          horizontal_re = re.compile(
+              r"M(?P<x1>\\d+(?:\\.\\d+)?) "
+              r"(?P<y>\\d+(?:\\.\\d+)?) "
+              r"H(?P<x2>\\d+(?:\\.\\d+)?)"
+          )
+
+          for path in targets:
+              root = ET.parse(path).getroot()
+              lines = []
+
+              for node in root.iter():
+                  if not node.tag.endswith("path"):
+                      continue
+                  for match in horizontal_re.finditer(node.attrib.get("d", "")):
+                      x1 = float(match.group("x1"))
+                      x2 = float(match.group("x2"))
+                      y = float(match.group("y"))
+                      lines.append((min(x1, x2), max(x1, x2), y))
+
+              for node in root.iter():
+                  if not node.tag.endswith("text"):
+                      continue
+                  try:
+                      x = float(node.attrib["x"])
+                      baseline = float(node.attrib["y"])
+                      size = float(node.attrib["font-size"])
+                  except (KeyError, ValueError):
+                      continue
+
+                  value = (node.text or "").strip()
+                  glyph_top = baseline - size
+                  glyph_bottom = baseline + 2
+
+                  for left, right, line_y in lines:
+                      if not (left <= x <= right):
+                          continue
+                      if glyph_top <= line_y <= glyph_bottom:
+                          failures.append(
+                              f"{path}: horizontal line y={line_y:g} crosses "
+                              f"text {value!r} at baseline y={baseline:g}"
+                          )
+
+          if failures:
+              raise SystemExit("\\n".join(failures))
+
+          print("Horizontal Signal connectors stay clear of text glyph bands.")
+          PY
+
       - name: Validate README local assets
         run: |
           python - <<'PY'
