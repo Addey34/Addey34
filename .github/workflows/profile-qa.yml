@@ -127,6 +127,7 @@ jobs:
               "workflow.svg": ["30", "31", "32", "33", "34", "35", "36", "37"],
               "toolkit.svg": ["40", "41", "42", "43", "44", "45"],
               "more.svg": ["50", "51", "52", "53"],
+              "contact.svg": ["60"],
               "footer.svg": ["90"],
           }
 
@@ -174,7 +175,7 @@ jobs:
                   if match:
                       coords.append(match.group(1))
               # Hero mobile intentionally has no Practice panel.
-              mobile_labels = labels if filename != "hero.svg" else labels[:2]
+              mobile_labels = labels
               cursor = 0
               for label in mobile_labels:
                   try:
@@ -188,6 +189,64 @@ jobs:
               raise SystemExit("\n".join(failures))
 
           print("Signal global coordinate system is coherent across desktop and mobile.")
+          PY
+
+
+      - name: Validate action semantics
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          import xml.etree.ElementTree as ET
+
+          failures = []
+          actions = Path("assets/brand/v83/actions")
+
+          internal = ["about", "current", "workflow", "toolkit", "contact"]
+          external = ["portfolio", "linkedin", "email"]
+
+          def texts(path):
+              root = ET.parse(path).getroot()
+              return [
+                  (node.text or "").strip()
+                  for node in root.iter()
+                  if node.tag.endswith("text")
+              ]
+
+          for name in internal:
+              for suffix in [".svg", "-light.svg"]:
+                  path = actions / f"{name}{suffix}"
+                  values = texts(path)
+                  if "↓" not in values or "↗" in values:
+                      failures.append(f"{path}: internal action must use ↓ and not ↗")
+
+          for name in external:
+              for suffix in [".svg", "-light.svg"]:
+                  path = actions / f"{name}{suffix}"
+                  values = texts(path)
+                  if "↗" not in values:
+                      failures.append(f"{path}: external action must use ↗")
+
+          readme = Path("README.md").read_text(encoding="utf-8")
+          nav_match = re.search(
+              r'<p align="center">\s*(.*?)\s*</p>',
+              readme,
+              re.DOTALL,
+          )
+          if not nav_match:
+              failures.append("Could not find primary navigation block.")
+          else:
+              nav = nav_match.group(1)
+              for anchor in ["#about", "#current", "#workflow", "#toolkit", "#contact"]:
+                  if f'href="{anchor}"' not in nav:
+                      failures.append(f"Primary nav missing internal anchor {anchor}")
+              if "https://" in nav or "mailto:" in nav:
+                  failures.append("Primary nav must not contain external actions.")
+
+          if failures:
+              raise SystemExit("\n".join(failures))
+
+          print("Internal/external Signal action semantics are coherent.")
           PY
 
       - name: Validate README local assets
