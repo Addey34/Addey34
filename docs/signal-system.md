@@ -11,7 +11,7 @@ The system is built around a continuous **signal spine**.
 - Neutral rails = continuity and system structure.
 - Typography carries hierarchy before decoration.
 
-## V8.7 coherence rules
+## Coherence rules
 
 1. Every section begins from the same directive rail.
 2. Related modules connect to shared backbones rather than repeating decorative accents.
@@ -61,6 +61,9 @@ Top-level sections use one stable coordinate grid:
 - 40 — Toolkit
 - 50 — More / Exploration
 - 60 — Contact
+- 61 — Portfolio
+- 62 — LinkedIn
+- 63 — Email
 - 90 — End / Continue
 
 Submodules inherit the section decade:
@@ -87,6 +90,15 @@ Top-level section accents follow those semantics rather than alternating for dec
 - Internal navigation actions use a downward signal glyph and remain inside the GitHub profile.
 - External actions use the north-east arrow glyph and leave the profile.
 - Internal navigation contains only profile sections.
-- Portfolio, LinkedIn and Email are grouped only under 60 — Contact.
+- Portfolio, LinkedIn and Email are grouped only under 60 — Contact and inherit coordinates 61, 62 and 63.
 
 Desktop and mobile hero compositions must expose the same semantic coordinates, including 02 — Practice.
+
+
+## End-sequence geometry
+
+The profile closes as one signal sequence:
+
+60 Contact → 61 Portfolio / 62 LinkedIn / 63 Email → 90 End / Continue.
+
+Contact branches the signal into three external channels. The footer visually collects those three channels back into one system endpoint. External action buttons use the same 150px rendered width as the primary navigation to preserve rhythm.
