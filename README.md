@@ -1,11 +1,11 @@
-<p align="center">
+<div align="center">
   <picture>
     <source media="(prefers-color-scheme: light) and (max-width: 640px)" srcset="./assets/brand/v83/composed/hero-mobile-light.svg" />
     <source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/composed/hero-light.svg" />
     <source media="(max-width: 640px)" srcset="./assets/brand/v83/composed/hero-mobile.svg" />
     <img src="./assets/brand/v83/composed/hero.svg" alt="Adrian Guichard — Full-Stack JavaScript / TypeScript Developer" />
   </picture>
-</p>
+</div>
 
 <p align="center">
   <a href="#about"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/about-light.svg" /><img src="./assets/brand/v83/actions/about.svg" width="150" alt="About" /></picture></a>
@@ -17,56 +17,56 @@
 
 <a id="about"></a>
 
-<p align="center">
+<div align="center">
   <picture>
     <source media="(prefers-color-scheme: light) and (max-width: 640px)" srcset="./assets/brand/v83/composed/about-mobile-light.svg" />
     <source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/composed/about-light.svg" />
     <source media="(max-width: 640px)" srcset="./assets/brand/v83/composed/about-mobile.svg" />
     <img src="./assets/brand/v83/composed/about.svg" alt="About Adrian Guichard" />
   </picture>
-</p>
+</div>
 
 <a id="current"></a>
 
-<p align="center">
+<div align="center">
   <picture>
     <source media="(prefers-color-scheme: light) and (max-width: 640px)" srcset="./assets/brand/v83/composed/current-mobile-light.svg" />
     <source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/composed/current-light.svg" />
     <source media="(max-width: 640px)" srcset="./assets/brand/v83/composed/current-mobile.svg" />
     <img src="./assets/brand/v83/composed/current.svg" alt="Current focus across frontend, backend, engineering and exploration" />
   </picture>
-</p>
+</div>
 
 <a id="workflow"></a>
 
-<p align="center">
+<div align="center">
   <picture>
     <source media="(prefers-color-scheme: light) and (max-width: 640px)" srcset="./assets/brand/v83/composed/workflow-mobile-light.svg" />
     <source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/composed/workflow-light.svg" />
     <source media="(max-width: 640px)" srcset="./assets/brand/v83/composed/workflow-mobile.svg" />
     <img src="./assets/brand/v83/composed/workflow.svg" alt="Workflow from idea to improvement" />
   </picture>
-</p>
+</div>
 
 <a id="toolkit"></a>
 
-<p align="center">
+<div align="center">
   <picture>
     <source media="(prefers-color-scheme: light) and (max-width: 640px)" srcset="./assets/brand/v83/composed/toolkit-mobile-light.svg" />
     <source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/composed/toolkit-light.svg" />
     <source media="(max-width: 640px)" srcset="./assets/brand/v83/composed/toolkit-mobile.svg" />
     <img src="./assets/brand/v83/composed/toolkit.svg" alt="Current toolkit" />
   </picture>
-</p>
+</div>
 
-<p align="center">
+<div align="center">
   <picture>
     <source media="(prefers-color-scheme: light) and (max-width: 640px)" srcset="./assets/brand/v83/composed/more-mobile-light.svg" />
     <source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/composed/more-light.svg" />
     <source media="(max-width: 640px)" srcset="./assets/brand/v83/composed/more-mobile.svg" />
     <img src="./assets/brand/v83/composed/more.svg" alt="Additional experience and areas being explored" />
   </picture>
-</p>
+</div>
 
 <p align="center">
   <a href="https://adrianguichard.dev"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/portfolio-light.svg" /><img src="./assets/brand/v83/actions/portfolio.svg" width="170" alt="Portfolio" /></picture></a>
@@ -74,11 +74,11 @@
   <a href="mailto:adrian34470@gmail.com"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/email-light.svg" /><img src="./assets/brand/v83/actions/email.svg" width="170" alt="Email" /></picture></a>
 </p>
 
-<p align="center">
+<div align="center">
   <picture>
     <source media="(prefers-color-scheme: light) and (max-width: 640px)" srcset="./assets/brand/v83/composed/footer-mobile-light.svg" />
     <source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/composed/footer-light.svg" />
     <source media="(max-width: 640px)" srcset="./assets/brand/v83/composed/footer-mobile.svg" />
     <img src="./assets/brand/v83/composed/footer.svg" alt="From idea to running system" />
   </picture>
-</p>
+</div>
