@@ -143,7 +143,7 @@ jobs:
               ]
               coords = []
               for value in texts:
-                  match = re.match(r"^(\\d{2})(?:\\b|\\s|\\s*·)", value)
+                  match = re.match(r"^(\d{2})(?:\b|\s|\s*·)", value)
                   if match:
                       coords.append(match.group(1))
               cursor = 0
@@ -170,7 +170,7 @@ jobs:
               ]
               coords = []
               for value in texts:
-                  match = re.match(r"^(\\d{2})(?:\\b|\\s|\\s*·)", value)
+                  match = re.match(r"^(\d{2})(?:\b|\s|\s*·)", value)
                   if match:
                       coords.append(match.group(1))
               # Hero mobile intentionally has no Practice panel.
