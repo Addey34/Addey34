@@ -49,21 +49,21 @@ The README uses composed sections because GitHub does not expose arbitrary CSS l
 
 Hero → Internal navigation → About → Current → Workflow → Toolkit → More → Contact → External actions → End / Continue.
 
-## Evolution baseline — V8.17 Coherence
+## Evolution baseline — V8.18 Optical Polish
 
-This revision is the current stable base for future Signal evolution. New visual ideas should extend this grammar instead of adding one-off rails, labels or decorative wiring.
+This revision is the current stable base for future Signal evolution. It is calibrated from the real GitHub desktop render, not only from source SVG geometry. New visual ideas should extend this grammar instead of adding one-off rails, labels or decorative wiring.
 
 - **Hero** keeps the V8.16 foundation: STACK and LOCATION are explicit metadata modules, while the AG mark remains separate from that data.
 - **About** does not repeat location information already established by Hero.
-- **Current** is four independent open frames. There is no decorative center spine; each module communicates through its own node, leader and frame.
-- **Workflow** is the intentional exception: its rail encodes a real seven-stage sequence, so the shared line has semantic meaning. Secondary verbs remain visible at GitHub scale.
+- **Current** is four independent open frames. There is no decorative center spine; each module communicates through its own node, leader and frame. Its desktop/mobile heights are intentionally compact (394px / 646px) so the visual density matches the amount of information.
+- **Workflow** is the intentional exception: its rail encodes a real seven-stage sequence, so the shared line has semantic meaning. Secondary verbs use 13.5px desktop / 12.5px mobile after real-render review.
 - **Toolkit** uses the same independent-frame grammar as Current. Its technical lists read as continuous lines instead of artificial left/right fragments. AI & Local Tooling is one wide module with direct copy, not CORE / LOCAL CLI micro-hierarchy.
 - **More** is a simple three-column extension layer. Desktop columns have equal geometry; the section title is not semantically duplicated with EXPLORING.
-- **Contact** is only the branching connector. Portfolio, LinkedIn and Email are named once by the actual action buttons immediately below it.
+- **Contact** is only the branching connector. Portfolio, LinkedIn and Email are named once by the actual action buttons immediately below it. Desktop branch centers are 356 / 560 / 764; mobile centers are 168 / 320 / 472 so the rails land on the actual fixed-width README actions.
 - **End / Continue** collects those external channels and closes with the system signature only; decorative AG/year microcopy is omitted.
 - Open frames use a full top rail and a deliberately shorter bottom rail. This asymmetry is part of the Signal grammar, not a per-section improvisation.
 - Dark/light variants share geometry exactly. Mobile is composed intentionally rather than scaled from desktop.
-- Useful secondary information must remain readable after GitHub scaling: 12.5px minimum on desktop and 12px on mobile for status/verb metadata.
+- Useful secondary information must remain readable after GitHub scaling. Current status metadata uses 13.5px desktop / 12.5px mobile; Workflow verbs use the same optical minimum.
 
 Core reusable primitives are: **section spine, semantic node, short leader, open frame, sequence rail when meaningfully justified, semantic title, neutral supporting copy**. A new line or node must communicate a relationship; if it does not, it should not exist.
 
@@ -118,7 +118,7 @@ The profile closes as one signal sequence:
 
 Contact → Portfolio / LinkedIn / Email → End / Continue.
 
-Contact branches the signal directly into the three external action buttons without duplicating their labels. The footer visually collects those channels back into one system endpoint. External action buttons use the same 150px rendered width as the primary navigation to preserve rhythm.
+Contact branches the signal directly into the three external action buttons without duplicating their labels. Contact and Footer use the same calibrated action-center coordinates, so the three channels visually enter and leave the buttons on one axis. The footer then collects those channels back into one system endpoint. External action buttons use the same 150px rendered width as the primary navigation to preserve rhythm.
 
 
 ## Editorial open-frame rule
