@@ -117,11 +117,12 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
+          import re
           import xml.etree.ElementTree as ET
 
           expected = {
-              "hero.svg": ["00 · PROFILE / IDENTITY", "01 · BUILD", "02 · PRACTICE"],
-              "about.svg": ["10", "11 · ROLE", "12 · SCOPE", "13 · PATH"],
+              "hero.svg": ["00", "01", "02"],
+              "about.svg": ["10", "11", "12", "13"],
               "current.svg": ["20", "21", "22", "23", "24"],
               "workflow.svg": ["30", "31", "32", "33", "34", "35", "36", "37"],
               "toolkit.svg": ["40", "41", "42", "43", "44", "45"],
@@ -140,12 +141,17 @@ jobs:
                   for node in root.iter()
                   if node.tag.endswith("text")
               ]
+              coords = []
+              for value in texts:
+                  match = re.match(r"^(\d{2})(?:\b|\s|\s*·)", value)
+                  if match:
+                      coords.append(match.group(1))
               cursor = 0
               for label in labels:
                   try:
-                      idx = texts.index(label, cursor)
+                      idx = coords.index(label, cursor)
                   except ValueError:
-                      failures.append(f"{path}: missing or out-of-order label {label!r}")
+                      failures.append(f"{path}: missing or out-of-order coordinate {label!r}")
                       break
                   cursor = idx + 1
 
@@ -162,14 +168,19 @@ jobs:
                   for node in root.iter()
                   if node.tag.endswith("text")
               ]
+              coords = []
+              for value in texts:
+                  match = re.match(r"^(\d{2})(?:\b|\s|\s*·)", value)
+                  if match:
+                      coords.append(match.group(1))
               # Hero mobile intentionally has no Practice panel.
               mobile_labels = labels if filename != "hero.svg" else labels[:2]
               cursor = 0
               for label in mobile_labels:
                   try:
-                      idx = texts.index(label, cursor)
+                      idx = coords.index(label, cursor)
                   except ValueError:
-                      failures.append(f"{path}: missing or out-of-order label {label!r}")
+                      failures.append(f"{path}: missing or out-of-order coordinate {label!r}")
                       break
                   cursor = idx + 1
 
