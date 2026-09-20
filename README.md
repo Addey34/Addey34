@@ -12,7 +12,7 @@
   <a href="#current"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/current-light.svg" /><img src="./assets/brand/v83/actions/current.svg" width="150" alt="Current" /></picture></a>
   <a href="#workflow"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/workflow-light.svg" /><img src="./assets/brand/v83/actions/workflow.svg" width="150" alt="Workflow" /></picture></a>
   <a href="#toolkit"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/toolkit-light.svg" /><img src="./assets/brand/v83/actions/toolkit.svg" width="150" alt="Toolkit" /></picture></a>
-  <a href="https://adrianguichard.dev"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/portfolio-light.svg" /><img src="./assets/brand/v83/actions/portfolio.svg" width="150" alt="Portfolio" /></picture></a>
+  <a href="#contact"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/contact-light.svg" /><img src="./assets/brand/v83/actions/contact.svg" width="150" alt="Contact" /></picture></a>
 </p>
 
 <a id="about"></a>
@@ -65,6 +65,17 @@
     <source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/composed/more-light.svg" />
     <source media="(max-width: 640px)" srcset="./assets/brand/v83/composed/more-mobile.svg" />
     <img src="./assets/brand/v83/composed/more.svg" alt="Additional experience and areas being explored" />
+  </picture>
+</div>
+
+<a id="contact"></a>
+
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: light) and (max-width: 640px)" srcset="./assets/brand/v83/composed/contact-mobile-light.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/composed/contact-light.svg" />
+    <source media="(max-width: 640px)" srcset="./assets/brand/v83/composed/contact-mobile.svg" />
+    <img src="./assets/brand/v83/composed/contact.svg" alt="Contact channels" />
   </picture>
 </div>
 
