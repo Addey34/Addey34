@@ -2,7 +2,7 @@
   <path d="M30 0 V120" stroke="#273240" stroke-width="2"/>
   <circle cx="30" cy="38" r="6" fill="#168CFF"/>
   <path d="M30 38 H62" stroke="#168CFF" stroke-width="2"/><text x="74" y="40" fill="#168CFF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="790" >CONTACT</text><path d="M70 90 H570" stroke="#18212C" stroke-width="1.5"/>
-  <circle cx="180" cy="90" r="5" fill="#168CFF"/>
+  <circle cx="168" cy="90" r="5" fill="#168CFF"/>
   <circle cx="320" cy="90" r="5" fill="#168CFF"/>
-  <circle cx="460" cy="90" r="5" fill="#168CFF"/>
-  <path d="M180 90 V120 M320 90 V120 M460 90 V120" stroke="#273240" stroke-width="1.5"/></svg>
+  <circle cx="472" cy="90" r="5" fill="#168CFF"/>
+  <path d="M168 90 V120 M320 90 V120 M472 90 V120" stroke="#273240" stroke-width="1.5"/></svg>
