@@ -348,17 +348,12 @@ jobs:
 
           failures = []
           base = Path("assets/brand/v83/composed")
+          families = ["hero", "about", "current", "toolkit", "more"]
+          variants = ("", "-light", "-mobile", "-mobile-light")
           targets = [
-              "hero.svg",
-              "hero-mobile.svg",
-              "about.svg",
-              "about-mobile.svg",
-              "current.svg",
-              "current-mobile.svg",
-              "toolkit.svg",
-              "toolkit-mobile.svg",
-              "more.svg",
-              "more-mobile.svg",
+              f"{family}{variant}.svg"
+              for family in families
+              for variant in variants
           ]
 
           frame_re = re.compile(
