@@ -291,8 +291,8 @@ jobs:
               "current": [
                   ("FRONTEND & INTERACTION", 110, 143, "gold"),
                   ("BACKEND & DATA", 616, 143, "blue"),
-                  ("ENGINEERING & DELIVERY", 110, 303, "gold"),
-                  ("REALTIME & EXPLORATION", 616, 303, "blue"),
+                  ("ENGINEERING & DELIVERY", 110, 279, "gold"),
+                  ("REALTIME & EXPLORATION", 616, 279, "blue"),
               ],
               "workflow": [
                   ("IDEA", 134, 122, "gold"),
@@ -325,9 +325,9 @@ jobs:
               ],
               "current": [
                   ("FRONTEND & INTERACTION", 92, 139, 136, "gold"),
-                  ("BACKEND & DATA", 92, 287, 284, "blue"),
-                  ("ENGINEERING & DELIVERY", 92, 435, 432, "gold"),
-                  ("REALTIME & EXPLORATION", 92, 583, 580, "blue"),
+                  ("BACKEND & DATA", 92, 269, 266, "blue"),
+                  ("ENGINEERING & DELIVERY", 92, 399, 396, "gold"),
+                  ("REALTIME & EXPLORATION", 92, 529, 526, "blue"),
               ],
               "toolkit": [
                   ("FRONTEND", 76, 136, 138, "gold"),
@@ -489,7 +489,7 @@ jobs:
           PY
 
 
-      - name: Validate V8.17 coherence geometry
+      - name: Validate V8.18 optical polish
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -551,17 +551,30 @@ jobs:
               )
 
           # Current: four independent open frames; no decorative center wiring.
+          for suffix, expected_height in [
+              (".svg", 394),
+              ("-light.svg", 394),
+              ("-mobile.svg", 646),
+              ("-mobile-light.svg", 646),
+          ]:
+              path = base / f"current{suffix}"
+              svg = root(path)
+              if float(svg.attrib.get("height", "0")) != expected_height:
+                  failures.append(
+                      f"{path}: Current optical height must remain {expected_height}px"
+                  )
+
           current_desktop = [
-              "M72 116 H520 M72 252 H480 M72 116 V252",
-              "M578 116 H1026 M578 252 H986 M578 116 V252",
-              "M72 276 H520 M72 412 H480 M72 276 V412",
-              "M578 276 H1026 M578 412 H986 M578 276 V412",
+              "M72 116 H520 M72 232 H480 M72 116 V232",
+              "M578 116 H1026 M578 232 H986 M578 116 V232",
+              "M72 252 H520 M72 368 H480 M72 252 V368",
+              "M578 252 H1026 M578 368 H986 M578 252 V368",
           ]
           current_mobile = [
-              "M54 112 H586 M54 242 H536 M54 112 V242",
-              "M54 260 H586 M54 390 H536 M54 260 V390",
-              "M54 408 H586 M54 538 H536 M54 408 V538",
-              "M54 556 H586 M54 686 H536 M54 556 V686",
+              "M54 112 H586 M54 224 H536 M54 112 V224",
+              "M54 242 H586 M54 354 H536 M54 242 V354",
+              "M54 372 H586 M54 484 H536 M54 372 V484",
+              "M54 502 H586 M54 614 H536 M54 502 V614",
           ]
           for suffix in [".svg", "-light.svg"]:
               path = base / f"current{suffix}"
@@ -681,24 +694,48 @@ jobs:
                   failures.append(f"{path}: section title must be MORE")
 
           # Contact labels belong to the real action buttons, not the connector SVG.
+          # Branch centers are locked to the centers of the three fixed-width README actions.
           for suffix in [".svg", "-light.svg", "-mobile.svg", "-mobile-light.svg"]:
               path = base / f"contact{suffix}"
               svg = root(path)
               visible = texts(svg)
+              geometry = paths(svg)
+              mobile = "mobile" in suffix
               if float(svg.attrib.get("height", "0")) != 120:
                   failures.append(f"{path}: Contact must stay compact at 120px")
               duplicate = {"PORTFOLIO", "LINKEDIN", "EMAIL"} & set(visible)
               if duplicate:
                   failures.append(f"{path}: duplicate Contact labels remain: {sorted(duplicate)}")
+              expected_branch = (
+                  "M168 90 V120 M320 90 V120 M472 90 V120"
+                  if mobile else
+                  "M356 90 V120 M560 90 V120 M764 90 V120"
+              )
+              if expected_branch not in geometry:
+                  failures.append(
+                      f"{path}: Contact branches are not centered on rendered actions"
+                  )
 
-          # Footer keeps the closing statement but drops decorative author/year microcopy.
+          # Footer keeps the closing statement, mirrors action centers, and drops decorative author/year microcopy.
           for suffix in [".svg", "-light.svg", "-mobile.svg", "-mobile-light.svg"]:
               path = base / f"footer{suffix}"
-              visible = texts(root(path))
+              svg = root(path)
+              visible = texts(svg)
+              geometry = paths(svg)
+              mobile = "mobile" in suffix
               if "FROM IDEA TO RUNNING SYSTEM." not in visible:
                   failures.append(f"{path}: missing closing signature")
               if "AG" in visible or "AG · 2026" in visible:
                   failures.append(f"{path}: redundant AG footer microcopy returned")
+              expected_collect = (
+                  "M168 0 V18 H320 M472 0 V18 H320 V32"
+                  if mobile else
+                  "M356 0 V18 H560 M764 0 V18 H560 V34"
+              )
+              if expected_collect not in geometry:
+                  failures.append(
+                      f"{path}: footer collector is not aligned with rendered actions"
+                  )
 
           # About does not repeat Hero LOCATION.
           for suffix in [".svg", "-light.svg", "-mobile.svg", "-mobile-light.svg"]:
@@ -720,8 +757,8 @@ jobs:
           }
 
           for family, labels, desktop_min, mobile_min in [
-              ("current", current_status, 12.5, 12.0),
-              ("workflow", workflow_verbs, 12.5, 12.0),
+              ("current", current_status, 13.5, 12.5),
+              ("workflow", workflow_verbs, 13.5, 12.5),
           ]:
               for suffix in [".svg", "-light.svg", "-mobile.svg", "-mobile-light.svg"]:
                   path = base / f"{family}{suffix}"
@@ -760,7 +797,7 @@ jobs:
           if failures:
               raise SystemExit("\n".join(failures))
 
-          print("V8.17 coherence geometry and useful-copy readability are stable.")
+          print("V8.18 optical density, action alignment and readability are stable.")
           PY
 
 
