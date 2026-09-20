@@ -59,16 +59,14 @@
   </picture>
 </p>
 
-<details>
-<summary><strong>Additional experience & exploration</strong></summary>
-
-<br />
-
-**Web** — Angular · Vue · Next.js · Astro · Tailwind CSS · styled-components · Axios · Mongoose · MongoDB driver · Zod · JWT · bcrypt  
-**Code quality** — ESLint · Prettier · Gitleaks  
-**Exploring** — realtime systems · automation · local AI · application security · production hardening · robotics · simulation
-
-</details>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: light) and (max-width: 640px)" srcset="./assets/brand/v83/composed/more-mobile-light.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/composed/more-light.svg" />
+    <source media="(max-width: 640px)" srcset="./assets/brand/v83/composed/more-mobile.svg" />
+    <img src="./assets/brand/v83/composed/more.svg" alt="Additional experience and areas being explored" />
+  </picture>
+</p>
 
 <p align="center">
   <a href="https://adrianguichard.dev"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/portfolio-light.svg" /><img src="./assets/brand/v83/actions/portfolio.svg" width="170" alt="Portfolio" /></picture></a>
