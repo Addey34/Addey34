@@ -17,7 +17,7 @@
 
 I build **web products, interactive systems and technical tools** across frontend, backend, realtime, 3D, AI/local compute, automation, security and engineering workflows.
 
-My core is TypeScript/JavaScript, with Python where compute, tooling or AI workloads call for it. I care about the whole path from an idea to a system that can be **tested, hardened, deployed, observed and improved**.
+TypeScript/JavaScript is my main application stack; I use Python for compute, tooling and AI workloads. I care about the whole path from an idea to a system that can be **tested, hardened, deployed, observed and improved**.
 
 <a id="scope"></a>
 
@@ -48,7 +48,7 @@ My core is TypeScript/JavaScript, with Python where compute, tooling or AI workl
 **Compute** — PyTorch · Diffusers · ONNX Runtime · CUDA / DirectML  
 **Engineering** — Playwright · Vitest · Jest · Docker · GitHub Actions · CI/CD · Linux  
 
-**Also worked with** — Vue · Next.js · Astro · React Native · Java / Spring Boot · Prisma · Mongoose · Tailwind · Firebase · Caddy · Nginx
+**Also worked with** — Angular · Vue · Next.js · Astro · React Native · Java / Spring Boot · Prisma · Mongoose · Tailwind · Firebase · Caddy · Nginx
 
 </details>
 
@@ -71,17 +71,23 @@ My core is TypeScript/JavaScript, with Python where compute, tooling or AI workl
 </div>
 
 <p align="center">
-  <a href="https://galaxy.adrianguichard.dev"><strong>Galaxy</strong></a>
+  <strong>Galaxy</strong>
   &nbsp;·&nbsp;
-  <a href="https://github.com/Addey34/galaxy-3d">source</a>
+  <a href="https://galaxy.adrianguichard.dev">Live</a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/Addey34/galaxy-3d">Source</a>
   &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="https://ludora.adrianguichard.dev"><strong>Ludora</strong></a>
+  <strong>Ludora</strong>
   &nbsp;·&nbsp;
-  <a href="https://github.com/Addey34/ludora-showcase">showcase</a>
+  <a href="https://ludora.adrianguichard.dev">Live</a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/Addey34/ludora-showcase">Showcase</a>
   &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="https://magnotes.adrianguichard.dev"><strong>MagNotes</strong></a>
+  <strong>MagNotes</strong>
   &nbsp;·&nbsp;
-  <a href="https://github.com/Addey34/magnotes-frontend">source</a>
+  <a href="https://magnotes.adrianguichard.dev">Live</a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/Addey34/magnotes-frontend">Source</a>
 </p>
 
 <a id="activity"></a>
