@@ -28,33 +28,79 @@ jobs:
           USERNAME: ${{ github.repository_owner }}
           SETTING_JSON: activity-settings/ag.json
 
-      - name: Keep only the 3D contribution surface
+      - name: Build curated activity surfaces
         run: |
           python - <<'PY'
+          import copy
           import xml.etree.ElementTree as ET
+          from pathlib import Path
 
-          path = "profile-3d-contrib/activity-ag.svg"
-          ET.register_namespace("", "http://www.w3.org/2000/svg")
-          tree = ET.parse(path)
-          root = tree.getroot()
+          NS = "http://www.w3.org/2000/svg"
+          ET.register_namespace("", NS)
+          q = lambda tag: f"{{{NS}}}{tag}"
+
+          source = Path("profile-3d-contrib/activity-ag.svg")
+          root = ET.parse(source).getroot()
           children = list(root)
 
-          # Generated layout: style, background, 3D calendar, radar, languages, counters.
-          # Keep only the visual system we actually want to expose.
-          for child in children[3:]:
-              root.remove(child)
+          # Generator layout: style, background, 3D calendar, radar, languages, counters.
+          style = copy.deepcopy(children[0])
+          calendar = copy.deepcopy(children[2])
 
-          root.set("width", "1280")
-          root.set("height", "700")
-          root.set("viewBox", "0 120 1280 700")
-          tree.write(path, encoding="unicode")
+          def text(parent, x, y, value, size, fill, *, mono=False, weight=None, spacing=None):
+              attrs = {
+                  "x": str(x), "y": str(y), "fill": fill,
+                  "font-size": str(size),
+                  "font-family": "Consolas, monospace" if mono else "Inter, Segoe UI, Arial, sans-serif",
+              }
+              if weight:
+                  attrs["font-weight"] = str(weight)
+              if spacing:
+                  attrs["letter-spacing"] = str(spacing)
+              node = ET.SubElement(parent, q("text"), attrs)
+              node.text = value
+              return node
+
+          def build(path, width, height, tx, ty, scale, mobile=False):
+              out = ET.Element(q("svg"), {
+                  "width": str(width), "height": str(height),
+                  "viewBox": f"0 0 {width} {height}",
+                  "role": "img", "aria-labelledby": "title desc",
+              })
+              title = ET.SubElement(out, q("title"), {"id": "title"})
+              title.text = "GitHub contribution activity"
+              desc = ET.SubElement(out, q("desc"), {"id": "desc"})
+              desc.text = "Animated 3D GitHub contribution activity generated from real contribution data."
+
+              out.append(copy.deepcopy(style))
+              ET.SubElement(out, q("rect"), {
+                  "width": str(width), "height": str(height),
+                  "rx": "32" if mobile else "28",
+                  "fill": "#06080D",
+              })
+
+              hx = 54 if mobile else 72
+              hy = 60 if mobile else 58
+              header = ET.SubElement(out, q("g"), {"transform": f"translate({hx} {hy})"})
+              ET.SubElement(header, q("circle"), {"cx": "7", "cy": "-12", "r": "6" if mobile else "5", "fill": "#D9AE57"})
+              text(header, 26 if mobile else 24, -5, "ACTIVITY / 3D CONTRIBUTIONS", 19 if mobile else 12, "#D9AE57", mono=True, spacing=3)
+              text(header, 0, 54 if mobile else 43, "Contribution activity, rendered as data.", 36 if mobile else 30, "#F5F3ED", weight=760)
+              text(header, 0, 91 if mobile else 70, "Generated from real GitHub contribution data.", 20 if mobile else 14, "#98A1AE")
+
+              cal = copy.deepcopy(calendar)
+              cal.set("transform", f"translate({tx} {ty}) scale({scale})")
+              out.append(cal)
+              ET.ElementTree(out).write(path, encoding="unicode")
+
+          build("assets/profile-v2/activity.svg", 1200, 650, 100, 10, 0.78, mobile=False)
+          build("assets/profile-v2/activity-mobile.svg", 720, 650, 27, 145, 0.52, mobile=True)
           PY
 
       - name: Commit generated activity
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add profile-3d-contrib/activity-ag.svg
+          git add profile-3d-contrib/activity-ag.svg assets/profile-v2/activity.svg assets/profile-v2/activity-mobile.svg
           if git commit -m "chore(profile): refresh 3D activity"; then
             git push
           fi
