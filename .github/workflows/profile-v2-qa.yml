@@ -20,6 +20,10 @@ on:
       - .github/workflows/profile-v2-3d.yml
   workflow_dispatch:
 
+concurrency:
+  group: profile-v2-qa-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
