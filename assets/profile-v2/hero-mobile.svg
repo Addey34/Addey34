@@ -10,7 +10,7 @@
 text{font-family:Inter,Segoe UI,Arial,sans-serif}.m{font-family:Consolas,monospace}
 .line{stroke-dasharray:14 18;animation:flow 7s linear infinite}.pulse{animation:pulse 3.2s ease-in-out infinite}
 @keyframes flow{to{stroke-dashoffset:-128}}@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
-@media(prefers-reduced-motion:reduce){.line,.pulse{animation:none!important}}
+@media(prefers-reduced-motion:reduce){.motion-dot{display:none!important}.line,.pulse{animation:none!important}}
 </style>
 </defs>
 <rect width="720" height="900" rx="32" fill="url(#bg)"/>
@@ -45,6 +45,6 @@ text{font-family:Inter,Segoe UI,Arial,sans-serif}.m{font-family:Consolas,monospa
 <text x="360" y="805" text-anchor="middle">AI / COMPUTE</text>
 </g>
 <use href="#signal" fill="none" stroke="#168CFF" stroke-opacity=".18"/>
-<circle r="5" fill="#65C7FF" filter="url(#glow)"><animateMotion dur="6.2s" repeatCount="indefinite"><mpath href="#signal"/></animateMotion></circle>
+<circle class="motion-dot" r="5" fill="#65C7FF" filter="url(#glow)"><animateMotion dur="6.2s" repeatCount="indefinite"><mpath href="#signal"/></animateMotion></circle>
 <text x="360" y="866" text-anchor="middle" class="m" font-size="18" fill="#6F7A89" letter-spacing="2">FROM IDEA TO RUNNING SYSTEM.</text>
 </svg>
