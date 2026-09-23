@@ -22,7 +22,7 @@
 <g transform="translate(0 40)"><rect width="118" height="28" rx="14" fill="#0F1621" stroke="#2B3948"/><text x="59" y="18" text-anchor="middle">AUTOMATION</text></g>
 <g transform="translate(128 40)"><rect width="104" height="28" rx="14" fill="#0F1621" stroke="#2B3948"/><text x="52" y="18" text-anchor="middle">SECURITY</text></g>
 </g>
-<text y="323" class="m" font-size="11" fill="#6F7A89" letter-spacing="2">FROM IDEA TO RUNNING SYSTEM.</text>
+<text y="323" class="m" font-size="11" fill="#7E8996" letter-spacing="2">FROM IDEA TO RUNNING SYSTEM.</text>
 </g>
 <use href="#p" fill="none" stroke="#168CFF" stroke-opacity=".22"/><circle class="motion-dot" r="4" fill="#65C7FF" filter="url(#glow)"><animateMotion dur="5.4s" repeatCount="indefinite"><mpath href="#p"/></animateMotion></circle>
 <g transform="translate(760 72)"><g class="f">
