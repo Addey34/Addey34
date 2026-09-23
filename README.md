@@ -113,8 +113,6 @@
   <a href="https://www.linkedin.com/in/adrianguichard/"><strong>LinkedIn</strong></a>
   &nbsp;·&nbsp;
   <a href="mailto:adrian34470@gmail.com"><strong>Email</strong></a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/Addey34"><strong>GitHub</strong></a>
 </p>
 
 <div align="center">
