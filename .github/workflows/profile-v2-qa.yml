@@ -212,7 +212,7 @@ jobs:
               failures.append("Unexpected github-profile-3d-contrib revision.")
           if 'github-actions[bot]' not in workflow:
               failures.append("Activity commits must use the GitHub Actions bot identity.")
-          if "profile-v2-activity-${{ github.ref }}" not in workflow:
+          if "group: profile-v2-activity-" not in workflow or "cancel-in-progress: true" not in workflow:
               failures.append("Activity workflow must serialize runs per ref.")
           if "- main" not in workflow:
               failures.append("Activity workflow must remain ready for the main branch.")
