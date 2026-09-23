@@ -154,20 +154,20 @@ jobs:
 
           build(
               "assets/profile-v2/activity.svg",
-              1200, 590, -314, -269, 1.05,
-              min_calendar_x=560,
+              1200, 590, -375, -269, 1.05,
+              min_calendar_x=640,
           )
           build(
               "assets/profile-v2/activity-compact.svg",
-              900, 500, -358, -238, 0.90,
+              900, 500, -388, -238, 0.90,
               compact=True,
-              min_calendar_x=620,
+              min_calendar_x=660,
           )
           build(
               "assets/profile-v2/activity-mobile.svg",
-              720, 590, -785, -359, 1.15,
+              720, 590, -700, -359, 1.15,
               mobile=True,
-              min_calendar_x=650,
+              min_calendar_x=680,
           )
 
           static_style = '<style id="static-motion-override">*{animation:none!important}.motion-dot{display:none!important}</style>'
