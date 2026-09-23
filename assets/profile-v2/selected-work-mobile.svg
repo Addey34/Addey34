@@ -5,7 +5,7 @@
 <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#06080D"/><stop offset="1" stop-color="#0A1119"/></linearGradient>
 <linearGradient id="top" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#18212D"/><stop offset="1" stop-color="#0B1119"/></linearGradient>
 <path id="rail" d="M360 300V930"/>
-<style>text{font-family:Inter,Segoe UI,Arial,sans-serif}.m{font-family:Consolas,monospace}.flow{stroke-dasharray:16 20;animation:r 8s linear infinite}.c{animation:o 6s ease-in-out infinite}@keyframes r{to{stroke-dashoffset:-144}}@keyframes o{0%,100%{opacity:.92}50%{opacity:1}}@media(prefers-reduced-motion:reduce){.flow,.c{animation:none!important}}</style>
+<style>text{font-family:Inter,Segoe UI,Arial,sans-serif}.m{font-family:Consolas,monospace}.flow{stroke-dasharray:16 20;animation:r 8s linear infinite}.c{animation:o 6s ease-in-out infinite}@keyframes r{to{stroke-dashoffset:-144}}@keyframes o{0%,100%{opacity:.92}50%{opacity:1}}@media(prefers-reduced-motion:reduce){.motion-dot{display:none!important}.flow,.c{animation:none!important}}</style>
 </defs>
 <rect width="720" height="1050" rx="32" fill="url(#bg)"/>
 <g transform="translate(54 60)">
@@ -37,5 +37,5 @@
 <text y="92" class="m" font-size="18" fill="#98A1AE">TypeScript · React · Node / Express · MongoDB</text>
 </g>
 </g>
-<circle r="5" fill="#65C7FF"><animateMotion dur="7s" repeatCount="indefinite"><mpath href="#rail"/></animateMotion></circle>
+<circle class="motion-dot" r="5" fill="#65C7FF"><animateMotion dur="7s" repeatCount="indefinite"><mpath href="#rail"/></animateMotion></circle>
 </svg>
