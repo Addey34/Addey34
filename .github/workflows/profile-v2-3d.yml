@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - main
-      - profile/v2-candidate
+      - "profile/v2-*"
     paths:
       - ".github/workflows/profile-v2-3d.yml"
       - "activity-settings/ag.json"
