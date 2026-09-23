@@ -1,0 +1,141 @@
+name: Profile V2 QA
+
+on:
+  push:
+    branches:
+      - profile/v2-candidate
+    paths:
+      - README.md
+      - assets/profile-v2/**
+      - activity-settings/**
+      - .github/workflows/profile-v2-qa.yml
+      - .github/workflows/profile-v2-3d.yml
+  pull_request:
+    paths:
+      - README.md
+      - assets/profile-v2/**
+      - activity-settings/**
+      - .github/workflows/profile-v2-qa.yml
+      - .github/workflows/profile-v2-3d.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+
+      - name: Validate V2 SVG assets
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+
+          root_dir = Path("assets/profile-v2")
+          required = {
+              "hero.svg", "hero-mobile.svg",
+              "scope.svg", "scope-mobile.svg",
+              "stack.svg", "stack-mobile.svg",
+              "engineering.svg", "engineering-mobile.svg",
+              "selected-work.svg", "selected-work-mobile.svg",
+              "activity.svg", "activity-mobile.svg",
+              "footer.svg", "footer-mobile.svg",
+          }
+          found = {p.name for p in root_dir.glob("*.svg")}
+          failures = []
+          missing = sorted(required - found)
+          unexpected = sorted(found - required)
+
+          if missing:
+              failures.append("Missing V2 SVG assets: " + ", ".join(missing))
+          if unexpected:
+              failures.append("Unexpected V2 SVG assets: " + ", ".join(unexpected))
+
+          ns = "{http://www.w3.org/2000/svg}"
+          for path in sorted(root_dir.glob("*.svg")):
+              try:
+                  root = ET.parse(path).getroot()
+              except Exception as exc:
+                  failures.append(f"{path}: invalid XML: {exc}")
+                  continue
+
+              if "viewBox" not in root.attrib:
+                  failures.append(f"{path}: missing viewBox")
+              title = root.find(f"{ns}title")
+              desc = root.find(f"{ns}desc")
+              if title is None or not (title.text or "").strip():
+                  failures.append(f"{path}: missing non-empty <title>")
+              if desc is None or not (desc.text or "").strip():
+                  failures.append(f"{path}: missing non-empty <desc>")
+
+              raw = path.read_text(encoding="utf-8").lower()
+              if any(ext in raw for ext in (".png", ".jpg", ".jpeg", ".gif")):
+                  failures.append(f"{path}: raster dependency is not allowed in V2")
+
+          if failures:
+              raise SystemExit("\n".join(failures))
+          print(f"Validated {len(found)} V2 SVG assets.")
+          PY
+
+      - name: Validate V2 README
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          readme = Path("README.md").read_text(encoding="utf-8")
+          failures = []
+
+          for anchor in ["#scope", "#stack", "#engineering", "#work", "#activity", "#contact"]:
+              if f'href="{anchor}"' not in readme:
+                  failures.append(f"README missing navigation anchor {anchor}")
+
+          expected_assets = [
+              "./assets/profile-v2/hero.svg",
+              "./assets/profile-v2/scope.svg",
+              "./assets/profile-v2/stack.svg",
+              "./assets/profile-v2/engineering.svg",
+              "./assets/profile-v2/selected-work.svg",
+              "./assets/profile-v2/activity.svg",
+              "./assets/profile-v2/footer.svg",
+          ]
+          for asset in expected_assets:
+              if asset not in readme:
+                  failures.append(f"README missing V2 asset {asset}")
+
+          if "assets/brand/v83/" in readme:
+              failures.append("README still references V83 visual assets")
+          if "FULL-STACK DEVELOPER" not in Path("assets/profile-v2/hero.svg").read_text(encoding="utf-8"):
+              failures.append("Hero role must remain FULL-STACK DEVELOPER")
+          if "Python" not in readme:
+              failures.append("README must retain Python in the technical profile")
+          if "ImageGeneratorLocal" in readme:
+              failures.append("ImageGeneratorLocal must stay out of the public showcase for now")
+
+          sources = (
+              re.findall(r'<img[^>]+src="([^"]+)"', readme)
+              + re.findall(r'<source[^>]+srcset="([^"]+)"', readme)
+          )
+          for src in sources:
+              if not src.startswith("./assets/profile-v2/"):
+                  failures.append(f"README image is not a V2 self-hosted asset: {src}")
+              if src.lower().endswith((".png", ".jpg", ".jpeg", ".gif")):
+                  failures.append(f"Raster README image is not allowed: {src}")
+
+          refs = sorted(set(
+              re.findall(r'(?:src|href)="(\./[^"#?]+)', readme)
+              + re.findall(r'srcset="(\./[^"#?]+)', readme)
+          ))
+          missing = [ref for ref in refs if not Path(ref[2:]).exists()]
+          if missing:
+              failures.append("Missing local README assets: " + ", ".join(missing))
+
+          if failures:
+              raise SystemExit("\n".join(failures))
+          print(f"README guardrails valid; {len(refs)} local references resolved.")
+          PY
