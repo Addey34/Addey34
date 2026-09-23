@@ -1,7 +1,7 @@
 <!-- profile-v2 -->
 <div align="center">
   <picture>
-    <source media="(max-width: 640px)" srcset="./assets/profile-v2/hero-mobile.svg" />
+    <source media="(max-width: 768px)" srcset="./assets/profile-v2/hero-mobile.svg" />
     <img src="./assets/profile-v2/hero.svg" alt="Adrian Guichard — Full-Stack Developer" width="100%" />
   </picture>
 </div>
@@ -23,7 +23,7 @@ TypeScript/JavaScript is my main application stack; I use Python for compute, to
 
 <div align="center">
   <picture>
-    <source media="(max-width: 640px)" srcset="./assets/profile-v2/scope-mobile.svg" />
+    <source media="(max-width: 768px)" srcset="./assets/profile-v2/scope-mobile.svg" />
     <img src="./assets/profile-v2/scope.svg" alt="Technical scope — web, realtime, games, 3D, AI, automation, security and hardware/performance" width="100%" />
   </picture>
 </div>
@@ -32,7 +32,7 @@ TypeScript/JavaScript is my main application stack; I use Python for compute, to
 
 <div align="center">
   <picture>
-    <source media="(max-width: 640px)" srcset="./assets/profile-v2/stack-mobile.svg" />
+    <source media="(max-width: 768px)" srcset="./assets/profile-v2/stack-mobile.svg" />
     <img src="./assets/profile-v2/stack.svg" alt="Core technical stack" width="100%" />
   </picture>
 </div>
@@ -56,7 +56,7 @@ TypeScript/JavaScript is my main application stack; I use Python for compute, to
 
 <div align="center">
   <picture>
-    <source media="(max-width: 640px)" srcset="./assets/profile-v2/engineering-mobile.svg" />
+    <source media="(max-width: 768px)" srcset="./assets/profile-v2/engineering-mobile.svg" />
     <img src="./assets/profile-v2/engineering.svg" alt="Engineering loop — plan, build, test, harden, deploy, monitor and iterate" width="100%" />
   </picture>
 </div>
@@ -65,7 +65,7 @@ TypeScript/JavaScript is my main application stack; I use Python for compute, to
 
 <div align="center">
   <picture>
-    <source media="(max-width: 640px)" srcset="./assets/profile-v2/selected-work-mobile.svg" />
+    <source media="(max-width: 768px)" srcset="./assets/profile-v2/selected-work-mobile.svg" />
     <img src="./assets/profile-v2/selected-work.svg" alt="Selected public work — Galaxy, Ludora and MagNotes" width="100%" />
   </picture>
 </div>
@@ -95,7 +95,7 @@ TypeScript/JavaScript is my main application stack; I use Python for compute, to
 
 <div align="center">
   <picture>
-    <source media="(max-width: 640px)" srcset="./assets/profile-v2/activity-mobile.svg" />
+    <source media="(max-width: 768px)" srcset="./assets/profile-v2/activity-mobile.svg" />
     <img src="./assets/profile-v2/activity.svg" alt="Animated 3D GitHub contribution activity generated from real contribution data" width="100%" />
   </picture>
 </div>
@@ -114,7 +114,7 @@ TypeScript/JavaScript is my main application stack; I use Python for compute, to
 
 <div align="center">
   <picture>
-    <source media="(max-width: 640px)" srcset="./assets/profile-v2/footer-mobile.svg" />
+    <source media="(max-width: 768px)" srcset="./assets/profile-v2/footer-mobile.svg" />
     <img src="./assets/profile-v2/footer.svg" alt="From idea to running system" width="100%" />
   </picture>
 </div>
