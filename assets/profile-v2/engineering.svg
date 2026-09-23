@@ -12,4 +12,4 @@
 <g transform="translate(885 194)" class="s x6"><polygon points="-65,0 0,-34 65,0 0,34" fill="url(#top)" stroke="#405064"/><text y="4">MONITOR</text></g>
 <g transform="translate(1095 235)" class="s x7"><polygon points="-65,0 0,-34 65,0 0,34" fill="#181713" stroke="#D9AE57"/><text y="4" fill="#F2D58A">ITERATE</text></g></g>
 <circle r="5" fill="#65C7FF"><animateMotion dur="6.8s" repeatCount="indefinite"><mpath href="#rail"/></animateMotion></circle><circle r="3" fill="#D9AE57"><animateMotion dur="9s" begin="-4s" repeatCount="indefinite"><mpath href="#rail"/></animateMotion></circle>
-<text x="600" y="332" text-anchor="middle" class="m" font-size="10" fill="#667281" letter-spacing="2">PLAN → BUILD → TEST → HARDEN → DEPLOY → MONITOR → ITERATE</text></svg>
+<text x="600" y="332" text-anchor="middle" class="m" font-size="10" fill="#667281" letter-spacing="2">PLAN · BUILD · TEST · HARDEN · DEPLOY · MONITOR · ITERATE</text></svg>
