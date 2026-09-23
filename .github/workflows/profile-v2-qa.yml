@@ -44,13 +44,13 @@ jobs:
 
           root_dir = Path("assets/profile-v2")
           required = {
-              "hero.svg", "hero-mobile.svg", "hero-static.svg", "hero-mobile-static.svg",
-              "scope.svg", "scope-mobile.svg", "scope-static.svg", "scope-mobile-static.svg",
-              "stack.svg", "stack-mobile.svg", "stack-static.svg", "stack-mobile-static.svg",
-              "engineering.svg", "engineering-mobile.svg", "engineering-static.svg", "engineering-mobile-static.svg",
-              "selected-work.svg", "selected-work-mobile.svg", "selected-work-static.svg", "selected-work-mobile-static.svg",
-              "activity.svg", "activity-mobile.svg", "activity-static.svg", "activity-mobile-static.svg",
-              "footer.svg", "footer-mobile.svg", "footer-static.svg", "footer-mobile-static.svg",
+              "hero.svg", "hero-compact.svg", "hero-mobile.svg", "hero-static.svg", "hero-compact-static.svg", "hero-mobile-static.svg",
+              "scope.svg", "scope-compact.svg", "scope-mobile.svg", "scope-static.svg", "scope-compact-static.svg", "scope-mobile-static.svg",
+              "stack.svg", "stack-compact.svg", "stack-mobile.svg", "stack-static.svg", "stack-compact-static.svg", "stack-mobile-static.svg",
+              "engineering.svg", "engineering-compact.svg", "engineering-mobile.svg", "engineering-static.svg", "engineering-compact-static.svg", "engineering-mobile-static.svg",
+              "selected-work.svg", "selected-work-compact.svg", "selected-work-mobile.svg", "selected-work-static.svg", "selected-work-compact-static.svg", "selected-work-mobile-static.svg",
+              "activity.svg", "activity-compact.svg", "activity-mobile.svg", "activity-static.svg", "activity-compact-static.svg", "activity-mobile-static.svg",
+              "footer.svg", "footer-compact.svg", "footer-mobile.svg", "footer-static.svg", "footer-compact-static.svg", "footer-mobile-static.svg",
           }
           found = {p.name for p in root_dir.glob("*.svg")}
           failures = []
@@ -66,21 +66,21 @@ jobs:
           static_style = '<style id="static-motion-override">*{animation:none!important}.motion-dot{display:none!important}</style>'
 
           animated_names = [
-              "hero.svg", "hero-mobile.svg",
-              "scope.svg", "scope-mobile.svg",
-              "stack.svg", "stack-mobile.svg",
-              "engineering.svg", "engineering-mobile.svg",
-              "selected-work.svg", "selected-work-mobile.svg",
-              "activity.svg", "activity-mobile.svg",
-              "footer.svg", "footer-mobile.svg",
+              "hero.svg", "hero-compact.svg", "hero-mobile.svg",
+              "scope.svg", "scope-compact.svg", "scope-mobile.svg",
+              "stack.svg", "stack-compact.svg", "stack-mobile.svg",
+              "engineering.svg", "engineering-compact.svg", "engineering-mobile.svg",
+              "selected-work.svg", "selected-work-compact.svg", "selected-work-mobile.svg",
+              "activity.svg", "activity-compact.svg", "activity-mobile.svg",
+              "footer.svg", "footer-compact.svg", "footer-mobile.svg",
           ]
 
           def static_name(name):
-              return (
-                  name.replace("-mobile.svg", "-mobile-static.svg")
-                  if name.endswith("-mobile.svg")
-                  else name.replace(".svg", "-static.svg")
-              )
+              if name.endswith("-mobile.svg"):
+                  return name.replace("-mobile.svg", "-mobile-static.svg")
+              if name.endswith("-compact.svg"):
+                  return name.replace("-compact.svg", "-compact-static.svg")
+              return name.replace(".svg", "-static.svg")
 
           for name in animated_names:
               source = (root_dir / name).read_text(encoding="utf-8")
@@ -112,18 +112,22 @@ jobs:
                       failures.append(f"{path}: malformed viewBox {viewbox!r}")
                   else:
                       width = float(parts[2])
-                      expected_width = 720.0 if "-mobile" in path.stem else 1200.0
+                      expected_width = (
+                          720.0 if "-mobile" in path.stem
+                          else 900.0 if "-compact" in path.stem
+                          else 1200.0
+                      )
                       if width != expected_width:
                           failures.append(
                               f"{path}: expected viewBox width {expected_width:g}, got {width:g}"
                           )
 
               background = root.find(f"{ns}rect")
-              expected_rx = "32" if "-mobile" in path.stem else "28"
+              expected_rx = "32" if "-mobile" in path.stem else ("30" if "-compact" in path.stem else "28")
               if background is None or background.attrib.get("rx") != expected_rx:
                   failures.append(f"{path}: expected outer radius {expected_rx}px")
 
-              minimum_font = 22.0 if "-mobile" in path.stem else 14.0
+              minimum_font = 22.0 if "-mobile" in path.stem else (20.0 if "-compact" in path.stem else 14.0)
               for text_node, raw_size in walk_text_sizes(root):
                   if raw_size is None:
                       failures.append(f"{path}: visible <text> has no effective font-size")
@@ -194,13 +198,20 @@ jobs:
 
           required = {
               "hero.svg": ["FULL-STACK DEVELOPER", "hardware"],
+              "hero-compact.svg": ["FULL-STACK DEVELOPER", "hardware"],
               "hero-mobile.svg": ["FULL-STACK DEVELOPER", "hardware"],
               "scope.svg": ["React · Node.js · APIs · Data", "ARCHITECTURE / FLOW / CONSTRAINTS"],
+              "scope-compact.svg": ["React · Node.js · APIs · Data", "ARCHITECTURE · FLOW"],
               "scope-mobile.svg": ["React · Node.js · APIs · Data", "ARCHITECTURE · FLOW", "CONSTRAINTS"],
               "selected-work.svg": [
                   "TypeScript · JavaScript",
                   "TypeScript · React · Node.js",
                   "Nakama · WebSocket",
+              ],
+              "selected-work-compact.svg": [
+                  "TypeScript · JavaScript · Three.js · WebGL",
+                  "TypeScript · JavaScript · Three.js · Nakama · WebSocket",
+                  "TypeScript · React · Node.js / Express · MongoDB",
               ],
               "selected-work-mobile.svg": [
                   "TypeScript · JavaScript · Three.js",
@@ -209,6 +220,7 @@ jobs:
                   "Express · MongoDB",
               ],
               "footer.svg": ["FULL-STACK DEVELOPER"],
+              "footer-compact.svg": ["FULL-STACK DEVELOPER"],
               "footer-mobile.svg": ["FULL-STACK DEVELOPER"],
           }
           for filename, needles in required.items():
@@ -240,6 +252,8 @@ jobs:
               failures.append("Unexpected github-profile-3d-contrib revision.")
           if 'github-actions[bot]' not in workflow:
               failures.append("Activity commits must use the GitHub Actions bot identity.")
+          if "activity-compact.svg" not in workflow or "activity-compact-static.svg" not in workflow:
+              failures.append("Activity workflow must generate compact animated/static surfaces.")
           if "group: profile-v2-activity-" not in workflow or "cancel-in-progress: true" not in workflow:
               failures.append("Activity workflow must serialize runs per ref.")
           if "- main" not in workflow:
@@ -289,12 +303,15 @@ jobs:
           if "ImageGeneratorLocal" in readme:
               failures.append("ImageGeneratorLocal must stay out of the public showcase for now")
 
-          if '(max-width: 640px)' in readme:
-              failures.append("README still uses the obsolete 640px responsive breakpoint")
-          if readme.count('(max-width: 768px)') != 14:
-              failures.append("All seven responsive surfaces must expose animated and reduced-motion mobile sources")
-          if readme.count('(prefers-reduced-motion: reduce)') != 14:
-              failures.append("All seven responsive surfaces must expose reduced-motion desktop/mobile sources")
+          for obsolete in ('(max-width: 640px)', '(max-width: 768px)'):
+              if obsolete in readme:
+                  failures.append(f"README still uses obsolete responsive breakpoint {obsolete}")
+          if readme.count('(max-width: 430px)') != 14:
+              failures.append("All seven surfaces must expose mobile animated/reduced-motion sources")
+          if readme.count('(max-width: 1280px)') != 14:
+              failures.append("All seven surfaces must expose compact animated/reduced-motion sources")
+          if readme.count('(prefers-reduced-motion: reduce)') != 21:
+              failures.append("All seven surfaces must expose reduced-motion mobile/compact/desktop sources")
 
           sources = (
               re.findall(r'<img[^>]+src="([^"]+)"', readme)
