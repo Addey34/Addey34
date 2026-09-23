@@ -38,6 +38,7 @@ jobs:
         run: |
           python - <<'PY'
           import copy
+          import re
           import xml.etree.ElementTree as ET
           from pathlib import Path
 
@@ -68,7 +69,7 @@ jobs:
               node = ET.SubElement(parent, q("text"), attrs)
               node.text = value
 
-          def build(path, width, height, tx, ty, scale, mobile=False):
+          def build(path, width, height, tx, ty, scale, mobile=False, min_calendar_x=None):
               out = ET.Element(q("svg"), {
                   "width": str(width), "height": str(height),
                   "viewBox": f"0 0 {width} {height}",
@@ -118,12 +119,26 @@ jobs:
               })
 
               cal = copy.deepcopy(calendar)
+              if min_calendar_x is not None:
+                  for child in list(cal):
+                      match = re.match(
+                          r"translate\(([-\d.]+)[ ,]+([-\d.]+)\)",
+                          child.attrib.get("transform", ""),
+                      )
+                      if match and float(match.group(1)) < min_calendar_x:
+                          cal.remove(child)
+
               cal.set("transform", f"translate({tx} {ty}) scale({scale})")
               out.append(cal)
               ET.ElementTree(out).write(path, encoding="unicode")
 
           build("assets/profile-v2/activity.svg", 1200, 610, 168, 20, 0.72)
-          build("assets/profile-v2/activity-mobile.svg", 720, 590, -785, -359, 1.15, mobile=True)
+          build(
+              "assets/profile-v2/activity-mobile.svg",
+              720, 590, -785, -359, 1.15,
+              mobile=True,
+              min_calendar_x=650,
+          )
 
           static_style = '<style id="static-motion-override">*{animation:none!important}.motion-dot{display:none!important}</style>'
 
@@ -174,6 +189,10 @@ jobs:
                   failures.append(f"{filename}: generic SMIL animation leaked into curated output")
               if "prefers-reduced-motion" not in raw:
                   failures.append(f"{filename}: reduced-motion fallback missing")
+              if "mobile" in filename and path.stat().st_size > 100_000:
+                  failures.append(
+                      f"{filename}: mobile activity exceeds 100 KB ({path.stat().st_size} bytes)"
+                  )
 
               for match in re.finditer(r'font-size="([\d.]+)"', raw):
                   if float(match.group(1)) < min_font:
