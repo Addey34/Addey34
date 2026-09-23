@@ -90,6 +90,7 @@ TypeScript/JavaScript is my main application stack; I use Python for compute, to
   <a href="https://github.com/Addey34/magnotes-frontend">Source</a>
 </p>
 
+<!-- Activity asset is generated from real GitHub contribution data. -->
 <a id="activity"></a>
 
 <div align="center">
