@@ -48,4 +48,4 @@ text{font-family:Inter,Segoe UI,Arial,sans-serif}.m{font-family:Consolas,monospa
 </g>
 
 <text x="360" y="866" text-anchor="middle" class="m" font-size="22" fill="#6F7A89" letter-spacing="2">FROM IDEA TO RUNNING SYSTEM.</text>
-</svg>
+<style id="static-motion-override">*{animation:none!important}.motion-dot{display:none!important}</style></svg>

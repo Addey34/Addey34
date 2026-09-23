@@ -32,4 +32,4 @@
 <g transform="translate(360 1125)"><polygon points="-285,0 0,-62 285,0 0,62" fill="url(#plate)" stroke="#405064"/><text y="-18" class="m" font-size="22" fill="#65C7FF">DELIVERY / QA</text><text y="10" font-size="22" font-weight="750" fill="#F5F3ED">Playwright · Vitest · Jest</text><text y="36" font-size="22" font-weight="700" fill="#98A1AE">Docker · GitHub Actions</text></g>
 </g>
 
-</svg>
+<style id="static-motion-override">*{animation:none!important}.motion-dot{display:none!important}</style></svg>

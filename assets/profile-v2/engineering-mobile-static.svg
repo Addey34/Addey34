@@ -25,4 +25,4 @@
 <g transform="translate(360 747)" class="s"><polygon points="-105,0 0,-42 105,0 0,42" fill="#181713" stroke="#D9AE57"/><text y="7" fill="#F2D58A">ITERATE</text></g>
 </g>
 
-</svg>
+<style id="static-motion-override">*{animation:none!important}.motion-dot{display:none!important}</style></svg>

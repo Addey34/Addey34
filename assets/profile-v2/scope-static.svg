@@ -19,4 +19,4 @@
 <g transform="translate(600 485)" class="box x7"><polygon points="-125,0 0,-54 125,0 0,54" fill="url(#top)" stroke="#405064"/><text y="-3" font-weight="700">HARDWARE / PERFORMANCE</text><text y="17" class="m" font-size="14" fill="#8FA0B1">GPU · runtime</text><text y="35" class="m" font-size="14" fill="#8FA0B1">profiling · constraints</text></g>
 </g>
 
-</svg>
+<style id="static-motion-override">*{animation:none!important}.motion-dot{display:none!important}</style></svg>
