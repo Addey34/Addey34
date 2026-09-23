@@ -1,0 +1,147 @@
+name: Profile V2 End-to-end Render Audit
+
+on:
+  push:
+    branches:
+      - profile/v2-candidate
+    paths:
+      - ".github/workflows/profile-v2-e2e-once.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+
+      - name: Install browser tools
+        run: |
+          npm init -y >/dev/null 2>&1
+          npm install --no-save playwright@1.55.0 pngjs@7.0.0 pixelmatch@5.3.0
+          npx playwright install chromium --with-deps
+
+      - name: Audit real GitHub rendering
+        run: |
+          node <<'JS'
+          const fs = require('fs');
+          const { chromium } = require('playwright');
+          const { PNG } = require('pngjs');
+          const pixelmatch = require('pixelmatch');
+
+          function diff(a, b) {
+            const pa = PNG.sync.read(a);
+            const pb = PNG.sync.read(b);
+            if (pa.width !== pb.width || pa.height !== pb.height) return Infinity;
+            return pixelmatch(pa.data, pb.data, null, pa.width, pa.height, {
+              threshold: 0.05,
+              includeAA: false,
+            });
+          }
+
+          function expectedTier(width) {
+            if (width <= 430) return 'mobile';
+            if (width <= 1240) return 'compact';
+            return 'desktop';
+          }
+
+          function matchesTier(src, tier) {
+            if (tier === 'mobile') return src.includes('-mobile.svg');
+            if (tier === 'compact') return src.includes('-compact.svg');
+            return !src.includes('-mobile.svg') && !src.includes('-compact.svg');
+          }
+
+          (async () => {
+            const browser = await chromium.launch({ headless: true });
+            const url = 'https://github.com/Addey34/Addey34/tree/profile/v2-candidate';
+            const widths = [320, 430, 431, 900, 1240, 1241, 1440];
+            const boundary = [];
+            const failures = [];
+
+            for (const width of widths) {
+              const page = await browser.newPage({
+                viewport: { width, height: 900 },
+                reducedMotion: 'no-preference',
+              });
+              await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+              await page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});
+              const article = page.locator('article.markdown-body').first();
+              await article.waitFor({ state: 'visible', timeout: 30000 });
+
+              const data = await article.evaluate((root) => {
+                const rr = root.getBoundingClientRect();
+                const overflow = [...root.querySelectorAll('*')]
+                  .map((el) => {
+                    const r = el.getBoundingClientRect();
+                    return { tag: el.tagName, left: r.left, right: r.right, width: r.width };
+                  })
+                  .filter((x) => x.width > 0 && (x.left < rr.left - 1 || x.right > rr.right + 1));
+
+                return {
+                  articleWidth: rr.width,
+                  overflowCount: overflow.length,
+                  images: [...root.querySelectorAll('img')].map((img) => ({
+                    alt: img.alt,
+                    currentSrc: img.currentSrc,
+                  })),
+                };
+              });
+
+              const tier = expectedTier(width);
+              const badSources = data.images.filter((img) => !matchesTier(img.currentSrc, tier));
+              if (data.overflowCount) failures.push(`${width}px: ${data.overflowCount} overflow elements`);
+              if (badSources.length) failures.push(`${width}px: ${badSources.length} wrong responsive sources`);
+
+              boundary.push({ width, tier, ...data, badSourceCount: badSources.length });
+              await page.close();
+            }
+
+            const motion = [];
+            for (const width of [390, 900, 1440]) {
+              for (const reducedMotion of ['reduce', 'no-preference']) {
+                const page = await browser.newPage({
+                  viewport: { width, height: 1000 },
+                  reducedMotion,
+                });
+                await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+                await page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});
+                const article = page.locator('article.markdown-body').first();
+                await article.waitFor({ state: 'visible', timeout: 30000 });
+
+                await page.waitForTimeout(350);
+                const first = await article.screenshot({ animations: 'allow' });
+                await page.waitForTimeout(1600);
+                const second = await article.screenshot({ animations: 'allow' });
+                const changed = diff(first, second);
+
+                motion.push({ width, reducedMotion, diffPixels: changed });
+                if (reducedMotion === 'reduce' && changed !== 0) {
+                  failures.push(`${width}px reduced-motion changed ${changed} pixels`);
+                }
+                if (reducedMotion === 'no-preference' && changed === 0) {
+                  failures.push(`${width}px normal-motion showed no animation`);
+                }
+                await page.close();
+              }
+            }
+
+            await browser.close();
+            const report = { failures, boundary, motion };
+            fs.writeFileSync('profile-v2-e2e-report.json', JSON.stringify(report, null, 2));
+            console.log(JSON.stringify(report, null, 2));
+            if (failures.length) process.exit(1);
+          })().catch((err) => {
+            console.error(err);
+            process.exit(1);
+          });
+          JS
+
+      - name: Upload audit report
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: profile-v2-e2e-report
+          path: profile-v2-e2e-report.json
+          retention-days: 1
