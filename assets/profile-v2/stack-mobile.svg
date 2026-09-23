@@ -10,8 +10,8 @@
 <rect width="720" height="1140" rx="32" fill="url(#bg)"/>
 <g transform="translate(54 60)">
 <circle cx="7" cy="-12" r="6" fill="#D9AE57"/><text x="26" y="-5" class="m" font-size="19" fill="#D9AE57" letter-spacing="3">CORE STACK</text>
-<text y="54" font-size="34" font-weight="760" fill="#F5F3ED">Tools grouped by technical role.</text>
-<text y="91" font-size="20" fill="#98A1AE">Core first; supporting experience stays in the README.</text>
+<text y="54" font-size="34" font-weight="760" fill="#F5F3ED">Technical stack by responsibility.</text>
+<text y="91" font-size="20" fill="#98A1AE">Languages, runtime, graphics, data, compute and delivery.</text>
 </g>
 <use href="#rail" stroke="#263140" stroke-width="2"/><use href="#rail" stroke="#168CFF" stroke-opacity=".28" stroke-width="2" class="rail"/>
 <circle class="motion-dot" r="5" fill="#65C7FF"><animateMotion dur="7s" repeatCount="indefinite"><mpath href="#rail"/></animateMotion></circle>
