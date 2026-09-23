@@ -9,15 +9,11 @@
 <p align="center">
   <a href="#scope">Scope</a> ·
   <a href="#stack">Stack</a> ·
-  <a href="#engineering">Loop</a> ·
   <a href="#work">Work</a> ·
   <a href="#activity">Activity</a> ·
   <a href="#contact">Contact</a>
 </p>
 
-<p align="center">
-  I build <strong>web products, realtime/3D systems and technical tools</strong> with TypeScript/JavaScript and Python.
-</p>
 
 <a id="scope"></a>
 
