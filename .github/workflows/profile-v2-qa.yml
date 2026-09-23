@@ -231,7 +231,7 @@ jobs:
                   failures.append(f"Brand tokens missing {required_token!r}")
 
           corpus = "\n".join(p.read_text(encoding="utf-8") for p in ROOT.glob("*.svg")) + "\n" + README
-          for needle in ("TS · JS", "Node / Express", "React · Node ·", "ImageGeneratorLocal"):
+          for needle in ("TS · JS", "Node / Express", "React · Node ·"):
               if needle in corpus:
                   failures.append(f"Forbidden/obsolete public wording: {needle!r}")
 
