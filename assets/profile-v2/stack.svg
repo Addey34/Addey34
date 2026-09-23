@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+<title id="title">Core technical stack</title>
+<desc id="desc">Pseudo-3D technical stack grouped into languages, product runtime, realtime graphics, backend data, AI compute and delivery quality.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#06080D"/><stop offset="1" stop-color="#08121B"/></linearGradient>
+  <linearGradient id="top" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#18212D"/><stop offset="1" stop-color="#0B1119"/></linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <path id="a" d="M500 300C420 255 360 220 260 205"/><path id="b" d="M490 330C400 330 350 330 260 330"/><path id="c" d="M500 360C420 405 360 440 260 455"/>
+  <path id="d" d="M700 300C780 255 840 220 940 205"/><path id="e" d="M710 330C800 330 850 330 940 330"/><path id="f" d="M700 360C780 405 840 440 940 455"/>
+  <style>
+    text{font-family:Inter,Segoe UI,Arial,sans-serif}.m{font-family:Consolas,monospace}
+    .rail{stroke-dasharray:14 18;animation:r 7s linear infinite}
+    .core{animation:float 7s ease-in-out infinite}
+    @keyframes r{to{stroke-dashoffset:-128}}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+    @media(prefers-reduced-motion:reduce){.rail,.core{animation:none!important}}
+  </style>
+</defs>
+<rect width="1200" height="620" rx="28" fill="url(#bg)"/>
+<g transform="translate(72 58)">
+  <circle cx="7" cy="-10" r="5" fill="#D9AE57"/>
+  <text x="24" y="-5" class="m" font-size="12" fill="#D9AE57" letter-spacing="3">CORE STACK</text>
+  <text y="43" font-size="30" font-weight="760" fill="#F5F3ED">A working stack across product, runtime and delivery.</text>
+  <text y="70" font-size="14" fill="#98A1AE">Core technologies grouped by the role they play in the systems I build.</text>
+</g>
+
+<g fill="none" stroke="#263140" stroke-width="1.5"><use href="#a"/><use href="#b"/><use href="#c"/><use href="#d"/><use href="#e"/><use href="#f"/></g>
+<g fill="none" stroke="#168CFF" stroke-opacity=".28" class="rail"><use href="#a"/><use href="#b"/><use href="#c"/><use href="#d"/><use href="#e"/><use href="#f"/></g>
+
+<g transform="translate(600 330)"><g class="core">
+  <polygon points="-105,0 0,-58 105,0 0,58" fill="#181713" stroke="#D9AE57"/>
+  <polygon points="-105,0 0,58 0,88 -105,30" fill="#0A0B0E" stroke="#3A3021"/>
+  <polygon points="0,58 105,0 105,30 0,88" fill="#08090B" stroke="#3A3021"/>
+  <text y="5" text-anchor="middle" font-size="22" font-weight="800" fill="#F2D58A">BUILD CORE</text>
+  <text y="28" text-anchor="middle" class="m" font-size="9.5" fill="#A7B0BC" letter-spacing="1.6">PRODUCT · SYSTEMS · DELIVERY</text>
+</g></g>
+
+<g text-anchor="middle">
+  <g transform="translate(260 205)">
+    <polygon points="-132,0 0,-58 132,0 0,58" fill="url(#top)" stroke="#405064"/>
+    <polygon points="-132,0 0,58 0,78 -132,20" fill="#091018" stroke="#263140"/>
+    <polygon points="0,58 132,0 132,20 0,78" fill="#070C12" stroke="#263140"/>
+    <text y="-10" class="m" font-size="10" fill="#D9AE57">LANGUAGES</text>
+    <text y="15" font-size="16" font-weight="750" fill="#F5F3ED">TypeScript · JavaScript</text>
+    <text y="36" class="m" font-size="10.5" fill="#98A1AE">Python</text>
+  </g>
+  <g transform="translate(260 330)">
+    <polygon points="-132,0 0,-58 132,0 0,58" fill="url(#top)" stroke="#405064"/>
+    <polygon points="-132,0 0,58 0,78 -132,20" fill="#091018" stroke="#263140"/>
+    <polygon points="0,58 132,0 132,20 0,78" fill="#070C12" stroke="#263140"/>
+    <text y="-10" class="m" font-size="10" fill="#65C7FF">REALTIME / GRAPHICS</text>
+    <text y="15" font-size="15.5" font-weight="750" fill="#F5F3ED">Three.js · WebGL</text>
+    <text y="36" class="m" font-size="10.5" fill="#98A1AE">WebSocket · Nakama</text>
+  </g>
+  <g transform="translate(260 455)">
+    <polygon points="-132,0 0,-58 132,0 0,58" fill="url(#top)" stroke="#405064"/>
+    <polygon points="-132,0 0,58 0,78 -132,20" fill="#091018" stroke="#263140"/>
+    <polygon points="0,58 132,0 132,20 0,78" fill="#070C12" stroke="#263140"/>
+    <text y="-10" class="m" font-size="10" fill="#65C7FF">BACKEND / DATA</text>
+    <text y="15" font-size="15.5" font-weight="750" fill="#F5F3ED">MongoDB · PostgreSQL</text>
+    <text y="36" class="m" font-size="10.5" fill="#98A1AE">REST APIs · JWT / OAuth</text>
+  </g>
+
+  <g transform="translate(940 205)">
+    <polygon points="-132,0 0,-58 132,0 0,58" fill="url(#top)" stroke="#405064"/>
+    <polygon points="-132,0 0,58 0,78 -132,20" fill="#091018" stroke="#263140"/>
+    <polygon points="0,58 132,0 132,20 0,78" fill="#070C12" stroke="#263140"/>
+    <text y="-10" class="m" font-size="10" fill="#65C7FF">PRODUCT RUNTIME</text>
+    <text y="15" font-size="16" font-weight="750" fill="#F5F3ED">React · Node.js</text>
+    <text y="36" class="m" font-size="10.5" fill="#98A1AE">Express · Vite</text>
+  </g>
+  <g transform="translate(940 330)">
+    <polygon points="-132,0 0,-58 132,0 0,58" fill="url(#top)" stroke="#405064"/>
+    <polygon points="-132,0 0,58 0,78 -132,20" fill="#091018" stroke="#263140"/>
+    <polygon points="0,58 132,0 132,20 0,78" fill="#070C12" stroke="#263140"/>
+    <text y="-10" class="m" font-size="10" fill="#65C7FF">AI / COMPUTE</text>
+    <text y="15" font-size="15.5" font-weight="750" fill="#F5F3ED">FastAPI · PyTorch</text>
+    <text y="36" class="m" font-size="10.5" fill="#98A1AE">ONNX · CUDA / DirectML</text>
+  </g>
+  <g transform="translate(940 455)">
+    <polygon points="-132,0 0,-58 132,0 0,58" fill="url(#top)" stroke="#405064"/>
+    <polygon points="-132,0 0,58 0,78 -132,20" fill="#091018" stroke="#263140"/>
+    <polygon points="0,58 132,0 132,20 0,78" fill="#070C12" stroke="#263140"/>
+    <text y="-10" class="m" font-size="10" fill="#65C7FF">DELIVERY / QA</text>
+    <text y="15" font-size="15.5" font-weight="750" fill="#F5F3ED">Playwright · Vitest · Jest</text>
+    <text y="36" class="m" font-size="10.5" fill="#98A1AE">Docker · GitHub Actions · CI/CD</text>
+  </g>
+</g>
+
+<g filter="url(#glow)">
+  <circle r="4" fill="#65C7FF"><animateMotion dur="6.2s" repeatCount="indefinite"><mpath href="#a"/></animateMotion></circle>
+  <circle r="3.5" fill="#65C7FF"><animateMotion dur="7.1s" begin="-3s" repeatCount="indefinite"><mpath href="#e"/></animateMotion></circle>
+  <circle r="3.5" fill="#D9AE57"><animateMotion dur="8s" begin="-5s" repeatCount="indefinite"><mpath href="#c"/></animateMotion></circle>
+</g>
+</svg>
