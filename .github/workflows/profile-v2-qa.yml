@@ -37,6 +37,7 @@ jobs:
 
       - name: Validate Profile V2
         run: |
+          node --check brand/brand-tokens.mjs
           python - <<'PY'
           from pathlib import Path
           import json
@@ -44,6 +45,7 @@ jobs:
           import xml.etree.ElementTree as ET
 
           ROOT = Path("assets/profile-v2")
+          BRAND_ROOT = Path("assets/brand")
           README = Path("README.md").read_text(encoding="utf-8")
           ACTIVITY = Path(".github/workflows/profile-v2-3d.yml").read_text(encoding="utf-8")
           SETTINGS = json.loads(Path("activity-settings/ag.json").read_text(encoding="utf-8"))
@@ -165,6 +167,68 @@ jobs:
               total = sum((ROOT / f"{group}{suffix}.svg").stat().st_size for group in groups)
               if total > 125_000:
                   failures.append(f"{tier} payload is {total} bytes; budget is 125000")
+
+
+          expected_brand = {"ag-mark.svg", "ag-mark-mono.svg", "identity-board.svg"}
+          found_brand = {p.name for p in BRAND_ROOT.glob("*.svg")}
+          if found_brand != expected_brand:
+              missing_brand = sorted(expected_brand - found_brand)
+              unexpected_brand = sorted(found_brand - expected_brand)
+              if missing_brand:
+                  failures.append("Missing brand sources: " + ", ".join(missing_brand))
+              if unexpected_brand:
+                  failures.append("Unexpected legacy brand assets: " + ", ".join(unexpected_brand))
+          if (BRAND_ROOT / "v83").exists():
+              failures.append("Legacy V83 asset tree must not exist in the final V2 branch")
+
+          for brand_asset in sorted(expected_brand):
+              path = BRAND_ROOT / brand_asset
+              try:
+                  brand_svg = ET.parse(path).getroot()
+              except Exception as exc:
+                  failures.append(f"{path}: invalid XML: {exc}")
+                  continue
+              title = brand_svg.find(f"{NS}title")
+              desc = brand_svg.find(f"{NS}desc")
+              if title is None or not "".join(title.itertext()).strip():
+                  failures.append(f"{path}: missing non-empty <title>")
+              if desc is None or not "".join(desc.itertext()).strip():
+                  failures.append(f"{path}: missing non-empty <desc>")
+
+          def path_geometry(path):
+              root = ET.parse(path).getroot()
+              return [
+                  node.attrib.get("d")
+                  for node in root.iter(f"{NS}path")
+                  if node.attrib.get("d")
+              ]
+
+          if path_geometry(BRAND_ROOT / "ag-mark.svg") != path_geometry(BRAND_ROOT / "ag-mark-mono.svg"):
+              failures.append("Primary and monochrome AG marks must share identical path geometry")
+
+          identity = (BRAND_ROOT / "identity-board.svg").read_text(encoding="utf-8")
+          if "FULL-STACK DEVELOPER" not in identity:
+              failures.append("Identity board must use the current FULL-STACK DEVELOPER role")
+
+          tokens = Path("brand/brand-tokens.mjs").read_text(encoding="utf-8")
+          for required_token in (
+              "mobileMax: 430",
+              "compactMax: 1240",
+              "desktop: 1200",
+              "compact: 900",
+              "mobile: 720",
+              "desktop: 28",
+              "compact: 30",
+              "mobile: 32",
+              "desktop: 14",
+              "compact: 20",
+              "mobile: 22",
+              "#06080D",
+              "#D9AE57",
+              "#168CFF",
+          ):
+              if required_token not in tokens:
+                  failures.append(f"Brand tokens missing {required_token!r}")
 
           corpus = "\n".join(p.read_text(encoding="utf-8") for p in ROOT.glob("*.svg")) + "\n" + README
           for needle in ("TS · JS", "Node / Express", "React · Node ·", "ImageGeneratorLocal"):
