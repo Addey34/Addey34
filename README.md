@@ -8,6 +8,7 @@
   <a href="#stack">Stack</a> ·
   <a href="#engineering">Engineering</a> ·
   <a href="#work">Selected Work</a> ·
+  <a href="#activity">Activity</a> ·
   <a href="#contact">Contact</a>
 </p>
 
@@ -57,22 +58,22 @@ My core is JavaScript/TypeScript, with Python where compute, tooling or AI workl
 <p align="center">
   <a href="https://galaxy.adrianguichard.dev"><strong>Galaxy</strong></a>
   &nbsp;·&nbsp;
+  <a href="https://github.com/Addey34/galaxy-3d">source</a>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="https://ludora.adrianguichard.dev"><strong>Ludora</strong></a>
   &nbsp;·&nbsp;
+  <a href="https://github.com/Addey34/ludora-showcase">showcase</a>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="https://magnotes.adrianguichard.dev"><strong>MagNotes</strong></a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/Addey34/magnotes-frontend">source</a>
 </p>
 
-<table>
-<tr>
-<td width="33%"><strong>Galaxy</strong><br/>TypeScript + JavaScript · Three.js · WebGL<br/><sub>3D, scientific data, rendering and performance.</sub></td>
-<td width="33%"><strong>Ludora</strong><br/>TypeScript + JavaScript · Three.js · Nakama · WebSocket<br/><sub>Games, realtime systems and browser-platform architecture.</sub></td>
-<td width="33%"><strong>MagNotes</strong><br/>TypeScript · React · Node.js / Express · MongoDB<br/><sub>Product interaction, full-stack contracts and production QA.</sub></td>
-</tr>
-</table>
+<a id="activity"></a>
 
-### Activity / next validation
-
-The activity surface is intentionally not faked in this branch. The next pass will compare a **real 3D contribution renderer** against an animated Skyline using actual GitHub contribution data, and keep only the one that matches the V2 system without becoming a vanity widget.
+<div align="center">
+  <img src="./assets/profile-v2/activity.svg" alt="3D GitHub contribution activity" width="100%" />
+</div>
 
 <a id="contact"></a>
 
