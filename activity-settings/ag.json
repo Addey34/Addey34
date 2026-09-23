@@ -1,0 +1,17 @@
+{
+  "type": "normal",
+  "fileName": "activity-ag.svg",
+  "backgroundColor": "#06080D",
+  "foregroundColor": "#F5F3ED",
+  "strongColor": "#D9AE57",
+  "weakColor": "#667281",
+  "radarColor": "#168CFF",
+  "growingAnimation": true,
+  "contribColors": [
+    "#121923",
+    "#173A59",
+    "#145F9E",
+    "#168CFF",
+    "#D9AE57"
+  ]
+}
