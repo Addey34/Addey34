@@ -89,6 +89,41 @@ jobs:
               if target.read_text(encoding="utf-8") != expected:
                   failures.append(f"{target}: static variant is out of sync with {name}")
 
+          tiers = {
+              "desktop": [
+                  "hero.svg", "scope.svg", "stack.svg", "engineering.svg",
+                  "selected-work.svg", "activity.svg", "footer.svg",
+              ],
+              "compact": [
+                  "hero-compact.svg", "scope-compact.svg", "stack-compact.svg",
+                  "engineering-compact.svg", "selected-work-compact.svg",
+                  "activity-compact.svg", "footer-compact.svg",
+              ],
+              "mobile": [
+                  "hero-mobile.svg", "scope-mobile.svg", "stack-mobile.svg",
+                  "engineering-mobile.svg", "selected-work-mobile.svg",
+                  "activity-mobile.svg", "footer-mobile.svg",
+              ],
+          }
+
+          for tier, names in tiers.items():
+              animated_bytes = sum((root_dir / name).stat().st_size for name in names)
+              static_bytes = sum((root_dir / static_name(name)).stat().st_size for name in names)
+              for mode, total in (("animated", animated_bytes), ("reduced-motion", static_bytes)):
+                  if total > 125_000:
+                      failures.append(
+                          f"{tier} {mode} payload is {total} bytes; budget is 125000 bytes"
+                      )
+
+          for name in (
+              "activity.svg", "activity-static.svg",
+              "activity-compact.svg", "activity-compact-static.svg",
+              "activity-mobile.svg", "activity-mobile-static.svg",
+          ):
+              size = (root_dir / name).stat().st_size
+              if size > 100_000:
+                  failures.append(f"{name}: {size} bytes exceeds 100 KB Activity budget")
+
           def walk_text_styles(node, inherited_size=None, inherited_fill=None):
               current_size = node.attrib.get("font-size", inherited_size)
               current_fill = node.attrib.get("fill", inherited_fill)
