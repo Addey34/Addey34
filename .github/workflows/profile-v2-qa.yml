@@ -273,7 +273,7 @@ jobs:
           readme = Path("README.md").read_text(encoding="utf-8")
           failures = []
 
-          for anchor in ["#scope", "#stack", "#work", "#activity", "#contact"]:
+          for anchor in ["#scope", "#stack", "#work", "#activity"]:
               if f'href="{anchor}"' not in readme:
                   failures.append(f"README missing navigation anchor {anchor}")
 
@@ -303,13 +303,15 @@ jobs:
           if "ImageGeneratorLocal" in readme:
               failures.append("ImageGeneratorLocal must stay out of the public showcase for now")
 
-          for obsolete in ('(max-width: 640px)', '(max-width: 768px)'):
+          for obsolete in ('(max-width: 640px)', '(max-width: 768px)', '(max-width: 1280px)'):
               if obsolete in readme:
                   failures.append(f"README still uses obsolete responsive breakpoint {obsolete}")
           if readme.count('(max-width: 430px)') != 14:
               failures.append("All seven surfaces must expose mobile animated/reduced-motion sources")
-          if readme.count('(max-width: 1280px)') != 14:
+          if readme.count('(max-width: 1240px)') != 14:
               failures.append("All seven surfaces must expose compact animated/reduced-motion sources")
+          if 'href="#contact"' in readme:
+              failures.append("Top navigation should stay compact; Contact remains a section, not a nav item.")
           if readme.count('(prefers-reduced-motion: reduce)') != 21:
               failures.append("All seven surfaces must expose reduced-motion mobile/compact/desktop sources")
 

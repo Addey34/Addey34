@@ -2,10 +2,10 @@
 <div align="center">
   <picture>
     <source media="(prefers-reduced-motion: reduce) and (max-width: 430px)" srcset="./assets/profile-v2/hero-mobile-static.svg" />
-    <source media="(prefers-reduced-motion: reduce) and (max-width: 1280px)" srcset="./assets/profile-v2/hero-compact-static.svg" />
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 1240px)" srcset="./assets/profile-v2/hero-compact-static.svg" />
     <source media="(prefers-reduced-motion: reduce)" srcset="./assets/profile-v2/hero-static.svg" />
     <source media="(max-width: 430px)" srcset="./assets/profile-v2/hero-mobile.svg" />
-    <source media="(max-width: 1280px)" srcset="./assets/profile-v2/hero-compact.svg" />
+    <source media="(max-width: 1240px)" srcset="./assets/profile-v2/hero-compact.svg" />
     <img src="./assets/profile-v2/hero.svg" alt="Adrian Guichard — Full-Stack Developer" width="100%" />
   </picture>
 </div>
@@ -14,8 +14,7 @@
   <a href="#scope">Scope</a> ·
   <a href="#stack">Stack</a> ·
   <a href="#work">Work</a> ·
-  <a href="#activity">Activity</a> ·
-  <a href="#contact">Contact</a>
+  <a href="#activity">Activity</a>
 </p>
 
 
@@ -24,10 +23,10 @@
 <div align="center">
   <picture>
     <source media="(prefers-reduced-motion: reduce) and (max-width: 430px)" srcset="./assets/profile-v2/scope-mobile-static.svg" />
-    <source media="(prefers-reduced-motion: reduce) and (max-width: 1280px)" srcset="./assets/profile-v2/scope-compact-static.svg" />
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 1240px)" srcset="./assets/profile-v2/scope-compact-static.svg" />
     <source media="(prefers-reduced-motion: reduce)" srcset="./assets/profile-v2/scope-static.svg" />
     <source media="(max-width: 430px)" srcset="./assets/profile-v2/scope-mobile.svg" />
-    <source media="(max-width: 1280px)" srcset="./assets/profile-v2/scope-compact.svg" />
+    <source media="(max-width: 1240px)" srcset="./assets/profile-v2/scope-compact.svg" />
     <img src="./assets/profile-v2/scope.svg" alt="Technical scope — web, realtime, games, 3D, AI, automation, security and hardware/performance" width="100%" />
   </picture>
 </div>
@@ -37,10 +36,10 @@
 <div align="center">
   <picture>
     <source media="(prefers-reduced-motion: reduce) and (max-width: 430px)" srcset="./assets/profile-v2/stack-mobile-static.svg" />
-    <source media="(prefers-reduced-motion: reduce) and (max-width: 1280px)" srcset="./assets/profile-v2/stack-compact-static.svg" />
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 1240px)" srcset="./assets/profile-v2/stack-compact-static.svg" />
     <source media="(prefers-reduced-motion: reduce)" srcset="./assets/profile-v2/stack-static.svg" />
     <source media="(max-width: 430px)" srcset="./assets/profile-v2/stack-mobile.svg" />
-    <source media="(max-width: 1280px)" srcset="./assets/profile-v2/stack-compact.svg" />
+    <source media="(max-width: 1240px)" srcset="./assets/profile-v2/stack-compact.svg" />
     <img src="./assets/profile-v2/stack.svg" alt="Core technical stack" width="100%" />
   </picture>
 </div>
@@ -65,10 +64,10 @@
 <div align="center">
   <picture>
     <source media="(prefers-reduced-motion: reduce) and (max-width: 430px)" srcset="./assets/profile-v2/engineering-mobile-static.svg" />
-    <source media="(prefers-reduced-motion: reduce) and (max-width: 1280px)" srcset="./assets/profile-v2/engineering-compact-static.svg" />
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 1240px)" srcset="./assets/profile-v2/engineering-compact-static.svg" />
     <source media="(prefers-reduced-motion: reduce)" srcset="./assets/profile-v2/engineering-static.svg" />
     <source media="(max-width: 430px)" srcset="./assets/profile-v2/engineering-mobile.svg" />
-    <source media="(max-width: 1280px)" srcset="./assets/profile-v2/engineering-compact.svg" />
+    <source media="(max-width: 1240px)" srcset="./assets/profile-v2/engineering-compact.svg" />
     <img src="./assets/profile-v2/engineering.svg" alt="Engineering loop — plan, build, test, harden, deploy, monitor and iterate" width="100%" />
   </picture>
 </div>
@@ -78,10 +77,10 @@
 <div align="center">
   <picture>
     <source media="(prefers-reduced-motion: reduce) and (max-width: 430px)" srcset="./assets/profile-v2/selected-work-mobile-static.svg" />
-    <source media="(prefers-reduced-motion: reduce) and (max-width: 1280px)" srcset="./assets/profile-v2/selected-work-compact-static.svg" />
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 1240px)" srcset="./assets/profile-v2/selected-work-compact-static.svg" />
     <source media="(prefers-reduced-motion: reduce)" srcset="./assets/profile-v2/selected-work-static.svg" />
     <source media="(max-width: 430px)" srcset="./assets/profile-v2/selected-work-mobile.svg" />
-    <source media="(max-width: 1280px)" srcset="./assets/profile-v2/selected-work-compact.svg" />
+    <source media="(max-width: 1240px)" srcset="./assets/profile-v2/selected-work-compact.svg" />
     <img src="./assets/profile-v2/selected-work.svg" alt="Selected public work — Galaxy, Ludora and MagNotes" width="100%" />
   </picture>
 </div>
@@ -98,10 +97,10 @@
 <div align="center">
   <picture>
     <source media="(prefers-reduced-motion: reduce) and (max-width: 430px)" srcset="./assets/profile-v2/activity-mobile-static.svg" />
-    <source media="(prefers-reduced-motion: reduce) and (max-width: 1280px)" srcset="./assets/profile-v2/activity-compact-static.svg" />
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 1240px)" srcset="./assets/profile-v2/activity-compact-static.svg" />
     <source media="(prefers-reduced-motion: reduce)" srcset="./assets/profile-v2/activity-static.svg" />
     <source media="(max-width: 430px)" srcset="./assets/profile-v2/activity-mobile.svg" />
-    <source media="(max-width: 1280px)" srcset="./assets/profile-v2/activity-compact.svg" />
+    <source media="(max-width: 1240px)" srcset="./assets/profile-v2/activity-compact.svg" />
     <img src="./assets/profile-v2/activity.svg" alt="Animated 3D GitHub contribution activity generated from real contribution data" width="100%" />
   </picture>
 </div>
@@ -121,10 +120,10 @@
 <div align="center">
   <picture>
     <source media="(prefers-reduced-motion: reduce) and (max-width: 430px)" srcset="./assets/profile-v2/footer-mobile-static.svg" />
-    <source media="(prefers-reduced-motion: reduce) and (max-width: 1280px)" srcset="./assets/profile-v2/footer-compact-static.svg" />
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 1240px)" srcset="./assets/profile-v2/footer-compact-static.svg" />
     <source media="(prefers-reduced-motion: reduce)" srcset="./assets/profile-v2/footer-static.svg" />
     <source media="(max-width: 430px)" srcset="./assets/profile-v2/footer-mobile.svg" />
-    <source media="(max-width: 1280px)" srcset="./assets/profile-v2/footer-compact.svg" />
+    <source media="(max-width: 1240px)" srcset="./assets/profile-v2/footer-compact.svg" />
     <img src="./assets/profile-v2/footer.svg" alt="From idea to running system" width="100%" />
   </picture>
 </div>
