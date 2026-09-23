@@ -151,6 +151,12 @@ jobs:
 
               raw_original = path.read_text(encoding="utf-8")
               raw = raw_original.lower()
+
+              for low_contrast in ("#667281", "#6F7A89"):
+                  if low_contrast.lower() in raw:
+                      failures.append(
+                          f"{path}: low-contrast muted tone {low_contrast} is not allowed in V2"
+                      )
               if any(ext in raw for ext in (".png", ".jpg", ".jpeg", ".gif")):
                   failures.append(f"{path}: raster dependency is not allowed in V2")
 
@@ -312,6 +318,8 @@ jobs:
               failures.append("All seven surfaces must expose compact animated/reduced-motion sources")
           if 'href="#contact"' in readme:
               failures.append("Top navigation should stay compact; Contact remains a section, not a nav item.")
+          if '<a href="https://github.com/Addey34"><strong>GitHub</strong></a>' in readme:
+              failures.append("Contact block should not repeat the current GitHub profile link.")
           if readme.count('(prefers-reduced-motion: reduce)') != 21:
               failures.append("All seven surfaces must expose reduced-motion mobile/compact/desktop sources")
 
