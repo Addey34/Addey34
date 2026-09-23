@@ -15,9 +15,10 @@
   <a href="#contact">Contact</a>
 </p>
 
-I build **web products, interactive systems and technical tools** across frontend, backend, realtime, 3D, AI/local compute, automation, security and engineering workflows.
-
-TypeScript/JavaScript is my main application stack; I use Python for compute, tooling and AI workloads. I care about the whole path from an idea to a system that can be **tested, hardened, deployed, observed and improved**.
+<p align="center">
+  I build <strong>web products, interactive systems and technical tools</strong> across frontend, backend, realtime, 3D, AI/local compute, automation and security.<br />
+  TypeScript/JavaScript is my main application stack; I use Python for compute, tooling and AI workloads.
+</p>
 
 <a id="scope"></a>
 
@@ -38,15 +39,15 @@ TypeScript/JavaScript is my main application stack; I use Python for compute, to
 </div>
 
 <details>
-<summary><strong>Stack detail</strong></summary>
+<summary><strong>Extended stack</strong></summary>
 <br />
 
 **Languages** — TypeScript · JavaScript · Python  
 **Product runtime** — React · Node.js · Express · Vite  
-**Interactive** — Three.js · WebGL · Canvas · realtime/game logic  
-**Backend & data** — MongoDB · PostgreSQL · FastAPI · REST APIs · WebSocket · authentication  
-**Compute** — PyTorch · Diffusers · ONNX Runtime · CUDA / DirectML  
-**Engineering** — Playwright · Vitest · Jest · Docker · GitHub Actions · CI/CD · Linux  
+**Realtime & graphics** — Three.js · WebGL · Canvas · WebSocket · Nakama · game logic  
+**Data & APIs** — MongoDB · PostgreSQL · REST APIs · JWT / OAuth  
+**Compute** — FastAPI · PyTorch · Diffusers · ONNX Runtime · CUDA / DirectML  
+**Delivery & QA** — Playwright · Vitest · Jest · Docker · GitHub Actions · CI/CD · Linux  
 
 **Also worked with** — Angular · Vue · Next.js · Astro · React Native · Java / Spring Boot · Prisma · Mongoose · Tailwind · Firebase · Caddy · Nginx
 
