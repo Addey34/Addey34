@@ -11,7 +11,7 @@
 <g transform="translate(54 60)">
 <circle cx="7" cy="-12" r="6" fill="#D9AE57"/><text x="26" y="-5" class="m" font-size="22" fill="#D9AE57" letter-spacing="3">SELECTED WORK</text>
 <text y="54" font-size="34" font-weight="760" fill="#F5F3ED">Three public projects.</text>
-<text y="91" font-size="22" fill="#98A1AE">3D · realtime platform systems · full-stack product</text>
+<text y="91" font-size="22" fill="#98A1AE">3D · realtime · full-stack product engineering</text>
 </g>
 <use href="#rail" fill="none" stroke="#263140" stroke-width="2"/><use href="#rail" fill="none" stroke="#168CFF" stroke-opacity=".28" stroke-width="2" class="flow"/>
 <circle class="motion-dot" r="5" fill="#65C7FF"><animateMotion dur="7.2s" repeatCount="indefinite"><mpath href="#rail"/></animateMotion></circle>
