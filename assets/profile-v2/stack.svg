@@ -13,7 +13,7 @@
     .core{animation:float 7s ease-in-out infinite}
     @keyframes r{to{stroke-dashoffset:-128}}
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-    @media(prefers-reduced-motion:reduce){.rail,.core{animation:none!important}}
+    @media(prefers-reduced-motion:reduce){.motion-dot{display:none!important}.rail,.core{animation:none!important}}
   </style>
 </defs>
 <rect width="1200" height="620" rx="28" fill="url(#bg)"/>
@@ -88,8 +88,8 @@
 </g>
 
 <g filter="url(#glow)">
-  <circle r="4" fill="#65C7FF"><animateMotion dur="6.2s" repeatCount="indefinite"><mpath href="#a"/></animateMotion></circle>
-  <circle r="3.5" fill="#65C7FF"><animateMotion dur="7.1s" begin="-3s" repeatCount="indefinite"><mpath href="#e"/></animateMotion></circle>
-  <circle r="3.5" fill="#D9AE57"><animateMotion dur="8s" begin="-5s" repeatCount="indefinite"><mpath href="#c"/></animateMotion></circle>
+  <circle class="motion-dot" r="4" fill="#65C7FF"><animateMotion dur="6.2s" repeatCount="indefinite"><mpath href="#a"/></animateMotion></circle>
+  <circle class="motion-dot" r="3.5" fill="#65C7FF"><animateMotion dur="7.1s" begin="-3s" repeatCount="indefinite"><mpath href="#e"/></animateMotion></circle>
+  <circle class="motion-dot" r="3.5" fill="#D9AE57"><animateMotion dur="8s" begin="-5s" repeatCount="indefinite"><mpath href="#c"/></animateMotion></circle>
 </g>
 </svg>
