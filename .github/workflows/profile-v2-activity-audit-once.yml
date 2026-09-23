@@ -1,5 +1,5 @@
 name: Profile V2 Activity Visual Audit
-# audit revision: 1
+# audit revision: 2
 
 on:
   push:
