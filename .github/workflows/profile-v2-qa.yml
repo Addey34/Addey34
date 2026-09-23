@@ -3,6 +3,7 @@ name: Profile V2 QA
 on:
   push:
     branches:
+      - main
       - profile/v2-candidate
     paths:
       - README.md
