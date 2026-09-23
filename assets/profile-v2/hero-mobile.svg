@@ -16,7 +16,7 @@ text{font-family:Inter,Segoe UI,Arial,sans-serif}.m{font-family:Consolas,monospa
 <rect width="720" height="900" rx="32" fill="url(#bg)"/>
 <g transform="translate(54 62)">
 <circle cx="7" cy="-12" r="6" fill="#D9AE57"/>
-<text x="26" y="-5" class="m" font-size="19" fill="#D9AE57" letter-spacing="3">AG / TECHNICAL PROFILE</text>
+<text x="26" y="-5" class="m" font-size="20" fill="#D9AE57" letter-spacing="3">AG / TECHNICAL PROFILE</text>
 <text y="72" font-size="47" font-weight="800" fill="#F5F3ED">ADRIAN GUICHARD</text>
 <text y="116" class="m" font-size="25" fill="#65C7FF" letter-spacing="1.5">FULL-STACK DEVELOPER</text>
 <text y="172" font-size="22" fill="#B8C0CA">Building products and technical systems across web,</text>
@@ -38,14 +38,14 @@ text{font-family:Inter,Segoe UI,Arial,sans-serif}.m{font-family:Consolas,monospa
 <polygon points="0,72 130,0 130,53 0,125" fill="#060A0F" stroke="#293541"/>
 <polygon points="-108,0 0,-58 108,0 0,58" fill="none" stroke="#D9AE57" class="line"/>
 <text y="10" text-anchor="middle" font-size="44" font-weight="800" fill="url(#gold)">AG</text>
-<text y="42" text-anchor="middle" class="m" font-size="16" fill="#A7B0BC" letter-spacing="1.4">PRODUCT · SYSTEMS · DELIVERY</text>
+<text y="42" text-anchor="middle" class="m" font-size="20" fill="#A7B0BC" letter-spacing="1.4">PRODUCT · SYSTEMS</text>
 </g>
-<g class="m" font-size="18" fill="#B6C0CB">
+<g class="m" font-size="20" fill="#B6C0CB">
 <text x="360" y="508" text-anchor="middle">WEB / REALTIME</text>
 <text x="94" y="642">SECURITY</text>
 <text x="626" y="642" text-anchor="end">3D / GRAPHICS</text>
 <text x="360" y="805" text-anchor="middle">AI / COMPUTE</text>
 </g>
 
-<text x="360" y="866" text-anchor="middle" class="m" font-size="18" fill="#6F7A89" letter-spacing="2">FROM IDEA TO RUNNING SYSTEM.</text>
+<text x="360" y="866" text-anchor="middle" class="m" font-size="20" fill="#6F7A89" letter-spacing="2">FROM IDEA TO RUNNING SYSTEM.</text>
 </svg>
