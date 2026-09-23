@@ -1,4 +1,4 @@
-name: Profile V2 Layout Boundary Audit
+name: Profile V2 Profile-page Boundary Audit
 
 on:
   push:
@@ -31,7 +31,7 @@ jobs:
 
           (async () => {
             const browser = await chromium.launch({ headless: true });
-            const url = 'https://github.com/Addey34/Addey34/tree/profile/v2-candidate';
+            const url = 'https://github.com/Addey34';
             const widths = [320, 360, 390, 430, 767, 768, 769, 900, 1024, 1440];
             const report = [];
 
