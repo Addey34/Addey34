@@ -14,6 +14,7 @@
 <text y="91" font-size="20" fill="#98A1AE">3D · realtime platform systems · full-stack product</text>
 </g>
 <use href="#rail" fill="none" stroke="#263140" stroke-width="2"/><use href="#rail" fill="none" stroke="#168CFF" stroke-opacity=".28" stroke-width="2" class="flow"/>
+<circle class="motion-dot" r="5" fill="#65C7FF"><animateMotion dur="7s" repeatCount="indefinite"><mpath href="#rail"/></animateMotion></circle>
 <g text-anchor="middle">
 <g transform="translate(360 330)" class="c">
 <polygon points="-290,0 0,-108 290,0 0,108" fill="url(#top)" stroke="#405064"/>
@@ -37,5 +38,5 @@
 <text y="82" class="m" font-size="18" fill="#98A1AE">TypeScript · React · Node.js / Express · MongoDB</text>
 </g>
 </g>
-<circle class="motion-dot" r="5" fill="#65C7FF"><animateMotion dur="7s" repeatCount="indefinite"><mpath href="#rail"/></animateMotion></circle>
+
 </svg>
