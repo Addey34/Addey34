@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+<title id="title">GitHub contribution activity</title>
+<desc id="desc">Animated isometric activity surface reserved for generated GitHub contribution data.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#06080D"/><stop offset="1" stop-color="#0A1119"/></linearGradient>
+  <filter id="g" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <style>
+    text{font-family:Inter,Segoe UI,Arial,sans-serif}.m{font-family:SFMono-Regular,Consolas,Liberation Mono,monospace}
+    .flow{stroke-dasharray:12 16;animation:f 7s linear infinite}.pulse{animation:p 2.8s ease-in-out infinite}
+    @keyframes f{to{stroke-dashoffset:-112}}@keyframes p{0%,100%{opacity:.4}50%{opacity:1}}
+    @media(prefers-reduced-motion:reduce){.flow,.pulse{animation:none!important}}
+  </style>
+</defs>
+<rect width="1200" height="300" rx="28" fill="url(#bg)"/>
+<g transform="translate(72 58)">
+  <circle cx="7" cy="-10" r="5" fill="#D9AE57"/>
+  <text x="24" y="-5" class="m" font-size="12" fill="#D9AE57" letter-spacing="3">ACTIVITY / 3D CONTRIBUTIONS</text>
+  <text y="43" font-size="30" font-weight="760" fill="#F5F3ED">Contribution data as a system surface.</text>
+  <text y="70" font-size="14" fill="#98A1AE">This slot is designed for the generated 3D GitHub activity renderer.</text>
+</g>
+<g transform="translate(92 238) skewY(-15) scale(1 .62)" fill="none" stroke="#263140">
+  <path d="M0 0H1010M0-40H1010M0-80H1010M0-120H1010"/>
+  <path d="M0 0V-120M101 0V-120M202 0V-120M303 0V-120M404 0V-120M505 0V-120M606 0V-120M707 0V-120M808 0V-120M909 0V-120M1010 0V-120"/>
+</g>
+<g transform="translate(142 216) skewY(-15) scale(1 .62)">
+  <rect x="0" y="-35" width="44" height="35" fill="#173A59"/>
+  <rect x="78" y="-68" width="44" height="68" fill="#145F9E"/>
+  <rect x="156" y="-108" width="44" height="108" fill="#168CFF"/>
+  <rect x="234" y="-50" width="44" height="50" fill="#173A59"/>
+  <rect x="312" y="-128" width="44" height="128" fill="#65C7FF"/>
+  <rect x="390" y="-82" width="44" height="82" fill="#168CFF"/>
+  <rect x="468" y="-116" width="44" height="116" fill="#D9AE57"/>
+  <path class="flow" d="M0-4H620" stroke="#65C7FF" stroke-width="2" opacity=".45"/>
+</g>
+<circle class="pulse" cx="1040" cy="88" r="4" fill="#168CFF" filter="url(#g)"/>
+<text x="1026" y="93" text-anchor="end" class="m" font-size="10.5" fill="#98A1AE" letter-spacing="2">GENERATED ACTIVITY SLOT</text>
+</svg>
