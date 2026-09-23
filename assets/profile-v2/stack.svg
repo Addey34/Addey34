@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img"><defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img"><title>Core technical stack</title><desc>Animated pseudo-3D view of Adrian's core languages, product runtime, interactive engineering, data and compute stack.</desc><defs>
 <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#06080D"/><stop offset="1" stop-color="#08121B"/></linearGradient><linearGradient id="top" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#18212D"/><stop offset="1" stop-color="#0B1119"/></linearGradient>
 <path id="r1" d="M250 220C420 160 520 185 600 240S790 300 950 220"/><path id="r2" d="M250 374C430 330 510 355 600 408S790 440 950 374"/>
 <style>text{font-family:Inter,Segoe UI,Arial,sans-serif}.m{font-family:Consolas,monospace}.layer{animation:f 7s ease-in-out infinite}.l2{animation-delay:-2.7s}.rail{stroke-dasharray:14 17;animation:r 6s linear infinite}@keyframes f{50%{transform:translateY(-5px)}}@keyframes r{to{stroke-dashoffset:-124}}@media(prefers-reduced-motion:reduce){.layer,.rail{animation:none!important}}</style></defs>
