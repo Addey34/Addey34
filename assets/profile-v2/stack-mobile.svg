@@ -13,13 +13,16 @@
 <text y="54" font-size="34" font-weight="760" fill="#F5F3ED">Tools grouped by technical role.</text>
 <text y="91" font-size="20" fill="#98A1AE">Core first; supporting experience stays in the README.</text>
 </g>
+<use href="#rail" stroke="#263140" stroke-width="2"/><use href="#rail" stroke="#168CFF" stroke-opacity=".28" stroke-width="2" class="rail"/>
+<circle class="motion-dot" r="5" fill="#65C7FF"><animateMotion dur="7s" repeatCount="indefinite"><mpath href="#rail"/></animateMotion></circle>
+<circle class="motion-dot" r="4" fill="#D9AE57"><animateMotion dur="9s" begin="-4s" repeatCount="indefinite"><mpath href="#rail"/></animateMotion></circle>
 <g transform="translate(360 230)">
 <polygon points="-120,0 0,-62 120,0 0,62" fill="#181713" stroke="#D9AE57"/>
 <polygon points="-120,0 0,62 0,92 -120,30" fill="#0A0B0E" stroke="#3A3021"/>
 <polygon points="0,62 120,0 120,30 0,92" fill="#08090B" stroke="#3A3021"/>
 <text y="7" text-anchor="middle" font-size="29" font-weight="800" fill="#F2D58A">BUILD CORE</text>
 </g>
-<use href="#rail" stroke="#263140" stroke-width="2"/><use href="#rail" stroke="#168CFF" stroke-opacity=".28" stroke-width="2" class="rail"/>
+
 <g text-anchor="middle">
 <g transform="translate(360 380)"><polygon points="-285,0 0,-50 285,0 0,50" fill="url(#plate)" stroke="#405064"/><text y="-10" class="m" font-size="18" fill="#D9AE57">LANGUAGES</text><text y="17" font-size="24" font-weight="750" fill="#F5F3ED">TypeScript · JavaScript · Python</text></g>
 <g transform="translate(360 510)"><polygon points="-285,0 0,-50 285,0 0,50" fill="url(#plate)" stroke="#405064"/><text y="-10" class="m" font-size="18" fill="#65C7FF">PRODUCT RUNTIME</text><text y="17" font-size="23" font-weight="750" fill="#F5F3ED">React · Node.js · Express · Vite</text></g>
@@ -28,6 +31,5 @@
 <g transform="translate(360 900)"><polygon points="-285,0 0,-50 285,0 0,50" fill="url(#plate)" stroke="#405064"/><text y="-10" class="m" font-size="18" fill="#65C7FF">AI / COMPUTE</text><text y="17" font-size="22" font-weight="750" fill="#F5F3ED">FastAPI · PyTorch · ONNX · CUDA / DirectML</text></g>
 <g transform="translate(360 1030)"><polygon points="-285,0 0,-50 285,0 0,50" fill="url(#plate)" stroke="#405064"/><text y="-10" class="m" font-size="18" fill="#65C7FF">DELIVERY / QA</text><text y="17" font-size="20" font-weight="750" fill="#F5F3ED">Playwright · Vitest · Jest · Docker · GitHub Actions</text></g>
 </g>
-<circle class="motion-dot" r="5" fill="#65C7FF"><animateMotion dur="7s" repeatCount="indefinite"><mpath href="#rail"/></animateMotion></circle>
-<circle class="motion-dot" r="4" fill="#D9AE57"><animateMotion dur="9s" begin="-4s" repeatCount="indefinite"><mpath href="#rail"/></animateMotion></circle>
+
 </svg>
