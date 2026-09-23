@@ -122,8 +122,8 @@ jobs:
               out.append(cal)
               ET.ElementTree(out).write(path, encoding="unicode")
 
-          build("assets/profile-v2/activity.svg", 1200, 650, 100, 10, 0.78)
-          build("assets/profile-v2/activity-mobile.svg", 720, 650, 27, 145, 0.52, mobile=True)
+          build("assets/profile-v2/activity.svg", 1200, 650, 150, 35, 0.75)
+          build("assets/profile-v2/activity-mobile.svg", 720, 650, 49, 145, 0.52, mobile=True)
           PY
 
       - name: Commit curated activity
