@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="640" height="120" viewBox="0 0 640 120" role="img" aria-labelledby="title desc"><title id="title">Contact mobile</title><desc id="desc">Mobile Signal contact branches directly into the external action buttons below.</desc><rect width="640" height="120" fill="#F4F1E8"/>
-  <path d="M30 0 V120" stroke="#CDD2D8" stroke-width="2"/>
-  <circle cx="30" cy="38" r="6" fill="#006BDD"/>
-  <path d="M30 38 H62" stroke="#006BDD" stroke-width="2"/><text x="74" y="40" fill="#006BDD" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="790" >CONTACT</text><path d="M70 90 H570" stroke="#DDE0E3" stroke-width="1.5"/>
-  <circle cx="168" cy="90" r="5" fill="#006BDD"/>
-  <circle cx="320" cy="90" r="5" fill="#006BDD"/>
-  <circle cx="472" cy="90" r="5" fill="#006BDD"/>
-  <path d="M168 90 V120 M320 90 V120 M472 90 V120" stroke="#CDD2D8" stroke-width="1.5"/></svg>

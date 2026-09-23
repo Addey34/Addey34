@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="120" viewBox="0 0 1120 120" role="img" aria-labelledby="title desc"><title id="title">Contact</title><desc id="desc">Signal contact branches directly into the external action buttons below.</desc><rect width="1120" height="120" fill="#F4F1E8"/>
-  <path d="M36 0 V120" stroke="#CDD2D8" stroke-width="2"/>
-  <circle cx="36" cy="40" r="6" fill="#006BDD"/>
-  <path d="M36 40 H68" stroke="#006BDD" stroke-width="2"/><text x="80" y="42" fill="#006BDD" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18.5" font-weight="790" >CONTACT</text><path d="M72 90 H1048" stroke="#DDE0E3" stroke-width="1.5"/>
-  <circle cx="356" cy="90" r="5" fill="#006BDD"/>
-  <circle cx="560" cy="90" r="5" fill="#006BDD"/>
-  <circle cx="764" cy="90" r="5" fill="#006BDD"/>
-  <path d="M356 90 V120 M560 90 V120 M764 90 V120" stroke="#CDD2D8" stroke-width="1.5"/></svg>

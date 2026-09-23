@@ -3,7 +3,8 @@ name: Profile V2 QA
 on:
   push:
     branches:
-      - profile/v2-candidate
+      - main
+      - "profile/v2-*"
     paths:
       - README.md
       - assets/profile-v2/**
@@ -19,6 +20,10 @@ on:
       - .github/workflows/profile-v2-3d.yml
   workflow_dispatch:
 
+concurrency:
+  group: profile-v2-qa-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
@@ -30,151 +35,287 @@ jobs:
       - name: Checkout
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
 
-      - name: Validate V2 SVG assets
+      - name: Validate Profile V2
         run: |
+          node --check brand/brand-tokens.mjs
           python - <<'PY'
           from pathlib import Path
+          import json
+          import re
           import xml.etree.ElementTree as ET
 
-          root_dir = Path("assets/profile-v2")
-          required = {
-              "hero.svg", "hero-mobile.svg",
-              "scope.svg", "scope-mobile.svg",
-              "stack.svg", "stack-mobile.svg",
-              "engineering.svg", "engineering-mobile.svg",
-              "selected-work.svg", "selected-work-mobile.svg",
-              "activity.svg", "activity-mobile.svg",
-              "footer.svg", "footer-mobile.svg",
-          }
-          found = {p.name for p in root_dir.glob("*.svg")}
+          ROOT = Path("assets/profile-v2")
+          BRAND_ROOT = Path("assets/brand")
+          README = Path("README.md").read_text(encoding="utf-8")
+          ACTIVITY = Path(".github/workflows/profile-v2-3d.yml").read_text(encoding="utf-8")
+          SETTINGS = json.loads(Path("activity-settings/ag.json").read_text(encoding="utf-8"))
+          NS = "{http://www.w3.org/2000/svg}"
           failures = []
-          missing = sorted(required - found)
-          unexpected = sorted(found - required)
 
-          if missing:
-              failures.append("Missing V2 SVG assets: " + ", ".join(missing))
-          if unexpected:
-              failures.append("Unexpected V2 SVG assets: " + ", ".join(unexpected))
+          groups = ["hero", "scope", "stack", "engineering", "selected-work", "activity", "footer"]
+          tiers = {
+              "desktop": ("", 1200.0, "28", 14.0),
+              "compact": ("-compact", 900.0, "30", 20.0),
+              "mobile": ("-mobile", 720.0, "32", 22.0),
+          }
 
-          ns = "{http://www.w3.org/2000/svg}"
-          for path in sorted(root_dir.glob("*.svg")):
+          required = {
+              f"{group}{suffix}.svg"
+              for group in groups
+              for suffix, _, _, _ in tiers.values()
+          }
+          found = {p.name for p in ROOT.glob("*.svg")}
+          if found != required:
+              missing = sorted(required - found)
+              extra = sorted(found - required)
+              if missing:
+                  failures.append("Missing SVG assets: " + ", ".join(missing))
+              if extra:
+                  failures.append("Unexpected SVG assets: " + ", ".join(extra))
+
+          def cfg(path):
+              if "-mobile" in path.stem:
+                  return tiers["mobile"]
+              if "-compact" in path.stem:
+                  return tiers["compact"]
+              return tiers["desktop"]
+
+          def walk_text(node, size=None, fill=None):
+              size = node.attrib.get("font-size", size)
+              fill = node.attrib.get("fill", fill)
+              if node.tag == f"{NS}text":
+                  yield node, size, fill
+              for child in node:
+                  yield from walk_text(child, size, fill)
+
+          def chan(v):
+              v /= 255.0
+              return v / 12.92 if v <= .04045 else ((v + .055) / 1.055) ** 2.4
+
+          def lum(color):
+              v = color.lstrip("#")
+              r, g, b = [int(v[i:i+2], 16) for i in (0, 2, 4)]
+              return .2126 * chan(r) + .7152 * chan(g) + .0722 * chan(b)
+
+          def contrast(fg, bg="#18212D"):
+              hi, lo = sorted((lum(fg), lum(bg)), reverse=True)
+              return (hi + .05) / (lo + .05)
+
+          for path in sorted(ROOT.glob("*.svg")):
+              suffix, width, radius, min_font = cfg(path)
               try:
                   root = ET.parse(path).getroot()
               except Exception as exc:
                   failures.append(f"{path}: invalid XML: {exc}")
                   continue
 
-              if "viewBox" not in root.attrib:
-                  failures.append(f"{path}: missing viewBox")
-              title = root.find(f"{ns}title")
-              desc = root.find(f"{ns}desc")
-              if title is None or not (title.text or "").strip():
+              vb = root.attrib.get("viewBox", "").split()
+              if len(vb) != 4 or float(vb[2]) != width:
+                  failures.append(f"{path}: unexpected viewBox")
+
+              bg = root.find(f"{NS}rect")
+              if bg is None or bg.attrib.get("rx") != radius:
+                  failures.append(f"{path}: expected outer radius {radius}px")
+
+              title = root.find(f"{NS}title")
+              desc = root.find(f"{NS}desc")
+              if title is None or not "".join(title.itertext()).strip():
+                  failures.append(f"{path}: missing title")
+              if desc is None or not "".join(desc.itertext()).strip():
+                  failures.append(f"{path}: missing description")
+
+              raw = path.read_text(encoding="utf-8")
+              lower = raw.lower()
+              if any(ext in lower for ext in (".png", ".jpg", ".jpeg", ".gif")):
+                  failures.append(f"{path}: raster dependency is not allowed")
+              if "#667281" in lower or "#6f7a89" in lower:
+                  failures.append(f"{path}: obsolete low-contrast muted tone")
+
+              for node, raw_size, raw_fill in walk_text(root):
+                  label = "".join(node.itertext()).strip()
+                  try:
+                      size = float(raw_size)
+                  except (TypeError, ValueError):
+                      failures.append(f"{path}: {label!r} has invalid font-size")
+                  else:
+                      if size < min_font:
+                          failures.append(f"{path}: {label!r} uses {size:g}px; minimum {min_font:g}px")
+                  if raw_fill and re.fullmatch(r"#[0-9A-Fa-f]{6}", raw_fill):
+                      ratio = contrast(raw_fill)
+                      if ratio < 4.5:
+                          failures.append(f"{path}: {label!r} contrast {ratio:.2f}:1 < 4.5:1")
+
+              if "@keyframes" in raw and "prefers-reduced-motion" not in raw:
+                  failures.append(f"{path}: CSS motion lacks reduced-motion fallback")
+
+              motions = raw.count("<animateMotion")
+              if motions:
+                  if raw.count('class="motion-dot"') < motions:
+                      failures.append(f"{path}: animateMotion node missing motion-dot wrapper")
+                  if ".motion-dot{display:none!important}" not in raw:
+                      failures.append(f"{path}: SMIL motion is not disabled for reduced motion")
+
+              if path.name.startswith("activity"):
+                  if any(x in raw for x in ("<animate>", "<animateMotion", "<animateTransform")):
+                      failures.append(f"{path}: generic SMIL leaked into Activity")
+                  if path.stat().st_size > 35_000:
+                      failures.append(f"{path}: Activity exceeds 35 KB")
+                  if 'id="activity-cell-0"' not in raw or raw.count("<use") < 70:
+                      failures.append(f"{path}: Activity geometry is not deduplicated")
+
+          for tier, (suffix, _, _, _) in tiers.items():
+              total = sum((ROOT / f"{group}{suffix}.svg").stat().st_size for group in groups)
+              if total > 125_000:
+                  failures.append(f"{tier} payload is {total} bytes; budget is 125000")
+
+
+          expected_brand = {"ag-mark.svg", "ag-mark-mono.svg", "identity-board.svg"}
+          found_brand = {p.name for p in BRAND_ROOT.glob("*.svg")}
+          if found_brand != expected_brand:
+              missing_brand = sorted(expected_brand - found_brand)
+              unexpected_brand = sorted(found_brand - expected_brand)
+              if missing_brand:
+                  failures.append("Missing brand sources: " + ", ".join(missing_brand))
+              if unexpected_brand:
+                  failures.append("Unexpected legacy brand assets: " + ", ".join(unexpected_brand))
+          if (BRAND_ROOT / "v83").exists():
+              failures.append("Legacy V83 asset tree must not exist in the final V2 branch")
+
+          for brand_asset in sorted(expected_brand):
+              path = BRAND_ROOT / brand_asset
+              try:
+                  brand_svg = ET.parse(path).getroot()
+              except Exception as exc:
+                  failures.append(f"{path}: invalid XML: {exc}")
+                  continue
+              title = brand_svg.find(f"{NS}title")
+              desc = brand_svg.find(f"{NS}desc")
+              if title is None or not "".join(title.itertext()).strip():
                   failures.append(f"{path}: missing non-empty <title>")
-              if desc is None or not (desc.text or "").strip():
+              if desc is None or not "".join(desc.itertext()).strip():
                   failures.append(f"{path}: missing non-empty <desc>")
 
-              raw_original = path.read_text(encoding="utf-8")
-              raw = raw_original.lower()
-              if any(ext in raw for ext in (".png", ".jpg", ".jpeg", ".gif")):
-                  failures.append(f"{path}: raster dependency is not allowed in V2")
+          def path_geometry(path):
+              root = ET.parse(path).getroot()
+              return [
+                  node.attrib.get("d")
+                  for node in root.iter(f"{NS}path")
+                  if node.attrib.get("d")
+              ]
 
-              if "@keyframes" in raw_original and "prefers-reduced-motion" not in raw_original:
-                  failures.append(f"{path}: animated CSS must include a reduced-motion fallback")
+          if path_geometry(BRAND_ROOT / "ag-mark.svg") != path_geometry(BRAND_ROOT / "ag-mark-mono.svg"):
+              failures.append("Primary and monochrome AG marks must share identical path geometry")
 
-              motion_count = raw_original.count("<animateMotion")
-              if motion_count:
-                  hidden_count = raw_original.count('class="motion-dot"')
-                  if hidden_count < motion_count:
-                      failures.append(
-                          f"{path}: {motion_count} animateMotion nodes but only "
-                          f"{hidden_count} reduced-motion motion-dot wrappers"
-                      )
-                  if ".motion-dot{display:none!important}" not in raw_original:
-                      failures.append(f"{path}: animateMotion signals must hide in reduced-motion mode")
+          identity = (BRAND_ROOT / "identity-board.svg").read_text(encoding="utf-8")
+          if "FULL-STACK DEVELOPER" not in identity:
+              failures.append("Identity board must use the current FULL-STACK DEVELOPER role")
 
-          if failures:
-              raise SystemExit("\n".join(failures))
-          print(f"Validated {len(found)} V2 SVG assets.")
-          PY
+          tokens = Path("brand/brand-tokens.mjs").read_text(encoding="utf-8")
+          for required_token in (
+              "mobileMax: 430",
+              "compactMax: 1240",
+              "desktop: 1200",
+              "compact: 900",
+              "mobile: 720",
+              "desktop: 28",
+              "compact: 30",
+              "mobile: 32",
+              "desktop: 14",
+              "compact: 20",
+              "mobile: 22",
+              "#06080D",
+              "#D9AE57",
+              "#168CFF",
+          ):
+              if required_token not in tokens:
+                  failures.append(f"Brand tokens missing {required_token!r}")
 
-      - name: Validate activity generator guardrails
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          import json
+          corpus = "\n".join(p.read_text(encoding="utf-8") for p in ROOT.glob("*.svg")) + "\n" + README
+          for needle in ("TS · JS", "Node / Express", "React · Node ·"):
+              if needle in corpus:
+                  failures.append(f"Forbidden/obsolete public wording: {needle!r}")
 
-          failures = []
-          settings = json.loads(Path("activity-settings/ag.json").read_text(encoding="utf-8"))
-          if settings.get("growingAnimation") is not False:
-              failures.append("Activity cube growth must remain disabled; motion belongs to the curated wrapper.")
+          required_copy = {
+              "hero.svg": ["FULL-STACK DEVELOPER", "hardware"],
+              "hero-compact.svg": ["FULL-STACK DEVELOPER", "hardware"],
+              "hero-mobile.svg": ["FULL-STACK DEVELOPER", "hardware"],
+              "scope.svg": ["React · Node.js · APIs · Data"],
+              "scope-mobile.svg": ["React · Node.js · APIs · Data"],
+              "selected-work.svg": ["TypeScript · JavaScript", "Nakama · WebSocket", "TypeScript · React · Node.js"],
+              "selected-work-mobile.svg": ["TypeScript · JavaScript", "Nakama · WebSocket", "TypeScript · React · Node.js"],
+              "footer.svg": ["FULL-STACK DEVELOPER"],
+              "footer-mobile.svg": ["FULL-STACK DEVELOPER"],
+          }
+          for name, needles in required_copy.items():
+              raw = (ROOT / name).read_text(encoding="utf-8").lower()
+              for needle in needles:
+                  if needle.lower() not in raw:
+                      failures.append(f"{name}: missing {needle!r}")
 
-          workflow = Path(".github/workflows/profile-v2-3d.yml").read_text(encoding="utf-8")
-          if "@latest" in workflow:
-              failures.append("Profile V2 third-party Actions must be pinned, not use @latest.")
-          if "github-profile-3d-contrib@9e3f937195cf840d364388973f73e3c4b3753586" not in workflow:
-              failures.append("Unexpected github-profile-3d-contrib revision.")
-          if 'github-actions[bot]' not in workflow:
-              failures.append("Activity commits must use the GitHub Actions bot identity.")
+          for nav in ("#scope", "#stack", "#work", "#activity"):
+              if f'href="{nav}"' not in README:
+                  failures.append(f"README missing nav link {nav}")
+          for section in ("scope", "stack", "engineering", "work", "activity", "contact"):
+              if f'<a id="{section}"></a>' not in README:
+                  failures.append(f"README missing section {section}")
 
-          if failures:
-              raise SystemExit("\n".join(failures))
-          print("Activity generator guardrails are valid.")
-          PY
+          if README.count("<picture>") != 7:
+              failures.append("README must contain seven responsive picture surfaces")
+          if README.count("(max-width: 430px)") != 7:
+              failures.append("README must expose seven mobile sources")
+          if README.count("(max-width: 1240px)") != 7:
+              failures.append("README must expose seven compact sources")
+          if "prefers-reduced-motion" in README or "-static.svg" in README:
+              failures.append("README still references duplicate reduced-motion assets")
+          if 'href="#contact"' in README:
+              failures.append("Top navigation should stay compact")
+          if '<a href="https://github.com/Addey34"><strong>GitHub</strong></a>' in README:
+              failures.append("Contact block repeats the current GitHub profile")
+          if "Python" not in README or "assets/brand/v83/" in README:
+              failures.append("README identity/legacy guardrail failed")
 
-      - name: Validate V2 README
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          import re
-
-          readme = Path("README.md").read_text(encoding="utf-8")
-          failures = []
-
-          for anchor in ["#scope", "#stack", "#engineering", "#work", "#activity", "#contact"]:
-              if f'href="{anchor}"' not in readme:
-                  failures.append(f"README missing navigation anchor {anchor}")
-
-          expected_assets = [
-              "./assets/profile-v2/hero.svg",
-              "./assets/profile-v2/scope.svg",
-              "./assets/profile-v2/stack.svg",
-              "./assets/profile-v2/engineering.svg",
-              "./assets/profile-v2/selected-work.svg",
-              "./assets/profile-v2/activity.svg",
-              "./assets/profile-v2/footer.svg",
-          ]
-          for asset in expected_assets:
-              if asset not in readme:
-                  failures.append(f"README missing V2 asset {asset}")
-
-          if "assets/brand/v83/" in readme:
-              failures.append("README still references V83 visual assets")
-          if "FULL-STACK DEVELOPER" not in Path("assets/profile-v2/hero.svg").read_text(encoding="utf-8"):
-              failures.append("Hero role must remain FULL-STACK DEVELOPER")
-          if "Python" not in readme:
-              failures.append("README must retain Python in the technical profile")
-          if "ImageGeneratorLocal" in readme:
-              failures.append("ImageGeneratorLocal must stay out of the public showcase for now")
-
-          sources = (
-              re.findall(r'<img[^>]+src="([^"]+)"', readme)
-              + re.findall(r'<source[^>]+srcset="([^"]+)"', readme)
+          images = (
+              re.findall(r'<img[^>]+src="([^"]+)"', README)
+              + re.findall(r'<source[^>]+srcset="([^"]+)"', README)
           )
-          for src in sources:
+          if len(images) != 21:
+              failures.append(f"README should expose 21 image references, got {len(images)}")
+          for src in images:
               if not src.startswith("./assets/profile-v2/"):
-                  failures.append(f"README image is not a V2 self-hosted asset: {src}")
+                  failures.append(f"Non-V2 image source: {src}")
               if src.lower().endswith((".png", ".jpg", ".jpeg", ".gif")):
-                  failures.append(f"Raster README image is not allowed: {src}")
+                  failures.append(f"Raster README source: {src}")
 
           refs = sorted(set(
-              re.findall(r'(?:src|href)="(\./[^"#?]+)', readme)
-              + re.findall(r'srcset="(\./[^"#?]+)', readme)
+              re.findall(r'(?:src|href)="(\./[^"#?]+)', README)
+              + re.findall(r'srcset="(\./[^"#?]+)', README)
           ))
           missing = [ref for ref in refs if not Path(ref[2:]).exists()]
           if missing:
               failures.append("Missing local README assets: " + ", ".join(missing))
 
+          if SETTINGS.get("growingAnimation") is not False:
+              failures.append("Activity cube-growth animation must remain disabled")
+          if "@latest" in ACTIVITY:
+              failures.append("Third-party Actions must stay pinned")
+          if "github-profile-3d-contrib@9e3f937195cf840d364388973f73e3c4b3753586" not in ACTIVITY:
+              failures.append("Unexpected 3D contribution Action revision")
+          if 'github-actions[bot]' not in ACTIVITY:
+              failures.append("Activity commits must use github-actions[bot]")
+          if "group: profile-v2-activity-" not in ACTIVITY or "cancel-in-progress: true" not in ACTIVITY:
+              failures.append("Activity generation must serialize per ref")
+          if "- main" not in ACTIVITY:
+              failures.append("Activity workflow must remain ready for main")
+          if "-static.svg" in ACTIVITY or "static-motion-override" in ACTIVITY:
+              failures.append("Activity workflow still contains static-copy logic")
+          for name in ("activity.svg", "activity-compact.svg", "activity-mobile.svg"):
+              if name not in ACTIVITY:
+                  failures.append(f"Activity workflow must generate {name}")
+          for token in ('proto_id = f"activity-cell-{len(prototypes)}"', "min_calendar_x", "zero-contribution", "curated activity exceeds 35 KB"):
+              if token not in ACTIVITY:
+                  failures.append(f"Activity workflow missing {token!r} guardrail")
+
           if failures:
               raise SystemExit("\n".join(failures))
-          print(f"README guardrails valid; {len(refs)} local references resolved.")
+          print("Profile V2 validation passed: 21 responsive SVG surfaces.")
           PY
