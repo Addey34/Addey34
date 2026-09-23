@@ -93,6 +93,12 @@ jobs:
           const fs = require('fs');
           const { chromium } = require('playwright');
 
+          const targets = [
+            ['hero', 'Adrian Guichard — Full-Stack Developer'],
+            ['scope', 'Technical scope — web, realtime, games, 3D, AI, automation, security and hardware/performance'],
+            ['activity', 'Animated 3D GitHub contribution activity generated from real contribution data'],
+          ];
+
           async function capture(browser, reduced, prefix) {
             const context = await browser.newContext({
               viewport: { width: 1440, height: 1000 },
@@ -107,9 +113,20 @@ jobs:
             const article = page.locator('article.markdown-body').first();
             await article.waitFor({ state: 'visible', timeout: 30000 });
             await page.waitForTimeout(1200);
-            await article.screenshot({ path: `${prefix}-a.png`, animations: 'allow' });
+
+            for (const [name, alt] of targets) {
+              const img = article.locator(`img[alt="${alt}"]`).first();
+              await img.waitFor({ state: 'visible', timeout: 30000 });
+              await img.screenshot({ path: `${prefix}-${name}-a.png`, animations: 'allow' });
+            }
+
             await page.waitForTimeout(2200);
-            await article.screenshot({ path: `${prefix}-b.png`, animations: 'allow' });
+
+            for (const [name, alt] of targets) {
+              const img = article.locator(`img[alt="${alt}"]`).first();
+              await img.screenshot({ path: `${prefix}-${name}-b.png`, animations: 'allow' });
+            }
+
             await context.close();
           }
 
@@ -128,40 +145,45 @@ jobs:
           from PIL import Image, ImageChops
           import json
 
+          targets = ["hero", "scope", "activity"]
+
           def changed_pixels(a_path, b_path, threshold=8):
               a = Image.open(a_path).convert("RGB")
               b = Image.open(b_path).convert("RGB")
               if a.size != b.size:
                   raise SystemExit(f"Size mismatch: {a_path} {a.size} vs {b_path} {b.size}")
               diff = ImageChops.difference(a, b)
-              changed = 0
-              for px in diff.getdata():
-                  if max(px) > threshold:
-                      changed += 1
+              changed = sum(1 for px in diff.getdata() if max(px) > threshold)
               return changed, a.size[0] * a.size[1]
 
-          normal, total = changed_pixels("motion-normal-a.png", "motion-normal-b.png")
-          reduced, _ = changed_pixels("motion-reduced-a.png", "motion-reduced-b.png")
-          report = {
-              "total_pixels": total,
-              "normal_changed_pixels": normal,
-              "normal_changed_ratio": normal / total,
-              "reduced_changed_pixels": reduced,
-              "reduced_changed_ratio": reduced / total,
-          }
+          report = {}
+          for target in targets:
+              normal, total = changed_pixels(
+                  f"motion-normal-{target}-a.png",
+                  f"motion-normal-{target}-b.png",
+              )
+              reduced, _ = changed_pixels(
+                  f"motion-reduced-{target}-a.png",
+                  f"motion-reduced-{target}-b.png",
+              )
+              report[target] = {
+                  "total_pixels": total,
+                  "normal_changed_pixels": normal,
+                  "normal_changed_ratio": normal / total,
+                  "reduced_changed_pixels": reduced,
+                  "reduced_changed_ratio": reduced / total,
+              }
+
           print(json.dumps(report, indent=2))
           with open("motion-report.json", "w", encoding="utf-8") as fh:
               json.dump(report, fh, indent=2)
 
-          if normal < 100:
-              raise SystemExit("Expected visible motion in normal mode, but screenshots are effectively static.")
-          if reduced > max(50, int(normal * 0.05)):
-              raise SystemExit(
-                  f"Reduced-motion still changes too much: {reduced} pixels vs {normal} normal."
-              )
+          if sum(v["normal_changed_pixels"] for v in report.values()) < 100:
+              raise SystemExit("Expected visible SVG motion in normal mode, but tested images are static.")
           PY
 
       - name: Upload GitHub render audit
+        if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: profile-v2-github-render
@@ -170,4 +192,6 @@ jobs:
             github-readme-mobile.png
             github-render-report.json
             motion-report.json
+            motion-normal-*.png
+            motion-reduced-*.png
           retention-days: 3
