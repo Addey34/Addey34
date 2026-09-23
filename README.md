@@ -1,6 +1,9 @@
 <!-- profile-v2-experimental -->
 <div align="center">
-  <img src="./assets/profile-v2/hero.svg" alt="Adrian Guichard — Full-Stack Developer" width="100%" />
+  <picture>
+    <source media="(max-width: 640px)" srcset="./assets/profile-v2/hero-mobile.svg" />
+    <img src="./assets/profile-v2/hero.svg" alt="Adrian Guichard — Full-Stack Developer" width="100%" />
+  </picture>
 </div>
 
 <p align="center">
@@ -18,13 +21,19 @@ My core is TypeScript/JavaScript, with Python where compute, tooling or AI workl
 <a id="scope"></a>
 
 <div align="center">
-  <img src="./assets/profile-v2/scope.svg" alt="Technical scope — web, realtime, games, 3D, AI, automation, security and hardware/performance" width="100%" />
+  <picture>
+    <source media="(max-width: 640px)" srcset="./assets/profile-v2/scope-mobile.svg" />
+    <img src="./assets/profile-v2/scope.svg" alt="Technical scope — web, realtime, games, 3D, AI, automation, security and hardware/performance" width="100%" />
+  </picture>
 </div>
 
 <a id="stack"></a>
 
 <div align="center">
-  <img src="./assets/profile-v2/stack.svg" alt="Core technical stack" width="100%" />
+  <picture>
+    <source media="(max-width: 640px)" srcset="./assets/profile-v2/stack-mobile.svg" />
+    <img src="./assets/profile-v2/stack.svg" alt="Core technical stack" width="100%" />
+  </picture>
 </div>
 
 <details>
@@ -45,13 +54,19 @@ My core is TypeScript/JavaScript, with Python where compute, tooling or AI workl
 <a id="engineering"></a>
 
 <div align="center">
-  <img src="./assets/profile-v2/engineering.svg" alt="Engineering loop — plan, build, test, harden, deploy, monitor and iterate" width="100%" />
+  <picture>
+    <source media="(max-width: 640px)" srcset="./assets/profile-v2/engineering-mobile.svg" />
+    <img src="./assets/profile-v2/engineering.svg" alt="Engineering loop — plan, build, test, harden, deploy, monitor and iterate" width="100%" />
+  </picture>
 </div>
 
 <a id="work"></a>
 
 <div align="center">
-  <img src="./assets/profile-v2/selected-work.svg" alt="Selected public work — Galaxy, Ludora and MagNotes" width="100%" />
+  <picture>
+    <source media="(max-width: 640px)" srcset="./assets/profile-v2/selected-work-mobile.svg" />
+    <img src="./assets/profile-v2/selected-work.svg" alt="Selected public work — Galaxy, Ludora and MagNotes" width="100%" />
+  </picture>
 </div>
 
 <p align="center">
@@ -83,5 +98,8 @@ My core is TypeScript/JavaScript, with Python where compute, tooling or AI workl
 </p>
 
 <div align="center">
-  <img src="./assets/profile-v2/footer.svg" alt="From idea to running system" width="100%" />
+  <picture>
+    <source media="(max-width: 640px)" srcset="./assets/profile-v2/footer-mobile.svg" />
+    <img src="./assets/profile-v2/footer.svg" alt="From idea to running system" width="100%" />
+  </picture>
 </div>
