@@ -9,9 +9,9 @@
 </defs>
 <rect width="720" height="1240" rx="32" fill="url(#bg)"/>
 <g transform="translate(54 60)">
-<circle cx="7" cy="-12" r="6" fill="#D9AE57"/><text x="26" y="-5" class="m" font-size="20" fill="#D9AE57" letter-spacing="3">CORE STACK</text>
+<circle cx="7" cy="-12" r="6" fill="#D9AE57"/><text x="26" y="-5" class="m" font-size="22" fill="#D9AE57" letter-spacing="3">CORE STACK</text>
 <text y="54" font-size="34" font-weight="760" fill="#F5F3ED">Technical stack by responsibility.</text>
-<text y="91" font-size="20" fill="#98A1AE">Languages, runtime, graphics, data, compute and delivery.</text>
+<text y="91" font-size="22" fill="#98A1AE">Languages, runtime, graphics, data, compute and delivery.</text>
 </g>
 <use href="#rail" stroke="#263140" stroke-width="2"/><use href="#rail" stroke="#168CFF" stroke-opacity=".28" stroke-width="2" class="rail"/>
 <circle class="motion-dot" r="5" fill="#65C7FF"><animateMotion dur="7.2s" repeatCount="indefinite"><mpath href="#rail"/></animateMotion></circle>
@@ -24,12 +24,12 @@
 </g>
 
 <g text-anchor="middle">
-<g transform="translate(360 400)"><polygon points="-285,0 0,-62 285,0 0,62" fill="url(#plate)" stroke="#405064"/><text y="-18" class="m" font-size="20" fill="#D9AE57">LANGUAGES</text><text y="10" font-size="21" font-weight="750" fill="#F5F3ED">TypeScript · JavaScript</text><text y="36" font-size="20" font-weight="700" fill="#98A1AE">Python</text></g>
-<g transform="translate(360 545)"><polygon points="-285,0 0,-62 285,0 0,62" fill="url(#plate)" stroke="#405064"/><text y="-18" class="m" font-size="20" fill="#65C7FF">PRODUCT RUNTIME</text><text y="10" font-size="21" font-weight="750" fill="#F5F3ED">React · Node.js</text><text y="36" font-size="20" font-weight="700" fill="#98A1AE">Express · Vite</text></g>
-<g transform="translate(360 690)"><polygon points="-285,0 0,-62 285,0 0,62" fill="url(#plate)" stroke="#405064"/><text y="-18" class="m" font-size="20" fill="#65C7FF">REALTIME / GRAPHICS</text><text y="10" font-size="21" font-weight="750" fill="#F5F3ED">Three.js · WebGL</text><text y="36" font-size="20" font-weight="700" fill="#98A1AE">WebSocket · Nakama</text></g>
-<g transform="translate(360 835)"><polygon points="-285,0 0,-62 285,0 0,62" fill="url(#plate)" stroke="#405064"/><text y="-18" class="m" font-size="20" fill="#65C7FF">BACKEND / DATA</text><text y="10" font-size="21" font-weight="750" fill="#F5F3ED">MongoDB · PostgreSQL</text><text y="36" font-size="20" font-weight="700" fill="#98A1AE">REST APIs · JWT / OAuth</text></g>
-<g transform="translate(360 980)"><polygon points="-285,0 0,-62 285,0 0,62" fill="url(#plate)" stroke="#405064"/><text y="-18" class="m" font-size="20" fill="#65C7FF">AI / COMPUTE</text><text y="10" font-size="21" font-weight="750" fill="#F5F3ED">FastAPI · PyTorch</text><text y="36" font-size="20" font-weight="700" fill="#98A1AE">ONNX · CUDA / DirectML</text></g>
-<g transform="translate(360 1125)"><polygon points="-285,0 0,-62 285,0 0,62" fill="url(#plate)" stroke="#405064"/><text y="-18" class="m" font-size="20" fill="#65C7FF">DELIVERY / QA</text><text y="10" font-size="21" font-weight="750" fill="#F5F3ED">Playwright · Vitest · Jest</text><text y="36" font-size="20" font-weight="700" fill="#98A1AE">Docker · GitHub Actions</text></g>
+<g transform="translate(360 400)"><polygon points="-285,0 0,-62 285,0 0,62" fill="url(#plate)" stroke="#405064"/><text y="-18" class="m" font-size="22" fill="#D9AE57">LANGUAGES</text><text y="10" font-size="22" font-weight="750" fill="#F5F3ED">TypeScript · JavaScript</text><text y="36" font-size="22" font-weight="700" fill="#98A1AE">Python</text></g>
+<g transform="translate(360 545)"><polygon points="-285,0 0,-62 285,0 0,62" fill="url(#plate)" stroke="#405064"/><text y="-18" class="m" font-size="22" fill="#65C7FF">PRODUCT RUNTIME</text><text y="10" font-size="22" font-weight="750" fill="#F5F3ED">React · Node.js</text><text y="36" font-size="22" font-weight="700" fill="#98A1AE">Express · Vite</text></g>
+<g transform="translate(360 690)"><polygon points="-285,0 0,-62 285,0 0,62" fill="url(#plate)" stroke="#405064"/><text y="-18" class="m" font-size="22" fill="#65C7FF">REALTIME / GRAPHICS</text><text y="10" font-size="22" font-weight="750" fill="#F5F3ED">Three.js · WebGL</text><text y="36" font-size="22" font-weight="700" fill="#98A1AE">WebSocket · Nakama</text></g>
+<g transform="translate(360 835)"><polygon points="-285,0 0,-62 285,0 0,62" fill="url(#plate)" stroke="#405064"/><text y="-18" class="m" font-size="22" fill="#65C7FF">BACKEND / DATA</text><text y="10" font-size="22" font-weight="750" fill="#F5F3ED">MongoDB · PostgreSQL</text><text y="36" font-size="22" font-weight="700" fill="#98A1AE">REST APIs · JWT / OAuth</text></g>
+<g transform="translate(360 980)"><polygon points="-285,0 0,-62 285,0 0,62" fill="url(#plate)" stroke="#405064"/><text y="-18" class="m" font-size="22" fill="#65C7FF">AI / COMPUTE</text><text y="10" font-size="22" font-weight="750" fill="#F5F3ED">FastAPI · PyTorch</text><text y="36" font-size="22" font-weight="700" fill="#98A1AE">ONNX · CUDA / DirectML</text></g>
+<g transform="translate(360 1125)"><polygon points="-285,0 0,-62 285,0 0,62" fill="url(#plate)" stroke="#405064"/><text y="-18" class="m" font-size="22" fill="#65C7FF">DELIVERY / QA</text><text y="10" font-size="22" font-weight="750" fill="#F5F3ED">Playwright · Vitest · Jest</text><text y="36" font-size="22" font-weight="700" fill="#98A1AE">Docker · GitHub Actions</text></g>
 </g>
 
 </svg>
