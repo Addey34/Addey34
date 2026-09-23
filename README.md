@@ -8,13 +8,12 @@
   <a href="#stack">Stack</a> ·
   <a href="#engineering">Engineering</a> ·
   <a href="#work">Selected Work</a> ·
-  <a href="#activity">Activity</a> ·
   <a href="#contact">Contact</a>
 </p>
 
 I build **web products, interactive systems and technical tools** across frontend, backend, realtime, 3D, AI/local compute, automation, security and engineering workflows.
 
-My core is JavaScript/TypeScript, with Python where compute, tooling or AI workloads call for it. I care about the whole path from an idea to a system that can be **tested, hardened, deployed, observed and improved**.
+My core is TypeScript/JavaScript, with Python where compute, tooling or AI workloads call for it. I care about the whole path from an idea to a system that can be **tested, hardened, deployed, observed and improved**.
 
 <a id="scope"></a>
 
@@ -69,11 +68,7 @@ My core is JavaScript/TypeScript, with Python where compute, tooling or AI workl
   <a href="https://github.com/Addey34/magnotes-frontend">source</a>
 </p>
 
-<a id="activity"></a>
-
-<div align="center">
-  <img src="./assets/profile-v2/activity.svg" alt="3D GitHub contribution activity" width="100%" />
-</div>
+<!-- Activity returns here once it is generated from real GitHub contribution data. -->
 
 <a id="contact"></a>
 
