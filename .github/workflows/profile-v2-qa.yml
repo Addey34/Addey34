@@ -257,6 +257,11 @@ jobs:
           if "ImageGeneratorLocal" in readme:
               failures.append("ImageGeneratorLocal must stay out of the public showcase for now")
 
+          if '(max-width: 640px)' in readme:
+              failures.append("README still uses the obsolete 640px responsive breakpoint")
+          if readme.count('(max-width: 768px)') != 7:
+              failures.append("All seven responsive surfaces must use the 768px breakpoint")
+
           sources = (
               re.findall(r'<img[^>]+src="([^"]+)"', readme)
               + re.findall(r'<source[^>]+srcset="([^"]+)"', readme)
