@@ -30,6 +30,8 @@ text{font-family:Inter,Segoe UI,Arial,sans-serif}.m{font-family:Consolas,monospa
 <g transform="translate(248 372)"><rect width="184" height="50" rx="25" fill="#0F1621" stroke="#2B3948"/><text x="92" y="32" text-anchor="middle">AUTOMATION</text></g>
 <g transform="translate(446 372)"><rect width="166" height="50" rx="25" fill="#0F1621" stroke="#2B3948"/><text x="83" y="32" text-anchor="middle">SECURITY</text></g>
 </g>
+<use href="#signal" fill="none" stroke="#168CFF" stroke-opacity=".18"/>
+<circle class="motion-dot" r="5" fill="#65C7FF" filter="url(#glow)"><animateMotion dur="6.2s" repeatCount="indefinite"><mpath href="#signal"/></animateMotion></circle>
 <g transform="translate(360 625)">
 <polygon points="-130,0 0,-72 130,0 0,72" fill="#151D28" stroke="#405064"/>
 <polygon points="-130,0 0,72 0,125 -130,53" fill="#090E14" stroke="#293541"/>
@@ -44,7 +46,6 @@ text{font-family:Inter,Segoe UI,Arial,sans-serif}.m{font-family:Consolas,monospa
 <text x="626" y="642" text-anchor="end">3D / GRAPHICS</text>
 <text x="360" y="805" text-anchor="middle">AI / COMPUTE</text>
 </g>
-<use href="#signal" fill="none" stroke="#168CFF" stroke-opacity=".18"/>
-<circle class="motion-dot" r="5" fill="#65C7FF" filter="url(#glow)"><animateMotion dur="6.2s" repeatCount="indefinite"><mpath href="#signal"/></animateMotion></circle>
+
 <text x="360" y="866" text-anchor="middle" class="m" font-size="18" fill="#6F7A89" letter-spacing="2">FROM IDEA TO RUNNING SYSTEM.</text>
 </svg>
