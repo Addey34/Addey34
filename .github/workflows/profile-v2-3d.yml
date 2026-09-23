@@ -72,9 +72,16 @@ jobs:
               title = ET.SubElement(out, q("title"), {"id": "title"})
               title.text = "GitHub contribution activity"
               desc = ET.SubElement(out, q("desc"), {"id": "desc"})
-              desc.text = "Animated 3D GitHub contribution activity generated from real contribution data."
+              desc.text = "3D GitHub contribution activity generated from real contribution data."
 
               out.append(copy.deepcopy(style))
+              motion_style = ET.SubElement(out, q("style"))
+              motion_style.text = (
+                  ".activity-flow{stroke-dasharray:14 20;animation:activityFlow 8s linear infinite}"
+                  "@keyframes activityFlow{to{stroke-dashoffset:-136}}"
+                  "@media(prefers-reduced-motion:reduce){.activity-flow{animation:none!important;stroke-opacity:.12}}"
+              )
+
               ET.SubElement(out, q("rect"), {
                   "width": str(width), "height": str(height),
                   "rx": "32" if mobile else "28",
@@ -94,6 +101,20 @@ jobs:
               cal = copy.deepcopy(calendar)
               cal.set("transform", f"translate({tx} {ty}) scale({scale})")
               out.append(cal)
+
+              flow_d = (
+                  "M60 540 C220 500 500 555 660 510"
+                  if mobile else
+                  "M120 548 C360 500 760 565 1080 510"
+              )
+              ET.SubElement(out, q("path"), {
+                  "d": flow_d,
+                  "fill": "none",
+                  "stroke": "#65C7FF",
+                  "stroke-width": "2",
+                  "stroke-opacity": ".28",
+                  "class": "activity-flow",
+              })
               ET.ElementTree(out).write(path, encoding="unicode")
 
           build("assets/profile-v2/activity.svg", 1200, 650, 100, 10, 0.78)
@@ -102,8 +123,8 @@ jobs:
 
       - name: Commit curated activity
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/profile-v2/activity.svg assets/profile-v2/activity-mobile.svg
           if git commit -m "chore(profile): refresh 3D activity"; then
             git pull --rebase origin "$GITHUB_REF_NAME"
