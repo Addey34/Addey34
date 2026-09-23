@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 900" role="img" aria-labelledby="title desc">
+<title id="title">Adrian Guichard — Full-Stack Developer</title>
+<desc id="desc">Mobile technical profile with animated pseudo-3D system core.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#06080D"/><stop offset="1" stop-color="#0A1119"/></linearGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F2D58A"/><stop offset="1" stop-color="#D9AE57"/></linearGradient>
+<filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<path id="signal" d="M150 610C220 525 495 520 570 610S500 785 360 765S150 700 150 610"/>
+<style>
+text{font-family:Inter,Segoe UI,Arial,sans-serif}.m{font-family:Consolas,monospace}
+.line{stroke-dasharray:14 18;animation:flow 8s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-128}}
+@media(prefers-reduced-motion:reduce){.motion-dot{display:none!important}.line{animation:none!important}}
+</style>
+</defs>
+<rect width="720" height="900" rx="32" fill="url(#bg)"/>
+<g transform="translate(54 62)">
+<circle cx="7" cy="-12" r="6" fill="#D9AE57"/>
+<text x="26" y="-5" class="m" font-size="22" fill="#D9AE57" letter-spacing="3">AG / TECHNICAL PROFILE</text>
+<text y="72" font-size="47" font-weight="800" fill="#F5F3ED">ADRIAN GUICHARD</text>
+<text y="116" class="m" font-size="25" fill="#65C7FF" letter-spacing="1.5">FULL-STACK DEVELOPER</text>
+<text y="172" font-size="22" fill="#B8C0CA">Building products and technical systems across web,</text>
+<text y="204" font-size="22" fill="#B8C0CA">realtime, 3D, AI, automation, security and hardware.</text>
+</g>
+<g class="m" font-size="22" fill="#DCE3EB">
+<g transform="translate(81 306)"><rect width="140" height="50" rx="25" fill="#0F1621" stroke="#2B3948"/><text x="70" y="32" text-anchor="middle">WEB</text></g>
+<g transform="translate(235 306)"><rect width="278" height="50" rx="25" fill="#0F1621" stroke="#2B3948"/><text x="139" y="32" text-anchor="middle">INTERACTIVE SYSTEMS</text></g>
+<g transform="translate(527 306)"><rect width="112" height="50" rx="25" fill="#0F1621" stroke="#2B3948"/><text x="56" y="32" text-anchor="middle">3D</text></g>
+<g transform="translate(108 372)"><rect width="126" height="50" rx="25" fill="#0F1621" stroke="#2B3948"/><text x="63" y="32" text-anchor="middle">AI</text></g>
+<g transform="translate(248 372)"><rect width="184" height="50" rx="25" fill="#0F1621" stroke="#2B3948"/><text x="92" y="32" text-anchor="middle">AUTOMATION</text></g>
+<g transform="translate(446 372)"><rect width="166" height="50" rx="25" fill="#0F1621" stroke="#2B3948"/><text x="83" y="32" text-anchor="middle">SECURITY</text></g>
+</g>
+<use href="#signal" fill="none" stroke="#168CFF" stroke-opacity=".18"/>
+<circle class="motion-dot" r="5" fill="#65C7FF" filter="url(#glow)"><animateMotion dur="7.2s" repeatCount="indefinite"><mpath href="#signal"/></animateMotion></circle>
+<g transform="translate(360 625)">
+<polygon points="-130,0 0,-72 130,0 0,72" fill="#151D28" stroke="#405064"/>
+<polygon points="-130,0 0,72 0,125 -130,53" fill="#090E14" stroke="#293541"/>
+<polygon points="0,72 130,0 130,53 0,125" fill="#060A0F" stroke="#293541"/>
+<polygon points="-108,0 0,-58 108,0 0,58" fill="none" stroke="#D9AE57" class="line"/>
+<text y="10" text-anchor="middle" font-size="44" font-weight="800" fill="url(#gold)">AG</text>
+<text y="42" text-anchor="middle" class="m" font-size="22" fill="#A7B0BC" letter-spacing="1.4">PRODUCT · SYSTEMS</text>
+</g>
+<g class="m" font-size="22" fill="#B6C0CB">
+<text x="360" y="508" text-anchor="middle">WEB / REALTIME</text>
+<text x="94" y="642">SECURITY</text>
+<text x="626" y="642" text-anchor="end">3D / GRAPHICS</text>
+<text x="360" y="805" text-anchor="middle">AI / COMPUTE</text>
+</g>
+
+<text x="360" y="866" text-anchor="middle" class="m" font-size="22" fill="#6F7A89" letter-spacing="2">FROM IDEA TO RUNNING SYSTEM.</text>
+<style id="static-motion-override">*{animation:none!important}.motion-dot{display:none!important}</style></svg>
