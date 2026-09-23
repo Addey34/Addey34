@@ -20,6 +20,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
 
+      - name: Detect profile generation
+        id: profile
+        run: |
+          if grep -q '<!-- profile-v2 -->' README.md; then
+            echo "is_v2=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "is_v2=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Setup Node
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
@@ -59,6 +68,7 @@ jobs:
 
 
       - name: Validate final Signal composition readability
+        if: steps.profile.outputs.is_v2 != 'true'
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -114,6 +124,7 @@ jobs:
 
 
       - name: Validate action semantics
+        if: steps.profile.outputs.is_v2 != 'true'
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -212,6 +223,7 @@ jobs:
           PY
 
       - name: Validate reader-facing labels
+        if: steps.profile.outputs.is_v2 != 'true'
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -244,6 +256,7 @@ jobs:
 
 
       - name: Validate rail-aligned reader hierarchy
+        if: steps.profile.outputs.is_v2 != 'true'
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -490,6 +503,7 @@ jobs:
 
 
       - name: Validate V8.18 optical polish
+        if: steps.profile.outputs.is_v2 != 'true'
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -802,6 +816,7 @@ jobs:
 
 
       - name: Validate editorial open-frame sections
+        if: steps.profile.outputs.is_v2 != 'true'
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -847,6 +862,7 @@ jobs:
 
 
       - name: Validate open-frame text padding
+        if: steps.profile.outputs.is_v2 != 'true'
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -929,6 +945,7 @@ jobs:
           PY
 
       - name: Validate text / connector clearance
+        if: steps.profile.outputs.is_v2 != 'true'
         run: |
           python - <<'PY'
           from pathlib import Path

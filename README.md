@@ -1,95 +1,120 @@
+<!-- profile-v2 -->
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: light) and (max-width: 640px)" srcset="./assets/brand/v83/composed/hero-mobile-light.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/composed/hero-light.svg" />
-    <source media="(max-width: 640px)" srcset="./assets/brand/v83/composed/hero-mobile.svg" />
-    <img src="./assets/brand/v83/composed/hero.svg" alt="Adrian Guichard — Full-Stack JavaScript / TypeScript Developer" />
+    <source media="(max-width: 640px)" srcset="./assets/profile-v2/hero-mobile.svg" />
+    <img src="./assets/profile-v2/hero.svg" alt="Adrian Guichard — Full-Stack Developer" width="100%" />
   </picture>
 </div>
 
 <p align="center">
-  <a href="#about"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/about-light.svg" /><img src="./assets/brand/v83/actions/about.svg" width="150" alt="About" /></picture></a>
-  <a href="#current"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/current-light.svg" /><img src="./assets/brand/v83/actions/current.svg" width="150" alt="Current" /></picture></a>
-  <a href="#workflow"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/workflow-light.svg" /><img src="./assets/brand/v83/actions/workflow.svg" width="150" alt="Workflow" /></picture></a>
-  <a href="#toolkit"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/toolkit-light.svg" /><img src="./assets/brand/v83/actions/toolkit.svg" width="150" alt="Toolkit" /></picture></a>
-  <a href="#contact"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/contact-light.svg" /><img src="./assets/brand/v83/actions/contact.svg" width="150" alt="Contact" /></picture></a>
+  <a href="#scope">Scope</a> ·
+  <a href="#stack">Stack</a> ·
+  <a href="#engineering">Engineering</a> ·
+  <a href="#work">Selected Work</a> ·
+  <a href="#activity">Activity</a> ·
+  <a href="#contact">Contact</a>
 </p>
 
-<a id="about"></a>
+I build **web products, interactive systems and technical tools** across frontend, backend, realtime, 3D, AI/local compute, automation, security and engineering workflows.
+
+TypeScript/JavaScript is my main application stack; I use Python for compute, tooling and AI workloads. I care about the whole path from an idea to a system that can be **tested, hardened, deployed, observed and improved**.
+
+<a id="scope"></a>
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: light) and (max-width: 640px)" srcset="./assets/brand/v83/composed/about-mobile-light.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/composed/about-light.svg" />
-    <source media="(max-width: 640px)" srcset="./assets/brand/v83/composed/about-mobile.svg" />
-    <img src="./assets/brand/v83/composed/about.svg" alt="About Adrian Guichard" />
+    <source media="(max-width: 640px)" srcset="./assets/profile-v2/scope-mobile.svg" />
+    <img src="./assets/profile-v2/scope.svg" alt="Technical scope — web, realtime, games, 3D, AI, automation, security and hardware/performance" width="100%" />
   </picture>
 </div>
 
-<a id="current"></a>
+<a id="stack"></a>
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: light) and (max-width: 640px)" srcset="./assets/brand/v83/composed/current-mobile-light.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/composed/current-light.svg" />
-    <source media="(max-width: 640px)" srcset="./assets/brand/v83/composed/current-mobile.svg" />
-    <img src="./assets/brand/v83/composed/current.svg" alt="Current focus across frontend, backend, engineering and exploration" />
+    <source media="(max-width: 640px)" srcset="./assets/profile-v2/stack-mobile.svg" />
+    <img src="./assets/profile-v2/stack.svg" alt="Core technical stack" width="100%" />
   </picture>
 </div>
 
-<a id="workflow"></a>
+<details>
+<summary><strong>Stack detail</strong></summary>
+<br />
+
+**Languages** — TypeScript · JavaScript · Python  
+**Product runtime** — React · Node.js · Express · Vite  
+**Interactive** — Three.js · WebGL · Canvas · realtime/game logic  
+**Backend & data** — MongoDB · PostgreSQL · FastAPI · REST APIs · WebSocket · authentication  
+**Compute** — PyTorch · Diffusers · ONNX Runtime · CUDA / DirectML  
+**Engineering** — Playwright · Vitest · Jest · Docker · GitHub Actions · CI/CD · Linux  
+
+**Also worked with** — Angular · Vue · Next.js · Astro · React Native · Java / Spring Boot · Prisma · Mongoose · Tailwind · Firebase · Caddy · Nginx
+
+</details>
+
+<a id="engineering"></a>
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: light) and (max-width: 640px)" srcset="./assets/brand/v83/composed/workflow-mobile-light.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/composed/workflow-light.svg" />
-    <source media="(max-width: 640px)" srcset="./assets/brand/v83/composed/workflow-mobile.svg" />
-    <img src="./assets/brand/v83/composed/workflow.svg" alt="Workflow from idea to improvement" />
+    <source media="(max-width: 640px)" srcset="./assets/profile-v2/engineering-mobile.svg" />
+    <img src="./assets/profile-v2/engineering.svg" alt="Engineering loop — plan, build, test, harden, deploy, monitor and iterate" width="100%" />
   </picture>
 </div>
 
-<a id="toolkit"></a>
+<a id="work"></a>
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: light) and (max-width: 640px)" srcset="./assets/brand/v83/composed/toolkit-mobile-light.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/composed/toolkit-light.svg" />
-    <source media="(max-width: 640px)" srcset="./assets/brand/v83/composed/toolkit-mobile.svg" />
-    <img src="./assets/brand/v83/composed/toolkit.svg" alt="Current toolkit" />
+    <source media="(max-width: 640px)" srcset="./assets/profile-v2/selected-work-mobile.svg" />
+    <img src="./assets/profile-v2/selected-work.svg" alt="Selected public work — Galaxy, Ludora and MagNotes" width="100%" />
   </picture>
 </div>
 
+<p align="center">
+  <strong>Galaxy</strong>
+  &nbsp;·&nbsp;
+  <a href="https://galaxy.adrianguichard.dev">Live</a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/Addey34/galaxy-3d">Source</a>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  <strong>Ludora</strong>
+  &nbsp;·&nbsp;
+  <a href="https://ludora.adrianguichard.dev">Live</a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/Addey34/ludora-showcase">Showcase</a>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  <strong>MagNotes</strong>
+  &nbsp;·&nbsp;
+  <a href="https://magnotes.adrianguichard.dev">Live</a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/Addey34/magnotes-frontend">Source</a>
+</p>
+
+<!-- Activity asset is generated from real GitHub contribution data. -->
+<a id="activity"></a>
+
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: light) and (max-width: 640px)" srcset="./assets/brand/v83/composed/more-mobile-light.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/composed/more-light.svg" />
-    <source media="(max-width: 640px)" srcset="./assets/brand/v83/composed/more-mobile.svg" />
-    <img src="./assets/brand/v83/composed/more.svg" alt="Additional experience and areas being explored" />
+    <source media="(max-width: 640px)" srcset="./assets/profile-v2/activity-mobile.svg" />
+    <img src="./assets/profile-v2/activity.svg" alt="Animated 3D GitHub contribution activity generated from real contribution data" width="100%" />
   </picture>
 </div>
 
 <a id="contact"></a>
 
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: light) and (max-width: 640px)" srcset="./assets/brand/v83/composed/contact-mobile-light.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/composed/contact-light.svg" />
-    <source media="(max-width: 640px)" srcset="./assets/brand/v83/composed/contact-mobile.svg" />
-    <img src="./assets/brand/v83/composed/contact.svg" alt="Contact channels" />
-  </picture>
-</div>
-
-<div align="center">
-  <a href="https://adrianguichard.dev"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/portfolio-light.svg" /><img src="./assets/brand/v83/actions/portfolio.svg" width="150" alt="Portfolio" /></picture></a>
-  <a href="https://www.linkedin.com/in/adrianguichard/"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/linkedin-light.svg" /><img src="./assets/brand/v83/actions/linkedin.svg" width="150" alt="LinkedIn" /></picture></a>
-  <a href="mailto:adrian34470@gmail.com"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/actions/email-light.svg" /><img src="./assets/brand/v83/actions/email.svg" width="150" alt="Email" /></picture></a>
-</div>
+<p align="center">
+  <a href="https://adrianguichard.dev"><strong>Portfolio</strong></a>
+  &nbsp;·&nbsp;
+  <a href="https://www.linkedin.com/in/adrianguichard/"><strong>LinkedIn</strong></a>
+  &nbsp;·&nbsp;
+  <a href="mailto:adrian34470@gmail.com"><strong>Email</strong></a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/Addey34"><strong>GitHub</strong></a>
+</p>
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: light) and (max-width: 640px)" srcset="./assets/brand/v83/composed/footer-mobile-light.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="./assets/brand/v83/composed/footer-light.svg" />
-    <source media="(max-width: 640px)" srcset="./assets/brand/v83/composed/footer-mobile.svg" />
-    <img src="./assets/brand/v83/composed/footer.svg" alt="From idea to running system" />
+    <source media="(max-width: 640px)" srcset="./assets/profile-v2/footer-mobile.svg" />
+    <img src="./assets/profile-v2/footer.svg" alt="From idea to running system" width="100%" />
   </picture>
 </div>
