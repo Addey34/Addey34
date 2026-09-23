@@ -131,6 +131,23 @@ jobs:
                       if match and float(match.group(1)) < min_calendar_x:
                           cal.remove(child)
 
+              # Zero-contribution days are context, not data peaks:
+              # keep only their top face so the baseline reads as a flat grid,
+              # while active days retain full 3D volume.
+              for cell in list(cal):
+                  faces = list(cell)
+                  top = next(
+                      (
+                          face for face in faces
+                          if face.attrib.get("class") == "cont-top-0"
+                      ),
+                      None,
+                  )
+                  if top is not None:
+                      for face in faces:
+                          if face is not top:
+                              cell.remove(face)
+
               cal.set("transform", f"translate({tx} {ty}) scale({scale})")
               out.append(cal)
               ET.ElementTree(out).write(path, encoding="unicode")
@@ -208,6 +225,23 @@ jobs:
               if "mobile" in filename and path.stat().st_size > 100_000:
                   failures.append(
                       f"{filename}: mobile activity exceeds 100 KB ({path.stat().st_size} bytes)"
+                  )
+
+              # Empty contribution days must remain flat: one top face only.
+              tree = ET.parse(path)
+              flat_failures = 0
+              for cell in tree.getroot().iter(f"{NS}g"):
+                  faces = list(cell)
+                  if any(face.attrib.get("class") == "cont-top-0" for face in faces):
+                      zero_faces = [
+                          face for face in faces
+                          if face.attrib.get("class", "").endswith("-0")
+                      ]
+                      if len(zero_faces) != 1:
+                          flat_failures += 1
+              if flat_failures:
+                  failures.append(
+                      f"{filename}: {flat_failures} zero-contribution cells are not flat"
                   )
 
               for match in re.finditer(r'font-size="([\d.]+)"', raw):
