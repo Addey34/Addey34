@@ -19,13 +19,13 @@ text{font-family:Inter,Segoe UI,Arial,sans-serif}.m{font-family:Consolas,monospa
 <text x="26" y="-5" class="m" font-size="19" fill="#D9AE57" letter-spacing="3">AG / TECHNICAL PROFILE</text>
 <text y="72" font-size="47" font-weight="800" fill="#F5F3ED">ADRIAN GUICHARD</text>
 <text y="116" class="m" font-size="25" fill="#65C7FF" letter-spacing="1.5">FULL-STACK DEVELOPER</text>
-<text y="172" font-size="22" fill="#B8C0CA">Products, tools and technical systems across</text>
-<text y="204" font-size="22" fill="#B8C0CA">web, realtime, 3D, AI, automation and security.</text>
+<text y="172" font-size="22" fill="#B8C0CA">Building products and technical systems across web,</text>
+<text y="204" font-size="22" fill="#B8C0CA">realtime, 3D, AI, automation, security and hardware.</text>
 </g>
 <g class="m" font-size="20" fill="#DCE3EB">
-<g transform="translate(54 306)"><rect width="140" height="50" rx="25" fill="#0F1621" stroke="#2B3948"/><text x="70" y="32" text-anchor="middle">WEB</text></g>
-<g transform="translate(208 306)"><rect width="278" height="50" rx="25" fill="#0F1621" stroke="#2B3948"/><text x="139" y="32" text-anchor="middle">INTERACTIVE SYSTEMS</text></g>
-<g transform="translate(500 306)"><rect width="112" height="50" rx="25" fill="#0F1621" stroke="#2B3948"/><text x="56" y="32" text-anchor="middle">3D</text></g>
+<g transform="translate(81 306)"><rect width="140" height="50" rx="25" fill="#0F1621" stroke="#2B3948"/><text x="70" y="32" text-anchor="middle">WEB</text></g>
+<g transform="translate(235 306)"><rect width="278" height="50" rx="25" fill="#0F1621" stroke="#2B3948"/><text x="139" y="32" text-anchor="middle">INTERACTIVE SYSTEMS</text></g>
+<g transform="translate(527 306)"><rect width="112" height="50" rx="25" fill="#0F1621" stroke="#2B3948"/><text x="56" y="32" text-anchor="middle">3D</text></g>
 <g transform="translate(108 372)"><rect width="126" height="50" rx="25" fill="#0F1621" stroke="#2B3948"/><text x="63" y="32" text-anchor="middle">AI</text></g>
 <g transform="translate(248 372)"><rect width="184" height="50" rx="25" fill="#0F1621" stroke="#2B3948"/><text x="92" y="32" text-anchor="middle">AUTOMATION</text></g>
 <g transform="translate(446 372)"><rect width="166" height="50" rx="25" fill="#0F1621" stroke="#2B3948"/><text x="83" y="32" text-anchor="middle">SECURITY</text></g>
