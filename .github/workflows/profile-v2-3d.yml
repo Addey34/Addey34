@@ -3,6 +3,7 @@ name: Profile V2 3D Activity
 on:
   push:
     branches:
+      - main
       - profile/v2-candidate
     paths:
       - ".github/workflows/profile-v2-3d.yml"
@@ -98,10 +99,6 @@ jobs:
               text(header, 0, 54 if mobile else 43, "Recent contribution activity in 3D.", 28 if mobile else 30, "#F5F3ED", weight=760)
               text(header, 0, 91 if mobile else 70, "Generated from real GitHub contribution data.", 20 if mobile else 14, "#98A1AE")
 
-              cal = copy.deepcopy(calendar)
-              cal.set("transform", f"translate({tx} {ty}) scale({scale})")
-              out.append(cal)
-
               flow_d = (
                   "M60 540 C220 500 500 555 660 510"
                   if mobile else
@@ -115,6 +112,10 @@ jobs:
                   "stroke-opacity": ".28",
                   "class": "activity-flow",
               })
+
+              cal = copy.deepcopy(calendar)
+              cal.set("transform", f"translate({tx} {ty}) scale({scale})")
+              out.append(cal)
               ET.ElementTree(out).write(path, encoding="unicode")
 
           build("assets/profile-v2/activity.svg", 1200, 650, 100, 10, 0.78)
