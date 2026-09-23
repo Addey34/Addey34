@@ -4,7 +4,7 @@
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#06080D"/><stop offset="1" stop-color="#0A1119"/></linearGradient>
 <linearGradient id="top" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#18212D"/><stop offset="1" stop-color="#0B1119"/></linearGradient>
-<path id="rail" d="M360 255V745"/>
+<path id="rail" d="M360 255V747"/>
 <style>text{font-family:Inter,Segoe UI,Arial,sans-serif}.m{font-family:Consolas,monospace}.flow{stroke-dasharray:16 20;animation:r 8s linear infinite}.s{animation:p 6.4s ease-in-out infinite}@keyframes r{to{stroke-dashoffset:-144}}@keyframes p{0%,100%{opacity:.78}50%{opacity:1}}@media(prefers-reduced-motion:reduce){.motion-dot{display:none!important}.flow,.s{animation:none!important}}</style>
 </defs>
 <rect width="720" height="820" rx="32" fill="url(#bg)"/>
