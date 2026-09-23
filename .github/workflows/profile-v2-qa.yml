@@ -1,8 +1,10 @@
 name: Profile V2 QA
+# qa revision: 2
 
 on:
   push:
     branches:
+      - main
       - profile/v2-candidate
     paths:
       - README.md
@@ -18,6 +20,10 @@ on:
       - .github/workflows/profile-v2-qa.yml
       - .github/workflows/profile-v2-3d.yml
   workflow_dispatch:
+
+concurrency:
+  group: profile-v2-qa-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -38,13 +44,13 @@ jobs:
 
           root_dir = Path("assets/profile-v2")
           required = {
-              "hero.svg", "hero-mobile.svg",
-              "scope.svg", "scope-mobile.svg",
-              "stack.svg", "stack-mobile.svg",
-              "engineering.svg", "engineering-mobile.svg",
-              "selected-work.svg", "selected-work-mobile.svg",
-              "activity.svg", "activity-mobile.svg",
-              "footer.svg", "footer-mobile.svg",
+              "hero.svg", "hero-compact.svg", "hero-mobile.svg", "hero-static.svg", "hero-compact-static.svg", "hero-mobile-static.svg",
+              "scope.svg", "scope-compact.svg", "scope-mobile.svg", "scope-static.svg", "scope-compact-static.svg", "scope-mobile-static.svg",
+              "stack.svg", "stack-compact.svg", "stack-mobile.svg", "stack-static.svg", "stack-compact-static.svg", "stack-mobile-static.svg",
+              "engineering.svg", "engineering-compact.svg", "engineering-mobile.svg", "engineering-static.svg", "engineering-compact-static.svg", "engineering-mobile-static.svg",
+              "selected-work.svg", "selected-work-compact.svg", "selected-work-mobile.svg", "selected-work-static.svg", "selected-work-compact-static.svg", "selected-work-mobile-static.svg",
+              "activity.svg", "activity-compact.svg", "activity-mobile.svg", "activity-static.svg", "activity-compact-static.svg", "activity-mobile-static.svg",
+              "footer.svg", "footer-compact.svg", "footer-mobile.svg", "footer-static.svg", "footer-compact-static.svg", "footer-mobile-static.svg",
           }
           found = {p.name for p in root_dir.glob("*.svg")}
           failures = []
@@ -57,6 +63,39 @@ jobs:
               failures.append("Unexpected V2 SVG assets: " + ", ".join(unexpected))
 
           ns = "{http://www.w3.org/2000/svg}"
+          static_style = '<style id="static-motion-override">*{animation:none!important}.motion-dot{display:none!important}</style>'
+
+          animated_names = [
+              "hero.svg", "hero-compact.svg", "hero-mobile.svg",
+              "scope.svg", "scope-compact.svg", "scope-mobile.svg",
+              "stack.svg", "stack-compact.svg", "stack-mobile.svg",
+              "engineering.svg", "engineering-compact.svg", "engineering-mobile.svg",
+              "selected-work.svg", "selected-work-compact.svg", "selected-work-mobile.svg",
+              "activity.svg", "activity-compact.svg", "activity-mobile.svg",
+              "footer.svg", "footer-compact.svg", "footer-mobile.svg",
+          ]
+
+          def static_name(name):
+              if name.endswith("-mobile.svg"):
+                  return name.replace("-mobile.svg", "-mobile-static.svg")
+              if name.endswith("-compact.svg"):
+                  return name.replace("-compact.svg", "-compact-static.svg")
+              return name.replace(".svg", "-static.svg")
+
+          for name in animated_names:
+              source = (root_dir / name).read_text(encoding="utf-8")
+              expected = source.replace("</svg>", static_style + "</svg>")
+              target = root_dir / static_name(name)
+              if target.read_text(encoding="utf-8") != expected:
+                  failures.append(f"{target}: static variant is out of sync with {name}")
+
+          def walk_text_sizes(node, inherited=None):
+              current = node.attrib.get("font-size", inherited)
+              if node.tag == f"{ns}text":
+                  yield node, current
+              for child in node:
+                  yield from walk_text_sizes(child, current)
+
           for path in sorted(root_dir.glob("*.svg")):
               try:
                   root = ET.parse(path).getroot()
@@ -64,8 +103,45 @@ jobs:
                   failures.append(f"{path}: invalid XML: {exc}")
                   continue
 
-              if "viewBox" not in root.attrib:
+              viewbox = root.attrib.get("viewBox")
+              if not viewbox:
                   failures.append(f"{path}: missing viewBox")
+              else:
+                  parts = viewbox.split()
+                  if len(parts) != 4:
+                      failures.append(f"{path}: malformed viewBox {viewbox!r}")
+                  else:
+                      width = float(parts[2])
+                      expected_width = (
+                          720.0 if "-mobile" in path.stem
+                          else 900.0 if "-compact" in path.stem
+                          else 1200.0
+                      )
+                      if width != expected_width:
+                          failures.append(
+                              f"{path}: expected viewBox width {expected_width:g}, got {width:g}"
+                          )
+
+              background = root.find(f"{ns}rect")
+              expected_rx = "32" if "-mobile" in path.stem else ("30" if "-compact" in path.stem else "28")
+              if background is None or background.attrib.get("rx") != expected_rx:
+                  failures.append(f"{path}: expected outer radius {expected_rx}px")
+
+              minimum_font = 22.0 if "-mobile" in path.stem else (20.0 if "-compact" in path.stem else 14.0)
+              for text_node, raw_size in walk_text_sizes(root):
+                  if raw_size is None:
+                      failures.append(f"{path}: visible <text> has no effective font-size")
+                      continue
+                  try:
+                      size = float(raw_size)
+                  except ValueError:
+                      failures.append(f"{path}: non-numeric effective font-size {raw_size!r}")
+                      continue
+                  if size < minimum_font:
+                      failures.append(
+                          f"{path}: effective font-size {size:g}px below "
+                          f"{minimum_font:g}px minimum"
+                      )
               title = root.find(f"{ns}title")
               desc = root.find(f"{ns}desc")
               if title is None or not (title.text or "").strip():
@@ -92,9 +168,70 @@ jobs:
                   if ".motion-dot{display:none!important}" not in raw_original:
                       failures.append(f"{path}: animateMotion signals must hide in reduced-motion mode")
 
+              if path.name.startswith("activity"):
+                  if "<animate" in raw_original or "<animateMotion" in raw_original or "<animateTransform" in raw_original:
+                      failures.append(f"{path}: generated Activity must not contain generic SMIL animation")
+
           if failures:
               raise SystemExit("\n".join(failures))
           print(f"Validated {len(found)} V2 SVG assets.")
+          PY
+
+      - name: Validate V2 editorial precision
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          failures = []
+          assets = {p.name: p.read_text(encoding="utf-8") for p in Path("assets/profile-v2").glob("*.svg")}
+          corpus = "\n".join(assets.values()) + "\n" + Path("README.md").read_text(encoding="utf-8")
+
+          forbidden = {
+              "TS · JS": "Do not abbreviate TypeScript / JavaScript in public project stacks.",
+              "Node / Express": "Use Node.js / Express.",
+              "React · Node ·": "Use Node.js, not Node, in the public technical scope.",
+              "ImageGeneratorLocal": "ImageGeneratorLocal must remain out of the public V2 for now.",
+          }
+          for needle, message in forbidden.items():
+              if needle in corpus:
+                  failures.append(f"{message} Found: {needle!r}")
+
+          required = {
+              "hero.svg": ["FULL-STACK DEVELOPER", "hardware"],
+              "hero-compact.svg": ["FULL-STACK DEVELOPER", "hardware"],
+              "hero-mobile.svg": ["FULL-STACK DEVELOPER", "hardware"],
+              "scope.svg": ["React · Node.js · APIs · Data", "ARCHITECTURE / FLOW / CONSTRAINTS"],
+              "scope-compact.svg": ["React · Node.js · APIs · Data", "ARCHITECTURE · FLOW"],
+              "scope-mobile.svg": ["React · Node.js · APIs · Data", "ARCHITECTURE · FLOW", "CONSTRAINTS"],
+              "selected-work.svg": [
+                  "TypeScript · JavaScript",
+                  "TypeScript · React · Node.js",
+                  "Nakama · WebSocket",
+              ],
+              "selected-work-compact.svg": [
+                  "TypeScript · JavaScript · Three.js · WebGL",
+                  "TypeScript · JavaScript · Three.js · Nakama · WebSocket",
+                  "TypeScript · React · Node.js / Express · MongoDB",
+              ],
+              "selected-work-mobile.svg": [
+                  "TypeScript · JavaScript · Three.js",
+                  "Nakama · WebSocket",
+                  "TypeScript · React · Node.js",
+                  "Express · MongoDB",
+              ],
+              "footer.svg": ["FULL-STACK DEVELOPER"],
+              "footer-compact.svg": ["FULL-STACK DEVELOPER"],
+              "footer-mobile.svg": ["FULL-STACK DEVELOPER"],
+          }
+          for filename, needles in required.items():
+              raw = assets[filename]
+              for needle in needles:
+                  if needle not in raw:
+                      failures.append(f"{filename}: missing required wording {needle!r}")
+
+          if failures:
+              raise SystemExit("\n".join(failures))
+          print("V2 editorial precision guardrails are valid.")
           PY
 
       - name: Validate activity generator guardrails
@@ -115,6 +252,12 @@ jobs:
               failures.append("Unexpected github-profile-3d-contrib revision.")
           if 'github-actions[bot]' not in workflow:
               failures.append("Activity commits must use the GitHub Actions bot identity.")
+          if "activity-compact.svg" not in workflow or "activity-compact-static.svg" not in workflow:
+              failures.append("Activity workflow must generate compact animated/static surfaces.")
+          if "group: profile-v2-activity-" not in workflow or "cancel-in-progress: true" not in workflow:
+              failures.append("Activity workflow must serialize runs per ref.")
+          if "- main" not in workflow:
+              failures.append("Activity workflow must remain ready for the main branch.")
 
           if failures:
               raise SystemExit("\n".join(failures))
@@ -130,9 +273,13 @@ jobs:
           readme = Path("README.md").read_text(encoding="utf-8")
           failures = []
 
-          for anchor in ["#scope", "#stack", "#engineering", "#work", "#activity", "#contact"]:
+          for anchor in ["#scope", "#stack", "#work", "#activity"]:
               if f'href="{anchor}"' not in readme:
                   failures.append(f"README missing navigation anchor {anchor}")
+
+          for section_id in ["scope", "stack", "engineering", "work", "activity", "contact"]:
+              if f'<a id="{section_id}"></a>' not in readme:
+                  failures.append(f"README missing section id {section_id}")
 
           expected_assets = [
               "./assets/profile-v2/hero.svg",
@@ -155,6 +302,18 @@ jobs:
               failures.append("README must retain Python in the technical profile")
           if "ImageGeneratorLocal" in readme:
               failures.append("ImageGeneratorLocal must stay out of the public showcase for now")
+
+          for obsolete in ('(max-width: 640px)', '(max-width: 768px)', '(max-width: 1280px)'):
+              if obsolete in readme:
+                  failures.append(f"README still uses obsolete responsive breakpoint {obsolete}")
+          if readme.count('(max-width: 430px)') != 14:
+              failures.append("All seven surfaces must expose mobile animated/reduced-motion sources")
+          if readme.count('(max-width: 1240px)') != 14:
+              failures.append("All seven surfaces must expose compact animated/reduced-motion sources")
+          if 'href="#contact"' in readme:
+              failures.append("Top navigation should stay compact; Contact remains a section, not a nav item.")
+          if readme.count('(prefers-reduced-motion: reduce)') != 21:
+              failures.append("All seven surfaces must expose reduced-motion mobile/compact/desktop sources")
 
           sources = (
               re.findall(r'<img[^>]+src="([^"]+)"', readme)

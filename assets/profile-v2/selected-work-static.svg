@@ -10,4 +10,4 @@
 <g transform="translate(985 275)" class="card c3"><polygon points="-155,0 0,-92 155,0 0,92" fill="url(#top)" stroke="#405064"/><g transform="translate(-42 -69) rotate(-5)"><rect width="84" height="42" rx="6" fill="#111D2A" stroke="#405064"/><path d="M12 12h54M12 22h43M12 32h50" stroke="#168CFF"/></g><text y="4" text-anchor="middle" font-size="24" font-weight="800" fill="#F5F3ED">MAGNOTES</text><text y="32" text-anchor="middle" class="mono" font-size="14" fill="#65C7FF">PRODUCT / FULL-STACK / INTERACTION</text><text y="56" text-anchor="middle" class="mono" font-size="14" fill="#98A1AE">TypeScript · React · Node.js</text><text y="75" text-anchor="middle" class="mono" font-size="14" fill="#98A1AE">Express · MongoDB</text></g>
 
 
-</svg>
+<style id="static-motion-override">*{animation:none!important}.motion-dot{display:none!important}</style></svg>

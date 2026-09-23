@@ -13,4 +13,4 @@
 <g transform="translate(930 194)" class="s x6"><polygon points="-65,0 0,-34 65,0 0,34" fill="url(#top)" stroke="#405064"/><text y="4">MONITOR</text></g>
 <g transform="translate(1095 235)" class="s x7"><polygon points="-65,0 0,-34 65,0 0,34" fill="#181713" stroke="#D9AE57"/><text y="4" fill="#F2D58A">ITERATE</text></g></g>
 
-</svg>
+<style id="static-motion-override">*{animation:none!important}.motion-dot{display:none!important}</style></svg>
