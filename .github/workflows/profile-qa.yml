@@ -4,8 +4,7 @@ on:
   pull_request:
     paths:
       - README.md
-      - assets/**
-      - brand/**
+      - assets/profile-v2/**
       - .github/workflows/profile-qa.yml
   workflow_dispatch:
 
@@ -20,30 +19,33 @@ jobs:
       - name: Checkout
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
 
-      - name: Setup Node
-        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
-        with:
-          node-version: 22
-          package-manager-cache: false
-
-      - name: Check brand token syntax
-        run: node --check brand/brand-tokens.mjs
-
-      - name: Validate SVG XML and accessibility metadata
+      - name: Validate V2 SVG assets
         run: |
           python - <<'PY'
           from pathlib import Path
           import xml.etree.ElementTree as ET
 
+          root_dir = Path("assets/profile-v2")
+          required = {
+              "hero.svg", "scope.svg", "stack.svg",
+              "engineering.svg", "selected-work.svg", "footer.svg",
+          }
+          found = {p.name for p in root_dir.glob("*.svg")}
+          missing = sorted(required - found)
           failures = []
-          for path in sorted(Path("assets").rglob("*.svg")):
+          if missing:
+              failures.append("Missing V2 SVG assets: " + ", ".join(missing))
+
+          ns = "{http://www.w3.org/2000/svg}"
+          for path in sorted(root_dir.glob("*.svg")):
               try:
                   root = ET.parse(path).getroot()
               except Exception as exc:
                   failures.append(f"{path}: invalid XML: {exc}")
                   continue
 
-              ns = "{http://www.w3.org/2000/svg}"
+              if "viewBox" not in root.attrib:
+                  failures.append(f"{path}: missing viewBox")
               title = root.find(f"{ns}title")
               desc = root.find(f"{ns}desc")
               if title is None or not (title.text or "").strip():
@@ -51,231 +53,72 @@ jobs:
               if desc is None or not (desc.text or "").strip():
                   failures.append(f"{path}: missing non-empty <desc>")
 
+              raw = path.read_text(encoding="utf-8")
+              if ".png" in raw.lower() or ".jpg" in raw.lower() or ".jpeg" in raw.lower():
+                  failures.append(f"{path}: raster dependency is not allowed in V2")
+
           if failures:
               raise SystemExit("\n".join(failures))
-
-          print("All SVG assets are valid and include title/desc metadata.")
+          print(f"Validated {len(found)} V2 SVG assets.")
           PY
 
-
-      - name: Validate final Signal composition readability
+      - name: Validate V2 README structure
         run: |
           python - <<'PY'
           from pathlib import Path
           import re
-          import xml.etree.ElementTree as ET
-
-          failures = []
-          composed = Path("assets/brand/v83/composed")
-          files = sorted(composed.glob("*.svg"))
-
-          if not files:
-              failures.append("No V8.3 composed SVG assets found.")
-
-          for path in files:
-              root = ET.parse(path).getroot()
-              width = float(root.attrib.get("width", "0"))
-              is_mobile = "mobile" in path.stem
-              expected_width = 640 if is_mobile else 1120
-              if width != expected_width:
-                  failures.append(
-                      f"{path}: expected width {expected_width}, got {width:g}"
-                  )
-
-              minimum = 9.0 if is_mobile else 9.5
-              for elem in root.iter():
-                  if not elem.tag.endswith("text"):
-                      continue
-                  raw = elem.attrib.get("font-size")
-                  if raw is None:
-                      failures.append(f"{path}: <text> missing font-size")
-                      continue
-                  try:
-                      size = float(raw)
-                  except ValueError:
-                      failures.append(f"{path}: non-numeric font-size {raw!r}")
-                      continue
-                  if size < minimum:
-                      failures.append(
-                          f"{path}: font-size {size:g}px below {minimum:g}px minimum"
-                      )
 
           readme = Path("README.md").read_text(encoding="utf-8")
-          if "assets/brand/v82/" in readme:
-              failures.append("README still references obsolete V8.2 assets.")
-          if "<details>" in readme or re.search(r"^##?\s", readme, re.MULTILINE):
-              failures.append("Visible candidate README should remain SVG-driven.")
-
-          if failures:
-              raise SystemExit("\n".join(failures))
-
-          print(f"Validated readability and sizing for {len(files)} Signal compositions.")
-          PY
-
-
-      - name: Validate clean modular grammar
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          import re
-          import xml.etree.ElementTree as ET
-
           failures = []
-          composed = Path("assets/brand/v83/composed")
-          actions = Path("assets/brand/v83/actions")
 
-          families = ["hero", "about", "current", "workflow", "toolkit", "more", "contact", "footer"]
-          variants = [".svg", "-light.svg", "-mobile.svg", "-mobile-light.svg"]
-          titles = {
-              "about": "ABOUT",
-              "current": "CURRENT",
-              "workflow": "WORKFLOW",
-              "toolkit": "TOOLKIT",
-              "more": "MORE",
-              "contact": "CONTACT",
-              "footer": "END / CONTINUE",
-          }
-          min_rounded = {
-              "hero": 5,
-              "about": 5,
-              "current": 6,
-              "workflow": 9,
-              "toolkit": 7,
-              "more": 5,
-              "contact": 2,
-              "footer": 3,
-          }
-          forbidden = ("SIGNAL SYSTEM", "V8.", "V9.", "VERSION ", "MODULAR ")
-
-          for family in families:
-              for suffix in variants:
-                  path = composed / f"{family}{suffix}"
-                  root = ET.parse(path).getroot()
-                  mobile = "mobile" in suffix
-                  light = "light" in suffix
-                  width = float(root.attrib.get("width", "0"))
-                  height = float(root.attrib.get("height", "0"))
-                  expected_width = 640 if mobile else 1120
-                  if width != expected_width:
-                      failures.append(f"{path}: expected width {expected_width}, got {width:g}")
-
-                  rail_x = "30" if mobile else "36"
-                  rail = f"M{rail_x} 0 V{height:g}"
-                  if not any(
-                      n.tag.endswith("path") and n.attrib.get("d") == rail
-                      for n in root.iter()
-                  ):
-                      failures.append(f"{path}: missing one continuous left directive rail {rail!r}")
-
-                  rects = [n for n in root.iter() if n.tag.endswith("rect")]
-                  rounded = [
-                      n for n in rects
-                      if float(n.attrib.get("rx", "0") or 0) >= 9
-                  ]
-                  if len(rounded) < min_rounded[family]:
-                      failures.append(
-                          f"{path}: expected at least {min_rounded[family]} rounded title/main/sub-card surfaces, "
-                          f"found {len(rounded)}"
-                      )
-
-                  texts = [
-                      (n.text or "").strip()
-                      for n in root.iter()
-                      if n.tag.endswith("text")
-                  ]
-                  if family in titles and titles[family] not in texts:
-                      failures.append(f"{path}: missing public section title {titles[family]!r}")
-
-                  for value in texts:
-                      upper = value.upper()
-                      if any(marker in upper for marker in forbidden):
-                          failures.append(f"{path}: internal design/version copy leaked publicly: {value!r}")
-
-                  expected_panel = "#EDE7DB" if light else "#0B1118"
-                  expected_card = "#FFFDF8" if light else "#111923"
-                  fills = [n.attrib.get("fill") for n in rects]
-                  if expected_panel not in fills:
-                      failures.append(f"{path}: missing canonical main-card fill {expected_panel}")
-                  if expected_card not in fills:
-                      failures.append(f"{path}: missing canonical sub-card fill {expected_card}")
-
-                  # The new system must not carry legacy ghost/open-frame overlays.
-                  for n in root.iter():
-                      if n.tag.endswith("path") and "opacity" in n.attrib:
-                          failures.append(f"{path}: legacy/decorative path opacity is not allowed")
-
-          action_specs = {
-              "about": ("ABOUT", False),
-              "current": ("CURRENT", False),
-              "workflow": ("WORKFLOW", False),
-              "toolkit": ("TOOLKIT", False),
-              "contact": ("CONTACT", False),
-              "portfolio": ("PORTFOLIO", True),
-              "linkedin": ("LINKEDIN", True),
-              "email": ("EMAIL", True),
-          }
-
-          for name, (label, external) in action_specs.items():
-              for suffix in [".svg", "-light.svg"]:
-                  path = actions / f"{name}{suffix}"
-                  root = ET.parse(path).getroot()
-                  texts = [
-                      (n.text or "").strip()
-                      for n in root.iter()
-                      if n.tag.endswith("text")
-                  ]
-                  rects = [n for n in root.iter() if n.tag.endswith("rect")]
-                  circles = [n for n in root.iter() if n.tag.endswith("circle")]
-                  if label not in texts:
-                      failures.append(f"{path}: missing action label {label!r}")
-                  if len(rects) != 2:
-                      failures.append(f"{path}: actions should contain only canvas + one button card")
-                  if len(circles) != 1:
-                      failures.append(f"{path}: actions should contain one semantic accent dot")
-
-          readme = Path("README.md").read_text(encoding="utf-8")
-          nav = ["#about", "#current", "#workflow", "#toolkit", "#contact"]
-          for anchor in nav:
+          expected_anchors = ["#scope", "#stack", "#engineering", "#work", "#contact"]
+          for anchor in expected_anchors:
               if f'href="{anchor}"' not in readme:
-                  failures.append(f"README missing internal navigation anchor {anchor}")
-          end_order = [
-              readme.find('id="contact"'),
-              readme.find("actions/portfolio.svg"),
-              readme.find("actions/linkedin.svg"),
-              readme.find("actions/email.svg"),
-              readme.find("composed/footer.svg"),
+                  failures.append(f"README missing navigation anchor {anchor}")
+
+          expected_assets = [
+              "./assets/profile-v2/hero.svg",
+              "./assets/profile-v2/scope.svg",
+              "./assets/profile-v2/stack.svg",
+              "./assets/profile-v2/engineering.svg",
+              "./assets/profile-v2/selected-work.svg",
+              "./assets/profile-v2/footer.svg",
           ]
-          if any(v < 0 for v in end_order) or end_order != sorted(end_order):
-              failures.append("README end sequence must remain Contact → Portfolio / LinkedIn / Email → Footer")
+          for asset in expected_assets:
+              if asset not in readme:
+                  failures.append(f"README missing V2 asset {asset}")
+
+          if "assets/brand/v83/" in readme:
+              failures.append("README still references V83 visual assets")
+          if "FULL-STACK DEVELOPER" not in Path("assets/profile-v2/hero.svg").read_text(encoding="utf-8"):
+              failures.append("Hero role must remain FULL-STACK DEVELOPER")
+          if "Python" not in readme:
+              failures.append("README must retain Python in the technical profile")
+          if "ImageGeneratorLocal" in readme:
+              failures.append("ImageGeneratorLocal is intentionally not part of the public showcase yet")
+
+          image_sources = re.findall(r'<img[^>]+src="([^"]+)"', readme)
+          for src in image_sources:
+              if not src.startswith("./assets/profile-v2/"):
+                  failures.append(f"README image is not a V2 self-hosted asset: {src}")
+              if src.lower().endswith((".png", ".jpg", ".jpeg", ".gif")):
+                  failures.append(f"Raster README image is not allowed: {src}")
 
           if failures:
               raise SystemExit("\n".join(failures))
-
-          print("Clean modular profile grammar is coherent: rail → title card → main card → semantic sub-cards.")
+          print("V2 README structure and editorial guardrails are valid.")
           PY
 
-
-      - name: Validate README local assets
+      - name: Validate local README references
         run: |
           python - <<'PY'
           from pathlib import Path
           import re
 
           readme = Path("README.md").read_text(encoding="utf-8")
-          refs = sorted(set(re.findall(r'(?:src|href|srcset)="(\./[^"#?]+)', readme)))
+          refs = sorted(set(re.findall(r'(?:src|href)="(\./[^"#?]+)', readme)))
           missing = [ref for ref in refs if not Path(ref[2:]).exists()]
-
-          external_images = [
-              src for src in re.findall(r'<img[^>]+src="([^"]+)"', readme)
-              if not src.startswith("./assets/")
-          ]
-
           if missing:
               raise SystemExit("Missing local README assets:\n" + "\n".join(missing))
-          if external_images:
-              raise SystemExit(
-                  "README images must be self-hosted:\n" + "\n".join(external_images)
-              )
-
           print(f"Validated {len(refs)} local README references.")
           PY
