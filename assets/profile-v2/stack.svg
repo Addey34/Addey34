@@ -9,8 +9,8 @@
   <path id="d" d="M700 300C780 255 840 220 940 205"/><path id="e" d="M710 330C800 330 850 330 940 330"/><path id="f" d="M700 360C780 405 840 440 940 455"/>
   <style>
     text{font-family:Inter,Segoe UI,Arial,sans-serif}.m{font-family:Consolas,monospace}
-    .rail{stroke-dasharray:14 18;animation:r 7s linear infinite}
-    .core{animation:float 7s ease-in-out infinite}
+    .rail{stroke-dasharray:14 18;animation:r 8s linear infinite}
+    .core{animation:float 7.2s ease-in-out infinite}
     @keyframes r{to{stroke-dashoffset:-128}}
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
     @media(prefers-reduced-motion:reduce){.motion-dot{display:none!important}.rail,.core{animation:none!important}}
@@ -28,9 +28,9 @@
 <g fill="none" stroke="#168CFF" stroke-opacity=".28" class="rail"><use href="#a"/><use href="#b"/><use href="#c"/><use href="#d"/><use href="#e"/><use href="#f"/></g>
 
 <g filter="url(#glow)">
-  <circle class="motion-dot" r="4" fill="#65C7FF"><animateMotion dur="6.2s" repeatCount="indefinite"><mpath href="#a"/></animateMotion></circle>
-  <circle class="motion-dot" r="3.5" fill="#65C7FF"><animateMotion dur="7.1s" begin="-3s" repeatCount="indefinite"><mpath href="#e"/></animateMotion></circle>
-  <circle class="motion-dot" r="3.5" fill="#D9AE57"><animateMotion dur="8s" begin="-5s" repeatCount="indefinite"><mpath href="#c"/></animateMotion></circle>
+  <circle class="motion-dot" r="4" fill="#65C7FF"><animateMotion dur="7.2s" repeatCount="indefinite"><mpath href="#a"/></animateMotion></circle>
+  <circle class="motion-dot" r="3.5" fill="#65C7FF"><animateMotion dur="8.4s" begin="-3s" repeatCount="indefinite"><mpath href="#e"/></animateMotion></circle>
+  <circle class="motion-dot" r="3.5" fill="#D9AE57"><animateMotion dur="9.6s" begin="-5s" repeatCount="indefinite"><mpath href="#c"/></animateMotion></circle>
 </g>
 <g transform="translate(600 330)"><g class="core">
   <polygon points="-105,0 0,-58 105,0 0,58" fill="#181713" stroke="#D9AE57"/>
