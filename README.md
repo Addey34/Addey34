@@ -1,7 +1,8 @@
 <!-- profile-v2 -->
 <div align="center">
   <picture>
-    <source media="(max-width: 640px)" srcset="./assets/profile-v2/hero-mobile.svg" />
+    <source media="(max-width: 430px)" srcset="./assets/profile-v2/hero-mobile.svg" />
+    <source media="(max-width: 1240px)" srcset="./assets/profile-v2/hero-compact.svg" />
     <img src="./assets/profile-v2/hero.svg" alt="Adrian Guichard — Full-Stack Developer" width="100%" />
   </picture>
 </div>
@@ -9,21 +10,17 @@
 <p align="center">
   <a href="#scope">Scope</a> ·
   <a href="#stack">Stack</a> ·
-  <a href="#engineering">Engineering</a> ·
-  <a href="#work">Selected Work</a> ·
-  <a href="#activity">Activity</a> ·
-  <a href="#contact">Contact</a>
+  <a href="#work">Work</a> ·
+  <a href="#activity">Activity</a>
 </p>
 
-I build **web products, interactive systems and technical tools** across frontend, backend, realtime, 3D, AI/local compute, automation, security and engineering workflows.
-
-TypeScript/JavaScript is my main application stack; I use Python for compute, tooling and AI workloads. I care about the whole path from an idea to a system that can be **tested, hardened, deployed, observed and improved**.
 
 <a id="scope"></a>
 
 <div align="center">
   <picture>
-    <source media="(max-width: 640px)" srcset="./assets/profile-v2/scope-mobile.svg" />
+    <source media="(max-width: 430px)" srcset="./assets/profile-v2/scope-mobile.svg" />
+    <source media="(max-width: 1240px)" srcset="./assets/profile-v2/scope-compact.svg" />
     <img src="./assets/profile-v2/scope.svg" alt="Technical scope — web, realtime, games, 3D, AI, automation, security and hardware/performance" width="100%" />
   </picture>
 </div>
@@ -32,21 +29,22 @@ TypeScript/JavaScript is my main application stack; I use Python for compute, to
 
 <div align="center">
   <picture>
-    <source media="(max-width: 640px)" srcset="./assets/profile-v2/stack-mobile.svg" />
-    <img src="./assets/profile-v2/stack.svg" alt="Core technical stack" width="100%" />
+    <source media="(max-width: 430px)" srcset="./assets/profile-v2/stack-mobile.svg" />
+    <source media="(max-width: 1240px)" srcset="./assets/profile-v2/stack-compact.svg" />
+    <img src="./assets/profile-v2/stack.svg" alt="Core technical stack — TypeScript, JavaScript, Python, React, Node.js, Three.js, WebGL, MongoDB, PostgreSQL, PyTorch, ONNX, Playwright, Docker and CI/CD" width="100%" />
   </picture>
 </div>
 
 <details>
-<summary><strong>Stack detail</strong></summary>
+<summary><strong>Extended stack</strong></summary>
 <br />
 
 **Languages** — TypeScript · JavaScript · Python  
 **Product runtime** — React · Node.js · Express · Vite  
-**Interactive** — Three.js · WebGL · Canvas · realtime/game logic  
-**Backend & data** — MongoDB · PostgreSQL · FastAPI · REST APIs · WebSocket · authentication  
-**Compute** — PyTorch · Diffusers · ONNX Runtime · CUDA / DirectML  
-**Engineering** — Playwright · Vitest · Jest · Docker · GitHub Actions · CI/CD · Linux  
+**Realtime & graphics** — Three.js · WebGL · Canvas · WebSocket · Nakama · game logic  
+**Data & APIs** — MongoDB · PostgreSQL · REST APIs · JWT / OAuth  
+**Compute** — FastAPI · PyTorch · Diffusers · ONNX Runtime · CUDA / DirectML  
+**Delivery & QA** — Playwright · Vitest · Jest · Docker · GitHub Actions · CI/CD · Linux  
 
 **Also worked with** — Angular · Vue · Next.js · Astro · React Native · Java / Spring Boot · Prisma · Mongoose · Tailwind · Firebase · Caddy · Nginx
 
@@ -56,7 +54,8 @@ TypeScript/JavaScript is my main application stack; I use Python for compute, to
 
 <div align="center">
   <picture>
-    <source media="(max-width: 640px)" srcset="./assets/profile-v2/engineering-mobile.svg" />
+    <source media="(max-width: 430px)" srcset="./assets/profile-v2/engineering-mobile.svg" />
+    <source media="(max-width: 1240px)" srcset="./assets/profile-v2/engineering-compact.svg" />
     <img src="./assets/profile-v2/engineering.svg" alt="Engineering loop — plan, build, test, harden, deploy, monitor and iterate" width="100%" />
   </picture>
 </div>
@@ -65,29 +64,16 @@ TypeScript/JavaScript is my main application stack; I use Python for compute, to
 
 <div align="center">
   <picture>
-    <source media="(max-width: 640px)" srcset="./assets/profile-v2/selected-work-mobile.svg" />
-    <img src="./assets/profile-v2/selected-work.svg" alt="Selected public work — Galaxy, Ludora and MagNotes" width="100%" />
+    <source media="(max-width: 430px)" srcset="./assets/profile-v2/selected-work-mobile.svg" />
+    <source media="(max-width: 1240px)" srcset="./assets/profile-v2/selected-work-compact.svg" />
+    <img src="./assets/profile-v2/selected-work.svg" alt="Selected public work — Galaxy for 3D graphics, Ludora for realtime games and platform systems, and MagNotes for full-stack product engineering" width="100%" />
   </picture>
 </div>
 
 <p align="center">
-  <strong>Galaxy</strong>
-  &nbsp;·&nbsp;
-  <a href="https://galaxy.adrianguichard.dev">Live</a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/Addey34/galaxy-3d">Source</a>
-  &nbsp;&nbsp;|&nbsp;&nbsp;
-  <strong>Ludora</strong>
-  &nbsp;·&nbsp;
-  <a href="https://ludora.adrianguichard.dev">Live</a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/Addey34/ludora-showcase">Showcase</a>
-  &nbsp;&nbsp;|&nbsp;&nbsp;
-  <strong>MagNotes</strong>
-  &nbsp;·&nbsp;
-  <a href="https://magnotes.adrianguichard.dev">Live</a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/Addey34/magnotes-frontend">Source</a>
+  <strong>Galaxy</strong> · <a href="https://galaxy.adrianguichard.dev">Live</a> · <a href="https://github.com/Addey34/galaxy-3d">Source</a><br />
+  <strong>Ludora</strong> · <a href="https://ludora.adrianguichard.dev">Live</a> · <a href="https://github.com/Addey34/ludora-showcase">Showcase</a><br />
+  <strong>MagNotes</strong> · <a href="https://magnotes.adrianguichard.dev">Live</a> · <a href="https://github.com/Addey34/magnotes-frontend">Source</a>
 </p>
 
 <!-- Activity asset is generated from real GitHub contribution data. -->
@@ -95,8 +81,9 @@ TypeScript/JavaScript is my main application stack; I use Python for compute, to
 
 <div align="center">
   <picture>
-    <source media="(max-width: 640px)" srcset="./assets/profile-v2/activity-mobile.svg" />
-    <img src="./assets/profile-v2/activity.svg" alt="Animated 3D GitHub contribution activity generated from real contribution data" width="100%" />
+    <source media="(max-width: 430px)" srcset="./assets/profile-v2/activity-mobile.svg" />
+    <source media="(max-width: 1240px)" srcset="./assets/profile-v2/activity-compact.svg" />
+    <img src="./assets/profile-v2/activity.svg" alt="Recent GitHub contribution activity rendered in 3D from real contribution data" width="100%" />
   </picture>
 </div>
 
@@ -108,13 +95,12 @@ TypeScript/JavaScript is my main application stack; I use Python for compute, to
   <a href="https://www.linkedin.com/in/adrianguichard/"><strong>LinkedIn</strong></a>
   &nbsp;·&nbsp;
   <a href="mailto:adrian34470@gmail.com"><strong>Email</strong></a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/Addey34"><strong>GitHub</strong></a>
 </p>
 
 <div align="center">
   <picture>
-    <source media="(max-width: 640px)" srcset="./assets/profile-v2/footer-mobile.svg" />
+    <source media="(max-width: 430px)" srcset="./assets/profile-v2/footer-mobile.svg" />
+    <source media="(max-width: 1240px)" srcset="./assets/profile-v2/footer-compact.svg" />
     <img src="./assets/profile-v2/footer.svg" alt="From idea to running system" width="100%" />
   </picture>
 </div>

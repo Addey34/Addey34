@@ -33,12 +33,27 @@ export const brand = Object.freeze({
     },
   },
 
+  responsive: {
+    viewport: {
+      desktop: 1200,
+      compact: 900,
+      mobile: 720,
+    },
+    breakpoint: {
+      mobileMax: 430,
+      compactMax: 1240,
+    },
+  },
+
   geometry: {
-    canvasWidth: 1200,
     grid: 8,
     safeX: 72,
     safeY: 64,
-    cornerRadius: 24,
+    cornerRadius: {
+      desktop: 28,
+      compact: 30,
+      mobile: 32,
+    },
     hairline: 1,
     rule: 2,
     markStroke: 11,
@@ -51,6 +66,18 @@ export const brand = Object.freeze({
     body: 'Inter, Segoe UI, Arial, sans-serif',
     mono: 'SFMono-Regular, Consolas, Liberation Mono, monospace',
     trackingLabel: 3.2,
+    minimumSvgText: {
+      desktop: 14,
+      compact: 20,
+      mobile: 22,
+    },
+  },
+
+  motion: {
+    railSeconds: 8,
+    signalPrimarySeconds: 7.2,
+    signalSecondarySeconds: 9.6,
+    reducedMotion: 'native prefers-reduced-motion fallback',
   },
 
   rules: {

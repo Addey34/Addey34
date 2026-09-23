@@ -1,9 +1,11 @@
 name: Profile V2 3D Activity
+# generator revision: 1
 
 on:
   push:
     branches:
-      - profile/v2-candidate
+      - main
+      - "profile/v2-*"
     paths:
       - ".github/workflows/profile-v2-3d.yml"
       - "activity-settings/ag.json"
@@ -11,6 +13,10 @@ on:
     - cron: "17 3 * * *"
       timezone: "Europe/Paris"
   workflow_dispatch:
+
+concurrency:
+  group: profile-v2-activity-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: write
@@ -33,6 +39,7 @@ jobs:
         run: |
           python - <<'PY'
           import copy
+          import re
           import xml.etree.ElementTree as ET
           from pathlib import Path
 
@@ -47,7 +54,21 @@ jobs:
           if len(children) < 3:
               raise SystemExit("Unexpected 3D activity SVG structure")
 
-          style = copy.deepcopy(children[0])
+          source_style = children[0].text or ""
+          contribution_rules = re.findall(
+              r"(\.cont-(?:top|left|right)-\d+\s*\{[^}]+\})",
+              source_style,
+          )
+          if len(contribution_rules) != 15:
+              raise SystemExit(
+                  f"Unexpected contribution style structure: {len(contribution_rules)} rules"
+              )
+
+          style = ET.Element(q("style"))
+          style.text = "".join(
+              re.sub(r"\s+", " ", rule).strip()
+              for rule in contribution_rules
+          )
           calendar = copy.deepcopy(children[2])
 
           def text(parent, x, y, value, size, fill, *, mono=False, weight=None, spacing=None):
@@ -63,7 +84,7 @@ jobs:
               node = ET.SubElement(parent, q("text"), attrs)
               node.text = value
 
-          def build(path, width, height, tx, ty, scale, mobile=False):
+          def build(path, width, height, tx, ty, scale, mobile=False, compact=False, min_calendar_x=None):
               out = ET.Element(q("svg"), {
                   "width": str(width), "height": str(height),
                   "viewBox": f"0 0 {width} {height}",
@@ -84,28 +105,27 @@ jobs:
 
               ET.SubElement(out, q("rect"), {
                   "width": str(width), "height": str(height),
-                  "rx": "32" if mobile else "28",
+                  "rx": "32" if mobile else ("30" if compact else "28"),
                   "fill": "#06080D",
               })
 
-              hx = 54 if mobile else 72
-              hy = 60 if mobile else 58
+              hx = 54 if mobile else (48 if compact else 72)
+              hy = 60 if mobile else (52 if compact else 58)
               header = ET.SubElement(out, q("g"), {"transform": f"translate({hx} {hy})"})
               ET.SubElement(header, q("circle"), {
                   "cx": "7", "cy": "-12", "r": "6" if mobile else "5", "fill": "#D9AE57"
               })
-              text(header, 26 if mobile else 24, -5, "ACTIVITY / 3D CONTRIBUTIONS", 19 if mobile else 12, "#D9AE57", mono=True, spacing=3)
-              text(header, 0, 54 if mobile else 43, "Recent contribution activity in 3D.", 28 if mobile else 30, "#F5F3ED", weight=760)
-              text(header, 0, 91 if mobile else 70, "Generated from real GitHub contribution data.", 20 if mobile else 14, "#98A1AE")
-
-              cal = copy.deepcopy(calendar)
-              cal.set("transform", f"translate({tx} {ty}) scale({scale})")
-              out.append(cal)
+              text(header, 26 if mobile else 24, -5, "ACTIVITY / 3D CONTRIBUTIONS", 22 if mobile else (20 if compact else 14), "#D9AE57", mono=True, spacing=3)
+              text(header, 0, 54 if mobile else (50 if compact else 43), "Recent contribution activity in 3D.", 28 if mobile else (32 if compact else 30), "#F5F3ED", weight=760)
+              text(header, 0, 91 if mobile else (82 if compact else 70), "Generated from real GitHub contribution data.", 22 if mobile else (20 if compact else 15), "#98A1AE")
 
               flow_d = (
                   "M60 540 C220 500 500 555 660 510"
-                  if mobile else
-                  "M120 548 C360 500 760 565 1080 510"
+                  if mobile else (
+                      "M80 448 C250 418 620 470 820 430"
+                      if compact else
+                      "M120 548 C360 500 760 565 1080 510"
+                  )
               )
               ET.SubElement(out, q("path"), {
                   "d": flow_d,
@@ -115,18 +135,209 @@ jobs:
                   "stroke-opacity": ".28",
                   "class": "activity-flow",
               })
+
+              cal = copy.deepcopy(calendar)
+              if min_calendar_x is not None:
+                  for child in list(cal):
+                      match = re.match(
+                          r"translate\(([-\d.]+)[ ,]+([-\d.]+)\)",
+                          child.attrib.get("transform", ""),
+                      )
+                      if match and float(match.group(1)) < min_calendar_x:
+                          cal.remove(child)
+
+              # Zero-contribution days are context, not data peaks:
+              # keep only their top face so the baseline reads as a flat grid,
+              # while active days retain full 3D volume.
+              for cell in list(cal):
+                  faces = list(cell)
+                  top = next(
+                      (
+                          face for face in faces
+                          if face.attrib.get("class") == "cont-top-0"
+                      ),
+                      None,
+                  )
+                  if top is not None:
+                      for face in faces:
+                          if face is not top:
+                              cell.remove(face)
+
+              # Deduplicate only pixel-identical cube geometry. Color classes
+              # are not enough: cells within the same color band can have different
+              # heights, so the complete geometry is the cache key.
+              defs = ET.SubElement(out, q("defs"))
+              prototypes = {}
+              instances = ET.Element(
+                  q("g"),
+                  {"transform": f"translate({tx} {ty}) scale({scale})"},
+              )
+
+              for cell in list(cal):
+                  top_face = next(
+                      (
+                          face for face in list(cell)
+                          if face.attrib.get("class", "").startswith("cont-top-")
+                      ),
+                      None,
+                  )
+                  if top_face is None:
+                      instances.append(copy.deepcopy(cell))
+                      continue
+
+                  prototype = copy.deepcopy(cell)
+                  prototype.attrib.pop("transform", None)
+
+                  # Defaults: SVG rect x/y are 0 and stroke defaults to none.
+                  # Removing those repeated attributes is pixel-identical.
+                  for face in prototype:
+                      if face.attrib.get("x") == "0":
+                          face.attrib.pop("x")
+                      if face.attrib.get("y") == "0":
+                          face.attrib.pop("y")
+                      if face.attrib.get("stroke") == "none":
+                          face.attrib.pop("stroke")
+
+                  signature = ET.tostring(prototype, encoding="unicode")
+                  proto_id = prototypes.get(signature)
+                  if proto_id is None:
+                      proto_id = f"activity-cell-{len(prototypes)}"
+                      prototype.set("id", proto_id)
+                      defs.append(prototype)
+                      prototypes[signature] = proto_id
+
+                  ET.SubElement(
+                      instances,
+                      q("use"),
+                      {
+                          "href": f"#{proto_id}",
+                          "transform": cell.attrib.get("transform", ""),
+                      },
+                  )
+
+              out.append(instances)
               ET.ElementTree(out).write(path, encoding="unicode")
 
-          build("assets/profile-v2/activity.svg", 1200, 650, 100, 10, 0.78)
-          build("assets/profile-v2/activity-mobile.svg", 720, 650, 27, 145, 0.52, mobile=True)
+          build(
+              "assets/profile-v2/activity.svg",
+              1200, 590, -375, -269, 1.05,
+              min_calendar_x=640,
+          )
+          build(
+              "assets/profile-v2/activity-compact.svg",
+              900, 500, -388, -238, 0.90,
+              compact=True,
+              min_calendar_x=660,
+          )
+          build(
+              "assets/profile-v2/activity-mobile.svg",
+              720, 590, -700, -359, 1.15,
+              mobile=True,
+              min_calendar_x=680,
+          )
+
+          PY
+
+      - name: Validate curated activity surfaces
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          import xml.etree.ElementTree as ET
+
+          NS = "{http://www.w3.org/2000/svg}"
+          failures = []
+
+          for filename, width, radius, min_font in (
+              ("assets/profile-v2/activity.svg", 1200, "28", 14.0),
+              ("assets/profile-v2/activity-compact.svg", 900, "30", 20.0),
+              ("assets/profile-v2/activity-mobile.svg", 720, "32", 22.0),
+          ):
+              path = Path(filename)
+              try:
+                  root = ET.parse(path).getroot()
+              except Exception as exc:
+                  failures.append(f"{filename}: invalid XML: {exc}")
+                  continue
+
+              viewbox = root.attrib.get("viewBox", "").split()
+              if len(viewbox) != 4 or float(viewbox[2]) != width:
+                  failures.append(f"{filename}: unexpected viewBox")
+
+              background = root.find(f"{NS}rect")
+              if background is None or background.attrib.get("rx") != radius:
+                  failures.append(f"{filename}: unexpected outer radius")
+
+              raw = path.read_text(encoding="utf-8")
+              if "<animate" in raw or "<animateMotion" in raw or "<animateTransform" in raw:
+                  failures.append(f"{filename}: generic SMIL animation leaked into curated output")
+              if "prefers-reduced-motion" not in raw:
+                  failures.append(f"{filename}: reduced-motion fallback missing")
+              if path.stat().st_size > 35_000:
+                  failures.append(
+                      f"{filename}: curated activity exceeds 35 KB ({path.stat().st_size} bytes)"
+                  )
+
+              # Empty contribution days must remain flat: one top face only.
+              tree = ET.parse(path)
+              flat_failures = 0
+              for cell in tree.getroot().iter(f"{NS}g"):
+                  faces = list(cell)
+                  if any(face.attrib.get("class") == "cont-top-0" for face in faces):
+                      zero_faces = [
+                          face for face in faces
+                          if face.attrib.get("class", "").endswith("-0")
+                      ]
+                      if len(zero_faces) != 1:
+                          flat_failures += 1
+              if flat_failures:
+                  failures.append(
+                      f"{filename}: {flat_failures} zero-contribution cells are not flat"
+                  )
+
+              # Calendar geometry must be deduplicated into reusable cell prototypes.
+              raw_root = tree.getroot()
+              use_nodes = list(raw_root.iter(f"{NS}use"))
+              prototype_ids = {
+                  node.attrib.get("id")
+                  for node in raw_root.iter(f"{NS}g")
+                  if node.attrib.get("id", "").startswith("activity-cell-")
+              }
+              if not (10 <= len(prototype_ids) <= 50):
+                  failures.append(
+                      f"{filename}: unexpected activity prototype count {len(prototype_ids)}"
+                  )
+              if len(use_nodes) < 70:
+                  failures.append(
+                      f"{filename}: expected contribution cell <use> instances, got {len(use_nodes)}"
+                  )
+
+              for match in re.finditer(r'font-size="([\d.]+)"', raw):
+                  if float(match.group(1)) < min_font:
+                      failures.append(
+                          f"{filename}: font-size {match.group(1)} below {min_font:g}px minimum"
+                      )
+
+          if failures:
+              raise SystemExit("\n".join(failures))
+          print("Curated activity surfaces validated.")
           PY
 
       - name: Commit curated activity
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/profile-v2/activity.svg assets/profile-v2/activity-mobile.svg
+          git add assets/profile-v2/activity.svg assets/profile-v2/activity-compact.svg assets/profile-v2/activity-mobile.svg
           if git commit -m "chore(profile): refresh 3D activity"; then
-            git pull --rebase origin "$GITHUB_REF_NAME"
-            git push origin "HEAD:$GITHUB_REF_NAME"
+            for attempt in 1 2 3; do
+              git fetch origin "$GITHUB_REF_NAME"
+              git rebase "origin/$GITHUB_REF_NAME"
+              if git push origin "HEAD:$GITHUB_REF_NAME"; then
+                exit 0
+              fi
+              echo "Push raced with another update; retrying ($attempt/3)..."
+              sleep 2
+            done
+            echo "Unable to publish refreshed activity after 3 retries."
+            exit 1
           fi
