@@ -235,18 +235,6 @@ jobs:
               min_calendar_x=680,
           )
 
-          static_style = '<style id="static-motion-override">*{animation:none!important}.motion-dot{display:none!important}</style>'
-
-          def freeze(source, target):
-              raw = Path(source).read_text(encoding="utf-8")
-              Path(target).write_text(
-                  raw.replace("</svg>", static_style + "</svg>"),
-                  encoding="utf-8",
-              )
-
-          freeze("assets/profile-v2/activity.svg", "assets/profile-v2/activity-static.svg")
-          freeze("assets/profile-v2/activity-compact.svg", "assets/profile-v2/activity-compact-static.svg")
-          freeze("assets/profile-v2/activity-mobile.svg", "assets/profile-v2/activity-mobile-static.svg")
           PY
 
       - name: Validate curated activity surfaces
@@ -261,11 +249,8 @@ jobs:
 
           for filename, width, radius, min_font in (
               ("assets/profile-v2/activity.svg", 1200, "28", 14.0),
-              ("assets/profile-v2/activity-static.svg", 1200, "28", 14.0),
               ("assets/profile-v2/activity-compact.svg", 900, "30", 20.0),
-              ("assets/profile-v2/activity-compact-static.svg", 900, "30", 20.0),
               ("assets/profile-v2/activity-mobile.svg", 720, "32", 22.0),
-              ("assets/profile-v2/activity-mobile-static.svg", 720, "32", 22.0),
           ):
               path = Path(filename)
               try:
@@ -341,7 +326,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/profile-v2/activity.svg assets/profile-v2/activity-static.svg assets/profile-v2/activity-compact.svg assets/profile-v2/activity-compact-static.svg assets/profile-v2/activity-mobile.svg assets/profile-v2/activity-mobile-static.svg
+          git add assets/profile-v2/activity.svg assets/profile-v2/activity-compact.svg assets/profile-v2/activity-mobile.svg
           if git commit -m "chore(profile): refresh 3D activity"; then
             for attempt in 1 2 3; do
               git fetch origin "$GITHUB_REF_NAME"
