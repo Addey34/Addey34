@@ -5,7 +5,7 @@
 <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#06080D"/><stop offset="1" stop-color="#0A1119"/></linearGradient>
 <linearGradient id="plate" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#18212D"/><stop offset="1" stop-color="#0B1119"/></linearGradient>
 <path id="rail" d="M360 278V1200"/>
-<style>text{font-family:Inter,Segoe UI,Arial,sans-serif}.m{font-family:Consolas,monospace}.rail{stroke-dasharray:16 20;animation:r 8s linear infinite}.b{animation:o 6s ease-in-out infinite}.d2{animation-delay:-1s}.d3{animation-delay:-2s}.d4{animation-delay:-3s}.d5{animation-delay:-4s}.d6{animation-delay:-5s}@keyframes r{to{stroke-dashoffset:-144}}@keyframes o{0%,100%{opacity:.93}50%{opacity:1}}@media(prefers-reduced-motion:reduce){.motion-dot{display:none!important}.rail,.b{animation:none!important}}</style>
+<style>text{font-family:Inter,Segoe UI,Arial,sans-serif}.m{font-family:Consolas,monospace}.rail{stroke-dasharray:16 20;animation:r 8s linear infinite}.b{animation:o 6.4s ease-in-out infinite}.d2{animation-delay:-1s}.d3{animation-delay:-2s}.d4{animation-delay:-3s}.d5{animation-delay:-4s}.d6{animation-delay:-5s}@keyframes r{to{stroke-dashoffset:-144}}@keyframes o{0%,100%{opacity:.93}50%{opacity:1}}@media(prefers-reduced-motion:reduce){.motion-dot{display:none!important}.rail,.b{animation:none!important}}</style>
 </defs>
 <rect width="720" height="1280" rx="32" fill="url(#bg)"/>
 <g transform="translate(54 60)">
@@ -15,8 +15,8 @@
 </g>
 <use href="#rail" stroke="#263140" stroke-width="2"/>
 <use href="#rail" stroke="#168CFF" stroke-opacity=".28" stroke-width="2" class="rail"/>
-<circle class="motion-dot" r="5" fill="#65C7FF"><animateMotion dur="7s" repeatCount="indefinite"><mpath href="#rail"/></animateMotion></circle>
-<circle class="motion-dot" r="4" fill="#D9AE57"><animateMotion dur="9s" begin="-4s" repeatCount="indefinite"><mpath href="#rail"/></animateMotion></circle>
+<circle class="motion-dot" r="5" fill="#65C7FF"><animateMotion dur="7.2s" repeatCount="indefinite"><mpath href="#rail"/></animateMotion></circle>
+<circle class="motion-dot" r="4" fill="#D9AE57"><animateMotion dur="9.6s" begin="-4s" repeatCount="indefinite"><mpath href="#rail"/></animateMotion></circle>
 <g transform="translate(360 222)">
 <polygon points="-126,0 0,-66 126,0 0,66" fill="#171A1C" stroke="#D9AE57"/>
 <polygon points="-126,0 0,66 0,98 -126,32" fill="#0A0B0E" stroke="#3A3021"/>
