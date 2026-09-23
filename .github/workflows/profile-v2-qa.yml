@@ -10,6 +10,10 @@ on:
       - README.md
       - assets/profile-v2/**
       - activity-settings/**
+      - brand/brand-tokens.mjs
+      - assets/brand/ag-mark.svg
+      - assets/brand/ag-mark-mono.svg
+      - assets/brand/identity-board.svg
       - .github/workflows/profile-v2-qa.yml
       - .github/workflows/profile-v2-3d.yml
   pull_request:
