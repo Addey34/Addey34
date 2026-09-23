@@ -1,4 +1,4 @@
-name: Profile V2 Compact Boundary Audit
+name: Profile V2 Wide Breakpoint Audit
 
 on:
   push:
@@ -32,7 +32,7 @@ jobs:
           (async () => {
             const browser = await chromium.launch({ headless: true });
             const url = 'https://github.com/Addey34/Addey34/tree/profile/v2-candidate';
-            const widths = [320, 390, 430, 431, 767, 768, 769, 900, 1024, 1280, 1281, 1440];
+            const widths = [1024, 1060, 1100, 1140, 1180, 1200, 1220, 1240, 1260, 1280, 1281];
             const report = [];
 
             for (const width of widths) {
@@ -88,7 +88,7 @@ jobs:
               }, width);
 
               report.push(data);
-              if ([320, 431, 769, 1024, 1281].includes(width)) {
+              if ([1024, 1100, 1180, 1200, 1220, 1240, 1280, 1281].includes(width)) {
                 await article.screenshot({
                   path: `layout-${width}.png`,
                   animations: 'disabled',
@@ -111,9 +111,12 @@ jobs:
           name: profile-v2-layout-once
           path: |
             layout-report.json
-            layout-320.png
-            layout-431.png
-            layout-769.png
             layout-1024.png
+            layout-1100.png
+            layout-1180.png
+            layout-1200.png
+            layout-1220.png
+            layout-1240.png
+            layout-1280.png
             layout-1281.png
           retention-days: 1
