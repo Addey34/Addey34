@@ -177,8 +177,10 @@ jobs:
                   "Nakama · WebSocket",
               ],
               "selected-work-mobile.svg": [
-                  "TypeScript · JavaScript · Three.js · Nakama · WebSocket",
-                  "TypeScript · React · Node.js / Express · MongoDB",
+                  "TypeScript · JavaScript · Three.js",
+                  "Nakama · WebSocket",
+                  "TypeScript · React · Node.js",
+                  "Express · MongoDB",
               ],
               "footer.svg": ["FULL-STACK DEVELOPER"],
               "footer-mobile.svg": ["FULL-STACK DEVELOPER"],
