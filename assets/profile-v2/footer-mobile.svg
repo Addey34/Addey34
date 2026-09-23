@@ -10,8 +10,9 @@
 <rect width="720" height="430" rx="32" fill="url(#bg)"/>
 <g fill="none" stroke="#263140" stroke-width="2"><use href="#p1"/><use href="#p2"/><use href="#p3"/><use href="#p4"/></g>
 <g fill="none" stroke="#168CFF" stroke-opacity=".32" stroke-width="2" class="line"><use href="#p1"/><use href="#p2"/><use href="#p3"/><use href="#p4"/></g>
-<g transform="translate(360 205)"><polygon points="-90,0 0,-48 90,0 0,48" fill="#121923" stroke="#D9AE57"/><text y="12" text-anchor="middle" font-size="38" font-weight="800" fill="#F2D58A">AG</text></g>
 <g filter="url(#glow)"><circle class="motion-dot" r="4" fill="#65C7FF"><animateMotion dur="6s" repeatCount="indefinite"><mpath href="#p1"/></animateMotion></circle><circle class="motion-dot" r="4" fill="#65C7FF"><animateMotion dur="6.8s" begin="-3s" repeatCount="indefinite"><mpath href="#p2"/></animateMotion></circle></g>
+<g transform="translate(360 205)"><polygon points="-90,0 0,-48 90,0 0,48" fill="#121923" stroke="#D9AE57"/><text y="12" text-anchor="middle" font-size="38" font-weight="800" fill="#F2D58A">AG</text></g>
+
 <text x="360" y="352" text-anchor="middle" class="m" font-size="22" fill="#D9AE57" letter-spacing="2.5">FROM IDEA TO RUNNING SYSTEM.</text>
 <text x="360" y="388" text-anchor="middle" class="m" font-size="17" fill="#7E8996" letter-spacing="1.8">ADRIAN GUICHARD · FULL-STACK DEVELOPER</text>
 </svg>
