@@ -9,15 +9,14 @@
 <p align="center">
   <a href="#scope">Scope</a> ·
   <a href="#stack">Stack</a> ·
-  <a href="#engineering">Engineering</a> ·
-  <a href="#work">Selected Work</a> ·
+  <a href="#engineering">Loop</a> ·
+  <a href="#work">Work</a> ·
   <a href="#activity">Activity</a> ·
   <a href="#contact">Contact</a>
 </p>
 
 <p align="center">
-  I build <strong>web products, interactive systems and technical tools</strong> across frontend, backend, realtime, 3D, AI/local compute, automation and security.<br />
-  TypeScript/JavaScript is my main application stack; I use Python for compute, tooling and AI workloads.
+  I build <strong>web products, realtime/3D systems and technical tools</strong> with TypeScript/JavaScript and Python.
 </p>
 
 <a id="scope"></a>
@@ -72,23 +71,9 @@
 </div>
 
 <p align="center">
-  <strong>Galaxy</strong>
-  &nbsp;·&nbsp;
-  <a href="https://galaxy.adrianguichard.dev">Live</a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/Addey34/galaxy-3d">Source</a>
-  &nbsp;&nbsp;|&nbsp;&nbsp;
-  <strong>Ludora</strong>
-  &nbsp;·&nbsp;
-  <a href="https://ludora.adrianguichard.dev">Live</a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/Addey34/ludora-showcase">Showcase</a>
-  &nbsp;&nbsp;|&nbsp;&nbsp;
-  <strong>MagNotes</strong>
-  &nbsp;·&nbsp;
-  <a href="https://magnotes.adrianguichard.dev">Live</a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/Addey34/magnotes-frontend">Source</a>
+  <strong>Galaxy</strong> · <a href="https://galaxy.adrianguichard.dev">Live</a> · <a href="https://github.com/Addey34/galaxy-3d">Source</a><br />
+  <strong>Ludora</strong> · <a href="https://ludora.adrianguichard.dev">Live</a> · <a href="https://github.com/Addey34/ludora-showcase">Showcase</a><br />
+  <strong>MagNotes</strong> · <a href="https://magnotes.adrianguichard.dev">Live</a> · <a href="https://github.com/Addey34/magnotes-frontend">Source</a>
 </p>
 
 <!-- Activity asset is generated from real GitHub contribution data. -->
