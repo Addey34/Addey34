@@ -20,7 +20,7 @@
 <polygon points="-120,0 0,-62 120,0 0,62" fill="#181713" stroke="#D9AE57"/>
 <polygon points="-120,0 0,62 0,92 -120,30" fill="#0A0B0E" stroke="#3A3021"/>
 <polygon points="0,62 120,0 120,30 0,92" fill="#08090B" stroke="#3A3021"/>
-<text y="7" text-anchor="middle" font-size="29" font-weight="800" fill="#F2D58A">BUILD CORE</text>
+<text y="7" text-anchor="middle" font-size="29" font-weight="800" fill="#F2D58A">TECH CORE</text>
 </g>
 
 <g text-anchor="middle">
