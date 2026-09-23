@@ -11,6 +11,7 @@
   <a href="#stack">Stack</a> ·
   <a href="#engineering">Engineering</a> ·
   <a href="#work">Selected Work</a> ·
+  <a href="#activity">Activity</a> ·
   <a href="#contact">Contact</a>
 </p>
 
@@ -83,7 +84,14 @@ My core is TypeScript/JavaScript, with Python where compute, tooling or AI workl
   <a href="https://github.com/Addey34/magnotes-frontend">source</a>
 </p>
 
-<!-- Activity returns here once it is generated from real GitHub contribution data. -->
+<a id="activity"></a>
+
+<div align="center">
+  <picture>
+    <source media="(max-width: 640px)" srcset="./assets/profile-v2/activity-mobile.svg" />
+    <img src="./assets/profile-v2/activity.svg" alt="Animated 3D GitHub contribution activity generated from real contribution data" width="100%" />
+  </picture>
+</div>
 
 <a id="contact"></a>
 
