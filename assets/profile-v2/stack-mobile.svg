@@ -5,7 +5,7 @@
 <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#06080D"/><stop offset="1" stop-color="#08121B"/></linearGradient>
 <linearGradient id="plate" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#18212D"/><stop offset="1" stop-color="#0B1119"/></linearGradient>
 <path id="rail" d="M360 310V1050"/>
-<style>text{font-family:Inter,Segoe UI,Arial,sans-serif}.m{font-family:Consolas,monospace}.rail{stroke-dasharray:16 20;animation:r 8s linear infinite}@keyframes r{to{stroke-dashoffset:-144}}@media(prefers-reduced-motion:reduce){.rail{animation:none!important}}</style>
+<style>text{font-family:Inter,Segoe UI,Arial,sans-serif}.m{font-family:Consolas,monospace}.rail{stroke-dasharray:16 20;animation:r 8s linear infinite}@keyframes r{to{stroke-dashoffset:-144}}@media(prefers-reduced-motion:reduce){.motion-dot{display:none!important}.rail{animation:none!important}}</style>
 </defs>
 <rect width="720" height="1140" rx="32" fill="url(#bg)"/>
 <g transform="translate(54 60)">
@@ -28,6 +28,6 @@
 <g transform="translate(360 900)"><polygon points="-285,0 0,-50 285,0 0,50" fill="url(#plate)" stroke="#405064"/><text y="-10" class="m" font-size="18" fill="#65C7FF">AI / COMPUTE</text><text y="17" font-size="22" font-weight="750" fill="#F5F3ED">FastAPI · PyTorch · ONNX · CUDA / DirectML</text></g>
 <g transform="translate(360 1030)"><polygon points="-285,0 0,-50 285,0 0,50" fill="url(#plate)" stroke="#405064"/><text y="-10" class="m" font-size="18" fill="#65C7FF">DELIVERY / QA</text><text y="17" font-size="21" font-weight="750" fill="#F5F3ED">Playwright · Vitest · Jest · Docker · Actions</text></g>
 </g>
-<circle r="5" fill="#65C7FF"><animateMotion dur="7s" repeatCount="indefinite"><mpath href="#rail"/></animateMotion></circle>
-<circle r="4" fill="#D9AE57"><animateMotion dur="9s" begin="-4s" repeatCount="indefinite"><mpath href="#rail"/></animateMotion></circle>
+<circle class="motion-dot" r="5" fill="#65C7FF"><animateMotion dur="7s" repeatCount="indefinite"><mpath href="#rail"/></animateMotion></circle>
+<circle class="motion-dot" r="4" fill="#D9AE57"><animateMotion dur="9s" begin="-4s" repeatCount="indefinite"><mpath href="#rail"/></animateMotion></circle>
 </svg>
