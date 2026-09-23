@@ -234,9 +234,13 @@ jobs:
           readme = Path("README.md").read_text(encoding="utf-8")
           failures = []
 
-          for anchor in ["#scope", "#stack", "#engineering", "#work", "#activity", "#contact"]:
+          for anchor in ["#scope", "#stack", "#work", "#activity", "#contact"]:
               if f'href="{anchor}"' not in readme:
                   failures.append(f"README missing navigation anchor {anchor}")
+
+          for section_id in ["scope", "stack", "engineering", "work", "activity", "contact"]:
+              if f'<a id="{section_id}"></a>' not in readme:
+                  failures.append(f"README missing section id {section_id}")
 
           expected_assets = [
               "./assets/profile-v2/hero.svg",
