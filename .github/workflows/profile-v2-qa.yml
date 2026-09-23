@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - profile/v2-candidate
+      - "profile/v2-*"
     paths:
       - README.md
       - assets/profile-v2/**
