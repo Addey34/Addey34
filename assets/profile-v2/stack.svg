@@ -27,6 +27,11 @@
 <g fill="none" stroke="#263140" stroke-width="1.5"><use href="#a"/><use href="#b"/><use href="#c"/><use href="#d"/><use href="#e"/><use href="#f"/></g>
 <g fill="none" stroke="#168CFF" stroke-opacity=".28" class="rail"><use href="#a"/><use href="#b"/><use href="#c"/><use href="#d"/><use href="#e"/><use href="#f"/></g>
 
+<g filter="url(#glow)">
+  <circle class="motion-dot" r="4" fill="#65C7FF"><animateMotion dur="6.2s" repeatCount="indefinite"><mpath href="#a"/></animateMotion></circle>
+  <circle class="motion-dot" r="3.5" fill="#65C7FF"><animateMotion dur="7.1s" begin="-3s" repeatCount="indefinite"><mpath href="#e"/></animateMotion></circle>
+  <circle class="motion-dot" r="3.5" fill="#D9AE57"><animateMotion dur="8s" begin="-5s" repeatCount="indefinite"><mpath href="#c"/></animateMotion></circle>
+</g>
 <g transform="translate(600 330)"><g class="core">
   <polygon points="-105,0 0,-58 105,0 0,58" fill="#181713" stroke="#D9AE57"/>
   <polygon points="-105,0 0,58 0,88 -105,30" fill="#0A0B0E" stroke="#3A3021"/>
@@ -87,9 +92,5 @@
   </g>
 </g>
 
-<g filter="url(#glow)">
-  <circle class="motion-dot" r="4" fill="#65C7FF"><animateMotion dur="6.2s" repeatCount="indefinite"><mpath href="#a"/></animateMotion></circle>
-  <circle class="motion-dot" r="3.5" fill="#65C7FF"><animateMotion dur="7.1s" begin="-3s" repeatCount="indefinite"><mpath href="#e"/></animateMotion></circle>
-  <circle class="motion-dot" r="3.5" fill="#D9AE57"><animateMotion dur="8s" begin="-5s" repeatCount="indefinite"><mpath href="#c"/></animateMotion></circle>
-</g>
+
 </svg>
