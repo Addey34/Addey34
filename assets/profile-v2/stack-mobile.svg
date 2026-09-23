@@ -14,8 +14,8 @@
 <text y="91" font-size="20" fill="#98A1AE">Languages, runtime, graphics, data, compute and delivery.</text>
 </g>
 <use href="#rail" stroke="#263140" stroke-width="2"/><use href="#rail" stroke="#168CFF" stroke-opacity=".28" stroke-width="2" class="rail"/>
-<circle class="motion-dot" r="5" fill="#65C7FF"><animateMotion dur="7s" repeatCount="indefinite"><mpath href="#rail"/></animateMotion></circle>
-<circle class="motion-dot" r="4" fill="#D9AE57"><animateMotion dur="9s" begin="-4s" repeatCount="indefinite"><mpath href="#rail"/></animateMotion></circle>
+<circle class="motion-dot" r="5" fill="#65C7FF"><animateMotion dur="7.2s" repeatCount="indefinite"><mpath href="#rail"/></animateMotion></circle>
+<circle class="motion-dot" r="4" fill="#D9AE57"><animateMotion dur="9.6s" begin="-4s" repeatCount="indefinite"><mpath href="#rail"/></animateMotion></circle>
 <g transform="translate(360 230)">
 <polygon points="-120,0 0,-62 120,0 0,62" fill="#181713" stroke="#D9AE57"/>
 <polygon points="-120,0 0,62 0,92 -120,30" fill="#0A0B0E" stroke="#3A3021"/>
