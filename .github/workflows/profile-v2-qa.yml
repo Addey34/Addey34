@@ -97,7 +97,7 @@ jobs:
               if background is None or background.attrib.get("rx") != expected_rx:
                   failures.append(f"{path}: expected outer radius {expected_rx}px")
 
-              minimum_font = 16.0 if "-mobile" in path.stem else 12.0
+              minimum_font = 20.0 if "-mobile" in path.stem else 12.0
               for text_node, raw_size in walk_text_sizes(root):
                   if raw_size is None:
                       failures.append(f"{path}: visible <text> has no effective font-size")
@@ -170,7 +170,7 @@ jobs:
               "hero.svg": ["FULL-STACK DEVELOPER", "hardware"],
               "hero-mobile.svg": ["FULL-STACK DEVELOPER", "hardware"],
               "scope.svg": ["React · Node.js · APIs · Data", "ARCHITECTURE / FLOW / CONSTRAINTS"],
-              "scope-mobile.svg": ["React · Node.js · APIs · Data", "ARCHITECTURE · FLOW · CONSTRAINTS"],
+              "scope-mobile.svg": ["React · Node.js · APIs · Data", "ARCHITECTURE · FLOW", "CONSTRAINTS"],
               "selected-work.svg": [
                   "TypeScript · JavaScript",
                   "TypeScript · React · Node.js",
