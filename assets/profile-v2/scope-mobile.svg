@@ -11,7 +11,7 @@
 <g transform="translate(54 60)">
 <circle cx="7" cy="-12" r="6" fill="#D9AE57"/><text x="26" y="-5" class="m" font-size="19" fill="#D9AE57" letter-spacing="3">TECHNICAL SCOPE</text>
 <text y="54" font-size="36" font-weight="760" fill="#F5F3ED">Multiple technical domains.</text>
-<text y="91" font-size="21" fill="#98A1AE">Connected across product, runtime and delivery.</text>
+<text y="91" font-size="21" fill="#98A1AE">From interface to runtime, compute and reliability.</text>
 </g>
 <g transform="translate(360 222)">
 <polygon points="-126,0 0,-66 126,0 0,66" fill="#171A1C" stroke="#D9AE57"/>
