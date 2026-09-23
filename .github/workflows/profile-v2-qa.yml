@@ -52,10 +52,17 @@ jobs:
               "activity.svg", "activity-compact.svg", "activity-mobile.svg", "activity-static.svg", "activity-compact-static.svg", "activity-mobile-static.svg",
               "footer.svg", "footer-compact.svg", "footer-mobile.svg", "footer-static.svg", "footer-compact-static.svg", "footer-mobile-static.svg",
           }
-          found = {p.name for p in root_dir.glob("*.svg")}
+          svg_paths = list(root_dir.glob("*.svg"))
+          found = {p.name for p in svg_paths}
           failures = []
           missing = sorted(required - found)
           unexpected = sorted(found - required)
+
+          total_svg_bytes = sum(p.stat().st_size for p in svg_paths)
+          if total_svg_bytes > 375_000:
+              failures.append(
+                  f"V2 SVG payload exceeds 375 KB budget: {total_svg_bytes} bytes"
+              )
 
           if missing:
               failures.append("Missing V2 SVG assets: " + ", ".join(missing))
