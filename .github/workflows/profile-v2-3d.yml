@@ -99,9 +99,9 @@ jobs:
               ET.SubElement(header, q("circle"), {
                   "cx": "7", "cy": "-12", "r": "6" if mobile else "5", "fill": "#D9AE57"
               })
-              text(header, 26 if mobile else 24, -5, "ACTIVITY / 3D CONTRIBUTIONS", 20 if mobile else 13, "#D9AE57", mono=True, spacing=3)
+              text(header, 26 if mobile else 24, -5, "ACTIVITY / 3D CONTRIBUTIONS", 22 if mobile else 14, "#D9AE57", mono=True, spacing=3)
               text(header, 0, 54 if mobile else 43, "Recent contribution activity in 3D.", 28 if mobile else 30, "#F5F3ED", weight=760)
-              text(header, 0, 91 if mobile else 70, "Generated from real GitHub contribution data.", 20 if mobile else 15, "#98A1AE")
+              text(header, 0, 91 if mobile else 70, "Generated from real GitHub contribution data.", 22 if mobile else 15, "#98A1AE")
 
               flow_d = (
                   "M60 540 C220 500 500 555 660 510"
@@ -137,8 +137,8 @@ jobs:
           failures = []
 
           for filename, width, radius, min_font in (
-              ("assets/profile-v2/activity.svg", 1200, "28", 12.0),
-              ("assets/profile-v2/activity-mobile.svg", 720, "32", 16.0),
+              ("assets/profile-v2/activity.svg", 1200, "28", 14.0),
+              ("assets/profile-v2/activity-mobile.svg", 720, "32", 22.0),
           ):
               path = Path(filename)
               try:
