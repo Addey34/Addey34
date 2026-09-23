@@ -73,13 +73,52 @@ jobs:
               if desc is None or not (desc.text or "").strip():
                   failures.append(f"{path}: missing non-empty <desc>")
 
-              raw = path.read_text(encoding="utf-8").lower()
+              raw_original = path.read_text(encoding="utf-8")
+              raw = raw_original.lower()
               if any(ext in raw for ext in (".png", ".jpg", ".jpeg", ".gif")):
                   failures.append(f"{path}: raster dependency is not allowed in V2")
+
+              if "@keyframes" in raw_original and "prefers-reduced-motion" not in raw_original:
+                  failures.append(f"{path}: animated CSS must include a reduced-motion fallback")
+
+              motion_count = raw_original.count("<animateMotion")
+              if motion_count:
+                  hidden_count = raw_original.count('class="motion-dot"')
+                  if hidden_count < motion_count:
+                      failures.append(
+                          f"{path}: {motion_count} animateMotion nodes but only "
+                          f"{hidden_count} reduced-motion motion-dot wrappers"
+                      )
+                  if ".motion-dot{display:none!important}" not in raw_original:
+                      failures.append(f"{path}: animateMotion signals must hide in reduced-motion mode")
 
           if failures:
               raise SystemExit("\n".join(failures))
           print(f"Validated {len(found)} V2 SVG assets.")
+          PY
+
+      - name: Validate activity generator guardrails
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+
+          failures = []
+          settings = json.loads(Path("activity-settings/ag.json").read_text(encoding="utf-8"))
+          if settings.get("growingAnimation") is not False:
+              failures.append("Activity cube growth must remain disabled; motion belongs to the curated wrapper.")
+
+          workflow = Path(".github/workflows/profile-v2-3d.yml").read_text(encoding="utf-8")
+          if "@latest" in workflow:
+              failures.append("Profile V2 third-party Actions must be pinned, not use @latest.")
+          if "github-profile-3d-contrib@9e3f937195cf840d364388973f73e3c4b3753586" not in workflow:
+              failures.append("Unexpected github-profile-3d-contrib revision.")
+          if 'github-actions[bot]' not in workflow:
+              failures.append("Activity commits must use the GitHub Actions bot identity.")
+
+          if failures:
+              raise SystemExit("\n".join(failures))
+          print("Activity generator guardrails are valid.")
           PY
 
       - name: Validate V2 README
