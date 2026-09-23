@@ -88,7 +88,7 @@ jobs:
                   "cx": "7", "cy": "-12", "r": "6" if mobile else "5", "fill": "#D9AE57"
               })
               text(header, 26 if mobile else 24, -5, "ACTIVITY / 3D CONTRIBUTIONS", 19 if mobile else 12, "#D9AE57", mono=True, spacing=3)
-              text(header, 0, 54 if mobile else 43, "Contribution activity, rendered as data.", 36 if mobile else 30, "#F5F3ED", weight=760)
+              text(header, 0, 54 if mobile else 43, "Contribution activity, rendered as data.", 28 if mobile else 30, "#F5F3ED", weight=760)
               text(header, 0, 91 if mobile else 70, "Generated from real GitHub contribution data.", 20 if mobile else 14, "#98A1AE")
 
               cal = copy.deepcopy(calendar)
