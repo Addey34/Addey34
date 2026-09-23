@@ -1,4 +1,4 @@
-<!-- profile-v2-experimental -->
+<!-- profile-v2 -->
 <div align="center">
   <picture>
     <source media="(max-width: 640px)" srcset="./assets/profile-v2/hero-mobile.svg" />
