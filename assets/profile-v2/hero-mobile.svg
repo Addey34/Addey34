@@ -8,9 +8,9 @@
 <path id="signal" d="M150 610C220 525 495 520 570 610S500 785 360 765S150 700 150 610"/>
 <style>
 text{font-family:Inter,Segoe UI,Arial,sans-serif}.m{font-family:Consolas,monospace}
-.line{stroke-dasharray:14 18;animation:flow 7s linear infinite}.pulse{animation:pulse 3.2s ease-in-out infinite}
-@keyframes flow{to{stroke-dashoffset:-128}}@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
-@media(prefers-reduced-motion:reduce){.motion-dot{display:none!important}.line,.pulse{animation:none!important}}
+.line{stroke-dasharray:14 18;animation:flow 8s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-128}}
+@media(prefers-reduced-motion:reduce){.motion-dot{display:none!important}.line{animation:none!important}}
 </style>
 </defs>
 <rect width="720" height="900" rx="32" fill="url(#bg)"/>
@@ -31,7 +31,7 @@ text{font-family:Inter,Segoe UI,Arial,sans-serif}.m{font-family:Consolas,monospa
 <g transform="translate(446 372)"><rect width="166" height="50" rx="25" fill="#0F1621" stroke="#2B3948"/><text x="83" y="32" text-anchor="middle">SECURITY</text></g>
 </g>
 <use href="#signal" fill="none" stroke="#168CFF" stroke-opacity=".18"/>
-<circle class="motion-dot" r="5" fill="#65C7FF" filter="url(#glow)"><animateMotion dur="6.2s" repeatCount="indefinite"><mpath href="#signal"/></animateMotion></circle>
+<circle class="motion-dot" r="5" fill="#65C7FF" filter="url(#glow)"><animateMotion dur="7.2s" repeatCount="indefinite"><mpath href="#signal"/></animateMotion></circle>
 <g transform="translate(360 625)">
 <polygon points="-130,0 0,-72 130,0 0,72" fill="#151D28" stroke="#405064"/>
 <polygon points="-130,0 0,72 0,125 -130,53" fill="#090E14" stroke="#293541"/>
