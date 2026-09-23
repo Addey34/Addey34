@@ -26,6 +26,42 @@ jobs:
           python -m pip install --disable-pip-version-check pillow
           npx playwright install chromium --with-deps
 
+      - name: Audit public live links
+        run: |
+          python - <<'PY'
+          import urllib.request
+          import urllib.error
+          import time
+
+          urls = [
+              "https://adrianguichard.dev",
+              "https://galaxy.adrianguichard.dev",
+              "https://ludora.adrianguichard.dev",
+              "https://magnotes.adrianguichard.dev",
+          ]
+
+          failures = []
+          for url in urls:
+              start = time.perf_counter()
+              request = urllib.request.Request(
+                  url,
+                  headers={"User-Agent": "Mozilla/5.0 ProfileV2Audit/1.0"},
+              )
+              try:
+                  with urllib.request.urlopen(request, timeout=20) as response:
+                      code = response.getcode()
+                      final = response.geturl()
+                      elapsed = time.perf_counter() - start
+                      print(f"{url} -> {code} -> {final} ({elapsed:.2f}s)")
+                      if not 200 <= code < 400:
+                          failures.append(f"{url}: HTTP {code}")
+              except Exception as exc:
+                  failures.append(f"{url}: {exc}")
+
+          if failures:
+              raise SystemExit("\n".join(failures))
+          PY
+
       - name: Capture real GitHub README rendering
         run: |
           node <<'JS'
