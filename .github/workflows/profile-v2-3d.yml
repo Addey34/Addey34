@@ -13,6 +13,10 @@ on:
       timezone: "Europe/Paris"
   workflow_dispatch:
 
+concurrency:
+  group: profile-v2-activity-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
