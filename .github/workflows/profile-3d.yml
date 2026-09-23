@@ -28,6 +28,28 @@ jobs:
           USERNAME: ${{ github.repository_owner }}
           SETTING_JSON: activity-settings/ag.json
 
+      - name: Keep only the 3D contribution surface
+        run: |
+          python - <<'PY'
+          import xml.etree.ElementTree as ET
+
+          path = "profile-3d-contrib/activity-ag.svg"
+          ET.register_namespace("", "http://www.w3.org/2000/svg")
+          tree = ET.parse(path)
+          root = tree.getroot()
+          children = list(root)
+
+          # Generated layout: style, background, 3D calendar, radar, languages, counters.
+          # Keep only the visual system we actually want to expose.
+          for child in children[3:]:
+              root.remove(child)
+
+          root.set("width", "1280")
+          root.set("height", "700")
+          root.set("viewBox", "0 120 1280 700")
+          tree.write(path, encoding="unicode")
+          PY
+
       - name: Commit generated activity
         run: |
           git config user.name github-actions
