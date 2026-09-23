@@ -1,0 +1,89 @@
+name: Profile V2 One-shot Render Audit
+
+on:
+  push:
+    branches:
+      - profile/v2-candidate
+    paths:
+      - ".github/workflows/profile-v2-render-once.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+
+      - name: Install Playwright
+        run: |
+          npm init -y >/dev/null 2>&1
+          npm install --no-save playwright@1.55.0
+          npx playwright install chromium --with-deps
+
+      - name: Capture real GitHub README
+        run: |
+          node <<'JS'
+          const fs = require('fs');
+          const { chromium } = require('playwright');
+
+          (async () => {
+            const browser = await chromium.launch({ headless: true });
+            const url = 'https://github.com/Addey34/Addey34/tree/profile/v2-candidate';
+            const cases = [
+              { name: 'desktop', width: 1440, height: 1000, scheme: 'light' },
+              { name: 'mobile', width: 390, height: 844, scheme: 'light' },
+              { name: 'desktop-dark', width: 1440, height: 1000, scheme: 'dark' },
+              { name: 'mobile-dark', width: 390, height: 844, scheme: 'dark' },
+            ];
+            const report = {};
+
+            for (const c of cases) {
+              const page = await browser.newPage({
+                viewport: { width: c.width, height: c.height },
+                colorScheme: c.scheme,
+                deviceScaleFactor: 1,
+              });
+              await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+              await page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});
+              const article = page.locator('article.markdown-body').first();
+              await article.waitFor({ state: 'visible', timeout: 30000 });
+
+              report[c.name] = await article.evaluate((root) => ({
+                width: root.getBoundingClientRect().width,
+                images: [...root.querySelectorAll('img')].map((img) => ({
+                  alt: img.alt,
+                  currentSrc: img.currentSrc,
+                  width: img.getBoundingClientRect().width,
+                  height: img.getBoundingClientRect().height,
+                })),
+              }));
+
+              await article.screenshot({
+                path: `github-readme-${c.name}.png`,
+                animations: 'disabled',
+              });
+              await page.close();
+            }
+
+            fs.writeFileSync('github-render-report.json', JSON.stringify(report, null, 2));
+            await browser.close();
+          })().catch((err) => {
+            console.error(err);
+            process.exit(1);
+          });
+          JS
+
+      - name: Upload render audit
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: profile-v2-render-once
+          path: |
+            github-readme-desktop.png
+            github-readme-mobile.png
+            github-readme-desktop-dark.png
+            github-readme-mobile-dark.png
+            github-render-report.json
+          retention-days: 1
