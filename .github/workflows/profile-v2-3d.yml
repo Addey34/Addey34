@@ -122,7 +122,7 @@ jobs:
               out.append(cal)
               ET.ElementTree(out).write(path, encoding="unicode")
 
-          build("assets/profile-v2/activity.svg", 1200, 650, 150, 35, 0.75)
+          build("assets/profile-v2/activity.svg", 1200, 610, 168, 20, 0.72)
           build("assets/profile-v2/activity-mobile.svg", 720, 590, -725, -359, 1.15, mobile=True)
           PY
 
