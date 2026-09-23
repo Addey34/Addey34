@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 580" role="img" aria-labelledby="title desc">
 <title id="title">Core technical stack</title>
 <desc id="desc">Pseudo-3D technical stack grouped into languages, product runtime, realtime graphics, backend data, AI compute and delivery quality.</desc>
 <defs>
@@ -16,7 +16,7 @@
     @media(prefers-reduced-motion:reduce){.motion-dot{display:none!important}.rail,.core{animation:none!important}}
   </style>
 </defs>
-<rect width="1200" height="620" rx="28" fill="url(#bg)"/>
+<rect width="1200" height="580" rx="28" fill="url(#bg)"/>
 <g transform="translate(72 58)">
   <circle cx="7" cy="-10" r="5" fill="#D9AE57"/>
   <text x="24" y="-5" class="m" font-size="13" fill="#D9AE57" letter-spacing="3">CORE STACK</text>
