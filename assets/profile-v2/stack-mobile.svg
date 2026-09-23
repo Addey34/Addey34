@@ -10,8 +10,8 @@
 <rect width="720" height="1140" rx="32" fill="url(#bg)"/>
 <g transform="translate(54 60)">
 <circle cx="7" cy="-12" r="6" fill="#D9AE57"/><text x="26" y="-5" class="m" font-size="19" fill="#D9AE57" letter-spacing="3">CORE STACK</text>
-<text y="54" font-size="36" font-weight="760" fill="#F5F3ED">Tools grouped by technical role.</text>
-<text y="91" font-size="21" fill="#98A1AE">Core first; supporting experience stays in the README.</text>
+<text y="54" font-size="34" font-weight="760" fill="#F5F3ED">Tools grouped by technical role.</text>
+<text y="91" font-size="20" fill="#98A1AE">Core first; supporting experience stays in the README.</text>
 </g>
 <g transform="translate(360 230)">
 <polygon points="-120,0 0,-62 120,0 0,62" fill="#181713" stroke="#D9AE57"/>
