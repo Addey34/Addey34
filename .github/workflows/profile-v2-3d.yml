@@ -148,8 +148,57 @@ jobs:
                           if face is not top:
                               cell.remove(face)
 
-              cal.set("transform", f"translate({tx} {ty}) scale({scale})")
-              out.append(cal)
+              # Deduplicate repeated cube geometry. Each contribution level gets
+              # one reusable prototype; calendar cells become lightweight <use> nodes.
+              defs = ET.SubElement(out, q("defs"))
+              prototypes = {}
+              instances = ET.Element(
+                  q("g"),
+                  {"transform": f"translate({tx} {ty}) scale({scale})"},
+              )
+
+              for cell in list(cal):
+                  top_face = next(
+                      (
+                          face for face in list(cell)
+                          if face.attrib.get("class", "").startswith("cont-top-")
+                      ),
+                      None,
+                  )
+                  if top_face is None:
+                      instances.append(copy.deepcopy(cell))
+                      continue
+
+                  level = top_face.attrib["class"].rsplit("-", 1)[-1]
+                  proto_id = f"activity-cell-{level}"
+                  if level not in prototypes:
+                      prototype = copy.deepcopy(cell)
+                      prototype.attrib.pop("transform", None)
+                      prototype.set("id", proto_id)
+
+                      # Defaults: SVG rect x/y are 0 and stroke defaults to none.
+                      # Removing those repeated attributes is pixel-identical.
+                      for face in prototype:
+                          if face.attrib.get("x") == "0":
+                              face.attrib.pop("x")
+                          if face.attrib.get("y") == "0":
+                              face.attrib.pop("y")
+                          if face.attrib.get("stroke") == "none":
+                              face.attrib.pop("stroke")
+
+                      defs.append(prototype)
+                      prototypes[level] = proto_id
+
+                  ET.SubElement(
+                      instances,
+                      q("use"),
+                      {
+                          "href": f"#{proto_id}",
+                          "transform": cell.attrib.get("transform", ""),
+                      },
+                  )
+
+              out.append(instances)
               ET.ElementTree(out).write(path, encoding="unicode")
 
           build(
@@ -242,6 +291,23 @@ jobs:
               if flat_failures:
                   failures.append(
                       f"{filename}: {flat_failures} zero-contribution cells are not flat"
+                  )
+
+              # Calendar geometry must be deduplicated into reusable cell prototypes.
+              raw_root = tree.getroot()
+              use_nodes = list(raw_root.iter(f"{NS}use"))
+              prototype_ids = {
+                  node.attrib.get("id")
+                  for node in raw_root.iter(f"{NS}g")
+                  if node.attrib.get("id", "").startswith("activity-cell-")
+              }
+              if len(prototype_ids) != 5:
+                  failures.append(
+                      f"{filename}: expected 5 activity cell prototypes, got {len(prototype_ids)}"
+                  )
+              if len(use_nodes) < 70:
+                  failures.append(
+                      f"{filename}: expected contribution cell <use> instances, got {len(use_nodes)}"
                   )
 
               for match in re.finditer(r'font-size="([\d.]+)"', raw):
