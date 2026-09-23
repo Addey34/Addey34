@@ -247,7 +247,7 @@ jobs:
           for name in ("activity.svg", "activity-compact.svg", "activity-mobile.svg"):
               if name not in ACTIVITY:
                   failures.append(f"Activity workflow must generate {name}")
-          for token in ("activity-cell-0", "min_calendar_x", "zero-contribution", "curated activity exceeds 35 KB"):
+          for token in ('proto_id = f"activity-cell-{len(prototypes)}"', "min_calendar_x", "zero-contribution", "curated activity exceeds 35 KB"):
               if token not in ACTIVITY:
                   failures.append(f"Activity workflow missing {token!r} guardrail")
 
