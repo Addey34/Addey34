@@ -97,7 +97,7 @@ jobs:
               if background is None or background.attrib.get("rx") != expected_rx:
                   failures.append(f"{path}: expected outer radius {expected_rx}px")
 
-              minimum_font = 16.0 if "-mobile" in path.stem else 11.0
+              minimum_font = 16.0 if "-mobile" in path.stem else 12.0
               for text_node, raw_size in walk_text_sizes(root):
                   if raw_size is None:
                       failures.append(f"{path}: visible <text> has no effective font-size")
