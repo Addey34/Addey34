@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+<title id="title">Adrian Guichard — Full-Stack Developer</title><desc id="desc">Compact animated technical profile for intermediate GitHub layouts.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#06080D"/><stop offset="1" stop-color="#0A1119"/></linearGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F2D58A"/><stop offset="1" stop-color="#D9AE57"/></linearGradient>
+<filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<path id="sig" d="M510 318C585 240 770 240 826 314S760 440 655 421S526 380 510 318"/>
+<style>text{font-family:Inter,Segoe UI,Arial,sans-serif}.m{font-family:Consolas,monospace}.dash{stroke-dasharray:13 18;animation:d 8s linear infinite}.pulse{animation:p 3.6s ease-in-out infinite}@keyframes d{to{stroke-dashoffset:-124}}@keyframes p{0%,100%{opacity:.42}50%{opacity:1}}@media(prefers-reduced-motion:reduce){.motion-dot{display:none!important}.dash,.pulse{animation:none!important}}</style>
+</defs>
+<rect width="900" height="520" rx="30" fill="url(#bg)"/>
+<g transform="translate(48 54)">
+<circle cx="7" cy="-10" r="5" fill="#D9AE57"/><text x="25" y="-4" class="m" font-size="20" fill="#D9AE57" letter-spacing="3">AG / TECHNICAL PROFILE</text>
+<text y="58" font-size="42" font-weight="800" fill="#F5F3ED">ADRIAN GUICHARD</text>
+<text y="94" class="m" font-size="22" fill="#65C7FF" letter-spacing="1.3">FULL-STACK DEVELOPER</text>
+<text y="138" font-size="20" fill="#B8C0CA">Web · realtime · 3D · AI · automation · security · hardware</text>
+</g>
+<g class="m" font-size="20" fill="#DCE3EB">
+<g transform="translate(48 235)"><rect width="96" height="40" rx="20" fill="#0F1621" stroke="#2B3948"/><text x="48" y="26" text-anchor="middle">WEB</text></g>
+<g transform="translate(154 235)"><rect width="146" height="40" rx="20" fill="#0F1621" stroke="#2B3948"/><text x="73" y="26" text-anchor="middle">REALTIME</text></g>
+<g transform="translate(310 235)"><rect width="86" height="40" rx="20" fill="#0F1621" stroke="#2B3948"/><text x="43" y="26" text-anchor="middle">3D</text></g>
+<g transform="translate(48 291)"><rect width="86" height="40" rx="20" fill="#0F1621" stroke="#2B3948"/><text x="43" y="26" text-anchor="middle">AI</text></g>
+<g transform="translate(144 291)"><rect width="160" height="40" rx="20" fill="#0F1621" stroke="#2B3948"/><text x="80" y="26" text-anchor="middle">AUTOMATION</text></g>
+<g transform="translate(314 291)"><rect width="142" height="40" rx="20" fill="#0F1621" stroke="#2B3948"/><text x="71" y="26" text-anchor="middle">SECURITY</text></g>
+</g>
+<use href="#sig" fill="none" stroke="#168CFF" stroke-opacity=".18"/><circle class="motion-dot" r="4" fill="#65C7FF" filter="url(#glow)"><animateMotion dur="7.2s" repeatCount="indefinite"><mpath href="#sig"/></animateMotion></circle>
+<g transform="translate(690 288)">
+<ellipse cx="0" cy="112" rx="128" ry="26" fill="#000" opacity=".28"/>
+<polygon points="-98,0 0,-54 98,0 0,54" fill="#151D28" stroke="#405064"/><polygon points="-98,0 0,54 0,94 -98,40" fill="#090E14" stroke="#293541"/><polygon points="0,54 98,0 98,40 0,94" fill="#060A0F" stroke="#293541"/>
+<polygon points="-80,0 0,-43 80,0 0,43" fill="none" stroke="#D9AE57" class="dash"/>
+<text y="8" text-anchor="middle" font-size="34" font-weight="800" fill="url(#gold)">AG</text><text y="34" text-anchor="middle" class="m" font-size="20" fill="#A7B0BC">PRODUCT · SYSTEMS</text>
+<g class="m" font-size="20" fill="#B6C0CB">
+<path d="M0-54V-90M98 0l36-22M98 40l36 18M0 94v36M-98 40l-36 18M-98 0l-36-22" stroke="#33404F"/>
+<text x="0" y="-98" text-anchor="middle">WEB</text><text x="140" y="-18">REALTIME</text><text x="140" y="66">3D</text><text x="0" y="152" text-anchor="middle">AI</text><text x="-140" y="66" text-anchor="end">SECURITY</text><text x="-140" y="-18" text-anchor="end">HARDWARE</text>
+</g>
+<g fill="#168CFF" filter="url(#glow)"><circle class="pulse" cy="-90" r="4"/><circle class="pulse" cx="134" cy="-22" r="4"/><circle class="pulse" cx="134" cy="58" r="4"/><circle class="pulse" cy="130" r="4"/><circle class="pulse" cx="-134" cy="58" r="4"/><circle class="pulse" cx="-134" cy="-22" r="4"/></g>
+</g>
+<text x="48" y="474" class="m" font-size="20" fill="#7E8996" letter-spacing="2">FROM IDEA TO RUNNING SYSTEM.</text>
+<style id="static-motion-override">*{animation:none!important}.motion-dot{display:none!important}</style></svg>
