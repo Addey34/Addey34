@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 820" role="img" aria-labelledby="title desc">
+<title id="title">Engineering loop</title>
+<desc id="desc">Mobile engineering loop from plan through iteration.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#06080D"/><stop offset="1" stop-color="#0A1119"/></linearGradient>
+<linearGradient id="top" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#18212D"/><stop offset="1" stop-color="#0B1119"/></linearGradient>
+<path id="rail" d="M360 255V747"/>
+<style>text{font-family:Inter,Segoe UI,Arial,sans-serif}.m{font-family:Consolas,monospace}.flow{stroke-dasharray:16 20;animation:r 8s linear infinite}.s{animation:p 6.4s ease-in-out infinite}@keyframes r{to{stroke-dashoffset:-144}}@keyframes p{0%,100%{opacity:.78}50%{opacity:1}}@media(prefers-reduced-motion:reduce){.motion-dot{display:none!important}.flow,.s{animation:none!important}}</style>
+</defs>
+<rect width="720" height="820" rx="32" fill="url(#bg)"/>
+<g transform="translate(54 60)">
+<circle cx="7" cy="-12" r="6" fill="#D9AE57"/><text x="26" y="-5" class="m" font-size="22" fill="#D9AE57" letter-spacing="3">ENGINEERING LOOP</text>
+<text y="54" font-size="34" font-weight="760" fill="#F5F3ED">Build, harden, observe, improve.</text>
+<text y="91" font-size="22" fill="#98A1AE">Quality stays inside the build loop.</text>
+</g>
+<use href="#rail" fill="none" stroke="#263140" stroke-width="3"/><use href="#rail" fill="none" stroke="#168CFF" stroke-opacity=".35" stroke-width="3" class="flow"/>
+<circle class="motion-dot" r="6" fill="#65C7FF"><animateMotion dur="7.2s" repeatCount="indefinite"><mpath href="#rail"/></animateMotion></circle>
+<g class="m" text-anchor="middle" font-size="22" fill="#F5F3ED">
+<g transform="translate(360 255)" class="s"><polygon points="-105,0 0,-42 105,0 0,42" fill="#181713" stroke="#D9AE57"/><text y="7" fill="#F2D58A">PLAN</text></g>
+<g transform="translate(360 337)" class="s"><polygon points="-105,0 0,-42 105,0 0,42" fill="url(#top)" stroke="#405064"/><text y="7">BUILD</text></g>
+<g transform="translate(360 419)" class="s"><polygon points="-105,0 0,-42 105,0 0,42" fill="url(#top)" stroke="#405064"/><text y="7">TEST</text></g>
+<g transform="translate(360 501)" class="s"><polygon points="-110,0 0,-44 110,0 0,44" fill="url(#top)" stroke="#168CFF"/><text y="7" fill="#65C7FF">HARDEN</text></g>
+<g transform="translate(360 583)" class="s"><polygon points="-105,0 0,-42 105,0 0,42" fill="url(#top)" stroke="#405064"/><text y="7">DEPLOY</text></g>
+<g transform="translate(360 665)" class="s"><polygon points="-105,0 0,-42 105,0 0,42" fill="url(#top)" stroke="#405064"/><text y="7">MONITOR</text></g>
+<g transform="translate(360 747)" class="s"><polygon points="-105,0 0,-42 105,0 0,42" fill="#181713" stroke="#D9AE57"/><text y="7" fill="#F2D58A">ITERATE</text></g>
+</g>
+
+<style id="static-motion-override">*{animation:none!important}.motion-dot{display:none!important}</style></svg>
