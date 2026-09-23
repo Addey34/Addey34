@@ -1,0 +1,117 @@
+name: Profile V2 Layout Boundary Audit
+
+on:
+  push:
+    branches:
+      - profile/v2-candidate
+    paths:
+      - ".github/workflows/profile-v2-layout-once.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+
+      - name: Install Playwright
+        run: |
+          npm init -y >/dev/null 2>&1
+          npm install --no-save playwright@1.55.0
+          npx playwright install chromium --with-deps
+
+      - name: Audit layout boundaries
+        run: |
+          node <<'JS'
+          const fs = require('fs');
+          const { chromium } = require('playwright');
+
+          (async () => {
+            const browser = await chromium.launch({ headless: true });
+            const url = 'https://github.com/Addey34/Addey34/tree/profile/v2-candidate';
+            const widths = [320, 360, 390, 430, 767, 768, 769, 900, 1024, 1440];
+            const report = [];
+
+            for (const width of widths) {
+              const page = await browser.newPage({
+                viewport: { width, height: 900 },
+                deviceScaleFactor: 1,
+              });
+              await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+              await page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});
+              const article = page.locator('article.markdown-body').first();
+              await article.waitFor({ state: 'visible', timeout: 30000 });
+
+              const data = await article.evaluate((root, viewportWidth) => {
+                const rr = root.getBoundingClientRect();
+                const elements = [...root.querySelectorAll('*')];
+                const overflow = elements
+                  .map((el) => {
+                    const r = el.getBoundingClientRect();
+                    return {
+                      tag: el.tagName,
+                      text: (el.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 100),
+                      left: r.left,
+                      right: r.right,
+                      width: r.width,
+                    };
+                  })
+                  .filter((x) => x.width > 0 && (x.left < rr.left - 1 || x.right > rr.right + 1));
+
+                const paragraphs = [...root.querySelectorAll('p')].map((p) => {
+                  const r = p.getBoundingClientRect();
+                  const style = getComputedStyle(p);
+                  return {
+                    text: (p.textContent || '').trim().replace(/\s+/g, ' '),
+                    height: r.height,
+                    lineHeight: parseFloat(style.lineHeight) || 0,
+                    approxLines: (parseFloat(style.lineHeight) || 0) ? r.height / parseFloat(style.lineHeight) : null,
+                  };
+                });
+
+                return {
+                  viewportWidth,
+                  articleWidth: rr.width,
+                  documentOverflow: document.documentElement.scrollWidth > document.documentElement.clientWidth,
+                  images: [...root.querySelectorAll('img')].map((img) => ({
+                    alt: img.alt,
+                    currentSrc: img.currentSrc,
+                    width: img.getBoundingClientRect().width,
+                    height: img.getBoundingClientRect().height,
+                  })),
+                  overflow,
+                  paragraphs,
+                };
+              }, width);
+
+              report.push(data);
+              if ([320, 768, 769].includes(width)) {
+                await article.screenshot({
+                  path: `layout-${width}.png`,
+                  animations: 'disabled',
+                });
+              }
+              await page.close();
+            }
+
+            fs.writeFileSync('layout-report.json', JSON.stringify(report, null, 2));
+            await browser.close();
+          })().catch((err) => {
+            console.error(err);
+            process.exit(1);
+          });
+          JS
+
+      - name: Upload layout audit
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: profile-v2-layout-once
+          path: |
+            layout-report.json
+            layout-320.png
+            layout-768.png
+            layout-769.png
+          retention-days: 1
