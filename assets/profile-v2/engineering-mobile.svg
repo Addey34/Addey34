@@ -9,7 +9,7 @@
 </defs>
 <rect width="720" height="930" rx="32" fill="url(#bg)"/>
 <g transform="translate(54 60)">
-<circle cx="7" cy="-12" r="6" fill="#D9AE57"/><text x="26" y="-5" class="m" font-size="19" fill="#D9AE57" letter-spacing="3">ENGINEERING LOOP</text>
+<circle cx="7" cy="-12" r="6" fill="#D9AE57"/><text x="26" y="-5" class="m" font-size="20" fill="#D9AE57" letter-spacing="3">ENGINEERING LOOP</text>
 <text y="54" font-size="34" font-weight="760" fill="#F5F3ED">Build, harden, observe, improve.</text>
 <text y="91" font-size="20" fill="#98A1AE">Quality stays inside the build loop.</text>
 </g>
