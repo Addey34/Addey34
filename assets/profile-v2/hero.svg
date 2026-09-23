@@ -13,7 +13,7 @@
 <text y="58" font-size="50" font-weight="800" fill="#F5F3ED">ADRIAN GUICHARD</text>
 <text y="94" class="m" font-size="16" fill="#65C7FF" letter-spacing="1.8">FULL-STACK DEVELOPER</text>
 <text y="142" font-size="16" fill="#B8C0CA">Building products, tools and technical systems across</text>
-<text y="168" font-size="16" fill="#B8C0CA">web, interactive systems, 3D, AI, automation and security.</text>
+<text y="168" font-size="16" fill="#B8C0CA">web, realtime, 3D, AI, automation, security and hardware.</text>
 <g transform="translate(0 214)" class="m" font-size="10.5" fill="#DCE3EB">
 <g><rect width="82" height="28" rx="14" fill="#0F1621" stroke="#2B3948"/><text x="41" y="18" text-anchor="middle">WEB</text></g>
 <g transform="translate(92)"><rect width="174" height="28" rx="14" fill="#0F1621" stroke="#2B3948"/><text x="87" y="18" text-anchor="middle">INTERACTIVE SYSTEMS</text></g>
