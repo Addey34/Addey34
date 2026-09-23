@@ -89,12 +89,28 @@ jobs:
               if target.read_text(encoding="utf-8") != expected:
                   failures.append(f"{target}: static variant is out of sync with {name}")
 
-          def walk_text_sizes(node, inherited=None):
-              current = node.attrib.get("font-size", inherited)
+          def walk_text_styles(node, inherited_size=None, inherited_fill=None):
+              current_size = node.attrib.get("font-size", inherited_size)
+              current_fill = node.attrib.get("fill", inherited_fill)
               if node.tag == f"{ns}text":
-                  yield node, current
+                  yield node, current_size, current_fill
               for child in node:
-                  yield from walk_text_sizes(child, current)
+                  yield from walk_text_styles(child, current_size, current_fill)
+
+          def channel(value):
+              value /= 255.0
+              return value / 12.92 if value <= 0.04045 else ((value + 0.055) / 1.055) ** 2.4
+
+          def luminance(hex_color):
+              value = hex_color.lstrip("#")
+              r, g, b = (int(value[i:i+2], 16) for i in (0, 2, 4))
+              return 0.2126 * channel(r) + 0.7152 * channel(g) + 0.0722 * channel(b)
+
+          def contrast_ratio(fg, bg):
+              lighter, darker = sorted((luminance(fg), luminance(bg)), reverse=True)
+              return (lighter + 0.05) / (darker + 0.05)
+
+          worst_text_surface = "#18212D"
 
           for path in sorted(root_dir.glob("*.svg")):
               try:
@@ -128,20 +144,29 @@ jobs:
                   failures.append(f"{path}: expected outer radius {expected_rx}px")
 
               minimum_font = 22.0 if "-mobile" in path.stem else (20.0 if "-compact" in path.stem else 14.0)
-              for text_node, raw_size in walk_text_sizes(root):
+              for text_node, raw_size, raw_fill in walk_text_styles(root):
                   if raw_size is None:
                       failures.append(f"{path}: visible <text> has no effective font-size")
-                      continue
-                  try:
-                      size = float(raw_size)
-                  except ValueError:
-                      failures.append(f"{path}: non-numeric effective font-size {raw_size!r}")
-                      continue
-                  if size < minimum_font:
-                      failures.append(
-                          f"{path}: effective font-size {size:g}px below "
-                          f"{minimum_font:g}px minimum"
-                      )
+                  else:
+                      try:
+                          size = float(raw_size)
+                      except ValueError:
+                          failures.append(f"{path}: non-numeric effective font-size {raw_size!r}")
+                      else:
+                          if size < minimum_font:
+                              failures.append(
+                                  f"{path}: effective font-size {size:g}px below "
+                                  f"{minimum_font:g}px minimum"
+                              )
+
+                  if raw_fill and raw_fill.startswith("#") and len(raw_fill) == 7:
+                      ratio = contrast_ratio(raw_fill, worst_text_surface)
+                      if ratio < 4.5:
+                          label = "".join(text_node.itertext()).strip()
+                          failures.append(
+                              f"{path}: text {label!r} uses {raw_fill} at "
+                              f"{ratio:.2f}:1 against {worst_text_surface}; minimum is 4.5:1"
+                          )
               title = root.find(f"{ns}title")
               desc = root.find(f"{ns}desc")
               if title is None or not (title.text or "").strip():
