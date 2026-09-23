@@ -86,6 +86,80 @@ jobs:
           });
           JS
 
+      - name: Audit live motion behavior
+        run: |
+          node <<'JS'
+          const fs = require('fs');
+          const { chromium } = require('playwright');
+
+          async function capture(browser, reduced, prefix) {
+            const context = await browser.newContext({
+              viewport: { width: 1440, height: 1000 },
+              reducedMotion: reduced ? 'reduce' : 'no-preference',
+            });
+            const page = await context.newPage();
+            await page.goto('https://github.com/Addey34/Addey34/tree/profile/v2-candidate', {
+              waitUntil: 'domcontentloaded',
+              timeout: 60000,
+            });
+            await page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});
+            const article = page.locator('article.markdown-body').first();
+            await article.waitFor({ state: 'visible', timeout: 30000 });
+            await page.waitForTimeout(1200);
+            await article.screenshot({ path: `${prefix}-a.png`, animations: 'allow' });
+            await page.waitForTimeout(2200);
+            await article.screenshot({ path: `${prefix}-b.png`, animations: 'allow' });
+            await context.close();
+          }
+
+          (async () => {
+            const browser = await chromium.launch({ headless: true });
+            await capture(browser, false, 'motion-normal');
+            await capture(browser, true, 'motion-reduced');
+            await browser.close();
+          })().catch((err) => {
+            console.error(err);
+            process.exit(1);
+          });
+          JS
+
+          python - <<'PY'
+          from PIL import Image, ImageChops
+          import json
+
+          def changed_pixels(a_path, b_path, threshold=8):
+              a = Image.open(a_path).convert("RGB")
+              b = Image.open(b_path).convert("RGB")
+              if a.size != b.size:
+                  raise SystemExit(f"Size mismatch: {a_path} {a.size} vs {b_path} {b.size}")
+              diff = ImageChops.difference(a, b)
+              changed = 0
+              for px in diff.getdata():
+                  if max(px) > threshold:
+                      changed += 1
+              return changed, a.size[0] * a.size[1]
+
+          normal, total = changed_pixels("motion-normal-a.png", "motion-normal-b.png")
+          reduced, _ = changed_pixels("motion-reduced-a.png", "motion-reduced-b.png")
+          report = {
+              "total_pixels": total,
+              "normal_changed_pixels": normal,
+              "normal_changed_ratio": normal / total,
+              "reduced_changed_pixels": reduced,
+              "reduced_changed_ratio": reduced / total,
+          }
+          print(json.dumps(report, indent=2))
+          with open("motion-report.json", "w", encoding="utf-8") as fh:
+              json.dump(report, fh, indent=2)
+
+          if normal < 100:
+              raise SystemExit("Expected visible motion in normal mode, but screenshots are effectively static.")
+          if reduced > max(50, int(normal * 0.05)):
+              raise SystemExit(
+                  f"Reduced-motion still changes too much: {reduced} pixels vs {normal} normal."
+              )
+          PY
+
       - name: Upload GitHub render audit
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
@@ -94,4 +168,5 @@ jobs:
             github-readme-desktop.png
             github-readme-mobile.png
             github-render-report.json
+            motion-report.json
           retention-days: 3
