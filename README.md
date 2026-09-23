@@ -40,7 +40,7 @@
     <source media="(prefers-reduced-motion: reduce)" srcset="./assets/profile-v2/stack-static.svg" />
     <source media="(max-width: 430px)" srcset="./assets/profile-v2/stack-mobile.svg" />
     <source media="(max-width: 1240px)" srcset="./assets/profile-v2/stack-compact.svg" />
-    <img src="./assets/profile-v2/stack.svg" alt="Core technical stack" width="100%" />
+    <img src="./assets/profile-v2/stack.svg" alt="Core technical stack — TypeScript, JavaScript, Python, React, Node.js, Three.js, WebGL, MongoDB, PostgreSQL, PyTorch, ONNX, Playwright, Docker and CI/CD" width="100%" />
   </picture>
 </div>
 
@@ -81,7 +81,7 @@
     <source media="(prefers-reduced-motion: reduce)" srcset="./assets/profile-v2/selected-work-static.svg" />
     <source media="(max-width: 430px)" srcset="./assets/profile-v2/selected-work-mobile.svg" />
     <source media="(max-width: 1240px)" srcset="./assets/profile-v2/selected-work-compact.svg" />
-    <img src="./assets/profile-v2/selected-work.svg" alt="Selected public work — Galaxy, Ludora and MagNotes" width="100%" />
+    <img src="./assets/profile-v2/selected-work.svg" alt="Selected public work — Galaxy for 3D graphics, Ludora for realtime games and platform systems, and MagNotes for full-stack product engineering" width="100%" />
   </picture>
 </div>
 
@@ -101,7 +101,7 @@
     <source media="(prefers-reduced-motion: reduce)" srcset="./assets/profile-v2/activity-static.svg" />
     <source media="(max-width: 430px)" srcset="./assets/profile-v2/activity-mobile.svg" />
     <source media="(max-width: 1240px)" srcset="./assets/profile-v2/activity-compact.svg" />
-    <img src="./assets/profile-v2/activity.svg" alt="Animated 3D GitHub contribution activity generated from real contribution data" width="100%" />
+    <img src="./assets/profile-v2/activity.svg" alt="Recent GitHub contribution activity rendered in 3D from real contribution data" width="100%" />
   </picture>
 </div>
 
