@@ -5,7 +5,7 @@
 <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F2D58A"/><stop offset="1" stop-color="#D9AE57"/></linearGradient>
 <filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 <path id="p" d="M760 110C880 58 1040 92 1085 177S984 316 808 302"/>
-<style>text{font-family:Inter,Segoe UI,Arial,sans-serif}.m{font-family:Consolas,monospace}.f{animation:f 7s ease-in-out infinite}.p{animation:p 3.4s ease-in-out infinite}.dash{stroke-dasharray:12 16;animation:d 6s linear infinite}@keyframes f{50%{transform:translateY(-6px)}}@keyframes p{50%{opacity:1;transform:scale(1.18)}0%,100%{opacity:.5}}@keyframes d{to{stroke-dashoffset:-112}}@media(prefers-reduced-motion:reduce){.f,.p,.dash{animation:none!important}}</style>
+<style>text{font-family:Inter,Segoe UI,Arial,sans-serif}.m{font-family:Consolas,monospace}.f{animation:f 7s ease-in-out infinite}.p{animation:p 3.4s ease-in-out infinite}.dash{stroke-dasharray:12 16;animation:d 6s linear infinite}@keyframes f{50%{transform:translateY(-6px)}}@keyframes p{50%{opacity:1;transform:scale(1.18)}0%,100%{opacity:.5}}@keyframes d{to{stroke-dashoffset:-112}}@media(prefers-reduced-motion:reduce){.motion-dot{display:none!important}.f,.p,.dash{animation:none!important}}</style>
 </defs>
 <rect width="1200" height="420" rx="28" fill="url(#bg)"/>
 <g transform="translate(72 70)">
@@ -38,5 +38,5 @@
 </g>
 <g fill="#168CFF" filter="url(#glow)"><circle class="p" cx="180" cy="12" r="4"/><circle class="p" cx="340" cy="90" r="4"/><circle class="p" cx="343" cy="189" r="4"/><circle class="p" cx="180" cy="278" r="4"/><circle class="p" cx="18" cy="189" r="4"/><circle class="p" cx="20" cy="90" r="4"/></g>
 </g></g>
-<use href="#p" fill="none" stroke="#168CFF" stroke-opacity=".22"/><circle r="4" fill="#65C7FF" filter="url(#glow)"><animateMotion dur="5.4s" repeatCount="indefinite"><mpath href="#p"/></animateMotion></circle>
+<use href="#p" fill="none" stroke="#168CFF" stroke-opacity=".22"/><circle class="motion-dot" r="4" fill="#65C7FF" filter="url(#glow)"><animateMotion dur="5.4s" repeatCount="indefinite"><mpath href="#p"/></animateMotion></circle>
 </svg>
