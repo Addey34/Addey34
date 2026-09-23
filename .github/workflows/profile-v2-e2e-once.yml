@@ -110,18 +110,33 @@ jobs:
                 const article = page.locator('article.markdown-body').first();
                 await article.waitFor({ state: 'visible', timeout: 30000 });
 
+                const images = article.locator('img');
+                const count = await images.count();
                 await page.waitForTimeout(350);
-                const first = await article.screenshot({ animations: 'allow' });
-                await page.waitForTimeout(1600);
-                const second = await article.screenshot({ animations: 'allow' });
-                const changed = diff(first, second);
 
-                motion.push({ width, reducedMotion, diffPixels: changed });
-                if (reducedMotion === 'reduce' && changed !== 0) {
-                  failures.push(`${width}px reduced-motion changed ${changed} pixels`);
+                const first = [];
+                for (let i = 0; i < count; i++) {
+                  first.push(await images.nth(i).screenshot({ animations: 'allow' }));
                 }
-                if (reducedMotion === 'no-preference' && changed === 0) {
-                  failures.push(`${width}px normal-motion showed no animation`);
+
+                await page.waitForTimeout(1600);
+
+                const diffs = [];
+                for (let i = 0; i < count; i++) {
+                  const second = await images.nth(i).screenshot({ animations: 'allow' });
+                  diffs.push(diff(first[i], second));
+                }
+
+                const totalChanged = diffs.reduce((a, b) => a + b, 0);
+                motion.push({ width, reducedMotion, imageDiffPixels: diffs, totalChanged });
+
+                if (reducedMotion === 'reduce' && totalChanged !== 0) {
+                  failures.push(
+                    `${width}px reduced-motion changed ${totalChanged} SVG pixels: ${JSON.stringify(diffs)}`
+                  );
+                }
+                if (reducedMotion === 'no-preference' && totalChanged === 0) {
+                  failures.push(`${width}px normal-motion showed no SVG animation`);
                 }
                 await page.close();
               }
