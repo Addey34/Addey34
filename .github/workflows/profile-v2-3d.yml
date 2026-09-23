@@ -53,7 +53,21 @@ jobs:
           if len(children) < 3:
               raise SystemExit("Unexpected 3D activity SVG structure")
 
-          style = copy.deepcopy(children[0])
+          source_style = children[0].text or ""
+          contribution_rules = re.findall(
+              r"(\.cont-(?:top|left|right)-\d+\s*\{[^}]+\})",
+              source_style,
+          )
+          if len(contribution_rules) != 15:
+              raise SystemExit(
+                  f"Unexpected contribution style structure: {len(contribution_rules)} rules"
+              )
+
+          style = ET.Element(q("style"))
+          style.text = "".join(
+              re.sub(r"\s+", " ", rule).strip()
+              for rule in contribution_rules
+          )
           calendar = copy.deepcopy(children[2])
 
           def text(parent, x, y, value, size, fill, *, mono=False, weight=None, spacing=None):
@@ -273,9 +287,9 @@ jobs:
                   failures.append(f"{filename}: generic SMIL animation leaked into curated output")
               if "prefers-reduced-motion" not in raw:
                   failures.append(f"{filename}: reduced-motion fallback missing")
-              if "mobile" in filename and path.stat().st_size > 100_000:
+              if path.stat().st_size > 35_000:
                   failures.append(
-                      f"{filename}: mobile activity exceeds 100 KB ({path.stat().st_size} bytes)"
+                      f"{filename}: curated activity exceeds 35 KB ({path.stat().st_size} bytes)"
                   )
 
               # Empty contribution days must remain flat: one top face only.
