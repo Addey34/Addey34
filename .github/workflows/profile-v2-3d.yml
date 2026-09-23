@@ -148,8 +148,9 @@ jobs:
                           if face is not top:
                               cell.remove(face)
 
-              # Deduplicate repeated cube geometry. Each contribution level gets
-              # one reusable prototype; calendar cells become lightweight <use> nodes.
+              # Deduplicate only pixel-identical cube geometry. Color classes
+              # are not enough: cells within the same color band can have different
+              # heights, so the complete geometry is the cache key.
               defs = ET.SubElement(out, q("defs"))
               prototypes = {}
               instances = ET.Element(
@@ -169,25 +170,26 @@ jobs:
                       instances.append(copy.deepcopy(cell))
                       continue
 
-                  level = top_face.attrib["class"].rsplit("-", 1)[-1]
-                  proto_id = f"activity-cell-{level}"
-                  if level not in prototypes:
-                      prototype = copy.deepcopy(cell)
-                      prototype.attrib.pop("transform", None)
+                  prototype = copy.deepcopy(cell)
+                  prototype.attrib.pop("transform", None)
+
+                  # Defaults: SVG rect x/y are 0 and stroke defaults to none.
+                  # Removing those repeated attributes is pixel-identical.
+                  for face in prototype:
+                      if face.attrib.get("x") == "0":
+                          face.attrib.pop("x")
+                      if face.attrib.get("y") == "0":
+                          face.attrib.pop("y")
+                      if face.attrib.get("stroke") == "none":
+                          face.attrib.pop("stroke")
+
+                  signature = ET.tostring(prototype, encoding="unicode")
+                  proto_id = prototypes.get(signature)
+                  if proto_id is None:
+                      proto_id = f"activity-cell-{len(prototypes)}"
                       prototype.set("id", proto_id)
-
-                      # Defaults: SVG rect x/y are 0 and stroke defaults to none.
-                      # Removing those repeated attributes is pixel-identical.
-                      for face in prototype:
-                          if face.attrib.get("x") == "0":
-                              face.attrib.pop("x")
-                          if face.attrib.get("y") == "0":
-                              face.attrib.pop("y")
-                          if face.attrib.get("stroke") == "none":
-                              face.attrib.pop("stroke")
-
                       defs.append(prototype)
-                      prototypes[level] = proto_id
+                      prototypes[signature] = proto_id
 
                   ET.SubElement(
                       instances,
@@ -301,9 +303,9 @@ jobs:
                   for node in raw_root.iter(f"{NS}g")
                   if node.attrib.get("id", "").startswith("activity-cell-")
               }
-              if len(prototype_ids) != 5:
+              if not (10 <= len(prototype_ids) <= 50):
                   failures.append(
-                      f"{filename}: expected 5 activity cell prototypes, got {len(prototype_ids)}"
+                      f"{filename}: unexpected activity prototype count {len(prototype_ids)}"
                   )
               if len(use_nodes) < 70:
                   failures.append(
