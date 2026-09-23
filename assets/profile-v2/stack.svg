@@ -20,7 +20,7 @@
 <g transform="translate(72 58)">
   <circle cx="7" cy="-10" r="5" fill="#D9AE57"/>
   <text x="24" y="-5" class="m" font-size="12" fill="#D9AE57" letter-spacing="3">CORE STACK</text>
-  <text y="43" font-size="30" font-weight="760" fill="#F5F3ED">Technologies grouped by responsibility.</text>
+  <text y="43" font-size="30" font-weight="760" fill="#F5F3ED">Technical stack by responsibility.</text>
   <text y="70" font-size="14" fill="#98A1AE">Languages, runtime, graphics, data, compute and delivery.</text>
 </g>
 
