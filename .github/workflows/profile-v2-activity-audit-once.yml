@@ -1,0 +1,48 @@
+name: Profile V2 Activity Visual Audit
+
+on:
+  push:
+    branches:
+      - profile/v2-candidate
+    paths:
+      - ".github/workflows/profile-v2-activity-audit-once.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+
+      - name: Render Activity surfaces
+        run: |
+          python -m pip install --disable-pip-version-check cairosvg
+          python - <<'PY'
+          from pathlib import Path
+          import cairosvg
+
+          root = Path("assets/profile-v2")
+          for name, width in (
+              ("activity.svg", 1200),
+              ("activity-compact.svg", 900),
+              ("activity-mobile.svg", 720),
+          ):
+              cairosvg.svg2png(
+                  url=str(root / name),
+                  write_to=f"{name[:-4]}.png",
+                  output_width=width,
+              )
+          PY
+
+      - name: Upload Activity audit
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: profile-v2-activity-audit
+          path: |
+            activity.png
+            activity-compact.png
+            activity-mobile.png
+          retention-days: 1
