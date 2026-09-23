@@ -132,6 +132,15 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/profile-v2/activity.svg assets/profile-v2/activity-mobile.svg
           if git commit -m "chore(profile): refresh 3D activity"; then
-            git pull --rebase origin "$GITHUB_REF_NAME"
-            git push origin "HEAD:$GITHUB_REF_NAME"
+            for attempt in 1 2 3; do
+              git fetch origin "$GITHUB_REF_NAME"
+              git rebase "origin/$GITHUB_REF_NAME"
+              if git push origin "HEAD:$GITHUB_REF_NAME"; then
+                exit 0
+              fi
+              echo "Push raced with another update; retrying ($attempt/3)..."
+              sleep 2
+            done
+            echo "Unable to publish refreshed activity after 3 retries."
+            exit 1
           fi
